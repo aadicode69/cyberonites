@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 Testing & Referring - https://aaditya-cyberonites.vercel.app/
 
-Preview - 
+Preview - https://cyberonites-alpha.vercel.app/
