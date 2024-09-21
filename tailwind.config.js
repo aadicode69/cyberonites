@@ -5,8 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'cyber1': '#7fe7f1',
+      },
+      fontFamily:{
+        'cyberfont': ['Ubuntu'],
+        'rubik': ['Rubik Glitch'],
+      },
+    },
   },
-  plugins: [],
 }
 
