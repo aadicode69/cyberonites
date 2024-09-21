@@ -1,5 +1,6 @@
 import React from "react";
 import "./nav.css";
+import logo from "../../img/ps-final1.png"
 // import { FaBell, FaHome } from "react-icons/fa";
 // import { IoCalendar } from "react-icons/io5";
 // import { FaUserGroup } from "react-icons/fa6";
@@ -36,7 +37,7 @@ return (
             <circle className="stroke-cyan-300" strokeWidth={Math.random()*2 + 1} fill="transparent" r={e} cx="55" cy="55" />
         </svg>
       ))}
-        <img className="translate-x-3 translate-y-4" src="src/img/ps-final1.png" />
+        <img className="translate-x-3 translate-y-4" src={logo} />
     </div>
       <div className="fixed top-14 left-1/2 -translate-x-1/2">
         <LavalampMenu className="toggleOptions bg-black border-y-2 border-cyan-300 text-cyan-300">
