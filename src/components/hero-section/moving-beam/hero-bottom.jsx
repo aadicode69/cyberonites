@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import DescriptionArea from "../description-area";
 import TagLine from "../tag-line";
 
-export default function VerticleBeam() {
+export default function HeroBottom() {
   return (
     <div className="relative flex flex-col-reverse justify-center items-center">
       <AnonymousSvgVector size={80} />

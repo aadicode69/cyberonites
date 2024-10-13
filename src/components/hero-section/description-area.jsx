@@ -2,8 +2,11 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function DescriptionArea({ className = "" }) {
+  const joinUs = "https://forms.gle/uy7Uneh2yZS7b1PA7";
+  const sponsorUs = "https://forms.gle/Sxd2L3NAjWxcGfZA8";
+
   return (
-    <div className={twMerge("space-y-3", className)}>
+    <div className={twMerge("space-y-5", className)}>
       <p className="text-white shadow-cyan-700 font-cyberfont font-semibold">
         Building the next generation of{" "}
         <span className="text-cyan-300">cyber experts</span> through education
@@ -19,13 +22,21 @@ export default function DescriptionArea({ className = "" }) {
 
       <div className="space-x-4">
         {/* Join Us button */}
-        <button className="bg-black hover:bg-cyan-300 hover:text-black duration-300 px-4 py-2.5 rounded-full text-cyan-300 font-bold border border-cyan-300">
+        <a
+          className="bg-black hover:bg-cyan-300 hover:text-black duration-300 px-4 py-2.5 rounded-full text-cyan-300 font-bold border border-cyan-300 cursor-pointer"
+          href={joinUs}
+          target="_blank"
+        >
           Join Us
-        </button>
+        </a>
         {/* Sponsors button */}
-        <button className="bg-black hover:bg-cyan-300 hover:text-black duration-300 px-4 py-2.5 rounded-full text-cyan-300 font-bold border border-cyan-300">
+        <a
+          className="bg-black hover:bg-cyan-300 hover:text-black duration-300 px-4 py-2.5 rounded-full text-cyan-300 font-bold border border-cyan-300 cursor-pointer"
+          href={sponsorUs}
+          target="_blank"
+        >
           Sponsors Us
-        </button>
+        </a>
       </div>
     </div>
   );

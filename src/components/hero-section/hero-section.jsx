@@ -1,7 +1,7 @@
 import React from "react";
 import LeftTopBeam from "./moving-beam/left-top-beam";
 import RightTopBeam from "./moving-beam/right-top-beam";
-import VerticleBeam from "./moving-beam/verticle-beam";
+import HeroBottom from "./moving-beam/hero-bottom";
 import Tagline from "../hero-section/tag-line";
 import DescriptionArea from "../hero-section/description-area";
 
@@ -18,7 +18,7 @@ export default function HeroSection() {
               Cyberonites
             </span>
           </div>
-          <VerticleBeam />
+          <HeroBottom />
         </div>
         <RightTopBeam />
       </div>
