@@ -5,11 +5,11 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white font-cyberfont">
       <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-black py-7">
-        <h1 className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5">
-          <span className="text-cyan-300 text-6xl">CY.  </span> Empowering
+        <h2 className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold md:w-2/5">
+          <div className="text-cyan-300 text-6xl">CY.  </div> Empowering
           students with advanced cybersecurity knowledge and skills.
-          <div className="text-cyan-300 text-2xl">BE POWERFUL.</div>
-        </h1>
+          <div className="text-cyan-300 text-xl">BE POWERFUL.</div>
+        </h2>
         <div>
           <input
             type="text"
