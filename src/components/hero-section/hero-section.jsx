@@ -7,8 +7,7 @@ import DescriptionArea from "../hero-section/description-area";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col-reverse lg:flex-col">
-      {/* Desktop View */}
+    <div className="flex flex-col gap-y-5 lg:flex-col">
       <div className="flex justify-center font-cyberfont items-center max-lg:-mt-36">
         <LeftTopBeam />
         <div className="mt-48 sm:mt-64 flex justify-center items-center flex-col">
@@ -22,7 +21,7 @@ export default function HeroSection() {
         </div>
         <RightTopBeam />
       </div>
-      {/* Mobile View */}
+      {/* Mobile only */}
       <div className="flex font-cyberfont flex-col p-2 lg:hidden">
         <Tagline />
         <DescriptionArea className="mt-8 text-sm" />
