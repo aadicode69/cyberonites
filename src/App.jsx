@@ -1,14 +1,18 @@
-// import React from 'react'
-import Body from "./components/Body";
-import Footer from "./components/Footer";
-import { Navbar } from "./components/navbar/navbar";
+import React from "react";
+import HeroSection from "./components/hero-section/hero-section";
+import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/Footer";
+import Pages from "./components/Pages";
+import Event from "./components/events/Event";
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Body />
+      <HeroSection />
+      <Event />
+      <Pages />
       <Footer />
-    </div>
+    </>
   );
 }
 
