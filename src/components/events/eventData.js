@@ -1,9 +1,9 @@
-import img1 from "src/img/events/youCanHack.png";
-import img2 from "src/img/events/NetworkInterception.png";
-import img3 from "src/img/events/ITMela.jpeg";
-import img4 from "src/img/events/WebSecPro.jpeg";
-import img5 from "src/img/events/Cybersphere.jpeg";
-import img6 from "src/img/events/CyberonitesSecurityFest.png";
+import img1 from "./../../img/events/youCanHack.png";
+import img2 from "./../../img/events/NetworkInterception.png";
+import img3 from "./../../img/events/ITMela.jpeg";
+import img4 from "./../../img/events/WebSecPro.jpeg";
+import img5 from "./../../img/events/Cybersphere.jpeg";
+import img6 from "./../../img/events/CyberonitesSecurityFest.png";
 const services = [
     {
         image: img1,
