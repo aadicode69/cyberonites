@@ -4,7 +4,7 @@ import { LavalampMenu } from "react-llamp-menu";
 import logo from "../../img/ps-final1.png";
 import "./nav.css";
 
-export function Navbar() {
+const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -27,8 +27,8 @@ export function Navbar() {
   useEffect(() => {
     setProgress();
     const svgs = document.querySelectorAll(".rings");
-    svgs.forEach((svg, i) => {
-      if (i % Math.floor(Math.random() * 2) === 0) {
+    svgs.forEach((svg) => {
+      if (Math.floor(Math.random() * 2) === Math.floor(Math.random() * 2)) {
         svg.style.animation = `spin ${Math.random() * 6 + 2}s linear infinite`;
       } else {
         svg.style.animation = `spin ${
@@ -36,9 +36,7 @@ export function Navbar() {
         }s linear infinite reverse`;
       }
     });
-  }, []);
 
-  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY) {
@@ -115,9 +113,9 @@ export function Navbar() {
         initial={{ y: 0 }}
         animate={controls}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed w-full bottom-8 lg:top-14 z-50"
+        className="fixed w-full h-auto bottom-8 lg:top-14 z-50"
       >
-        <div className="flex justify-center">
+        <div className="flex justify-center translate-z-10'">
           <LavalampMenu className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] bg-black lg:skew-x-[30deg] border-2 lg:border-0 lg:border-y-2 border-cyan-300 text-cyan-300 rounded-full lg:rounded-none">
             <ul>
               {["Home", "About", "Events", "Upcoming"].map((e) => (
@@ -137,3 +135,5 @@ export function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;

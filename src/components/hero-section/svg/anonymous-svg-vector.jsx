@@ -1,5 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { twMerge } from "tailwind-merge";
+
+AnonymousSvgVector.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
 
 export default function AnonymousSvgVector({
   className = "",

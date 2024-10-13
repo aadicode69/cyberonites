@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from './Footer'
+import Footer from './footer/Footer'
 
-function Pages() {
+export const Pages = () => {
   return (
     <div className='w-full h-screen bg-black'></div>
   )

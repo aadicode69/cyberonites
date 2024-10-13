@@ -1,5 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { twMerge } from "tailwind-merge";
+
+DescriptionArea.propTypes = {
+  className: PropTypes.string,
+};
 
 export default function DescriptionArea({ className = "" }) {
   const joinUs = "https://forms.gle/uy7Uneh2yZS7b1PA7";

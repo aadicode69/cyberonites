@@ -1,5 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { twMerge } from "tailwind-merge";
+
+ComputerSvgVector.propTypes = {
+  className: PropTypes.string,
+  color: PropTypes.string,
+};
 
 export default function ComputerSvgVector({ className = "", color = "white" }) {
   return (

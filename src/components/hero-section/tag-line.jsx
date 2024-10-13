@@ -1,5 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { twMerge } from "tailwind-merge";
+
+TagLine.propTypes = {
+  classNameBox: PropTypes.string,
+  classNameText: PropTypes.string,
+};
 
 export default function TagLine({ classNameBox = "", classNameText = "" }) {
   return (

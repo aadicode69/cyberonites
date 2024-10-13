@@ -1,35 +1,18 @@
-/* ---------------------------------------------------------------------------------------------- */
 .toggleOptions {
-    font-family: "Rubik Glitch", system-ui;
-    border-radius: var(--radius);
-    overflow: hidden;
-    transform: skewX(40deg);
+    --radius: 0px;
 
-    color: var(--cyan-300);
-
-    button {
-        height: 45px;
-        padding: 0 20px;
-        cursor: pointer;
-        margin: 0 1.7px;
-        border-radius: var(--radius);
-        transform: skewX(-40deg);
-
-        &.selected {
-            color: black !important;
-        }
+    .selected {
+        color: black !important;
     }
 
-    /*marker*/
     .indicator {
         background-color: var(--cyan-300) !important;
         border-radius: var(--radius);
-        height: calc(100% - 3.5px) !important;
+        height: calc(100% - 4.05px) !important;
         margin-top: 2px;
     }
 }
 
-/* ---------------------------------------------------------------------------------------------- */
 
 /*
 

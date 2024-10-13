@@ -13,7 +13,7 @@ export default function HeroSection() {
         <div className="mt-48 sm:mt-64 flex justify-center items-center flex-col">
           <div className="flex flex-col text-center">
             <span className="text-white text-lg sm:text-5xl">Welcome to</span>
-            <span className="text-[#3B82F6] font-bold text-xl sm:text-6xl">
+            <span className="text-cyan-400 font-bold text-xl sm:text-6xl">
               Cyberonites
             </span>
           </div>
