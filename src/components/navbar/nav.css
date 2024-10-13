@@ -1,18 +1,35 @@
+/* ---------------------------------------------------------------------------------------------- */
 .toggleOptions {
-    --radius: 0px;
+    font-family: "Rubik Glitch", system-ui;
+    border-radius: var(--radius);
+    overflow: hidden;
+    transform: skewX(40deg);
 
-    .selected {
-        color: black !important;
+    color: var(--cyan-300);
+
+    button {
+        height: 45px;
+        padding: 0 20px;
+        cursor: pointer;
+        margin: 0 1.7px;
+        border-radius: var(--radius);
+        transform: skewX(-40deg);
+
+        &.selected {
+            color: black !important;
+        }
     }
 
+    /*marker*/
     .indicator {
         background-color: var(--cyan-300) !important;
         border-radius: var(--radius);
-        height: calc(100% - 4.05px) !important;
+        height: calc(100% - 3.5px) !important;
         margin-top: 2px;
     }
 }
 
+/* ---------------------------------------------------------------------------------------------- */
 
 /*
 
@@ -27,25 +44,3 @@ Laptop : (min-width: 1024px)
         --radius: 26px;
     }
 }
-
-/* 
-.ribbon {
-    --w: 1.6rem;
-    --h: 4em;
-    width: var(--w);
-    height: var(--h);
-    background-color: var(--cyan-300);
-    box-shadow: 1px 0 2px 0px black;
-
-    &:before {
-        content: '';
-        position: absolute;
-        z-index: 2;
-        left: 0;
-        bottom: calc(var(--w)/-2);
-        border-left: calc(var(--w)/2) solid var(--cyan-300);
-        border-right: calc(var(--w)/2) solid var(--cyan-300);
-        border-bottom: calc(var(--w)/2) solid transparent;
-        box-shadow: 0px -1px 0px 0px var(--cyan-300);
-    }
-} */

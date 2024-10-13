@@ -22,7 +22,7 @@ export function Navbar() {
         ((Math.floor(Math.random() * 60) + 10) / 100) * circumference;
       ele.style.strokeDashoffset = offset;
     });
-  }
+}
 
   useEffect(() => {
     setProgress();
