@@ -1,12 +1,15 @@
-import React from "react";
-import "./nav.css";
-import logo from "../../img/ps-final1.png";
-// import { FaBell, FaHome } from "react-icons/fa";
-// import { IoCalendar } from "react-icons/io5";
-// import { FaUserGroup } from "react-icons/fa6";
-
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { LavalampMenu } from "react-llamp-menu";
+import logo from "../../img/ps-final1.png";
+import "./nav.css";
+
 export function Navbar() {
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const controls = useAnimation();
+
   function setProgress() {
     const circles = document.querySelectorAll("circle");
     circles.forEach((ele) => {
@@ -14,24 +17,78 @@ export function Navbar() {
       const circumference = radius * 2 * Math.PI;
       ele.style.strokeDasharray = `${circumference} ${circumference}`;
       ele.style.strokeDashoffset = `${circumference}`;
-      const offset = circumference - ((Math.floor(Math.random() * 60) + 10) / 100) * circumference; // const offset = circumference - 1 * circumference;
-      // const offset = circumference - 1 * circumference; // const offset = circumference - 1 * circumference;
+      const offset =
+        circumference -
+        ((Math.floor(Math.random() * 60) + 10) / 100) * circumference;
       ele.style.strokeDashoffset = offset;
     });
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     setProgress();
     const svgs = document.querySelectorAll(".rings");
-    svgs.forEach((svg) => {
-      const randomDuration = Math.random() * 6 + 2;
-      svg.style.animationDuration = `${randomDuration}s`;
+    svgs.forEach((svg, i) => {
+      if (i % Math.floor(Math.random() * 2) === 0) {
+        svg.style.animation = `spin ${Math.random() * 6 + 2}s linear infinite`;
+      } else {
+        svg.style.animation = `spin ${
+          Math.random() * 6 + 2
+        }s linear infinite reverse`;
+      }
     });
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setIsScrollingUp(false);
+      } else {
+        setIsScrollingUp(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    if (screenWidth > 770) {
+      if (lastScrollY < 100) {
+        if (isScrollingUp) {
+          controls.start({ y: 0 });
+        } else {
+          controls.start({ y: "-5%" });
+        }
+      } else {
+        if (isScrollingUp) {
+          controls.start({ y: "-5%" });
+        } else {
+          controls.start({ y: "-100%" });
+        }
+      }
+    } else {
+      if (isScrollingUp) {
+        controls.start({ y: "50%" });
+      } else {
+        controls.start({ y: "200%" });
+      }
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isScrollingUp, controls, lastScrollY, screenWidth]);
+
   return (
-    <nav className="font-['roboto_mono'] bg-black text-cyan-300">
-      <div className="relative w-20 h-20 lg:w-28 lg:h-28 m-4 lg:m-6">
+    <nav>
+      {/* ---- Logo ----- */}
+      <div className="absolute w-20 h-20 lg:w-28 lg:h-28 translate-x-4 translate-y-4">
+        {/* svg circles to rotate for logo */}
         {[40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53].map((e) => (
           <svg
             key={e}
@@ -39,7 +96,7 @@ export function Navbar() {
             viewBox="0 0 110 110"
           >
             <circle
-              strokeWidth={Math.random() * 4 + 0}
+              strokeWidth={Math.random() * 2 + 1}
               fill="transparent"
               r={e}
               cx="55"
@@ -47,28 +104,36 @@ export function Navbar() {
             />
           </svg>
         ))}
-        <img className="logo w-16 h-16 lg:w-28 lg:h-28 translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-5 drop-shadow-[0_0_.5rem_var(--cyan-300)]" src={logo} />
+        <img
+          className="logo w-16 h-16 lg:w-28 lg:h-28 translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-5 drop-shadow-[0_0_.5rem_var(--cyan-300)]"
+          src={logo}
+        />
       </div>
-      <div className="fixed bottom-8 lg:top-14 left-1/2 -translate-x-1/2">
-        <LavalampMenu
-          className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] bg-black lg:skew-x-[30deg] border-2 lg:border-y-2 border-cyan-300 text-cyan-300 rounded-full lg:rounded-none"
-        >
-          <ul>
-            {["Home", "About", "Events", "Upcoming"].map((e) => (
-              <li key={e}>
-                <button
-                  className="h-10 px-2 lg:px-10 mx-[2px] lg:-skew-x-[30deg] rounded-full lg:rounded-none"
-                  onClick={() => console.log()}
-                >
-                  {e}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </LavalampMenu>
-      </div>
-      <button className="fixed w-40 h-6 top-7 lg:top-9 -right-11 lg:-right-8 text-center font-bold bg-cyan-300 text-[#1C2828] rotate-45">Contact Us</button>
-      <button className="ribbon fixed top-0 right-20 lg:right-24 text-center bg-cyan-300 text-black animate-bounce"></button>
+
+      {/* ----------------- Nav Buttons ----------------- */}
+      <motion.nav
+        initial={{ y: 0 }}
+        animate={controls}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="fixed w-full bottom-8 lg:top-14 z-50"
+      >
+        <div className="flex justify-center">
+          <LavalampMenu className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] bg-black lg:skew-x-[30deg] border-2 lg:border-0 lg:border-y-2 border-cyan-300 text-cyan-300 rounded-full lg:rounded-none">
+            <ul>
+              {["Home", "About", "Events", "Upcoming"].map((e) => (
+                <li key={e}>
+                  <button
+                    className="h-10 px-2 lg:px-10 mx-[2px] lg:-skew-x-[30deg] rounded-full lg:rounded-none"
+                    onClick={() => console.log()}
+                  >
+                    {e}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </LavalampMenu>
+        </div>
+      </motion.nav>
     </nav>
   );
 }

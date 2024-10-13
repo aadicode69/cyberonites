@@ -1,10 +1,10 @@
 import React from 'react'
 import Footer from './Footer'
 
-function Body() {
+function Pages() {
   return (
     <div className='w-full h-screen bg-black'></div>
   )
 }
 
-export default Body
+export default Pages

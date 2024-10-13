@@ -1,15 +1,15 @@
 // import React from 'react'
-import Body from "./components/Body";
-import Footer from "./components/Footer";
 import { Navbar } from "./components/navbar/navbar";
+import Footer from "./components/Footer";
+import Pages from "./components/Pages";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Body />
+      <Pages />
       <Footer />
-    </div>
+    </>
   );
 }
 

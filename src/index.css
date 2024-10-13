@@ -74,6 +74,10 @@
   --black: #000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: black;
 }
