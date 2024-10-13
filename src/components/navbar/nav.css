@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
+.rubik-glitch-regular {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+}
+
+* {
+    /* CSS HEX */
+    --silver: #B5BDBC;
+    --battleship-gray: #858685;
+    --dark-slate-gray: #415D5D;
+    --gunmetal: #1C2828;
+    --cyan-300: #67e8f9;
+    --teal-400: #2dd4bf;
+    --black: #000;
+    --radius: 0px;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+.toggleOptions {
+    font-family: "Rubik Glitch", system-ui;
+    border-radius: var(--radius);
+    /* border: 2px solid var(--electric-blue); */
+    /* border-color: var(--electric-blue); */
+    overflow: hidden;
+    transform: skewX(40deg);
+
+    color: var(--cyan-300);
+
+    button {
+        height: 45px;
+        padding: 0 20px;
+        cursor: pointer;
+        /* transition: all 0.5s; */
+        margin: 0 1.7px;
+        border-radius: var(--radius);
+        transform: skewX(-40deg);
+
+        &.selected {
+            color: black !important;
+        }
+    }
+
+    /*marker*/
+    .indicator {
+        background-color: var(--cyan-300) !important;
+        border-radius: var(--radius);
+        height: calc(100% - 3.5px) !important;
+        margin-top: 2px;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+svg {
+    animation: rotateall 10s linear  infinite;
+    filter: drop-shadow(0 0 .5rem var(--cyan-300));
+}
+
+img {
+    filter: drop-shadow(0 0 .5rem var(--cyan-300));
+}
+
+@keyframes rotateall {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
