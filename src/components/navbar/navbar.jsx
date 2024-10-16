@@ -28,7 +28,7 @@ const Navbar = () => {
     setProgress();
     const svgs = document.querySelectorAll(".rings");
     svgs.forEach((svg) => {
-      if (Math.floor(Math.random() * 2) === Math.floor(Math.random() * 2)) {
+      if (Math.floor(Math.random() * 2) === 1) {
         svg.style.animation = `spin ${Math.random() * 6 + 2}s linear infinite`;
       } else {
         svg.style.animation = `spin ${
@@ -59,20 +59,20 @@ const Navbar = () => {
         if (isScrollingUp) {
           controls.start({ y: 0 });
         } else {
-          controls.start({ y: "-5%" });
+          controls.start({ y: "-100%" });
         }
       } else {
         if (isScrollingUp) {
-          controls.start({ y: "-5%" });
-        } else {
           controls.start({ y: "-100%" });
+        } else {
+          controls.start({ y: "-250%" });
         }
       }
     } else {
       if (isScrollingUp) {
         controls.start({ y: "50%" });
       } else {
-        controls.start({ y: "200%" });
+        controls.start({ y: "250%" });
       }
     }
 
@@ -113,7 +113,7 @@ const Navbar = () => {
         initial={{ y: 0 }}
         animate={controls}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed w-full h-auto bottom-8 lg:top-14 z-50"
+        className="fixed w-full h-10 bottom-8 lg:top-14 z-50"
       >
         <div className="flex justify-center translate-z-10'">
           <LavalampMenu className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] bg-black lg:skew-x-[30deg] border-2 lg:border-0 lg:border-y-2 border-cyan-300 text-cyan-300 rounded-full lg:rounded-none">
