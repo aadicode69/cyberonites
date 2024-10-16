@@ -7,6 +7,7 @@ export const Explore = [
   export const Visit = [
     { name: "Cyberonites Club. GLA University, Mathura, India - 281406" },
     { name: "See on Maps", link: "#" },
+    { name: "Privacy Policy", link: "#" },
   ];
   export const Socials = [
     { name: "LinkedIn", link: "#" },
