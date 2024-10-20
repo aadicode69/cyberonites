@@ -19,8 +19,9 @@ function UpcomingEvents() {
         </video>
       </div>
       <div className=" flex items-center justify-center my-0">
-        <button class="bg-black text-white font-bold py-2 px-6 rounded-full border-2 border-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-[0_0_20px_#ffd700] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transform">
-          Register Now</button>
+        <button class="bg-black text-white font-bold py-2 px-6 rounded-full border-2 border-yellow-400 hover:bg-yellow-400 hover:text-black hover:shadow-[0_0_15px_#ffd700] transition-all duration-300 hover:-translate-y-1 transform">
+          Register Now
+        </button>
       </div>
     </>
   );
