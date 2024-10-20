@@ -1,17 +1,19 @@
 .alumni {
+  margin-top: 1rem;;
   padding: 2rem 0 2rem 0;
 }
 
 .heading {
   text-align: center;
+  font-family: "Ubuntu", serif;
 }
 
 .heading-secondary {
-  font-size: 1.6rem;
+  font-size:x-large;
   letter-spacing: 0.2px;
   text-transform: uppercase;
-  color: #4d4d4d;
-  font-weight: 500;
+  color: #22d3ee;
+  font-weight:800;
   margin-bottom: 3.4rem;
 }
 
