@@ -7,6 +7,7 @@ import Event from "./components/events/Event";
 import ContactUs from "./components/contact/ContactUs";
 import Explore from "./components/Alumini/Alumni";
 import Sponsor from "./components/Sponsers/Sponser";
+import UpcomingEvents from "./components/upcominEvents/UpcomingEvents";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HeroSection />
       <Explore heading="Our Alumni" />
       <Sponsor heading="Our Sponsors" />
+      <UpcomingEvents/>
       <Event />
       <ContactUs />
       <Pages />
