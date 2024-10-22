@@ -36,9 +36,12 @@ export default function HeroBottom() {
         />
       </svg>
 
-      <DescriptionArea className="absolute right-36 top-5 w-[400px] max-lg:hidden p-5" />
+      <DescriptionArea className="absolute left-36 top-5 w-[36vw] max-lg:hidden p-5 xl:text-lg" />
 
-      <TagLine classNameBox="absolute left-44 top-5 w-[380px] max-lg:hidden p-5" />
+      <TagLine
+        classNameBox="absolute right-44 top-5 w-[36vw] max-lg:hidden p-5"
+        classNameText="xl:text-4xl"
+      />
     </div>
   );
 }

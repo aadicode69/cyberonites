@@ -22,9 +22,9 @@ export default function HeroSection() {
         <RightTopBeam />
       </div>
       {/* Mobile only */}
-      <div className="flex font-cyberfont flex-col p-2 lg:hidden">
+      <div className="flex font-cyberfont flex-col p-4 lg:hidden">
         <Tagline />
-        <DescriptionArea className="mt-8 text-sm" />
+        <DescriptionArea className="mt-8 text-sm md:text-lg" />
       </div>
     </div>
   );

@@ -3,7 +3,10 @@ import Footer from './footer/Footer'
 
 export const Pages = () => {
   return (
-    <div className='w-full h-screen bg-black'></div>
+    <>
+    <div className='w-full h-screen bg-black'></div>  
+    </>
+
   )
 }
 

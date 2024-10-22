@@ -1,0 +1,101 @@
+.alumni {
+  margin-top: 1rem;;
+  padding: 2rem 0 2rem 0;
+}
+
+.heading {
+  text-align: center;
+  font-family: "Ubuntu", serif;
+}
+
+.heading-secondary {
+  font-size:x-large;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #22d3ee;
+  font-weight:800;
+  margin-bottom: 3.4rem;
+}
+
+.Spo-company-image-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  width: 100%;
+}
+
+.Spo-company-image {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  min-width: 100%;
+  animation: sponser-scroll 10s linear infinite;
+}
+
+.Spo-company-image img {
+  height: 2.5rem;
+  margin-right: 3rem;
+  filter: brightness(0.5);
+}
+
+@keyframes sponser-scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.Spo-company-image-wrapper:hover .Spo-company-image {
+  animation-play-state: paused;
+}
+
+@media (max-width: 1024px) {
+  .company-image-wrapper {
+    justify-content: center;
+  }
+
+  .company-image img {
+    height: 2.6rem;
+  }
+}
+@media (max-width: 480px) {
+  .Spo-company-image-wrapper {
+    display: flex;
+    justify-self: space-evenly;
+    overflow: hidden;
+  }
+
+  @keyframes sponser-scr {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .Spo-company-image-wrapper .Spo-company-image {
+    display: flex;
+    gap: 5rem;
+    animation: sponser-scr 10s linear infinite;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .Spo-company-image {
+    display: inline-flex;
+  }
+
+  .Spo-company-image::after {
+    content: "";
+    display: inline-block;
+  }
+
+  .Spo-company-image img {
+    height: 2rem;
+    filter: brightness(1);
+    margin-right: 5px;
+  }
+}
