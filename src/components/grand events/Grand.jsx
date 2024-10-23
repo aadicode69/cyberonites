@@ -13,6 +13,9 @@ function Grand() {
       </div>
 
       <div className="flex flex-row gap-5 items-center justify-center font-cyberfont ">
+
+        {/* here the card component starts; you may copy and paste it */}
+        
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
           <a href="#">
             <img
@@ -36,7 +39,7 @@ function Grand() {
               practical skills for cybersecurity careers.
             </p>
             <a
-              href="#"
+              href="/guestlecture"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-400 rounded-lg hover:bg-cyan-500 focus:ring-0 hover:shadow-[0_0_8px_4px_rgba(0,255,255,0.7)] transition-all duration-300 dark:bg-cyan-500 dark:hover:bg-cyan-500 dark:focus:ring-0"
             >
               Explore
