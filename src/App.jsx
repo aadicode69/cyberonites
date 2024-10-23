@@ -11,6 +11,8 @@ import UpcomingEvents from "./components/upcominEvents/UpcomingEvents";
 import Grand from "./components/grand events/Grand";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Security from "./components/security/security";
+import GuestLecture from "./components/grand events/eventdetails/GuestLecture";
+import CTF from "./components/grand events/eventdetails/CTF";
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           }
         />
         {/* <Route path="*" element={<Error />} /> */}
+        <Route path="/guestlecture" element={<GuestLecture/>} />
+        <Route path="/capturetheflag" element={<CTF/>} />
       </Routes>
     </BrowserRouter>
   );

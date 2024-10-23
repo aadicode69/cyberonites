@@ -1,38 +1,50 @@
 import React from "react";
+import "./Card.css";
+import event1 from "../../img/events/EscalateXGL.jpg";
+import event2 from "../../img/events/EscalateX_CTF.jpg";
 
 function Grand() {
   return (
     <>
       <div className="flex items-center justify-center my-10">
-
         <h1 className="text-cyan-400 font-cyberfont font-semibold text-4xl mt-10">
           Grand Events
         </h1>
-
       </div>
 
       <div className="flex flex-row gap-5 items-center justify-center font-cyberfont ">
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-800">
+        {/* here the card component starts; you may copy and paste it */}
+        
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
           <a href="#">
-            <img class="rounded-t-lg" src="#" alt=""/>
+            <img
+              className="rounded-t-lg transition duration-300 ease-in-out hover:scale-100"
+              src={event1}
+              alt="EscalateX Image"
+            />
           </a>
-          <div class="p-5">
+          <div className="p-5">
             <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Escalate X
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white typing-effect">
+                EscalateX - Guest Lecture
               </h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              EscalateX aims to provide participants with hands-on experience in cybersecurity challanged through the CTF  competition and to enrich their understanding with insights from industry experts during the guest lectures.
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 fade-in-effect">
+              The EscalateX Guest Lecture Series aimed to deepen students,
+              understanding of cybersecurity topics like reverse engineering,
+              hardware hacking, and web penetration testing. Featuring
+              experienced professionals and alumni, it bridged theoretical
+              knowledge with real-world applications, equipping students with
+              practical skills for cybersecurity careers.
             </p>
             <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-400 rounded-lg hover:bg-cyan-500 focus:ring-4 focus:outline-none focus:ring-cyan-400 dark:bg-cyan-500 dark:hover:bg-cyan-600 dark:focus:ring-cyan-600"
+              href="/guestlecture"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-400 rounded-lg hover:bg-cyan-500 focus:ring-0 hover:shadow-[0_0_8px_4px_rgba(0,255,255,0.7)] transition-all duration-300 dark:bg-cyan-500 dark:hover:bg-cyan-500 dark:focus:ring-0"
             >
               Explore
               <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -40,9 +52,56 @@ function Grand() {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
+          <a href="#">
+            <img
+              className="rounded-t-lg transition duration-300 ease-in-out hover:scale-100"
+              src={event2}
+              alt="EscalateX Image"
+            />
+          </a>
+          <div className="p-5">
+            <a href="#">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white typing-effect">
+                EscalateX - CTF
+              </h5>
+            </a>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 fade-in-effect">
+              The primary objective of the CTF event was to promote practical
+              learning and encourage students to apply their theoretical
+              knowledge to real-world cybersecurity issues. By offering
+              challenges that simulated real hacking scenarios, the event aimed
+              to enhance participants' problem-solving abilities, teamwork, and
+              technical skills, preparing them for future careers in
+              cybersecurity.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-400 rounded-lg hover:bg-cyan-500 focus:ring-0 hover:shadow-[0_0_8px_4px_rgba(0,255,255,0.7)] transition-all duration-300 dark:bg-cyan-500 dark:hover:bg-cyan-500 dark:focus:ring-0"
+            >
+              Explore
+              <svg
+                className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
