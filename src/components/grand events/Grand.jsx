@@ -10,9 +10,8 @@ function Grand() {
         </h1>
 
       </div>
-      
-      <div className="flex flex-row gap-5 items-center justify-center font-cyberfont">
 
+      <div className="flex flex-row gap-5 items-center justify-center font-cyberfont ">
 
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-800">
           <a href="#">
@@ -50,8 +49,6 @@ function Grand() {
             </a>
           </div>
         </div>
-
-
       </div>
     </>
   );
