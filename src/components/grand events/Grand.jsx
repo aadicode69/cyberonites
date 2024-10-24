@@ -71,7 +71,7 @@ function Grand() {
             />
           </a>
           <div className="p-5">
-            <a href="#">
+            <a href="/capturetheflag">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white typing-effect">
                 EscalateX - CTF
               </h5>
@@ -86,7 +86,7 @@ function Grand() {
               cybersecurity.
             </p>
             <a
-              href="#"
+              href="/capturetheflag"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-400 rounded-lg hover:bg-cyan-500 focus:ring-0 hover:shadow-[0_0_8px_4px_rgba(0,255,255,0.7)] transition-all duration-300 dark:bg-cyan-500 dark:hover:bg-cyan-500 dark:focus:ring-0"
             >
               Explore

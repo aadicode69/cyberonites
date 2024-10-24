@@ -13,8 +13,7 @@ const GuestLecture = () => {
     {
       title: "Reverse Engineering",
       speaker: "Mr. Sanchay Singh",
-      description:
-        "Principles and techniques of software deconstruction and analysis.",
+      description: "Principles and techniques of software deconstruction and analysis.",
       image: "./src/img/people-photos/DSC_0101.JPG",
     },
     {
@@ -26,8 +25,7 @@ const GuestLecture = () => {
     {
       title: "Web Penetration Testing",
       speaker: "Mr. Ritaj Sharma and Mr. Aman Chauhan",
-      description:
-        "Identification and exploitation of web application vulnerabilities.",
+      description: "Identification and exploitation of web application vulnerabilities.",
       image: "./src/img/people-photos/DSC_0111.png",
     },
   ];
@@ -89,7 +87,7 @@ const GuestLecture = () => {
             asking insightful questions and interacting with the distinguished
             speakers. The broad range of attendees, from beginners to advanced
             learners, fostered a collaborative and inclusive environment. The
-            overwhelming participation demonstrated the students’ strong
+            overwhelming participation demonstrated the students, strong
             interest in cybersecurity, positioning them well for future
             challenges in the field. The guest lecture series held on September
             15, 2024, saw an enthusiastic turnout of 105 participants, with 29
