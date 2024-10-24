@@ -76,8 +76,8 @@ const GuestLecture = () => {
             ))}
           </div>
         </div>
+        {/* participation section */}
 
-        {/* Participation Section */}
         <div className="bg-cyan-800 border border-cyan-600 rounded-lg p-8 mb-12 shadow-lg w-full md:w-3/4 mx-auto">
           <h2 className="text-3xl font-bold text-cyan-300 mb-4">
             Participation
