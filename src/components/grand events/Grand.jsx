@@ -12,10 +12,9 @@ function Grand() {
         </h1>
       </div>
 
-      <div className="flex flex-row gap-5 items-center justify-center font-cyberfont ">
+      <div className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont">
+        {/* Card Component */}
 
-        {/* here the card component starts; you may copy and paste it */}
-        
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
           <a href="#">
             <img
@@ -31,7 +30,7 @@ function Grand() {
               </h5>
             </a>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 fade-in-effect">
-              The EscalateX Guest Lecture Series aimed to deepen students,
+              The EscalateX Guest Lecture Series aimed to deepen students'
               understanding of cybersecurity topics like reverse engineering,
               hardware hacking, and web penetration testing. Featuring
               experienced professionals and alumni, it bridged theoretical
@@ -63,7 +62,7 @@ function Grand() {
         </div>
 
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
-          <a href="#">
+          <a href="/capturetheflag">
             <img
               className="rounded-t-lg transition duration-300 ease-in-out hover:scale-100"
               src={event2}
