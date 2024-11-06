@@ -31,7 +31,7 @@ const Event = () => {
     <div
       className={`flex ${
         direction ? "flex-col" : "flex-row"
-      } m-4 p-16 border border-gray-800 bg-gray-900 rounded`}
+      } m-4 p-8 border border-gray-800 bg-gray-900 rounded`}
     >
       <Swiper
         onSwiper={setSecondSwiper}

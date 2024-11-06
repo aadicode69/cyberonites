@@ -37,6 +37,7 @@ const Navbar = () => {
       }
     });
   }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -91,11 +92,11 @@ const Navbar = () => {
         {[40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53].map((e) => (
           <svg
             key={e}
-            className="rings lg:w-36 lg:h-36 absolute stroke-cyan-300 drop-shadow-[0_0_.5rem_var(--cyan-300)] animate-spin"
+            className="rings lg:w-36 lg:h-36 absolute stroke-cyan-300 drop-shadow-[0_0_.75rem_var(--cyan-300)] animate-spin will-change-transform"
             viewBox="0 0 110 110"
           >
             <circle
-              strokeWidth={Math.random() * 2 + 1}
+              strokeWidth={Math.random() * 1.75 + 1}
               fill="transparent"
               r={e}
               cx="55"
