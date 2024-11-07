@@ -7,11 +7,11 @@ import netSPILogo from "../../img/company-logo/netspli.png";
 import zscalerLogo from "../../img/company-logo/zscalerLogo.svg";
 import juspayLogo from "../../img/company-logo/juspay.png";
 
-export default function Explore(props) {
+export default function Explore({heading}) {
   return (
     <section className="alumni">
       <div className="heading">
-        <p className="heading-secondary">{props.heading}</p>
+        <p className="heading-secondary">{heading}</p>
       </div>
       <div className="Alu-company-image-wrapper">
         {/* First set of logos */}
