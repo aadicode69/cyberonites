@@ -30,14 +30,14 @@ const Event = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center my-10">
-        <h1 className="text-cyan-400 font-cyberfont font-semibold text-4xl mt-10">
+        <h1 className="text-cyan-400 font-cyberfont font-semibold text-3xl mt-10 mb-4">
           {/* Our Events */}
           Event Archive
         </h1>
         <div
-          className={` w-2/3 flex ${
+          className={`w-[95%] flex ${
             direction ? "flex-col" : "flex-row"
-          } m-4 p-8 border border-gray-800 bg-gray-900 rounded`}
+          } overflow-hidden items-center justify-center py-8 border border-gray-800 bg-gray-900 rounded`}
         >
           <Swiper
             onSwiper={setSecondSwiper}
@@ -94,8 +94,6 @@ const Event = () => {
               onSwiper={setFirstSwiper}
               effect={"creative"}
               loop={true}
-              direction="vertical"
-              grabCursor={true}
               creativeEffect={{
                 prev: {
                   shadow: true,

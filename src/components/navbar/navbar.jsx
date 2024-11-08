@@ -114,7 +114,7 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: 0 }}
         animate={controls}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        // transition={{ type: "tween", duration: 0.1 }}
         className="fixed w-full h-10 bottom-8 lg:top-14 z-50"
       >
         <div className="flex justify-center translate-z-10'">
