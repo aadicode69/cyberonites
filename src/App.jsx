@@ -2,7 +2,6 @@ import React from "react";
 import HeroSection from "./components/hero-section/hero-section";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/Footer";
-import Pages from "./components/Pages";
 import Event from "./components/events/Event";
 import ContactUs from "./components/contact/ContactUs";
 import Explore from "./components/Alumini/Alumni";
@@ -13,6 +12,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Security from "./components/security/security";
 import GuestLecture from "./components/grand events/eventdetails/GuestLecture";
 import CTF from "./components/grand events/eventdetails/CTF";
+import KnowUs from "./components/knowUs/KnowUs";
 
 function App() {
   return (
@@ -30,8 +30,8 @@ function App() {
               <UpcomingEvents />
               <Grand />
               <Event />
+              <KnowUs/>
               <ContactUs />
-              <Pages />
               <Footer />
             </>
           }
