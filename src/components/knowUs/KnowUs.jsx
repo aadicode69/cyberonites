@@ -2,7 +2,7 @@ import React from "react";
 
 const KnowUs = () => {
   return (
-    <div className="bg-black text-cyan-300 min-h-fit p-8 font-cyberfont">
+    <div id="About" className="bg-black text-cyan-300 min-h-fit p-8 font-cyberfont">
       <div className="max-w-5xl mx-auto space-y-16">
         <div className="text-center">
           <h2 className="text-orange-400 text-lg font-semibold tracking-widest">

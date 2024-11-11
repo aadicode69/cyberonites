@@ -4,7 +4,7 @@ import escalateX from "../../img/event-videos/escalateX.mp4";
 function UpcomingEvents() {
   return (
     <>
-      <div className="flex flex-col items-center mt-10 mb-0">
+      <div id="Upcoming" className="flex flex-col items-center mt-10 mb-0">
         <h1 className="font-cyberfont text-4xl text-cyan-400 font-semibold text-center mb-6 sm:mb-2">
           Upcoming Events
         </h1>
