@@ -13,7 +13,7 @@ import Events from "./eventData";
 import { FaAngleDoubleUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
-const Event = () => {
+const EventArchive = () => {
   const [direction, cngDirection] = useState(window.innerWidth <= 800);
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
@@ -190,4 +190,4 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default EventArchive;

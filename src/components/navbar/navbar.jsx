@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { LavalampMenu } from "react-llamp-menu";
 import logo from "../../img/ps-final1.png";
 import "./nav.css";
 
-const Navbar = () => {
+const Navbar = ({ scrollToComponent }) => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const controls = useAnimation();
 
-  function setProgress() {
+  const setProgress = useCallback(() => {
     const circles = document.querySelectorAll("circle");
     circles.forEach((ele) => {
       const radius = ele.r.baseVal.value;
@@ -22,30 +22,23 @@ const Navbar = () => {
         ((Math.floor(Math.random() * 60) + 10) / 100) * circumference;
       ele.style.strokeDashoffset = offset;
     });
-}
+  }, []);
 
   useEffect(() => {
     setProgress();
     const svgs = document.querySelectorAll(".rings");
     svgs.forEach((svg) => {
-      if (Math.floor(Math.random() * 2) === 1) {
-        svg.style.animation = `spin ${Math.random() * 6 + 2}s linear infinite`;
-      } else {
-        svg.style.animation = `spin ${
-          Math.random() * 6 + 2
-        }s linear infinite reverse`;
-      }
+      const duration = Math.random() * 6 + 2;
+      svg.style.animation = `spin ${duration}s linear infinite ${
+        Math.random() < 0.5 ? "reverse" : ""
+      }`;
     });
-  }, []);
+  }, [setProgress]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        setIsScrollingUp(false);
-      } else {
-        setIsScrollingUp(true);
-      }
+      setIsScrollingUp(currentScrollY < lastScrollY);
       setLastScrollY(currentScrollY);
     };
 
@@ -53,39 +46,39 @@ const Navbar = () => {
       setScreenWidth(window.innerWidth);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const debouncedHandleScroll = debounce(handleScroll, 100);
+
+    window.addEventListener("scroll", debouncedHandleScroll);
     window.addEventListener("resize", handleResize);
 
     if (screenWidth > 770) {
       if (lastScrollY < 100) {
-        if (isScrollingUp) {
-          controls.start({ y: 0 });
-        } else {
-          controls.start({ y: "-100%" });
-        }
+        controls.start({ y: isScrollingUp ? 0 : "-100%" });
       } else {
-        if (isScrollingUp) {
-          controls.start({ y: "-100%" });
-        } else {
-          controls.start({ y: "-250%" });
-        }
-      } 
-    } else {
-      if (isScrollingUp) {
-        controls.start({ y: "50%" });
-      } else {
-        controls.start({ y: "250%" });
+        controls.start({ y: isScrollingUp ? "-100%" : "-250%" });
       }
+    } else {
+      controls.start({ y: isScrollingUp ? "50%" : "250%" });
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", debouncedHandleScroll);
       window.removeEventListener("resize", handleResize);
     };
   }, [isScrollingUp, controls, lastScrollY, screenWidth]);
 
   return (
     <nav>
+      {/* ---- Show NavBar on Hover ---- */}
+      <div
+        className="fixed lg:top-0 bottom-0 h-6 w-screen z-30"
+        onMouseOver={() =>
+          controls.start({
+            y: screenWidth > 770 ? (lastScrollY < 100 ? 0 : "-100%") : "50%",
+          })
+        }
+      ></div>
+
       {/* ---- Logo ----- */}
       <div className="relative w-20 h-20 lg:w-28 lg:h-28 translate-x-4 translate-y-4">
         {/* svg circles to rotate for logo */}
@@ -115,7 +108,7 @@ const Navbar = () => {
         initial={{ y: 0 }}
         animate={controls}
         // transition={{ type: "tween", duration: 0.1 }}
-        className="fixed w-full h-10 bottom-8 lg:top-14 z-50"
+        className="fixed w-screen h-10 bottom-8 lg:top-14 z-50"
       >
         <div className="flex justify-center translate-z-10'">
           <LavalampMenu className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] bg-black lg:skew-x-[30deg] border-2 lg:border-0 lg:border-y-2 border-cyan-300 text-cyan-300 rounded-full lg:rounded-none">
@@ -124,7 +117,7 @@ const Navbar = () => {
                 <li key={e}>
                   <button
                     className="h-10 px-2 lg:px-10 mx-[2px] lg:-skew-x-[30deg] rounded-full lg:rounded-none"
-                    onClick={() => console.log()}
+                    onClick={() => scrollToComponent(e)}
                   >
                     {e}
                   </button>
@@ -136,6 +129,14 @@ const Navbar = () => {
       </motion.nav>
     </nav>
   );
+};
+
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
 }
 
 export default Navbar;
