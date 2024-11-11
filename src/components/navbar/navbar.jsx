@@ -69,12 +69,13 @@ const Navbar = ({ scrollToComponent }) => {
 
   return (
     <nav>
-
       {/* ---- Show NavBar on Hover ---- */}
       <div
-        className="fixed h-6 w-screen border z-30"
+        className="fixed lg:top-0 bottom-0 h-6 w-screen z-30"
         onMouseOver={() =>
-          controls.start({ y: lastScrollY < 100 ? 0 : "-100%" })
+          controls.start({
+            y: screenWidth > 770 ? (lastScrollY < 100 ? 0 : "-100%") : "50%",
+          })
         }
       ></div>
 
