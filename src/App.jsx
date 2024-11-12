@@ -27,7 +27,7 @@ function App() {
               <HeroSection />
               <Explore heading="Our Alumni" />
               <Sponsor heading="Our Sponsors" />
-              <UpcomingEvents />
+              {/* <UpcomingEvents /> */}
               <Grand />
               <Event />
               <KnowUs/>
