@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { motion, useAnimation } from "framer-motion";
 import { LavalampMenu } from "react-llamp-menu";
 import logo from "../../img/ps-final1.png";
@@ -138,5 +139,9 @@ function debounce(func, wait) {
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
 }
+
+Navbar.propTypes = {
+  scrollToComponent: PropTypes.func.isRequired,
+};
 
 export default Navbar;
