@@ -21,7 +21,7 @@ const Home = () => {
       <HeroSection id="Home" />
       <Explore heading="Our Alumni" />
       <Sponsor heading="Our Sponsors" />
-      <UpcomingEvents id="Upcoming" />
+      {/* <UpcomingEvents id="Upcoming" /> */}
       <Grand id="Events" />
       <EventArchive />
       <KnowUs />
