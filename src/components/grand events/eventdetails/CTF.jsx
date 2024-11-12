@@ -13,7 +13,6 @@ const CTF = () => {
   return (
     <>
       <div className="min-h-screen bg-black p-8 flex flex-col items-center font-cyberfont">
-        {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-5xl font-extrabold text-emerald-400 glitch-effect">
             EscalateX - Capture The Flag (CTF)
@@ -24,7 +23,6 @@ const CTF = () => {
         </header>
 
         <main className="w-full max-w-5xl">
-          {/* overview */}
           <section className="bg-gray-900 border border-emerald-500 rounded-lg p-6 mb-12 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400">
             <h2 className="text-3xl font-bold text-emerald-400 mb-4">
               Event Overview
@@ -50,7 +48,6 @@ const CTF = () => {
             </p>
           </section>
 
-          {/* winners */}
           <section className="bg-gray-900 border border-emerald-500 rounded-lg p-6 mb-12 shadow-lg transition-transform duration-300 hover:shadow-emerald-400">
             <h2 className="text-3xl font-bold text-emerald-400 mb-4">
               Winners and Awards
@@ -163,7 +160,6 @@ const CTF = () => {
             </div>
           </section>
 
-          {/* acknowledgments */}
           <section className="bg-gray-900 border border-emerald-500 rounded-lg p-6 mb-12 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400">
             <h2 className="text-3xl font-bold text-emerald-400 mb-4">
               Our CTF Players
@@ -183,7 +179,6 @@ const CTF = () => {
             </p>
           </section>
 
-          {/* feedback */}
           <section className="bg-gray-900 border border-emerald-500 rounded-lg p-6 mb-12 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400">
             <h2 className="text-3xl font-bold text-emerald-400 mb-4">
               Feedback and Conclusion
