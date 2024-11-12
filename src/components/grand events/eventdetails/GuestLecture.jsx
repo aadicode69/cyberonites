@@ -1,4 +1,7 @@
 import Footer from "../../footer/Footer";
+import imgi1 from "./../../../img/people-photos/DSC_0101.jpg";
+import imgi2 from "./../../../img/people-photos/DSC_0152.jpg";
+import imgi3 from "./../../../img/people-photos/DSC_0111.jpg";
 
 const GuestLecture = () => {
   const statistics = [
@@ -13,19 +16,19 @@ const GuestLecture = () => {
       title: "Reverse Engineering",
       speaker: "Mr. Sanchay Singh",
       description: "Principles and techniques of software deconstruction and analysis.",
-      image: "./src/img/people-photos/DSC_0101.JPG",
+      image: imgi1,
     },
     {
       title: "Hardware Hacking",
       speaker: "Lucky Thandel",
       description: "Exploitation and security of hardware systems.",
-      image: "./src/img/people-photos/DSC_0152.JPG",
+      image: imgi2,
     },
     {
       title: "Web Penetration Testing",
       speaker: "Mr. Ritaj Sharma and Mr. Aman Chauhan",
       description: "Identification and exploitation of web application vulnerabilities.",
-      image: "./src/img/people-photos/DSC_0111.jpg",
+      image: imgi3,
     },
   ];
 
