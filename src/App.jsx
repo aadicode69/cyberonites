@@ -3,6 +3,7 @@ import GuestLecture from "./components/grand events/eventdetails/GuestLecture";
 import CTF from "./components/grand events/eventdetails/CTF";
 import Home from "./pages/Home";
 import SecurityPage from "./pages/SecurityPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         {/* <Route path="*" element={<Error />} /> */}
         <Route path="/guestlecture" element={<GuestLecture />} />
         <Route path="/capturetheflag" element={<CTF />} />
+        <Route path="/404" element={<NotFound/>} />
+
       </Routes>
     </BrowserRouter>
   );
