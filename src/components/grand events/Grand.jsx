@@ -13,7 +13,7 @@ function Grand() {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont">
+      <div className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont sm:mx-2">
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
           <Link to="/guestlecture">
             <img
