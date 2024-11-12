@@ -1,6 +1,6 @@
-import React from "react";
 import "./Alu.css";
 import Company from "./Comp";
+import PropTypes from "prop-types";
 import delloiteLogo from "../../img/company-logo/deolite.png";
 import pertsolLogo from "../../img/company-logo/pertsol.png";
 import netSPILogo from "../../img/company-logo/netspli.png";
@@ -33,3 +33,7 @@ export default function Explore({heading}) {
     </section>
   );
 }
+
+Explore.propTypes = {
+  heading: PropTypes.string.isRequired,
+};
