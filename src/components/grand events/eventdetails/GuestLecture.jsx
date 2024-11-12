@@ -25,7 +25,7 @@ const GuestLecture = () => {
       title: "Web Penetration Testing",
       speaker: "Mr. Ritaj Sharma and Mr. Aman Chauhan",
       description: "Identification and exploitation of web application vulnerabilities.",
-      image: "./src/img/people-photos/DSC_0111.png",
+      image: "./src/img/people-photos/DSC_0111.jpg",
     },
   ];
 
