@@ -23,13 +23,13 @@ function ContactUs() {
           welcome your interest and participation.
         </p>
         <div className="bg-black flex justify-start space-x-4 md:space-x-6 mt-6">
-          <a href="#">
+          <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=support@cyberonites.com">
             <FaEnvelope className="text-white rounded h-6 w-6 md:h-8 md:w-8 hover:text-cyan-400" />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/cyberonites-glau/">
             <FaLinkedin className="text-white rounded h-6 w-6 md:h-8 md:w-8 hover:text-cyan-400" />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/official_cyberonites/">
             <FaInstagram className="text-white rounded h-6 w-6 md:h-8 md:w-8 hover:text-cyan-400" />
           </a>
         </div>
