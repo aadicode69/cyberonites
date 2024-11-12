@@ -1,10 +1,39 @@
-import React from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import event1 from "../../img/events/EscalateXGL.jpg";
 import event2 from "../../img/events/EscalateX_CTF.jpg";
 
 function Grand() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    });
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [ref]);
+
+  useEffect(() => {
+    if (isVisible) {
+      const cards = document.querySelectorAll(".typing-effect");
+      cards.forEach((card) => {
+        card.style.animation = "typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite";
+        });
+      }
+    }, [isVisible]);
+
   return (
     <>
       <div id="Events" className="flex items-center justify-center my-10">
@@ -13,7 +42,7 @@ function Grand() {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont">
+      <div ref={ref} className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont">
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
           <Link to="/guestlecture">
             <img
@@ -29,7 +58,7 @@ function Grand() {
               </h5>
             </Link>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 fade-in-effect">
-              The EscalateX Guest Lecture Series aimed to deepen students'
+              The EscalateX Guest Lecture Series aimed to deepen students&apos;
               understanding of cybersecurity topics like reverse engineering,
               hardware hacking, and web penetration testing. Featuring
               experienced professionals and alumni, it bridged theoretical
@@ -79,7 +108,7 @@ function Grand() {
               learning and encourage students to apply their theoretical
               knowledge to real-world cybersecurity issues. By offering
               challenges that simulated real hacking scenarios, the event aimed
-              to enhance participants' problem-solving abilities, teamwork, and
+              to enhance participants&apos; problem-solving abilities, teamwork, and
               technical skills, preparing them for future careers in
               cybersecurity.
             </p>
