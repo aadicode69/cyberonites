@@ -14,7 +14,7 @@ export default function HeroSection() {
           <div className="flex flex-col text-center">
             <span className="text-white text-lg sm:text-5xl">Welcome to</span>
             <span className="text-cyan-400 font-bold text-xl sm:text-6xl">
-              Cyberonites
+              CYBERONITES
             </span>
           </div>
           <HeroBottom />

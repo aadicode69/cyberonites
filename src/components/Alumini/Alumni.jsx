@@ -7,9 +7,9 @@ import netSPILogo from "../../img/company-logo/netspli.png";
 import zscalerLogo from "../../img/company-logo/zscalerLogo.svg";
 import juspayLogo from "../../img/company-logo/juspay.png";
 
-export default function Explore({heading}) {
+export default function Explore({ heading }) {
   return (
-    <section className="alumni">
+    <section className="alumni mt-20">
       <div className="heading">
         <p className="heading-secondary">{heading}</p>
       </div>
