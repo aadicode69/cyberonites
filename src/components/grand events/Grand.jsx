@@ -29,7 +29,7 @@ function Grand() {
     if (isVisible) {
       const cards = document.querySelectorAll(".typing-effect");
       cards.forEach((card) => {
-        card.style.animation = "typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite";
+        card.style.animation = "typing 3.5s steps(40, end)";
         });
       }
     }, [isVisible]);
