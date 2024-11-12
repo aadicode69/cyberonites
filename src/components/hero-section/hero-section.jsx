@@ -7,8 +7,8 @@ import DescriptionArea from "../hero-section/description-area";
 
 export default function HeroSection() {
   return (
-    <div id="Home" className="flex flex-col gap-y-5 lg:flex-col max-lg:pt-20">
-      <div className="flex justify-center font-cyberfont items-center max-lg:-mt-36">
+    <div id="Home" className="flex flex-col gap-y-5 lg:flex-col">
+      <div className="flex justify-center font-cyberfont items-center -mt-36">
         <LeftTopBeam />
         <div className="mt-48 sm:mt-64 flex justify-center items-center flex-col">
           <div className="flex flex-col text-center">
