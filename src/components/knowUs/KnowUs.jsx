@@ -49,7 +49,7 @@ const KnowUs = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx="true">{`
         .hover\\:neon-glow-left:hover {
           box-shadow: -10px 0px 30px 5px rgba(0, 255, 255, 0.8),
             0px 0px 15px rgba(0, 255, 255, 0.7);
