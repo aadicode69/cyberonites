@@ -49,12 +49,12 @@ const KnowUs = () => {
         </div>
       </div>
 
+      {/* Updated Neon Glow Style */}
       <style jsx="true">{`
         .hover\\:neon-glow-left:hover {
-          box-shadow: -10px 0px 30px 5px rgba(0, 255, 255, 0.8),
-            0px 0px 15px rgba(0, 255, 255, 0.7);
-        }
-      `}</style>
+          box-shadow: -5px 0px 20px 2px rgba(0, 255, 255, 0.8),
+            0px 0px 8px rgba(0, 255, 255, 0.6);
+        }`}</style>
     </div>
   );
 };

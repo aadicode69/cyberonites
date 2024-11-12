@@ -42,8 +42,9 @@ function Grand() {
         </h1>
       </div>
 
-      <div ref={ref} className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont">
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
+      <div ref={ref} className="flex flex-col md:flex-row gap-5 items-center justify-center font-cyberfont sm:mx-2">
+        {/* Card 1 */}
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800 mx-4 md:mx-0">
           <Link to="/guestlecture">
             <img
               className="rounded-t-lg transition duration-300 ease-in-out hover:scale-100"
@@ -89,7 +90,8 @@ function Grand() {
           </div>
         </div>
 
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800">
+        {/* Card 2 */}
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 dark:bg-gray-900 dark:border-gray-800 mx-4 md:mx-0">
           <Link to="/capturetheflag">
             <img
               className="rounded-t-lg transition duration-300 ease-in-out hover:scale-100"
