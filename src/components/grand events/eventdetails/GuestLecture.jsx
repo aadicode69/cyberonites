@@ -1,7 +1,7 @@
 import Footer from "../../footer/Footer";
-import imgi1 from "./../../../img/people-photos/DSC_0101.jpg";
-import imgi2 from "./../../../img/people-photos/DSC_0152.jpg";
-import imgi3 from "./../../../img/people-photos/DSC_0111.jpg";
+import imgi1 from "../../../img/people-photos/DSC_0101.jpg";
+import imgi2 from "../../../img/people-photos/DSC_0152.jpg";
+import imgi3 from "../../../img/people-photos/DSC_0111.jpg";
 
 const GuestLecture = () => {
   const statistics = [
