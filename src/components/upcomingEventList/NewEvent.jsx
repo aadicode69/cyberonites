@@ -1,0 +1,108 @@
+import React from "react";
+import EventImg from "../../img/events/Defence_Matrix.jpg";
+
+const NewEvent = () => {
+  return (
+    <>
+      <h1 className="text-4xl font-bold mt-0 mb-5 text-center text-cyan-400">
+        Upcoming Events
+      </h1>
+      <div className="container mx-auto p-6 flex flex-col items-center">
+        <div className="max-w-7xl w-full p-6 rounded-xl shadow-lg font-cyberfont border-2 border-gray-700 hover:border-gray-400 transition-all duration-300 ease-in-out">
+          {/* Heading on top */}
+          <h1 className="text-3xl font-bold mb-8 text-center text-cyan-400">
+            Defence Matrix
+          </h1>
+
+          {/* Side-by-side content */}
+          <div className="flex flex-col md:flex-row items-start justify-between">
+            {/* Left content (Text, Details, Topics Covered) */}
+            <div className="w-full flex flex-col justify-start text-left p-4 mb-6 md:w-1/2">
+              <p className="text-xl text-wrap mb-6 text-cyan-400">
+                The Cyberonites Club invites you to Defence Matrix 2025, an
+                action-packed event designed to enhance your cybersecurity
+                skills. Explore critical concepts, gain practical knowledge, and
+                prepare to tackle modern cyber threats!
+              </p>
+              <div className="mt-12">
+                <h2 className="text-3xl font-bold mb-6 text-cyan-400">
+                  Topics Covered
+                </h2>
+                <ul className="list-none space-y-4 text-lg text-white">
+                  <li className="flex items-center">
+                    <span className="font-bold mr-2 text-xl text-cyan-400">
+                      $
+                    </span>{" "}
+                    Digital Forensics
+                  </li>
+                  <li className="flex items-center">
+                    <span className="font-bold mr-2 text-xl text-cyan-400">
+                      $
+                    </span>{" "}
+                    OSINT Techniques
+                  </li>
+                  <li className="flex items-center">
+                    <span className="font-bold mr-2 text-xl text-cyan-400">
+                      $
+                    </span>{" "}
+                    Data Security & Privacy
+                  </li>
+                  <li className="flex items-center">
+                    <span className="font-bold mr-2 text-xl text-cyan-400">
+                      $
+                    </span>{" "}
+                    Malware Protection
+                  </li>
+                  <li className="flex items-center">
+                    <span className="font-bold mr-2 text-xl text-cyan-400">
+                      $
+                    </span>{" "}
+                    Linux Basics
+                  </li>
+                </ul>
+              </div>
+
+              {/* Register Button */}
+              <div className="flex justify-center mt-6">
+                <a
+                  href="https://forms.gle/r1Wzqxj1YyZqGezt6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-blue-500 hover:bg-blue-600 border-2 border-black hover:border-white text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_10px_4px_rgba(59,130,246,0.6)] flex items-center">
+                    <span>Register</span>
+                    <svg
+                      className="ml-2 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 12h14M12 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            {/* Right image */}
+            <div className="w-full flex justify-center mb-6 md:w-1/2">
+              <img
+                src={EventImg}
+                alt="Event Image"
+                className="w-full h-full object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default NewEvent;

@@ -8,6 +8,7 @@ import KnowUs from "../components/knowUs/KnowUs";
 import Navbar from "../components/navbar/navbar";
 import Sponsor from "../components/Sponsers/Sponser";
 import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
+import NewEvent from "../components/upcomingEventList/NewEvent";
 
 const ScrollElement = (item) => {
     document.getElementById(item).scrollIntoView({ behavior: "smooth" });
@@ -21,6 +22,7 @@ const Home = () => {
       <HeroSection id="Home" />
       <Explore heading="Our Alumni" />
       <Sponsor heading="Our Sponsors" />
+      <NewEvent/>
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Grand id="Events" />
       <EventArchive />
