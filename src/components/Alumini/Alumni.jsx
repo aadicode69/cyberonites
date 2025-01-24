@@ -1,15 +1,15 @@
-import React from "react";
 import "./Alu.css";
 import Company from "./Comp";
+import PropTypes from "prop-types";
 import delloiteLogo from "../../img/company-logo/deolite.png";
 import pertsolLogo from "../../img/company-logo/pertsol.png";
 import netSPILogo from "../../img/company-logo/netspli.png";
 import zscalerLogo from "../../img/company-logo/zscalerLogo.svg";
 import juspayLogo from "../../img/company-logo/juspay.png";
 
-export default function Explore({heading}) {
+export default function Explore({ heading }) {
   return (
-    <section className="alumni">
+    <section className="alumni mt-20">
       <div className="heading">
         <p className="heading-secondary">{heading}</p>
       </div>
@@ -33,3 +33,7 @@ export default function Explore({heading}) {
     </section>
   );
 }
+
+Explore.propTypes = {
+  heading: PropTypes.string.isRequired,
+};
