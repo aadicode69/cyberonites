@@ -1,6 +1,7 @@
 import React from "react";
 import { secutityData } from "./secutityData";
 import { twJoin } from "tailwind-merge";
+import codeofconduct_file from '../../../src/docs/Code-of-Conduct.pdf';
 
 export default function Security() {
   const handleOnClick = (buttonLink) => {
@@ -88,7 +89,7 @@ export default function Security() {
         </p>
         <button
           className="mt-2 text-lg font-semibold tracking-tight text-black bg-cyan-300 hover:bg-cyan-400 hover:shadow-[0_0_15px_#00ffff] transition-all duration-300 hover:-translate-y-1 transform py-2 px-4 rounded-full sm:text-lg lg:text-xl sm:rounded-2xl sm:w-max"
-          onClick={() => handleOnClick("https://forms.gle/uy7Uneh2yZS7b1PA7")}
+          onClick={() => handleOnClick(codeofconduct_file)}
         >
           Code of Conduct
         </button>
