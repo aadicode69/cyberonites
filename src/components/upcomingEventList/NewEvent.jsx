@@ -1,5 +1,6 @@
 import React from "react";
 import EventImg from "../../img/events/Defence_Matrix.jpg";
+import 'react-creative-cursor/dist/styles.css';
 
 const NewEvent = () => {
   return (
@@ -9,22 +10,18 @@ const NewEvent = () => {
       </h1>
       <div className="container mx-auto p-6 flex flex-col items-center">
         <div className="max-w-7xl w-full p-6 rounded-xl shadow-lg font-cyberfont border-2 border-gray-700 hover:border-gray-400 transition-all duration-300 ease-in-out">
-          {/* Heading on top */}
           <h1 className="text-3xl font-bold mb-8 text-center text-cyan-400">
             Defence Matrix
           </h1>
-
-          {/* Side-by-side content */}
-          <div className="flex flex-col md:flex-row items-start justify-between">
-            {/* Left content (Text, Details, Topics Covered) */}
-            <div className="w-full flex flex-col justify-start text-left p-4 mb-6 md:w-1/2">
-              <p className="text-xl text-wrap mb-6 text-cyan-400">
+          <div className="flex gap-5 md:flex-row flex-col">
+            <div className="w-full grow gap-5 flex flex-col text-left p-4 mb-0 md:w-1/2">
+              <p className="text-xl grow text-wrap mb-6 text-cyan-400">
                 The Cyberonites Club invites you to Defence Matrix 2025, an
                 action-packed event designed to enhance your cybersecurity
                 skills. Explore critical concepts, gain practical knowledge, and
                 prepare to tackle modern cyber threats!
               </p>
-              <div className="mt-12">
+              <div className="mt-10 grow">
                 <h2 className="text-3xl font-bold mb-6 text-cyan-400">
                   Topics Covered
                 </h2>
@@ -61,9 +58,7 @@ const NewEvent = () => {
                   </li>
                 </ul>
               </div>
-
-              {/* Register Button */}
-              <div className="flex justify-center mt-6">
+              <div className="flex grow justify-center items-center w-[100%] h-[100%] ">
                 <a
                   href="https://forms.gle/r1Wzqxj1YyZqGezt6"
                   target="_blank"
@@ -89,13 +84,11 @@ const NewEvent = () => {
                 </a>
               </div>
             </div>
-
-            {/* Right image */}
-            <div className="w-full flex justify-center mb-6 md:w-1/2">
+            <div className="w-full flex justify-center align-top mb-0 md:w-1/2">
               <img
                 src={EventImg}
                 alt="Event Image"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
+                className="object-contain rounded-lg shadow-lg"
               />
             </div>
           </div>
