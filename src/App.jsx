@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Cursor isGelly={true} cursorBackgrounColor="#26C6DA" cursorInnerColor="#fff"/>
-      <div data-cursor-size="30px" className="cursor-none">
+      <div data-cursor-size="20px" className="cursor-none">
       <BrowserRouter >
         <Routes>
           <Route exact path="/" element={<Home />} />
