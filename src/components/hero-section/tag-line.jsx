@@ -22,7 +22,7 @@ export default function TagLine({ classNameBox = "", classNameText = "" }) {
       <div className="space-x-4">
         {/* Join Us button */}
         <a
-          className="bg-black hover:bg-cyan-300 hover:text-black duration-300 px-4 py-2.5 rounded-full text-cyan-300 font-bold border border-cyan-300 cursor-pointer"
+          className="bg-black hover:bg-cyan-300 hover:text-black duration-300 px-4 py-2.5 rounded-md text-cyan-300 font-bold border border-cyan-300"
           href={joinUs}
           target="_blank"
         >
@@ -30,7 +30,7 @@ export default function TagLine({ classNameBox = "", classNameText = "" }) {
         </a>
         {/* Sponsors button */}
         <a
-          className="bg-cyan-300 hover:bg-black text-black duration-300 px-4 py-2.5 rounded-full hover:text-cyan-300 font-bold border border-cyan-300 cursor-pointer"
+          className="bg-cyan-300 hover:bg-black text-black duration-300 px-4 py-2.5 rounded-md hover:text-cyan-300 font-bold border border-cyan-300"
           href={sponsorUs}
           target="_blank"
         >

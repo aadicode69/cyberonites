@@ -1,6 +1,6 @@
 .toggleOptions {
-    --radius: 0px;
-
+    /* --radius: 0px; */
+    --radius: 26px;
     .selected {
         color: black !important;
     }

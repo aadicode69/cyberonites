@@ -22,11 +22,11 @@ const Home = () => {
       <HeroSection id="Home" />
       <Explore heading="Our Alumni" />
       <Sponsor heading="Our Sponsors" />
-      <NewEvent/>
+      <KnowUs />
+      <NewEvent id="Upcoming"/>
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Grand id="Events" />
       <EventArchive />
-      <KnowUs />
       <ContactUs id="About" />
       <Footer />
     </>
