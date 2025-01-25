@@ -1,12 +1,12 @@
 import React from "react";
-import dsc1 from "../../../img/people-photos/DSC_2326.png";
-import dsc2 from "../../../img/people-photos/DSC_2498.png";
-import dsc3 from "../../../img/people-photos/DSC_2605.png";
-import dsc4 from "../../../img/people-photos/DSC_2614.png";
-import dsc5 from "../../../img/people-photos/DSC_2687.png";
-import dsc6 from "../../../img/people-photos/DSC_2615.png";
-import dsc7 from "../../../img/people-photos/DSC_2626.png";
-import dsc8 from "../../../img/people-photos/DSC_2629.png";
+import dsc1 from "../../../img/people-photos/DSC_2326.jpg";
+import dsc2 from "../../../img/people-photos/DSC_2498.jpg";
+import dsc3 from "../../../img/people-photos/DSC_2605.jpg";
+import dsc4 from "../../../img/people-photos/DSC_2614.jpg";
+import dsc5 from "../../../img/people-photos/DSC_2687.jpg";
+import dsc6 from "../../../img/people-photos/DSC_2615.jpg";
+import dsc7 from "../../../img/people-photos/DSC_2626.jpg";
+import dsc8 from "../../../img/people-photos/DSC_2629.jpg";
 import Footer from "../../footer/Footer";
 
 const CTF = () => {
