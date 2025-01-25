@@ -1,12 +1,12 @@
 import React from "react";
 import EventImg from "../../img/events/Defence_Matrix.jpg";
-import 'react-creative-cursor/dist/styles.css';
+import "react-creative-cursor/dist/styles.css";
 
 const NewEvent = () => {
   return (
-    <>
-      <h1 className="text-4xl font-bold mt-0 mb-5 text-center text-cyan-400">
-        Upcoming Events
+      <div id="Upcoming">
+      <h1 className="text-4xl font-bold font-cyberfont mt-0 mb-5 text-center text-cyan-400">
+        Upcoming Event
       </h1>
       <div className="container mx-auto p-6 flex flex-col items-center">
         <div className="max-w-7xl w-full p-6 rounded-xl shadow-lg font-cyberfont border-2 border-gray-700 hover:border-gray-400 transition-all duration-300 ease-in-out">
@@ -94,7 +94,7 @@ const NewEvent = () => {
           </div>
         </div>
       </div>
-    </>
+      </div>
   );
 };
 
