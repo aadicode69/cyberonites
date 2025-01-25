@@ -36,7 +36,7 @@ function Grand() {
 
   return (
     <>
-      <div id="Events" className="flex items-center justify-center my-10">
+      <div id="Events" className="flex items-center justify-center my-7">
         <h1 className="text-cyan-400 font-cyberfont font-semibold text-4xl mt-10">
           Grand Events
         </h1>
