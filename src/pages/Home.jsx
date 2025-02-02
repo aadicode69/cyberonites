@@ -1,5 +1,5 @@
 import Explore from "../components/Alumini/Alumni";
-import ContactUs from "../components/contact/ContactUs";
+import ConnecttUs from "../components/connect/ConnectUs";
 import EventArchive from "../components/events/Event";
 import Footer from "../components/footer/Footer";
 import Grand from "../components/grand events/Grand";
@@ -21,13 +21,13 @@ const Home = () => {
       <Navbar scrollToComponent={ScrollElement} />
       <HeroSection id="Home" />
       <Explore heading="Our Alumni" />
-      <Sponsor heading="Our Sponsors" />
       <KnowUs />
       <NewEvent id="Upcoming"/>
       {/* <UpcomingEvents id="Upcoming" /> */}
+      <Sponsor heading="Our Sponsors" />
       <Grand id="Events" />
       <EventArchive />
-      <ContactUs id="About" />
+      <ConnecttUs id="About" />
       <Footer />
     </>
   );

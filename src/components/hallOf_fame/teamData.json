@@ -1,0 +1,84 @@
+[
+    {
+      "name": "Aaditya Goyal",
+      "role": "Development Lead",
+      "profileImage": "src/img/Team/Aaditya.jpg",
+      "bannerImage": "src/img/Team/banner-AG.jpg",
+      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "linkedin": "https://www.linkedin.com",
+      "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Rahul Dixit",
+        "role": "President",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Krishna Agarwal",
+        "role": "Vice President",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Abhinav Singh",
+        "role": "General Secretary",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Kushagra",
+        "role": "Technical Head",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Arjun Chauhan",
+        "role": "Public Relations Head",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Ayush Singh",
+        "role": "Event Head",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Kartikeyan Singh Tomar",
+        "role": "Management Head",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    },
+    {
+        "name": "Harshit",
+        "role": "Public Relations Head",
+        "profileImage": "src/img/Team/Aaditya.jpg",
+        "bannerImage": "src/img/Team/banner-AG.jpg",
+        "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+        "linkedin": "https://www.linkedin.com",
+        "email": "mailto:example@gmail.com"
+    }
+  ]
+  

@@ -1,12 +1,13 @@
 export const Explore = [
-  { name: "Home", link: "#" },
-  { name: "Contact", link: "#" },
-  { name: "Join Us", link: "#" },
-  { name: "Security", link: "/security" },
+  { name: "Home", link: "/" },
+  { name: "Our Team", link: "/our_team" },
+  { name: "Contact", link: "/contactus" }, //no current contact details listed
+  { name: "Join Us", link: "#" }, // form link not added(form not working)
 ];
 export const Visit = [
   { name: "Cyberonites Club. GLA University, Mathura, India - 281406" },
   { name: "See on Maps", link: "https://www.google.com/maps/place/GLA+University/@27.6056887,77.5907496,17z/data=!3m1!4b1!4m6!3m5!1s0x39736ce47bffc039:0xfe5fc3da92c6341!8m2!3d27.6056887!4d77.5933245!16s%2Fm%2F0ryvc6s?entry=tts&g_ep=EgoyMDI0MDYxNS4wKgBIAVAD" },
+  { name: "Security", link: "/security" },
   { name: "Privacy Policy", link: "https://www.freeprivacypolicy.com/live/af9fbbb5-1acc-481f-8d06-ac6b84b7a27c" },
 ];
 export const Socials = [

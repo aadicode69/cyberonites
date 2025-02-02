@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import EventImg from "../../img/events/Defence_Matrix.jpg";
 import "react-creative-cursor/dist/styles.css";
 
 const NewEvent = () => {
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const image = imageRef.current;
+    const isWideScreen = () => window.innerWidth >= 768;
+    const handleMouseMove = (event) => {
+      if (!isWideScreen()) return;
+      const { top, left, width, height } = image.getBoundingClientRect();
+      const middleX = left + width / 2;
+      const middleY = top + height / 2;
+      const clientX = event.clientX;
+      const clientY = event.clientY;
+      const offsetX = (clientX - middleX) / (width / 2);
+      const offsetY = (middleY - clientY) / (height / 2);
+      const rotationX = Math.max(-5, Math.min(5, offsetY * 5));
+      const rotationY = Math.max(-5, Math.min(5, offsetX * 5));
+
+      image.style.transform = `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg) scale(1.05)`;
+    };
+    const handleMouseLeave = () => {
+      if (!isWideScreen()) return;
+      image.style.transform =
+        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+    };
+    if (isWideScreen()) {
+      image.addEventListener("mousemove", handleMouseMove);
+      image.addEventListener("mouseleave", handleMouseLeave);
+    }
+    return () => {
+      image.removeEventListener("mousemove", handleMouseMove);
+      image.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
-      <div id="Upcoming">
+    <div id="Upcoming">
       <h1 className="text-4xl font-bold font-cyberfont mt-0 mb-5 text-center text-cyan-400">
-        Upcoming Event
+        Latest Events
       </h1>
       <div className="container mx-auto p-6 flex flex-col items-center">
         <div className="max-w-7xl w-full p-6 rounded-xl shadow-lg font-cyberfont border-2 border-gray-700 hover:border-gray-400 transition-all duration-300 ease-in-out">
@@ -88,13 +122,14 @@ const NewEvent = () => {
               <img
                 src={EventImg}
                 alt="Event Image"
-                className="object-contain rounded-lg shadow-lg"
+                className="relative top-0 left-0 w-auto h-auto object-contain object-center rounded-lg shadow-lg"
+                ref={imageRef}
               />
             </div>
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
