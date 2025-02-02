@@ -5,15 +5,18 @@ import CTF from "./components/grand events/eventdetails/CTF";
 import Home from "./pages/Home";
 import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
-import { Cursor } from "react-creative-cursor";
 import "react-creative-cursor/dist/styles.css";
+import ContactUs from "./components/contact us/ContactUs";
+import TeamGallery from "./components/hallOf_fame/TeamGallery";
 
 function App() {
   return (
     <>
-      <Cursor isGelly={true} cursorBackgrounColor="#26C6DA" cursorInnerColor="#fff"/>
-      <div data-cursor-size="20px" className="cursor-none">
-      <BrowserRouter >
+      {/* <Cursor isGelly={true} cursorBackgrounColor="#26C6DA" cursorInnerColor="#fff"/>
+      <div data-cursor-size="20px className="cursor-pointer-none">
+      
+      </div> */}
+      <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/security" element={<SecurityPage />} />
@@ -21,9 +24,10 @@ function App() {
           <Route path="/guestlecture" element={<GuestLecture />} />
           <Route path="/capturetheflag" element={<CTF />} />
           <Route path="/404" element={<NotFound />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/our_team" element={<TeamGallery/>} />
         </Routes>
       </BrowserRouter>
-      </div>
     </>
   );
 }

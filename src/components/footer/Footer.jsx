@@ -1,6 +1,6 @@
 import React from "react";
 import Itemscontainer from "./Itemscontainer";
-// sticky bottom-1
+
 const Footer = () => {
   return (
     <footer className="bg-black text-white font-cyberfont">
