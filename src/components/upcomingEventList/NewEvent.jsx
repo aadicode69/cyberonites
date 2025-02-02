@@ -5,6 +5,11 @@ import "react-creative-cursor/dist/styles.css";
 const NewEvent = () => {
   const imageRef = useRef(null);
 
+  const joinUs = (e) => {
+    e.preventDefault();
+    alert("The event 'Defence Matrix' concluded on 1st February 2025.");
+  };
+
   useEffect(() => {
     const image = imageRef.current;
     const isWideScreen = () => window.innerWidth >= 768;
@@ -93,29 +98,26 @@ const NewEvent = () => {
                 </ul>
               </div>
               <div className="flex grow justify-center items-center w-[100%] h-[100%] ">
-                <a
-                  href="https://forms.gle/r1Wzqxj1YyZqGezt6"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={joinUs} 
+                  className="bg-blue-500 hover:bg-blue-600 border-2 border-black hover:border-white text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_10px_4px_rgba(59,130,246,0.6)] flex items-center"
                 >
-                  <button className="bg-blue-500 hover:bg-blue-600 border-2 border-black hover:border-white text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_10px_4px_rgba(59,130,246,0.6)] flex items-center">
-                    <span>Register</span>
-                    <svg
-                      className="ml-2 w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinenjoin="round"
-                        strokeWidth="2"
-                        d="M5 12h14M12 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-                </a>
+                  <span>Register</span>
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 12h14M12 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
             <div className="w-full flex justify-center align-top mb-0 md:w-1/2">
