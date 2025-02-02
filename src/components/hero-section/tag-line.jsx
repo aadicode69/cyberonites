@@ -8,11 +8,11 @@ TagLine.propTypes = {
 };
 
 export default function TagLine({ classNameBox = "", classNameText = "" }) {
-  // const joinUs = "https://forms.gle/uy7Uneh2yZS7b1PA7";
-  const joinUs = (e) => {
-    e.preventDefault(); // Prevents the default link behavior
-    alert("We are not accepting any hiring forms at the moment. Please check back soon for updates!");
-  };
+  const joinUs = "https://forms.gle/MVZSG1Lb5yLyzmG37";
+  // const joinUs = (e) => {
+  //   e.preventDefault();
+  //   alert("We are not accepting any hiring forms at the moment. Please check back soon for updates!");
+  // };
 
   const sponsorUs = "https://forms.gle/Sxd2L3NAjWxcGfZA8";
   return (
