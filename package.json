@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "core-js": "^3.38.1",
-    "framer-motion": "^11.11.8",
+    "framer-motion": "^11.18.2",
     "react": "^18.3.1",
     "react-creative-cursor": "^1.2.7",
     "react-dom": "^18.3.1",
