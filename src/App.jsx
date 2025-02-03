@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound";
 import "react-creative-cursor/dist/styles.css";
 import ContactUs from "./components/contact us/ContactUs";
 import TeamGallery from "./components/hallOf_fame/TeamGallery";
+import Hiring from "./components/hiringForm/Hiring";
+import HForm from "./components/hiringForm/HForm";
+import WhatsApp from "./components/hiringForm/WhatsApp";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
           <Route path="/404" element={<NotFound />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/our_team" element={<TeamGallery/>} />
+          <Route path="/recruitment" element={<Hiring/>} />
+          <Route path="/recruitment_form" element={<HForm/>} />
+          <Route path="/join_hiringLobby" element={<WhatsApp/>} />
         </Routes>
       </BrowserRouter>
     </>
