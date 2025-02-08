@@ -25,7 +25,6 @@ const HForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isAccepted) {
-      //   console.log("Form submitted with data: ", formData);
       alert("Your application has been submitted");
       setFormData({
         fullName: "",
@@ -37,7 +36,8 @@ const HForm = () => {
         applyingFor: "",
       });
       setIsAccepted(false);
-      navigate("/join_hiringLobby");
+      navigate("/join_hiringLobby"); 
+      console.log("Form submitted with data: ", formData);
     } else {
       alert("You must accept the code of conduct to submit the form");
     }
