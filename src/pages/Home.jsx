@@ -7,7 +7,8 @@ import HeroSection from "../components/hero-section/hero-section";
 import KnowUs from "../components/knowUs/KnowUs";
 import Navbar from "../components/navbar/navbar";
 import Sponsor from "../components/Sponsers/Sponser";
-import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
+import DashCard_Event from "../components/pastEvents/DashCard_Event";
+// import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
 import NewEvent from "../components/upcomingEventList/NewEvent";
 
 const ScrollElement = (item) => {
@@ -22,7 +23,8 @@ const Home = () => {
       <HeroSection id="Home" />
       <Explore heading="Our Alumni" />
       <KnowUs />
-      <NewEvent id="Upcoming"/>
+      <DashCard_Event/>
+      {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Sponsor heading="Our Sponsors" />
       <Grand id="Events" />
@@ -32,5 +34,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;

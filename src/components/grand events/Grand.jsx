@@ -37,7 +37,7 @@ function Grand() {
   return (
     <>
       <div id="Events" className="flex items-center justify-center my-7">
-        <h1 className="text-cyan-400 font-cyberfont font-semibold text-4xl mt-10">
+        <h1 className="text-cyan-400 font-clash font-bold text-4xl mt-10">
           Grand Events
         </h1>
       </div>
@@ -54,7 +54,7 @@ function Grand() {
           </Link>
           <div className="p-5">
             <Link to="/guestlecture">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white typing-effect">
+              <h5 className="mb-2 text-2xl font-bold font-clash tracking-tight text-gray-900 dark:text-white typing-effect">
                 EscalateX - Guest Lecture
               </h5>
             </Link>
@@ -101,7 +101,7 @@ function Grand() {
           </Link>
           <div className="p-5">
             <Link to="/capturetheflag">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white typing-effect">
+              <h5 className="mb-2 text-2xl font-bold font-clash tracking-tight text-gray-900 dark:text-white typing-effect">
                 EscalateX - CTF
               </h5>
             </Link>

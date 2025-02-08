@@ -18,7 +18,7 @@
     "react-icons": "^5.4.0",
     "react-llamp-menu": "^1.0.30",
     "react-router-dom": "^6.28.0",
-    "swiper": "^11.1.14",
+    "swiper": "^11.2.2",
     "tailgrids": "^2.2.7",
     "tailwind-merge": "^2.5.3"
   },

@@ -11,14 +11,11 @@ import TeamGallery from "./components/hallOf_fame/TeamGallery";
 import Hiring from "./components/hiringForm/Hiring";
 import HForm from "./components/hiringForm/HForm";
 import WhatsApp from "./components/hiringForm/WhatsApp";
+import EventDash from "./components/pastEvents/EventDash";
 
 function App() {
   return (
     <>
-      {/* <Cursor isGelly={true} cursorBackgrounColor="#26C6DA" cursorInnerColor="#fff"/>
-      <div data-cursor-size="20px className="cursor-pointer-none">
-      
-      </div> */}
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -32,6 +29,7 @@ function App() {
           <Route path="/recruitment" element={<Hiring/>} />
           <Route path="/recruitment_form" element={<HForm/>} />
           <Route path="/join_hiringLobby" element={<WhatsApp/>} />
+          <Route path="/event_dashboard" element={<EventDash/>} />
         </Routes>
       </BrowserRouter>
     </>
