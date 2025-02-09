@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GuestLecture from "./components/grand events/eventdetails/GuestLecture";
 import CTF from "./components/grand events/eventdetails/CTF";
@@ -25,11 +25,11 @@ function App() {
           <Route path="/capturetheflag" element={<CTF />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/our_team" element={<TeamGallery/>} />
-          <Route path="/recruitment" element={<Hiring/>} />
-          <Route path="/recruitment_form" element={<HForm/>} />
-          <Route path="/join_hiringLobby" element={<WhatsApp/>} />
-          <Route path="/event_dashboard" element={<EventDash/>} />
+          <Route path="/our_team" element={<TeamGallery />} />
+          <Route path="/recruitment" element={<Hiring />} />
+          <Route path="/recruitment_form" element={<HForm />} />
+          <Route path="/join_hiringLobby" element={<WhatsApp />} />
+          <Route path="/event_dashboard" element={<EventDash />} />
         </Routes>
       </BrowserRouter>
     </>

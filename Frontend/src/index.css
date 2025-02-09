@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: black;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -68,10 +64,10 @@ body {
 
 * {
   /* CSS HEX */
-  --silver: #B5BDBC;
+  --silver: #b5bdbc;
   --battleship-gray: #858685;
-  --dark-slate-gray: #415D5D;
-  --gunmetal: #1C2828;
+  --dark-slate-gray: #415d5d;
+  --gunmetal: #1c2828;
   --cyan-300: #67e8f9;
   --teal-400: #2dd4bf;
   --black: #000;

@@ -29,7 +29,7 @@ const EventArchive = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center my-10">
+      <div className="flex flex-col items-center justify-center py-10">
         <h1 className="text-cyan-400 font-clash font-bold text-4xl mt-10 mb-4">
           {/* Our Events */}
           Event Archive

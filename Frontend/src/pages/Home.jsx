@@ -10,27 +10,36 @@ import Sponsor from "../components/Sponsers/Sponser";
 import DashCard_Event from "../components/pastEvents/DashCard_Event";
 // import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
 import NewEvent from "../components/upcomingEventList/NewEvent";
+import { TopGradient, BottomGradient } from "../components/gradient-bg";
 
 const ScrollElement = (item) => {
-    document.getElementById(item).scrollIntoView({ behavior: "smooth" });
-    return;
+  document.getElementById(item).scrollIntoView({ behavior: "smooth" });
+  return;
 };
 
 const Home = () => {
   return (
     <>
-      <Navbar scrollToComponent={ScrollElement} />
-      <HeroSection id="Home" />
-      <Explore heading="Our Alumni" />
-      <KnowUs />
-      <DashCard_Event/>
+      <TopGradient>
+        <Navbar scrollToComponent={ScrollElement} />
+        <HeroSection id="Home" />
+        <Explore heading="Our Alumni" />
+      </TopGradient>
+      <BottomGradient>
+        <KnowUs />
+      </BottomGradient>
+      <DashCard_Event />
       {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Sponsor heading="Our Sponsors" />
-      <Grand id="Events" />
-      <EventArchive />
-      <ConnecttUs id="About" />
-      <Footer />
+      <TopGradient>
+        <Grand id="Events" />
+      </TopGradient>
+      <BottomGradient>
+        <EventArchive />
+        <ConnecttUs id="About" />
+        <Footer />
+      </BottomGradient>
     </>
   );
 };
