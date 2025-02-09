@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TitleCard from "./TitleCard";
-import teamData from "./teamData.json";
+import teamData from "../hallOf_fame/teamData.json";
 import Footer from "../footer/Footer";
 
 function TeamGallery() {
