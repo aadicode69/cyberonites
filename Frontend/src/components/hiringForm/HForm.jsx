@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { successToast, errorToast } from "../../utils/Toaster";
+import axios from "axios";
 
 const HForm = () => {
   const [isAccepted, setIsAccepted] = useState(false);
@@ -24,8 +26,8 @@ const HForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    submitDetails(formData)
     if (isAccepted) {
-      alert("Your application has been submitted");
       setFormData({
         fullName: "",
         universityRollNumber: "",
@@ -36,10 +38,23 @@ const HForm = () => {
         applyingFor: "",
       });
       setIsAccepted(false);
-      navigate("/join_hiringLobby"); 
-      console.log("Form submitted with data: ", formData);
     } else {
       alert("You must accept the code of conduct to submit the form");
+    }
+  };
+  const submitDetails = async (details) => {
+    try {
+      const response = await axios.post(
+        "https://api.hiring.cyberonites.com/api/v1/hiring",
+        details,
+        { headers: { "Content-Type": "application/json" } }
+      );
+      if (response.data.status === "success") {
+        successToast("Application Form Submitted Successfully.")
+        navigate("/join_hiringLobby");
+      }
+    } catch (error) {
+      errorToast(error.response?.data?.message || "An unexpected error occured.");
     }
   };
 
