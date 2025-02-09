@@ -1,14 +1,18 @@
 import React from "react";
 import { secutityData } from "./secutityData";
 import { twJoin } from "tailwind-merge";
-import codeofconduct_file from '../../../src/docs/Code-of-Conduct.pdf';
+import codeofconduct_file from "../../../src/docs/Code-of-Conduct.pdf";
+import { useNavigate } from "react-router-dom";
 
 export default function Security() {
   const handleOnClick = (buttonLink) => {
     window.open(buttonLink, "_blank");
   };
+
+  const navigate = useNavigate();
+
   return (
-    <div className="h-full flex flex-col gap-y-16 sm:gap-y-20 pt-32 sm:pt-40 sm:w-11/12 mx-auto">
+    <div className="h-full flex flex-col gap-y-16 sm:gap-y-20 pt-32 sm:pt-16 sm:w-11/12 mx-auto">
       {secutityData.map((data, index) => (
         <div
           className={twJoin(
@@ -94,6 +98,28 @@ export default function Security() {
           Code of Conduct
         </button>
       </div>
+
+      {/* Sticky Home Button */}
+      <button
+        className="fixed bottom-5 right-5 z-50 bg-cyan-300 hover:bg-cyan-400 hover:shadow-[0_0_15px_#00ffff] transition-all duration-300 hover:-translate-y-1 transform py-3 px-4 rounded-full flex items-center justify-center"
+        onClick={() => navigate("/")}
+        aria-label="Home"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 9.75l8.485-7.485a2.25 2.25 0 013.03 0L23 9.75M3.75 9.75V21a2.25 2.25 0 002.25 2.25h4.5a.75.75 0 00.75-.75v-4.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v4.5a.75.75 0 00.75.75h4.5A2.25 2.25 0 0020.25 21V9.75m-16.5 0L12 3m8.25 6.75L12 3"
+          />
+        </svg>
+      </button>
     </div>
   );
 }

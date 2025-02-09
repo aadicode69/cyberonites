@@ -30,9 +30,8 @@ const Navbar = ({ scrollToComponent }) => {
     const svgs = document.querySelectorAll(".rings");
     svgs.forEach((svg) => {
       const duration = Math.random() * 6 + 2;
-      svg.style.animation = `spin ${duration}s linear infinite ${
-        Math.random() < 0.5 ? "reverse" : ""
-      }`;
+      svg.style.animation = `spin ${duration}s linear infinite ${Math.random() < 0.5 ? "reverse" : ""
+        }`;
     });
   }, [setProgress]);
 
@@ -108,16 +107,22 @@ const Navbar = ({ scrollToComponent }) => {
       <motion.nav
         initial={{ y: 0 }}
         animate={controls}
-        // transition={{ type: "tween", duration: 0.1 }}
         className="fixed w-screen h-10 bottom-8 lg:top-14 z-50"
       >
-        <div className="flex justify-center translate-z-10'">
-          <LavalampMenu className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] bg-black lg:skew-x-[30deg] border-2 lg:border-0 lg:border-y-2 border-cyan-300 text-cyan-300 rounded-full lg:rounded-none">
-            <ul>
-              {["Home", "About", "Events", "Upcoming"].map((e) => (
+        <div className="flex justify-center">
+          <LavalampMenu
+            className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] border-0 border-x-2
+              bg-black/30 border-cyan-300
+              shadow-[0_0_15px_rgba(0,255,255,0.3)]
+              backdrop-blur-md bg-gradient-to-r from-cyan-500/10 to-blue-500/10 
+              text-cyan-300 rounded-full"
+          >
+            <ul className="flex items-center">
+              {["Home", "About", "Upcoming", "Events"].map((e) => (
                 <li key={e}>
                   <button
-                    className="h-10 px-2 lg:px-10 mx-[2px] lg:-skew-x-[30deg] rounded-full lg:rounded-none"
+                    className="h-10 px-2 lg:px-10 mx-[2px] hover:text-cyan-500
+                        rounded-full transition-all duration-300 ease-in-out"
                     onClick={() => scrollToComponent(e)}
                   >
                     {e}
@@ -130,7 +135,7 @@ const Navbar = ({ scrollToComponent }) => {
       </motion.nav>
     </nav>
   );
-};
+}
 
 function debounce(func, wait) {
   let timeout;

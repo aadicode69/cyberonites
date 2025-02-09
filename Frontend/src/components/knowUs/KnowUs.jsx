@@ -2,19 +2,19 @@ import React from "react";
 
 const KnowUs = () => {
   return (
-    <div id="About" className="bg-black text-cyan-300 min-h-fit p-8 font-cyberfont">
+    <div id="About" className="bg-black text-cyan-300 min-h-fit p-8 mb-7">
       <div className="max-w-5xl mx-auto space-y-16">
         <div className="text-center">
-          <h2 className="text-orange-400 text-lg font-semibold tracking-widest">
+          <h2 className="text-orange-400 text-lg font-semibold tracking-widest font-clash">
             KNOW US
           </h2>
-          <h1 className="text-4xl font-bold mt-2">
+          <h1 className="text-4xl font-bold mt-2 font-clash">
             Fostering Cybersecurity Excellence.
           </h1>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-16 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-16 font-cyberfont mt-16">
           <div className="bg-gradient-to-r from-cyan-600 to-black p-6 rounded-3xl text-justify shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:neon-glow-left">
-            <h3 className="text-white text-2xl font-semibold mb-4">MISSION</h3>
+            <h3 className="text-white text-2xl font-semibold mb-4 font-clash">MISSION</h3>
             <p className="text-gray-200">
               At Cyberonites Club, our mission is to foster a community of
               passionate tech enthusiasts dedicated to exploring and advancing
@@ -24,7 +24,7 @@ const KnowUs = () => {
             </p>
           </div>
           <div className="bg-gradient-to-r from-cyan-600 to-black p-6 rounded-3xl text-justify shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:neon-glow-left">
-            <h3 className="text-white text-2xl font-semibold mb-4">
+            <h3 className="text-white text-2xl font-semibold font-clash mb-4">
               WHO WE ARE
             </h3>
             <p className="text-gray-200">
@@ -35,7 +35,7 @@ const KnowUs = () => {
             </p>
           </div>
           <div className="bg-gradient-to-r from-cyan-600 to-black p-6 rounded-3xl text-justify shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:neon-glow-left">
-            <h3 className="text-white text-2xl font-semibold mb-4">
+            <h3 className="text-white text-2xl font-semibold font-clash mb-4">
               OUR STORY
             </h3>
             <p className="text-gray-200">
