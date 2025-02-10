@@ -11,7 +11,7 @@ export default function Explore({ heading }) {
   return (
     <section className="alumni mt-20">
       <div className="heading">
-        <p className="heading-secondary">{heading}</p>
+        <p className="heading-secondary font-clash">{heading}</p>
       </div>
       <div className="Alu-company-image-wrapper">
         {/* First set of logos */}

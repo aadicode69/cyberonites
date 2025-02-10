@@ -7,8 +7,10 @@ const ItemsContainer = () => {
       {/* Header Section */}
       <div className="flex flex-col justify-center items-start w-full sm:w-1/2 md:w-1/3 text-left">
         <h2 className="lg:text-xl text-lg mb-0 leading-tight">
-          <div className="text-cyan-300 text-4xl font-semibold pb-2">CY.</div>
-          <div>Empowering students with</div> <div>advanced cybersecurity</div> <div>knowledge and skills.</div>
+          <div className="text-cyan-300 text-4xl font-semibold font-clash pb-2">CY.</div>
+          <div>Empowering students with</div>
+          <div>advanced cybersecurity</div> 
+          <div>knowledge and skills.</div>
           <div className="text-cyan-300 text-xl font-semibold">BE POWERFUL.</div>
         </h2>
       </div>

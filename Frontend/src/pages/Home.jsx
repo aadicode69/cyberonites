@@ -23,7 +23,7 @@ const Home = () => {
       <HeroSection id="Home" />
       <Explore heading="Our Alumni" />
       <KnowUs />
-      <DashCard_Event/>
+      {/* <DashCard_Event/> */}
       {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Sponsor heading="Our Sponsors" />

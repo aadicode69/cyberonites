@@ -12,7 +12,7 @@ export default function Sponsor(props) {
   return (
     <section className="alumni">
       <div className="heading">
-        <p className="heading-secondary">{props.heading}</p>
+        <p className="heading-secondary font-clash">{props.heading}</p>
       </div>
       <div className="Spo-company-image-wrapper">
         {/* First set of logos */}

@@ -11,7 +11,7 @@ function ContactUs() {
         className="w-full h-auto max-w-xs md:max-w-md lg:max-w-lg mb-6 md:mb-10 lg:mb-0 mx-auto"
       />
       <div className="bg-black p-6 md:p-10 text-left font-cyberfont w-full lg:w-1/2">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mt-4 md:mt-2">
+        <h1 className="text-4xl md:text-5xl font-bold font-clash text-white mt-4 md:mt-2">
           Connect with <br />
           <span className="text-cyan-400">Cyberonites</span> Club
         </h1>

@@ -112,7 +112,7 @@ const EventArchive = () => {
                   key={eve.title}
                   className="flex w-72 text-center p-4 flex-col items-center justify-between bg-slate-900 border-b border-x border-gray-600 rounded-b-lg"
                 >
-                  <h2 className="w-4/5 text-cyan-400 text-xl font-bold mb-8">
+                  <h2 className="w-4/5 text-cyan-400 text-xl font-bold mb-8 font-clash">
                     {eve.title.toUpperCase()}
                   </h2>
                   <p className="w-full h-full text-md text-pretty text-justify">
@@ -160,7 +160,7 @@ const EventArchive = () => {
                   key={eve.title}
                   className="flex w-80 text-center p-4 flex-col items-center justify-between bg-slate-900 border-l border-y border-gray-600 rounded-s-lg"
                 >
-                  <h2 className="w-4/5 text-cyan-400 text-xl font-bold mb-8">
+                  <h2 className="w-4/5 text-cyan-400 text-xl font-bold mb-8 font-clash">
                     {eve.title.toUpperCase()}
                   </h2>
                   <p className="w-full h-full text-md text-pretty text-justify">
