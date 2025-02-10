@@ -42,6 +42,7 @@ const HForm = () => {
       alert("You must accept the code of conduct to submit the form");
     }
   };
+
   const submitDetails = async (details) => {
     try {
       const response = await axios.post(
