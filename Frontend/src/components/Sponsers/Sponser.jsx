@@ -37,36 +37,36 @@ const Sponsor = ({ heading }) => {
   ];
 
   // Define the position styles for each sponsor
-  const getSponsorStyle = (index) => {
-    const positions = [
-      {
-        top: '50%',
-        left: '85%',
-        transform: 'translate(-50%, -50%) rotate(0deg)'
-      },
-      {
-        top: '85%',
-        left: '70%',
-        transform: 'translate(-85%, -70%)'
-      },
-      {
-        top: '30%',
-        left: '85%',
-        transform: 'translate(-85%, -30%)'
-      },
-      {
-        top: '50%',
-        left: '15%',
-        transform: 'translate(-50%, -15%)'
-      },
-      {
-        top: '15%',
-        left: '50%',
-        transform: 'translate(-15%, -50%)'
-      }
-    ];
-    return positions[index] || {};
-  };
+  // const getSponsorStyle = (index) => {
+  //   const positions = [
+  //     {
+  //       top: '50%',
+  //       left: '85%',
+  //       transform: 'translate(-50%, -50%) rotate(0deg)'
+  //     },
+  //     {
+  //       top: '85%',
+  //       left: '70%',
+  //       transform: 'translate(-85%, -70%)'
+  //     },
+  //     {
+  //       top: '30%',
+  //       left: '85%',
+  //       transform: 'translate(-85%, -30%)'
+  //     },
+  //     {
+  //       top: '50%',
+  //       left: '15%',
+  //       transform: 'translate(-50%, -15%)'
+  //     },
+  //     {
+  //       top: '15%',
+  //       left: '50%',
+  //       transform: 'translate(-15%, -50%)'
+  //     }
+  //   ];
+  //   return positions[index] || {};
+  // };
 
   return (
     <div className="sponsor-container">
@@ -81,9 +81,12 @@ const Sponsor = ({ heading }) => {
               target="_blank"
               rel="noreferrer"
               style={{
-                position: 'absolute',
-                ...getSponsorStyle(index)
+                '--pos': index
               }}
+              // style={{
+              //   position: 'absolute',
+              //   ...getSponsorStyle(index)
+              // }}
             >
               <Company source={sponsor.img} alt={sponsor.alt} />
             </a>
