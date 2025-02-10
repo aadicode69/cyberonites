@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { motion, useAnimation } from "framer-motion";
 import { LavalampMenu } from "react-llamp-menu";
@@ -6,11 +6,65 @@ import logo from "../../img/ps-final1.png";
 import "./nav.css";
 
 const Navbar = ({ scrollToComponent }) => {
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
+  // const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const controls = useAnimation();
 
+  const SCROLL_VELOCITY_THRESHOLD = 15;
+  const THROTTLE_TIME = 16;
+  const MOBILE_BREAKPOINT = 770;
+  const lastScrollY = useRef(window.scrollY);
+
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return function (...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    }
+  }
+
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      const currentScrollY = window.scrollY;
+      const scrollVelocity = Math.abs(currentScrollY - lastScrollY.current);
+
+      if (scrollVelocity > SCROLL_VELOCITY_THRESHOLD) {
+        // Always show navbar when scroll position < 100
+        const shouldShowNavbar = currentScrollY < 100;
+
+        controls.start({
+          y: screenWidth > MOBILE_BREAKPOINT
+            ? (shouldShowNavbar ? 0 : "-100%")
+            : "50%",
+          transition: {
+            type: "tween",
+            duration: 0.2,
+            ease: "easeInOut"
+          }
+        });
+      }
+
+      lastScrollY.current = currentScrollY;
+    }, THROTTLE_TIME);
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [controls, screenWidth]);
+
+  // -----------------------
   const setProgress = useCallback(() => {
     const circles = document.querySelectorAll("circle");
     circles.forEach((ele) => {
@@ -35,49 +89,17 @@ const Navbar = ({ scrollToComponent }) => {
     });
   }, [setProgress]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrollingUp(currentScrollY < lastScrollY);
-      setLastScrollY(currentScrollY);
-    };
-
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    const debouncedHandleScroll = debounce(handleScroll, 100);
-
-    window.addEventListener("scroll", debouncedHandleScroll);
-    window.addEventListener("resize", handleResize);
-
-    if (screenWidth > 770) {
-      if (lastScrollY < 100) {
-        controls.start({ y: isScrollingUp ? 0 : "-100%" });
-      } else {
-        controls.start({ y: isScrollingUp ? "-100%" : "-250%" });
-      }
-    } else {
-      controls.start({ y: isScrollingUp ? "50%" : "250%" });
-    }
-
-    return () => {
-      window.removeEventListener("scroll", debouncedHandleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isScrollingUp, controls, lastScrollY, screenWidth]);
-
   return (
     <nav>
       {/* ---- Show NavBar on Hover ---- */}
-      <div
+      {/* <div
         className="fixed lg:top-0 bottom-0 h-6 w-screen z-30"
-        onMouseOver={() =>
-          controls.start({
-            y: screenWidth > 770 ? (lastScrollY < 100 ? 0 : "-100%") : "50%",
-          })
-        }
-      ></div>
+        // onMouseOver={() =>
+        //   controls.start({
+        //     y: screenWidth > 770 ? (lastScrollY < 100 ? 0 : "-100%") : "50%",
+        //   })
+        // }
+      ></div> */}
 
       {/* ---- Logo ----- */}
       <div className="relative w-20 h-20 lg:w-28 lg:h-28 translate-x-4 translate-y-4">
@@ -135,14 +157,6 @@ const Navbar = ({ scrollToComponent }) => {
       </motion.nav>
     </nav>
   );
-}
-
-function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), wait);
-  };
 }
 
 Navbar.propTypes = {

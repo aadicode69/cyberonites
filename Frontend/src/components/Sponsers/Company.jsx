@@ -1,15 +1,14 @@
 import React from "react";
 
-export default function Company(props) {
+export default function Company({ source, alt }) {
   return (
-    <>
+    <div className="sponsor-card">
       <img
-        src={props.source}
-        alt={props.alt}
-        style={props.style}
-        className="company-logo"
-        id={props.id}
+        src={source}
+        alt={alt}
+        className="sponsor-logo"
+        loading="lazy"
       />
-    </>
+    </div>
   );
 }
