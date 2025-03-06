@@ -1,4 +1,4 @@
-import Explore from "../components/Alumini/Alumni";
+import Alumini from "../components/Alumini/Alumni";
 import ConnecttUs from "../components/connect/ConnectUs";
 import EventArchive from "../components/events/Event";
 import Footer from "../components/footer/Footer";
@@ -21,12 +21,14 @@ const Home = () => {
     <>
       <Navbar scrollToComponent={ScrollElement} />
       <HeroSection id="Home" />
-      <Explore heading="Our Alumni" />
+      <div style={{flexDirection: "row", display: "flex", padding: "0 3%"}}>
+        <Alumini heading="Our Alumni" />
+        <Sponsor heading="Our Sponsors" />
+      </div>
       <KnowUs />
       <DashCard_Event/>
       {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
-      <Sponsor heading="Our Sponsors" />
       <Grand id="Events" />
       <EventArchive />
       <ConnecttUs id="About" />
