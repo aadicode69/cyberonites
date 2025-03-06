@@ -36,9 +36,14 @@ const Sponsor = ({ heading }) => {
     }
   ];
 
+  const handleImageError = (e) => {
+    e.target.onerror = null;
+    e.target.style.display = 'none';
+  };
+
   return (
     <div className="sponsor-container">
-      <div className="sponsor-circle">
+      <div className="sponsor-circle" style={{backgroundImage: `url('sssss.jpg')`}}>
         <h2 className="sponsor-heading">{heading}</h2>
         <div className="sponsor-items">
           {sponsors.map((sponsor, index) => (
@@ -52,7 +57,11 @@ const Sponsor = ({ heading }) => {
                 '--pos': index
               }}
             >
-              <Company source={sponsor.img} alt={sponsor.alt} />
+              <Company 
+                source={sponsor.img} 
+                alt={sponsor.alt}
+                onError={handleImageError}
+              />
             </a>
           ))}
         </div>

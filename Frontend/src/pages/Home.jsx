@@ -21,7 +21,7 @@ const Home = () => {
     <>
       <Navbar scrollToComponent={ScrollElement} />
       <HeroSection id="Home" />
-      <div style={{flexDirection: "row", display: "flex", padding: "0 3%"}}>
+      <div className="promo-section">
         <Alumini heading="Our Alumni" />
         <Sponsor heading="Our Sponsors" />
       </div>
