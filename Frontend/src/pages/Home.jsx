@@ -1,5 +1,6 @@
-import Explore from "../components/Alumini/Alumni";
-import ConnectUs from "../components/connect/ConnectUs";
+
+import Alumini from "../components/Alumini/Alumni";
+import ConnecttUs from "../components/connect/ConnectUs";
 import EventArchive from "../components/events/Event";
 import Footer from "../components/footer/Footer";
 import Grand from "../components/grand events/Grand";
@@ -21,10 +22,12 @@ const Home = () => {
     <>
       <Navbar scrollToComponent={ScrollElement} />
       <HeroSection id="Home" />
-      <Explore heading="Our Alumni" />
+      <div className="promo-section">
+        <Alumini heading="Our Alumni" />
+        <Sponsor heading="Our Sponsors" />
+      </div>
       <KnowUs />
       {/* <UpcomingEvents id="Upcoming" /> */}
-      <Sponsor heading="Our Sponsors" />
       <Grand id="Events" />
       <DashCard_Event />
       <ConnectUs id="About" />
