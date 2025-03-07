@@ -49,7 +49,6 @@ const KnowUs = () => {
         </div>
       </div>
 
-      {/* Updated Neon Glow Style */}
       <style jsx="true">{`
         .hover\\:neon-glow-left:hover {
           box-shadow: -5px 0px 20px 2px rgba(0, 255, 255, 0.8),

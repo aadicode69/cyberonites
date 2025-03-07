@@ -99,7 +99,7 @@ const NewEvent = () => {
               </div>
               <div className="flex grow justify-center items-center w-[100%] h-[100%] ">
                 <button
-                  onClick={joinUs} 
+                  onClick={joinUs}
                   className="bg-blue-500 hover:bg-blue-600 border-2 border-black hover:border-white text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_10px_4px_rgba(59,130,246,0.6)] flex items-center"
                 >
                   <span>Register</span>

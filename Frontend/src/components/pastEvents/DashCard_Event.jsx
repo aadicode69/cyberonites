@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const DashCard_Event = () => {
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate("#"); // /event_dashboard -link
+    navigate("/event_dashboard"); // /event_dashboard -link
   };
 
   return (
@@ -21,7 +21,7 @@ const DashCard_Event = () => {
           </h3>
           <div className="flex justify-center items-center">
             <motion.button
-              className="text-lg py-2 px-5 rounded-lg cursor-pointer bg-white text-black font-bold font-cyberfont transition-all duration-300 ease-in-out shadow-md hover:bg-black hover:text-white hover:shadow-lg hover:scale-100"
+              className="text-lg py-2 px-5 rounded-lg cursor-pointer bg-white text-black font-bold font-clash transition-all duration-300 ease-in-out shadow-md hover:bg-black hover:text-white hover:shadow-lg hover:scale-100"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleNavigate}
