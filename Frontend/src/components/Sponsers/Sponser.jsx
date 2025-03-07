@@ -1,11 +1,13 @@
 import React from "react";
 import "./Spon.css";
 import Company from "./Company";
-import AlteredSecurityLogo from "../../img/sponsor-logo/altered-security.png";
+import AlteredSecurityLogo from "../../img/sponsor-logo/altered-security-logo.jpg";
 import MultigradLogo from "../../img/sponsor-logo/multigrade.png";
 import CIGLogo from "../../img/sponsor-logo/cia.png";
+
 import OffsecLogo from "../../img/sponsor-logo/offsec.png";
 import YCFLogo from "../../img/sponsor-logo/ycf-logo.jpg";
+
 
 const Sponsor = ({ heading }) => {
   const sponsors = [
@@ -66,8 +68,6 @@ const Sponsor = ({ heading }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Sponsor;
+}

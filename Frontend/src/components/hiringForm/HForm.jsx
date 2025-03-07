@@ -103,6 +103,7 @@ const HForm = () => {
                         ))
                       : [
                           "Design Team",
+                          "Content Team",
                           "Technical Team",
                           "Management Team",
                         ].map((option) => (

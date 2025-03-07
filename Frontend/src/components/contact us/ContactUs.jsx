@@ -122,7 +122,6 @@ const ContactUs = () => {
         </form>
       </div>
 
-      {/* Home Button */}
       <button
         className="fixed bottom-5 text-white right-5 z-50 bg-gradient-to-tl from-gray-800 to-white hover:shadow-lg hover:scale-105 transition-all duration-300 py-4 px-4 rounded-full flex items-center justify-center"
         onClick={() => navigate("/")}

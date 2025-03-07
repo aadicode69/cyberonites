@@ -36,6 +36,25 @@ export default function Alumini({ heading }) {
   ];
 
   return (
+    <section className="alumni mt-20">
+      <div className="heading">
+        <p className="heading-secondary font-clash">{heading}</p>
+      </div>
+      <div className="Alu-company-image-wrapper">
+        <div className="Alu-company-image">
+          <Company source={delloiteLogo} alt="Deloitte Logo" />
+          <Company source={pertsolLogo} alt="Pert Sol Logo" />
+          <Company source={netSPILogo} alt="NetSPI Logo" />
+          <Company source={zscalerLogo} alt="ZScaler Logo" />
+          <Company source={juspayLogo} alt="Juspay Logo" />
+        </div>
+        <div className="Alu-company-image">
+          <Company source={delloiteLogo} alt="Deloitte Logo" />
+          <Company source={pertsolLogo} alt="Pert Sol Logo" />
+          <Company source={netSPILogo} alt="NetSPI Logo" />
+          <Company source={zscalerLogo} alt="ZScaler Logo" />
+          <Company source={juspayLogo} alt="Juspay Logo" />
+
     <div className="alumni-container">
       <div className="alumni-circle" style={{backgroundImage: `url('sssss.jpg')`}}>
         <h2 className="alumni-heading">{heading}</h2>
