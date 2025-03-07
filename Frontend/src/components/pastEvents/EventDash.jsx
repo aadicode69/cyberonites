@@ -69,9 +69,9 @@ function EventDash() {
               <SwiperSlide>
                 <NewEvent />
               </SwiperSlide>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <NewEvent />
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
             <button className="swiper-button-prev absolute left-[-40px] top-1/2 transform -translate-y-1/2 text-cyan-400 p-2 rounded-full text-sm">
               <MdArrowBack size={20} />

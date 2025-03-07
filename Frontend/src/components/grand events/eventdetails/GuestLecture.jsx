@@ -1,4 +1,5 @@
 import Footer from "../../footer/Footer";
+import { motion } from "framer-motion";
 import imgi1 from "../../../img/people-photos/DSC_0101.jpg";
 import imgi2 from "../../../img/people-photos/DSC_0152.jpg";
 import imgi3 from "../../../img/people-photos/DSC_0111.jpg";
@@ -34,92 +35,111 @@ const GuestLecture = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-gray-100 to-black p-8 flex flex-col items-center font-cyberfont">
-        
-        {/* Event Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-green-800 mb-2">
-            EscalateX - Guest Lecture Series
-          </h1>
-          <p className="text-green-700 text-lg md:text-xl">
-            September 14, 2024 | IBM Conference Hall, GLA University
-          </p>
-        </div>
+      <div className="relative min-h-screen bg-black overflow-hidden">
+        <motion.div
+          className="absolute inset-0 z-0"
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+          }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(72, 255, 190, 0.15) 10%, transparent 80%)",
+            backgroundSize: "200% 200%",
+          }}
+        />
 
-        {/* Sessions */}
-        <div className="mb-12 w-full">
-          <h2 className="text-4xl font-bold text-green-800 mb-6 text-center">
-            Technical Sessions
-          </h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {sessions.map((session, index) => (
-              <div
+        <div className="relative z-10 p-8 flex flex-col items-center font-sans text-white">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-extrabold font-clash text-green-600 mb-4">
+              <span className="bg-gradient-to-r from-green-500 to-yellow-500 text-transparent bg-clip-text" >EscalateX</span> - Guest Lecture Series
+            </h1>
+            <p className="text-green-300 text-lg font-cyberfont md:text-xl font-semibold">
+              September 14, 2024 | IBM Conference Hall, GLA University
+            </p>
+          </div>
+
+          <div className="w-full mb-16">
+            <h2 className="text-4xl font-semibold font-clash text-green-400 mb-10 text-center">
+              Technical Sessions
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+              {sessions.map((session, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white rounded-2xl shadow-xl overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <img
+                    src={session.image}
+                    alt={session.title}
+                    className="w-full h-56 object-cover transition-all duration-500 group-hover:scale-110"
+                  />
+                  <div className="p-6 relative">
+                    <h3 className="text-2xl font-semibold font-clash text-green-300">{session.title}</h3>
+                    <p className="text-green-400 font-cyberfont text-sm mb-4">
+                      <strong>Speaker:</strong> {session.speaker}
+                    </p>
+                    <p className="text-green-200 font-cyberfont text-base">{session.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-8 mb-16 rounded-2xl shadow-xl w-full md:w-3/4 mx-auto transform transition-all hover:scale-105">
+            <h2 className="text-3xl font-semibold font-clash text-green-600 mb-6">Participation</h2>
+            <p className="text-green-100 text-lg font-cyberfont">
+            The event attracted a significant number of enthusiastic students from diverse fields, all eager to explore the latest trends in cybersecurity. Participants actively engaged during the sessions, asking insightful questions and interacting with the distinguished speakers. The broad range of attendees, from beginners to advanced learners, fostered a collaborative and inclusive environment. The overwhelming participation demonstrated the students' strong interest in cybersecurity, positioning them well for future challenges in the field. The guest lecture series held on September 15, 2024, saw an enthusiastic turnout of 105 participants, with 29 external students, 46 students from the college, and 30 students from the Cyberonites club. Their active participation reflects their keen interest in the cybersecurity field, and the insights shared during the event have set a high standard for future sessions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16 w-full">
+            {statistics.map((stat, index) => (
+              <motion.div
                 key={index}
-                className="relative bg-gray-800 border border-green-700 rounded-lg p-6 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-yellow-500"
+                className="bg-green-800 text-gray-100 border border-green-700 rounded-xl p-8 text-center shadow-lg"
+                whileHover={{ scale: 1.1 }}
               >
-                {/* Ring Effect */}
-                <div className="absolute inset-0 rounded-lg border-2 border-yellow-500 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100"></div>
-                <img
-                  src={session.image}
-                  alt={session.title}
-                  className="w-full h-48 object-cover rounded-lg mb-4 z-10"
-                />
-                <h3 className="text-2xl font-bold text-green-200 mb-1 z-10">
-                  {session.title}
-                </h3>
-                <p className="text-green-300 mb-1 z-10">
-                  <strong>Speaker :</strong> {session.speaker}
-                </p>
-                <p className="text-green-100 text-sm mt-4 z-10">
-                  {session.description}
-                </p>
-              </div>
+                <h3 className="text-4xl font-clash font-bold text-yellow-400 mb-2">{stat.value}</h3>
+                <p className="text-green-200 font-cyberfont">{stat.label}</p>
+              </motion.div>
             ))}
           </div>
-        </div>
-        {/* Participation Section */}
-        <div className="bg-gray-800 border border-green-700 rounded-lg p-8 mb-12 shadow-lg w-full md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-bold text-green-600 mb-4">
-            Participation
-          </h2>
-          <p className="text-green-100 text-base">
-            The event attracted a significant number of enthusiastic students from diverse fields, all eager to explore the latest trends in cybersecurity. Participants actively engaged during the sessions, asking insightful questions and interacting with the distinguished speakers. The broad range of attendees, from beginners to advanced learners, fostered a collaborative and inclusive environment. The overwhelming participation demonstrated the students' strong interest in cybersecurity, positioning them well for future challenges in the field. The guest lecture series held on September 15, 2024, saw an enthusiastic turnout of 105 participants, with 29 external students, 46 students from the college, and 30 students from the Cyberonites club. Their active participation reflects their keen interest in the cybersecurity field, and the insights shared during the event have set a high standard for future sessions.
-          </p>
-        </div>
 
-        {/* Statistics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12 w-fit">
-          {statistics.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-green-800 text-gray-100 border border-green-700 rounded-lg p-6 text-center hover:bg-green-700 transition-all shadow-lg"
-            >
-              <h3 className="text-4xl font-bold text-yellow-500 mb-2">
-                {stat.value}
-              </h3>
-              <p className="text-green-200">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Impact & Feedback */}
-        <div className="bg-gray-800 border border-green-700 rounded-lg p-8 mb-12 shadow-lg w-full md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-bold text-green-600 mb-4">
-            Impact & Feedback
-          </h2>
-          <p className="text-green-100 text-base">
+          <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-8 mb-16 rounded-2xl shadow-xl w-full md:w-3/4 mx-auto transform transition-all hover:scale-105">
+            <h2 className="text-3xl font-semibold font-clash text-green-600 mb-6">Impact & Feedback</h2>
+            <p className="text-green-100 text-lg font-cyberfont">
             The lectures were highly informative and well-received by the participants. Many students expressed their appreciation for the opportunity to learn directly from industry experts, noting how the knowledge gained from the event will be highly beneficial in their future careers. The interactive nature of the sessions allowed participants to ask questions and engage directly with the experts.
-          </p>
-        </div>
-
-        {/* Conclusion Section */}
-        <div className="bg-gray-800 border border-green-700 rounded-lg p-8 shadow-lg w-full md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-bold text-green-600 mb-4">Conclusion</h2>
-          <p className="text-green-100 text-base">
+            </p>
+          </div>
+          <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-8 rounded-2xl shadow-xl w-full md:w-3/4 mx-auto transform transition-all hover:scale-105">
+            <h2 className="text-3xl font-semibold text-green-600 mb-6 font-clash">Conclusion</h2>
+            <p className="text-green-100 text-lg font-cyberfont">
             The EscalateX Guest Lecture Series was a resounding success, offering students a unique opportunity to expand their knowledge of cybersecurity. We extend our sincere gratitude to the Office of Students' Welfare and the Cyberonites Club for organising this enriching event. The contributions of our esteemed speakers and alumni played a crucial role in the success of the event. We look forward to organising more such knowledge-sharing sessions in the future to further enhance students' skills and awareness in the field of cybersecurity.
-          </p>
+            </p>
+          </div>
         </div>
       </div>
+      <button
+          className="fixed bottom-5 text-white right-5 z-50 bg-gradient-to-tl from-green-400 to-yellow-500 hover:shadow-lg hover:scale-105 transition-all duration-300 py-4 px-4 rounded-full flex items-center justify-center"
+          onClick={() => navigate("/")}
+          aria-label="Home"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-black"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 9.75l8.485-7.485a2.25 2.25 0 013.03 0L23 9.75M3.75 9.75V21a2.25 2.25 0 002.25 2.25h4.5a.75.75 0 00.75-.75v-4.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v4.5a.75.75 0 00.75.75h4.5A2.25 2.25 0 0020.25 21V9.75m-16.5 0L12 3m8.25 6.75L12 3"
+            />
+          </svg>
+        </button>
+
       <Footer />
     </>
   );

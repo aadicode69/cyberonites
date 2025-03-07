@@ -35,6 +35,35 @@ export default function Alumini({ heading }) {
     }
   ];
 
+export default function Alumini({ heading }) {
+  const Alumni = [
+    {
+      href: "",
+      alt: "Deloitte Logo",
+      img: delloiteLogo
+    },
+    {
+      href: "",
+      alt: "Pert Sol Logo",
+      img: pertsolLogo
+    },
+    {
+      href: "",
+      alt: "NetSPI Logo",
+      img: netSPILogo
+    },
+    {
+      href: "",
+      alt: "ZScaler Logo",
+      img: zscalerLogo
+    },
+    {
+      href: "",
+      alt: "Juspay Logo",
+      img: juspayLogo
+    }
+  ];
+
   return (
     <div className="alumni-container">
       <div className="alumni-circle" style={{backgroundImage: `url('sssss.jpg')`}}>
@@ -56,6 +85,7 @@ export default function Alumini({ heading }) {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 }
