@@ -36,41 +36,14 @@ const Sponsor = ({ heading }) => {
     }
   ];
 
-  // Define the position styles for each sponsor
-  // const getSponsorStyle = (index) => {
-  //   const positions = [
-  //     {
-  //       top: '50%',
-  //       left: '85%',
-  //       transform: 'translate(-50%, -50%) rotate(0deg)'
-  //     },
-  //     {
-  //       top: '85%',
-  //       left: '70%',
-  //       transform: 'translate(-85%, -70%)'
-  //     },
-  //     {
-  //       top: '30%',
-  //       left: '85%',
-  //       transform: 'translate(-85%, -30%)'
-  //     },
-  //     {
-  //       top: '50%',
-  //       left: '15%',
-  //       transform: 'translate(-50%, -15%)'
-  //     },
-  //     {
-  //       top: '15%',
-  //       left: '50%',
-  //       transform: 'translate(-15%, -50%)'
-  //     }
-  //   ];
-  //   return positions[index] || {};
-  // };
+  const handleImageError = (e) => {
+    e.target.onerror = null;
+    e.target.style.display = 'none';
+  };
 
   return (
     <div className="sponsor-container">
-      <div className="sponsor-circle">
+      <div className="sponsor-circle" style={{backgroundImage: `url('sssss.jpg')`}}>
         <h2 className="sponsor-heading">{heading}</h2>
         <div className="sponsor-items">
           {sponsors.map((sponsor, index) => (
@@ -83,12 +56,12 @@ const Sponsor = ({ heading }) => {
               style={{
                 '--pos': index
               }}
-              // style={{
-              //   position: 'absolute',
-              //   ...getSponsorStyle(index)
-              // }}
             >
-              <Company source={sponsor.img} alt={sponsor.alt} />
+              <Company 
+                source={sponsor.img} 
+                alt={sponsor.alt}
+                onError={handleImageError}
+              />
             </a>
           ))}
         </div>
