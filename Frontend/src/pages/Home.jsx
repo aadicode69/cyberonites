@@ -8,12 +8,12 @@ import KnowUs from "../components/knowUs/KnowUs";
 import Navbar from "../components/navbar/navbar";
 import Sponsor from "../components/Sponsers/Sponser";
 import DashCard_Event from "../components/pastEvents/DashCard_Event";
-// import Threads from "../blocks/Backgrounds/Threads/Threads";
 // import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
+import NewEvent from "../components/upcomingEventList/NewEvent";
 
 const ScrollElement = (item) => {
-  document.getElementById(item).scrollIntoView({ behavior: "smooth" });
-  return;
+    document.getElementById(item).scrollIntoView({ behavior: "smooth" });
+    return;
 };
 
 const Home = () => {
@@ -25,15 +25,13 @@ const Home = () => {
         <Alumini heading="Our Alumni" />
         <Sponsor heading="Our Sponsors" />
       </div>
-      <div className="promo-section">
-        <Alumini heading="Our Alumni" />
-        <Sponsor heading="Our Sponsors" />
-      </div>
       <KnowUs />
+      <DashCard_Event/>
+      {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Grand id="Events" />
-      <DashCard_Event />
-      <ConnectUs id="About" />
+      <EventArchive />
+      <ConnecttUs id="About" />
       <Footer />
     </>
   );
