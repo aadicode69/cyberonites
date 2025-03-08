@@ -3,10 +3,16 @@ import Itemscontainer from "./Itemscontainer";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white font-quicksand">
-      <Itemscontainer />
-      <div className="flex justify-center font-quicksand justify-items-center text-center pt-2 text-sm text-gray-300 pb-8">
-        CYBERONITES © 2024. All rights reserved.
+    <footer className="bg-gradient-to-b from-black via-gray-900 to-black text-white font-cyberfont">
+      <div className="border-t border-cyan-900">
+        <Itemscontainer />
+        <div className="max-w-screen-xl mx-auto px-4 pb-8">
+          <div className="text-center py-6 border-t border-gray-600/30">
+            <div className="text-sm text-gray-400 tracking-wide">
+              CYBERONITES © 2024. All rights reserved.
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

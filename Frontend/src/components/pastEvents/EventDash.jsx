@@ -90,21 +90,27 @@ function EventDash() {
           .star {
             position: absolute;
             top: -10px;
-            width: 1.5px;
-            height: 40px;
-            background-image: linear-gradient(30deg, white, black);
-            border-radius: 50%;
+            width: 2px;
+            height: 30px;
+            background-image: linear-gradient(180deg, rgba(255,255,255,0.8), transparent);
+            border-radius: 2px;
             opacity: 0.8;
-            animation: fall linear infinite;
+            animation: fall 3s linear infinite;
           }
           @keyframes fall {
             0% {
-              transform: translateY(0);
+              transform: translateY(-30px);
+              opacity: 0;
+            }
+            10% {
+              opacity: 0.8;
+            }
+            90% {
               opacity: 0.8;
             }
             100% {
               transform: translateY(var(--fall-distance));
-              opacity: 0.3;
+              opacity: 0;
             }
           }
         `}</style>
