@@ -12,6 +12,7 @@ import Hiring from "./components/hiringForm/Hiring";
 import HForm from "./components/hiringForm/HForm";
 import WhatsApp from "./components/hiringForm/WhatsApp";
 import EventDash from "./components/pastEvents/EventDash";
+import Terminal from "./components/Terminal/Terminal";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<Error />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/our_team" element={<TeamGallery/>} />
+          <Route path="/playground" element={<Terminal/>} />
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
           {/* <Route path="/recruitment_form" element={<HForm/>} />
           <Route path="/join_hiringLobby" element={<WhatsApp/>} /> */}
