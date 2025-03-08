@@ -83,33 +83,21 @@ body {
 }
 
 .promo-section {
-  flex-direction: row;
   display: flex;
+  flex-direction: row;
   padding: 0 3%;
-  gap: 2rem; /* Added gap between components */
-  margin: 2rem 0; /* Added vertical margin */
-  min-height: 60vh; /* Added minimum height */
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .promo-section {
-    flex-direction: row;
-  }
 }
 
 @media (max-width: 992px) {
   .promo-section {
     flex-direction: column;
   }
-  
 }
 
 @media (max-width: 768px) {
   .promo-section {
     flex-direction: column;
   }
-  
 }
 
 @media (max-width: 480px) {

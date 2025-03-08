@@ -12,6 +12,7 @@ import Hiring from "./components/hiringForm/Hiring";
 import HForm from "./components/hiringForm/HForm";
 import WhatsApp from "./components/hiringForm/WhatsApp";
 import EventDash from "./components/pastEvents/EventDash";
+import Terminal from "./components/Terminal/Terminal";
 
 function App() {
   return (
@@ -20,16 +21,17 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/security" element={<SecurityPage />} />
-          {/* <Route path="*" element={<Error />} /> */}
           <Route path="/guestlecture" element={<GuestLecture />} />
           <Route path="/capturetheflag" element={<CTF />} />
           <Route path="/404" element={<NotFound />} />
+          <Route path="/event_dashboard" element={<EventDash/>} />
+          <Route path="*" element={<Error />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/our_team" element={<TeamGallery/>} />
-          <Route path="/recruitment" element={<Hiring/>} />
-          <Route path="/recruitment_form" element={<HForm/>} />
-          <Route path="/join_hiringLobby" element={<WhatsApp/>} />
-          <Route path="/event_dashboard" element={<EventDash/>} />
+          <Route path="/playground" element={<Terminal/>} />
+          {/* <Route path="/recruitment" element={<Hiring/>} /> */}
+          {/* <Route path="/recruitment_form" element={<HForm/>} />
+          <Route path="/join_hiringLobby" element={<WhatsApp/>} /> */}
         </Routes>
       </BrowserRouter>
     </>
