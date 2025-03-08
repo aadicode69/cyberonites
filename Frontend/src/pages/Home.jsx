@@ -1,5 +1,5 @@
-import Explore from "../components/Alumini/Alumni";
-import ConnectUs from "../components/connect/ConnectUs";
+import Alumini from "../components/Alumini/Alumni";
+import ConnecttUs from "../components/connect/ConnectUs";
 import EventArchive from "../components/events/Event";
 import Footer from "../components/footer/Footer";
 import Grand from "../components/grand events/Grand";
@@ -8,12 +8,12 @@ import KnowUs from "../components/knowUs/KnowUs";
 import Navbar from "../components/navbar/navbar";
 import Sponsor from "../components/Sponsers/Sponser";
 import DashCard_Event from "../components/pastEvents/DashCard_Event";
-// import Threads from "../blocks/Backgrounds/Threads/Threads";
 // import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
+import NewEvent from "../components/upcomingEventList/NewEvent";
 
 const ScrollElement = (item) => {
-  document.getElementById(item).scrollIntoView({ behavior: "smooth" });
-  return;
+    document.getElementById(item).scrollIntoView({ behavior: "smooth" });
+    return;
 };
 
 const Home = () => {
@@ -21,13 +21,17 @@ const Home = () => {
     <>
       <Navbar scrollToComponent={ScrollElement} />
       <HeroSection id="Home" />
-      <Explore heading="Our Alumni" />
+      <div className="promo-section">
+        <Alumini heading="Our Alumni" />
+        <Sponsor heading="Our Sponsors" />
+      </div>
       <KnowUs />
+      <DashCard_Event/>
+      {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
-      <Sponsor heading="Our Sponsors" />
       <Grand id="Events" />
-      <DashCard_Event />
-      <ConnectUs id="About" />
+      <EventArchive />
+      <ConnecttUs id="About" />
       <Footer />
     </>
   );

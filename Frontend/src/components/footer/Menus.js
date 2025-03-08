@@ -1,7 +1,33 @@
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import toast styles
+
+const joinUs = (e) => {
+  e.preventDefault();
+  // alert("We are not accepting any hiring forms at the moment. Please check back soon for updates!");
+  toast("We are not accepting hiring applications at the moment. Please check back later for updates.", {
+    position: "bottom-right",
+    autoClose: 3000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    style: {
+      background: "#0A0A0A",
+      color: "#00FFFF",
+      border: "1px solid #00FFFF",
+      fontFamily: "'Courier New', monospace",
+      textAlign: "center",
+    },
+  });
+};
+
 export const Explore = [
   { name: "Home", link: "/" },
   { name: "Our Team", link: "#" }, // /our_team -link
-  { name: "Contact", link: "#" }, // /contactus -link
+  { name: "Contact", link: "/contactus" }, // /contactus -link
+  // { name: "Join Us", link: "/recruitment" }, // /recruitment -link
   { name: "Join Us", link: "#" }, // /recruitment -link
 ];
 export const Visit = [
