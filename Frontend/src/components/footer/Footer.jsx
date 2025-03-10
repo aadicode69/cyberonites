@@ -1,14 +1,24 @@
 import React from "react";
 import Itemscontainer from "./Itemscontainer";
+import Aurora from "../../blocks/Backgrounds/Aurora/Aurora";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-black via-gray-900 to-black text-white font-cyberfont">
-      <div className="border-t border-cyan-900">
+    <footer className="relative text-white font-clash overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-full h-full transform scale-y-[-1]">
+        <Aurora
+          colorStops={["#00ACC1", "#00B8D4", "#00ACC1"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1.1}
+        />
+      </div>
+
+      <div className="relative z-10">
         <Itemscontainer />
         <div className="max-w-screen-xl mx-auto px-4 pb-8">
-          <div className="text-center py-6 border-t border-gray-600/30">
-            <div className="text-sm text-gray-400 tracking-wide">
+          <div className="text-center py-6">
+            <div className="text-sm text-black tracking-wide font-bold">
               CYBERONITES © 2024. All rights reserved.
             </div>
           </div>

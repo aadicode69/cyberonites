@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
+import Footer from "../footer/Footer";
 
 const ContactUs = () => {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -58,6 +59,7 @@ const ContactUs = () => {
   };
 
   return (
+    <>
     <div ref={vantaRef} className="flex justify-center items-center min-h-screen font-clash">
       <div className="w-full max-w-md p-8 bg-transparent rounded-lg shadow-lg backdrop-blur-xl bg-opacity-30">
         <h2 className="text-3xl font-bold text-white text-center mb-6">
@@ -66,7 +68,7 @@ const ContactUs = () => {
         <form onSubmit={handleSubmit} className="flex flex-col items-center">
           <div className="mb-4 w-full">
             <label htmlFor="Name" className="block text-white text-md mb-2 font-semibold">
-              Name_Tag
+              Name
             </label>
             <input
               type="text"
@@ -82,7 +84,7 @@ const ContactUs = () => {
 
           <div className="mb-4 w-full">
             <label htmlFor="Email" className="block text-white text-md mb-2 font-semibold">
-              Contact_Id
+              Contact
             </label>
             <input
               type="email"
@@ -98,7 +100,7 @@ const ContactUs = () => {
 
           <div className="mb-4 w-full">
             <label htmlFor="Message" className="block text-white text-md mb-2 font-semibold">
-              Note
+              Message
             </label>
             <textarea
               id="Message"
@@ -143,6 +145,7 @@ const ContactUs = () => {
         </svg>
       </button>
     </div>
+    </>
   );
 };
 
