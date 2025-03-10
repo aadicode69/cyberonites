@@ -30,7 +30,6 @@ const Home = () => {
       {/* <NewEvent id="Upcoming"/> */}
       {/* <UpcomingEvents id="Upcoming" /> */}
       <Grand id="Events" />
-      <EventArchive />
       <ConnecttUs id="About" />
       <Footer />
     </>

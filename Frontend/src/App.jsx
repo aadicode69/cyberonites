@@ -27,11 +27,10 @@ function App() {
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
           <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/our_team" element={<TeamGallery/>} />
-          <Route path="/playground" element={<Terminal/>} />
+          {/* <Route path="/our_team" element={<TeamGallery/>} /> */}
+          {/* <Route path="/playground" element={<Terminal/>} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
-          {/* <Route path="/recruitment_form" element={<HForm/>} />
-          <Route path="/join_hiringLobby" element={<WhatsApp/>} /> */}
+          {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
         </Routes>
       </BrowserRouter>
     </>
