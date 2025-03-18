@@ -61,7 +61,7 @@ const NewEvent = () => {
                 prepare to tackle modern cyber threats!
               </p>
               <div className="mt-10 grow">
-                <h2 className="text-3xl font-bold mb-6 text-cyan-400">
+                <h2 className="text-3xl font-clash font-bold mb-6 text-cyan-400">
                   Topics Covered
                 </h2>
                 <ul className="list-none space-y-4 text-lg text-white">
@@ -98,7 +98,7 @@ const NewEvent = () => {
                 </ul>
               </div>
               <div className="flex grow justify-center items-center w-[100%] h-[100%] ">
-                <button
+                {/* <button
                   onClick={joinUs}
                   className="bg-blue-500 hover:bg-blue-600 border-2 border-black hover:border-white text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_10px_4px_rgba(59,130,246,0.6)] flex items-center"
                 >
@@ -117,7 +117,7 @@ const NewEvent = () => {
                       d="M5 12h14M12 5l7 7-7 7"
                     />
                   </svg>
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="w-full flex justify-center align-top mb-0 md:w-1/2">
