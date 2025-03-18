@@ -25,10 +25,10 @@ const Home = () => {
         <Alumini heading="Our Alumni" />
         <Sponsor heading="Our Sponsors" />
       </div>
+      <UpcomingEvents id="Upcoming" />
       <KnowUs />
       <DashCard_Event/>
       {/* <NewEvent id="Upcoming"/> */}
-      <UpcomingEvents id="Upcoming" />
       <Grand id="Events" />
       <ConnecttUs id="About" />
       <Footer />

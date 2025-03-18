@@ -22,7 +22,7 @@ function UpcomingEvents() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="flex items-center justify-center my-0 sm:my-0">
+      {/* <div className="flex items-center justify-center my-0 sm:my-0">
         <button className="relative overflow-hidden bg-black text-white font-bold py-2 px-6 rounded-md border-b border-cyan-400 hover:text-white font-clash hover:shadow-[0_0_15px_#00BCD4] transition-all duration-300 hover:-translate-y-1 transform">
           <div className="absolute inset-0 -z-10">
             <Aurora
@@ -34,7 +34,7 @@ function UpcomingEvents() {
           </div>
           Register Now
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
