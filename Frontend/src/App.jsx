@@ -7,11 +7,12 @@ import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
 import "react-creative-cursor/dist/styles.css";
 import ContactUs from "./components/contact us/ContactUs";
+import EventDash from "./components/pastEvents/EventDash";
+import Reg_Main from "./components/Registration/Reg_Main";
 import TeamGallery from "./components/hallOf_fame/TeamGallery";
 import Hiring from "./components/hiringForm/Hiring";
 import HForm from "./components/hiringForm/HForm";
 import WhatsApp from "./components/hiringForm/WhatsApp";
-import EventDash from "./components/pastEvents/EventDash";
 import Terminal from "./components/Terminal/Terminal";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/registrations" element={<Reg_Main/>} />
           {/* <Route path="/our_team" element={<TeamGallery/>} /> */}
           {/* <Route path="/playground" element={<Terminal/>} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}

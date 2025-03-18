@@ -1,8 +1,9 @@
 export const Explore = [
   { name: "Home", link: "/" },
-  { name: "Our Team", link: "/our_team" }, // /our_team -link
-  { name: "Contact", link: "/contactus" }, // /contactus -link
+  { name: "Register", link: "/registrations" }, // /recruitment -link
   { name: "Join Us", link: "/recruitment" }, // /recruitment -link
+  { name: "Our Team", link: "/our_team" }, // /our_team -link
+  { name: "Contact", link: "/contactus" }, // /registrations -link
 ];
 export const Visit = [
   { name: "Cyberonites Club. GLA University, Mathura, India - 281406" },
