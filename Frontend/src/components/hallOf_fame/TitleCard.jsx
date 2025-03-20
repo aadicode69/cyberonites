@@ -1,76 +1,110 @@
 import React from "react";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const TitleCard = ({
-  name,
-  role,
-  profileImage,
-  bannerImage,
-  description,
-  linkedin,
-  email,
-}) => {
-  return (
-    <div className="relative w-full max-w-xs border border-transparent rounded-xl shadow-xl backdrop-blur-xl p-5 overflow-hidden transition-all duration-300 group">
-      <div className="absolute inset-0 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute top-0 left-0 w-1/2 h-[3px] bg-blue-500"></div>
-        <div className="absolute bottom-0 right-0 w-1/2 h-[3px] bg-purple-500"></div>
-        <div className="absolute top-0 left-0 h-1/2 w-[3px] bg-blue-500"></div>
-        <div className="absolute bottom-0 right-0 h-1/2 w-[3px] bg-purple-500"></div>
-      </div>
-      <div className="w-full h-32 rounded-t-xl overflow-hidden relative">
-        <img
-          src={bannerImage}
-          alt="Banner"
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-      </div>
-      <div className="absolute top-14 left-1/2 transform -translate-x-1/2 rounded-full shadow-xl border-[3px] border-purple-300 group-hover:border-purple-500 transition-all duration-300">
-        <img
-          className="w-28 h-28 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
-          src={profileImage}
-          alt={name}
-        />
-      </div>
-      <div className="flex flex-col items-center pt-20 pb-6 px-5">
-        <h5 className="text-xl font-extrabold text-white tracking-wide">{name}</h5>
-        <span className="text-sm font-medium text-gray-400 mb-3">{role}</span>
-        <p className="text-center text-gray-300 text-sm leading-relaxed mb-5">
-          {description}
-        </p>
-        <div className="flex space-x-3">
-          <a
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center px-5 py-2 text-sm font-medium text-white rounded-full transition-all duration-300 border border-blue-500 bg-transparent hover:bg-blue-500/30 hover:shadow-[0px_0px_15px_#00d9ff] hover:scale-110"
-          >
-            <FaLinkedin className="mr-2" /> LinkedIn
-          </a>
+const TitleCard = ({ name, role, profileImage, description, linkedin, email, tier }) => {
+  const getTierStyles = (tier, role) => {
+    const styles = {
+      leadership: {
+        card: "from-white/10 to-white/5",
+        gradient: "from-yellow-400 via-orange-400 to-red-400",
+        size: role === "President" ? "w-44 h-44" : "w-40 h-40",
+        width: role === "President" ? "w-[380px]" : "w-[360px]",
+        shadow: "shadow-[0_8px_32px_rgba(0,0,0,0.3)]",
+        border: "border-t border-l border-white/20"
+      },
+      head: {
+        card: "from-white/10 to-white/5",
+        gradient: "from-blue-400 via-cyan-400 to-teal-400",
+        size: "w-36 h-36",
+        width: "w-[340px]",
+        shadow: "shadow-[0_8px_24px_rgba(0,0,0,0.25)]",
+        border: "border-t border-l border-white/20"
+      },
+      dev: {
+        card: "from-white/10 to-white/5",
+        gradient: "from-indigo-400 via-purple-400 to-pink-400",
+        size: "w-32 h-32",
+        width: "w-[320px]",
+        shadow: "shadow-[0_8px_16px_rgba(0,0,0,0.2)]",
+        border: "border-t border-l border-white/20"
+      }
+    };
+    
+    return styles[tier] || styles.dev;
+  };
 
-          <a
-            href={email}
-            className="relative flex items-center px-5 py-2 text-sm font-medium text-white rounded-full transition-all duration-300 border border-purple-400 bg-transparent hover:bg-purple-500/30 hover:shadow-[0px_0px_15px_#ff00ff] hover:scale-110"
-          >
-            <FaEnvelope className="mr-2" /> Message
-          </a>
+  const style = getTierStyles(tier, role);
+
+  return (
+    <div className={`${style.width} relative rounded-2xl bg-gradient-to-br ${style.card} 
+      backdrop-blur-xl ${style.shadow} ${style.border}`}
+    >
+      {/* Glass reflection effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+      
+      <div className="relative p-8 rounded-2xl">
+        {/* Profile Image Container */}
+        <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
+          <div className={`relative ${style.size} rounded-full p-[3px] bg-gradient-to-r ${style.gradient}
+            shadow-[0_8px_16px_rgba(0,0,0,0.3)]`}>
+            <div className="relative w-full h-full rounded-full overflow-hidden">
+              <img
+                src={profileImage}
+                alt={name}
+                className="w-full h-full object-cover"
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/0 via-black/0 to-black/30"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-24 text-center">
+          <h3 className={`text-2xl font-bold bg-gradient-to-r ${style.gradient} bg-clip-text text-transparent
+            drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]`}>
+            {name}
+          </h3>
+          <p className="text-base text-white/90 mt-2 font-medium tracking-wide">{role}</p>
+          <p className="mt-4 text-base text-white/70 line-clamp-2 px-4 leading-relaxed">
+            {description}
+          </p>
+          
+          <div className="flex justify-center gap-4 mt-6">
+            <SocialButton 
+              href={linkedin} 
+              icon={<FaLinkedin size={18} />} 
+              gradient={style.gradient}
+              label="LinkedIn" 
+            />
+            <SocialButton 
+              href={email} 
+              icon={<FaEnvelope size={18} />}
+              gradient={style.gradient}
+              label="Email" 
+            />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
+const SocialButton = ({ href, icon, label, gradient }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`group flex items-center justify-center w-12 h-12 rounded-full
+      bg-white/10 backdrop-blur-sm border border-white/10
+      shadow-[0_4px_12px_rgba(0,0,0,0.25)] transition-all duration-300
+      hover:bg-gradient-to-r ${gradient} hover:border-transparent
+      hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)]`}
+    aria-label={label}
+  >
+    <div className="text-white/70 group-hover:text-white transition-colors duration-300">
+      {icon}
+    </div>
+  </a>
+);
+
 export default TitleCard;
-
-
-// {
-//   "name": "Manmohan Singh",
-//   "role": "Development Team Member",
-//   "profileImage": "src/img/Team/Vaibhav.jpg",
-//   "bannerImage": "src/img/Team/banner-AG.jpg",
-//   "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
-//   "linkedin": "https://www.linkedin.com",
-//   "email": "mailto:rahul@gmail.com",
-//   "head": "Aaditya Goyal"
-// }
