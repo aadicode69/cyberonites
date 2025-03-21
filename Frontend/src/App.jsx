@@ -30,11 +30,11 @@ function App() {
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
           <Route path="/intrusion-x" element={<MainX/>} />
-          {/* <Route path="/prob-statement-x" element={<Problem_S/>} /> */}
-          {/* <Route path="/contactus" element={<ContactUs />} /> */}
-          {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
-          {/* <Route path="/our_team" element={<TeamGallery/>} /> */}
+          <Route path="/prob-statement-x" element={<Problem_S/>} />
+          <Route path="/registrations" element={<Reg_Main/>} />
+          <Route path="/our_team" element={<TeamGallery/>} />
           {/* <Route path="/playground" element={<Terminal/>} /> */}
+          {/* <Route path="/contactus" element={<ContactUs />} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
           {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
         </Routes>
