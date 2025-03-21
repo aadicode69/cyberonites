@@ -7,12 +7,15 @@ import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
 import "react-creative-cursor/dist/styles.css";
 import ContactUs from "./components/contact us/ContactUs";
+import EventDash from "./components/pastEvents/EventDash";
+import Reg_Main from "./components/Registration/Reg_Main";
 import TeamGallery from "./components/hallOf_fame/TeamGallery";
 import Hiring from "./components/hiringForm/Hiring";
 import HForm from "./components/hiringForm/HForm";
 import WhatsApp from "./components/hiringForm/WhatsApp";
-import EventDash from "./components/pastEvents/EventDash";
 import Terminal from "./components/Terminal/Terminal";
+import MainX from "./components/IntrusionX/MainX";
+import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
 
 function App() {
   return (
@@ -26,12 +29,14 @@ function App() {
           <Route path="/404" element={<NotFound />} />
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
-          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/intrusion-x" element={<MainX/>} />
+          <Route path="/prob-statement-x" element={<Problem_S/>} />
+          <Route path="/registrations" element={<Reg_Main/>} />
           <Route path="/our_team" element={<TeamGallery/>} />
-          <Route path="/playground" element={<Terminal/>} />
+          {/* <Route path="/playground" element={<Terminal/>} /> */}
+          {/* <Route path="/contactus" element={<ContactUs />} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
-          {/* <Route path="/recruitment_form" element={<HForm/>} />
-          <Route path="/join_hiringLobby" element={<WhatsApp/>} /> */}
+          {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
         </Routes>
       </BrowserRouter>
     </>

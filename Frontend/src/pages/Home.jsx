@@ -8,7 +8,7 @@ import KnowUs from "../components/knowUs/KnowUs";
 import Navbar from "../components/navbar/navbar";
 import Sponsor from "../components/Sponsers/Sponser";
 import DashCard_Event from "../components/pastEvents/DashCard_Event";
-// import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
+import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
 import NewEvent from "../components/upcomingEventList/NewEvent";
 
 const ScrollElement = (item) => {
@@ -25,12 +25,11 @@ const Home = () => {
         <Alumini heading="Our Alumni" />
         <Sponsor heading="Our Sponsors" />
       </div>
+      <UpcomingEvents id="Upcoming" />
       <KnowUs />
       <DashCard_Event/>
       {/* <NewEvent id="Upcoming"/> */}
-      {/* <UpcomingEvents id="Upcoming" /> */}
       <Grand id="Events" />
-      <EventArchive />
       <ConnecttUs id="About" />
       <Footer />
     </>

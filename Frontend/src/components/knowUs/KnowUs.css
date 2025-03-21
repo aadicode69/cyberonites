@@ -1,7 +1,7 @@
 .know-us-container {
   position: relative;
   /* min-height: 100vh; */
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   overflow: hidden;
   background: #000;
 }
@@ -9,7 +9,6 @@
 .animated-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, #000000, #1a1a1a);
   opacity: 0.8;
 }
 
