@@ -14,6 +14,8 @@ import Hiring from "./components/hiringForm/Hiring";
 import HForm from "./components/hiringForm/HForm";
 import WhatsApp from "./components/hiringForm/WhatsApp";
 import Terminal from "./components/Terminal/Terminal";
+import MainX from "./components/IntrusionX/MainX";
+import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
 
 function App() {
   return (
@@ -27,8 +29,10 @@ function App() {
           <Route path="/404" element={<NotFound />} />
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/registrations" element={<Reg_Main/>} />
+          <Route path="/intrusion-x" element={<MainX/>} />
+          {/* <Route path="/prob-statement-x" element={<Problem_S/>} /> */}
+          {/* <Route path="/contactus" element={<ContactUs />} /> */}
+          {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
           {/* <Route path="/our_team" element={<TeamGallery/>} /> */}
           {/* <Route path="/playground" element={<Terminal/>} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
