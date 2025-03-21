@@ -36,7 +36,7 @@ const TeamGallery = () => {
 
   return (
     <>
-      <div className="relative min-h-screen bg-[#0a0a0a]">
+      <div className="relative min-h-screen font-clash bg-[#0a0a0a]">
         {/* Improved background gradients */}
         <div className="fixed inset-0 bg-gradient-to-b from-blue-900/10 via-[#0a0a0a] to-purple-900/10"></div>
 
@@ -59,18 +59,34 @@ const TeamGallery = () => {
 
         {/* Main content container with max-width */}
         <div className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-28"
-          >
-            <span className="font-clash text-6xl sm:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
-              Our Team
-            </span>
-          </motion.h1>
+          <div className="text-center mb-28">
+            <motion.h1
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl sm:text-6xl text-white font-extrabold tracking-wide mb-6"
+            >
+              Meet the{" "}
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                Cyberonites Team
+              </span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-gray-300 max-w-3xl mx-auto mb-12"
+            >
+              The minds behind Cyberonites, shaping the future of tech and cybersecurity.
+            </motion.p>
+          </div>
 
-          {/* Leadership Section */}
+          {/* Core Team Section (previously Leadership) */}
           <div className="mb-40 mt-24">
+            <h2 className="text-2xl sm:text-5xl font-bold text-center mb-28">
+              <span className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
+                Core Team
+              </span>
+            </h2>
             <div className="relative">
               <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
               <motion.div className="flex flex-wrap justify-center gap-x-16 gap-y-28">
@@ -90,11 +106,6 @@ const TeamGallery = () => {
 
           {/* Department Heads Section */}
           <div className="mb-40">
-            <h2 className="font-clash text-4xl sm:text-5xl font-bold text-center mb-28">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
-                Department Heads
-              </span>
-            </h2>
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-28">
               {heads.map((member, index) => (
                 <motion.div
@@ -111,7 +122,7 @@ const TeamGallery = () => {
 
           {/* Development Team Section */}
           <div className="mt-40">
-            <h2 className="font-clash text-4xl sm:text-5xl font-bold text-center mb-28">
+            <h2 className="font-clash text-2xl sm:text-5xl font-bold text-center mb-28">
               <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
                 Development Team
               </span>
