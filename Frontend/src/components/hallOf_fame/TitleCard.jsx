@@ -39,11 +39,9 @@ const TitleCard = ({ name, role, profileImage, description, linkedin, email, tie
     <div className={`${style.width} relative rounded-2xl bg-gradient-to-br ${style.card} 
       backdrop-blur-xl ${style.shadow} ${style.border}`}
     >
-      {/* Glass reflection effect */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
       
       <div className="relative p-8 rounded-2xl">
-        {/* Profile Image Container */}
         <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
           <div className={`relative ${style.size} rounded-full p-[3px] bg-gradient-to-r ${style.gradient}
             shadow-[0_8px_16px_rgba(0,0,0,0.3)]`}>
@@ -53,7 +51,6 @@ const TitleCard = ({ name, role, profileImage, description, linkedin, email, tie
                 alt={name}
                 className="w-full h-full object-cover"
               />
-              {/* Overlay gradient */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/0 via-black/0 to-black/30"></div>
             </div>
           </div>
@@ -98,13 +95,16 @@ const SocialButton = ({ href, icon, label, gradient }) => (
       bg-white/10 backdrop-blur-sm border border-white/10
       shadow-[0_4px_12px_rgba(0,0,0,0.25)] transition-all duration-300
       hover:bg-gradient-to-r ${gradient} hover:border-transparent
-      hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)]`}
+      hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)]
+      hover:scale-110 active:scale-95 focus-visible:ring-2 focus-visible:ring-white/50
+      active:bg-white/20`}
     aria-label={label}
   >
-    <div className="text-white/70 group-hover:text-white transition-colors duration-300">
+    <div className="text-white/70 group-hover:text-black group-focus-visible:text-black transition-colors duration-300">
       {icon}
     </div>
   </a>
 );
+
 
 export default TitleCard;
