@@ -4,16 +4,16 @@
       "role": "President",
       "profileImage": "src/img/Team/Aaditya.jpg",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Visionary leader passionate about cybersecurity and emerging technologies. Driving Cyberonites towards excellence.",
       "linkedin": "https://www.linkedin.com",
       "email": "mailto:example@gmail.com"
     },
     {
       "name": "Krishna Agarwal",
       "role": "Vice President",
-      "profileImage": "src/img/Team/krishna.jpg",
+      "profileImage": "src/img/Team/krishna1.png",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Strategic thinker with expertise in project management and team leadership. Dedicated to fostering innovation.",
       "linkedin": "https://www.linkedin.com/in/krishna-agrawal-550a4b238",
       "email": "mailto:krishnanjin109@gmail.com"
     },
@@ -67,9 +67,9 @@
       "role": "Development Team Member",
       "profileImage": "src/img/Team/manmohan.jpg",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Contributing to web development projects and helping build the club's digital presence.",
       "linkedin": "https://linkedin.com/in/manmohan-singh-raghav",
       "email": "mailto:manmohan0singh0@gmail.com",
       "head": "Aaditya Goyal"
     }
-  ]
+]
