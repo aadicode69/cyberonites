@@ -11,12 +11,12 @@ const TeamGallery = () => {
   const [starPositions, setStarPositions] = useState([]);
 
   useEffect(() => {
-    const numStars = 100; // Increased number of stars
+    const numStars = 100;
     const stars = Array.from({ length: numStars }, () => ({
       left: `${Math.random() * 100}vw`,
       top: `${Math.random() * 100}vh`,
-      size: Math.random() * 2 + 1, // Random star size
-      duration: `${8 + Math.random() * 12}s`, // Slower animation
+      size: Math.random() * 2 + 1, 
+      duration: `${8 + Math.random() * 12}s`,
       delay: `${Math.random() * 4}s`,
     }));
     setStarPositions(stars);
@@ -37,10 +37,7 @@ const TeamGallery = () => {
   return (
     <>
       <div className="relative min-h-screen font-clash bg-[#0a0a0a]">
-        {/* Improved background gradients */}
         <div className="fixed inset-0 bg-gradient-to-b from-blue-900/10 via-[#0a0a0a] to-purple-900/10"></div>
-
-        {/* Enhanced star animation */}
         {starPositions.map((star, index) => (
           <div
             key={index}
@@ -56,8 +53,6 @@ const TeamGallery = () => {
             }}
           ></div>
         ))}
-
-        {/* Main content container with max-width */}
         <div className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-28">
             <motion.h1

@@ -97,14 +97,14 @@ const Header = React.memo(
       <div className="flex gap-4">
         <button
           onClick={navToProblemStatements}
-          className="px-6 py-2.5 rounded-md bg-black border border-green-400 text-green-400 font-mono shadow-lg shadow-green-400/20 hover:bg-green-900/20 hover:text-green-300 hover:border-green-300 hover:shadow-green-300/30 hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden"
+          className="px-4 py-2 md:px-6 md:py-2.5 rounded-md bg-black border border-green-400 text-green-400 font-mono shadow-lg shadow-green-400/20 hover:bg-green-900/20 hover:text-green-300 hover:border-green-300 hover:shadow-green-300/30 hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden text-sm md:text-base"
         >
           <span className="relative z-10">PROBLEM_STATEMENTS.exe</span>
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-green-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
         </button>
         <button
           onClick={navToRegistration}
-          className="px-6 py-2.5 rounded-md bg-black border border-cyan-400 text-cyan-400 font-mono shadow-lg shadow-cyan-400/20 hover:bg-cyan-900/20 hover:text-cyan-300 hover:border-cyan-300 hover:shadow-cyan-300/30 hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden"
+          className="px-4 py-2 md:px-6 md:py-2.5 rounded-md bg-black border border-cyan-400 text-cyan-400 font-mono shadow-lg shadow-cyan-400/20 hover:bg-cyan-900/20 hover:text-cyan-300 hover:border-cyan-300 hover:shadow-cyan-300/30 hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden text-sm md:text-base"
         >
           <span className="relative z-10">REGISTER</span>
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
@@ -116,7 +116,7 @@ const Header = React.memo(
 
 const Title = React.memo(({ glitchActive, intensifyEffect, pulseEffect }) => (
   <div
-    className={`text-5xl md:text-7xl lg:text-9xl font-bold relative transition-all font-clash duration-300 transform ${
+    className={`text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold relative transition-all font-clash duration-300 transform ${
       glitchActive ? "skew-x-2" : ""
     } ${intensifyEffect ? "scale-110" : ""}`}
   >
@@ -128,13 +128,13 @@ const Title = React.memo(({ glitchActive, intensifyEffect, pulseEffect }) => (
       INTRUSION
     </span>
     <span
-      className={`text-green-500 text-7xl md:text-9xl lg:text-[160px] transition-colors duration-300 ${
+      className={`text-green-500 text-5xl sm:text-7xl md:text-9xl lg:text-[160px] transition-colors duration-300 ${
         pulseEffect ? "text-green-400" : ""
       }`}
     >
       X
     </span>
-    <span className="text-white text-5xl md:text-6xl lg:text-7xl ml-4 md:ml-8">
+    <span className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl ml-2 sm:ml-4 md:ml-8">
       2025
     </span>
 
@@ -144,10 +144,10 @@ const Title = React.memo(({ glitchActive, intensifyEffect, pulseEffect }) => (
       }`}
     >
       <span>INTRUSION</span>
-      <span className="text-green-500 text-7xl md:text-8xl lg:text-[160px]">
+      <span className="text-green-500 text-5xl sm:text-7xl md:text-8xl lg:text-[160px]">
         X
       </span>
-      <span className="text-white text-5xl md:text-6xl lg:text-7xl ml-4 md:ml-8">
+      <span className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl ml-2 sm:ml-4 md:ml-8">
         2025
       </span>
     </div>
@@ -157,10 +157,10 @@ const Title = React.memo(({ glitchActive, intensifyEffect, pulseEffect }) => (
       }`}
     >
       <span>INTRUSION</span>
-      <span className="text-green-500 text-6xl md:text-8xl lg:text-10xl">
+      <span className="text-green-500 text-4xl sm:text-6xl md:text-8xl lg:text-10xl">
         X
       </span>
-      <span className="text-white text-4xl md:text-5xl lg:text-6xl ml-4 md:ml-8">
+      <span className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl ml-2 sm:ml-4 md:ml-8">
         2025
       </span>
     </div>
@@ -169,11 +169,11 @@ const Title = React.memo(({ glitchActive, intensifyEffect, pulseEffect }) => (
 
 const WhyIntrusionSection = React.memo(({ visible, loaded }) => (
   <div
-    className={`w-full py-16 px-4 md:px-8 transition-all duration-500 transform ${
+    className={`w-full py-12 sm:py-16 px-4 md:px-8 transition-all duration-500 transform ${
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
     } ${loaded ? "visible" : "invisible"}`}
   >
-    <div className="max-w-4xl mx-auto bg-black font-clash bg-opacity-80 border-2 border-green-500 rounded-lg p-6 md:p-10 backdrop-blur-md shadow-lg shadow-green-500/30 relative overflow-hidden">
+    <div className="max-w-4xl mx-auto bg-black font-clash bg-opacity-80 border-2 border-green-500 rounded-lg p-4 sm:p-6 md:p-10 backdrop-blur-md shadow-lg shadow-green-500/30 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div
           className="absolute top-0 left-0 w-full h-full"
@@ -197,22 +197,22 @@ const WhyIntrusionSection = React.memo(({ visible, loaded }) => (
       <div className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-green-400 rounded-bl-md"></div>
       <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-green-400 rounded-br-md"></div>
       <div className="relative z-10">
-        <div className="flex items-center justify-center mb-8">
-          <div className="h-px w-16 bg-gradient-to-r from-transparent to-green-500"></div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-clash text-green-400 text-center mx-4 font-bold tracking-wider">
+        <div className="flex items-center justify-center mb-6 sm:mb-8">
+          <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent to-green-500"></div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-clash text-green-400 text-center mx-2 sm:mx-4 font-bold tracking-wider">
             WHY INTRUSIONX ?
           </h2>
-          <div className="h-px w-16 bg-gradient-to-l from-transparent to-green-500"></div>
+          <div className="h-px w-8 sm:w-16 bg-gradient-to-l from-transparent to-green-500"></div>
         </div>
 
-        <ul className="space-y-6 mb-8 text-lg">
+        <ul className="space-y-4 sm:space-y-6 mb-6 sm:mb-8 text-base sm:text-lg">
           {WHY_INTRUSION_ITEMS.map((item, index) => (
             <li
               key={index}
               className="flex items-start transition-all duration-300 hover:translate-x-1 group"
             >
-              <div className="flex-shrink-0 mr-4 mt-1">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-green-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex-shrink-0 mr-3 sm:mr-4 mt-1">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-br from-green-400 to-green-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="w-3 h-3 text-black"
                     fill="currentColor"
@@ -228,13 +228,13 @@ const WhyIntrusionSection = React.memo(({ visible, loaded }) => (
               </div>
               <div>
                 <span className="text-green-600 block mb-1">{item.title}</span>
-                <span className="text-green-300">{item.desc}</span>
+                <span className="text-green-300 text-sm sm:text-base">{item.desc}</span>
               </div>
             </li>
           ))}
         </ul>
         <div className="w-full flex justify-center">
-          <div className="w-32 h-1 bg-gradient-to-r from-green-900 via-green-500 to-green-900 rounded-full"></div>
+          <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-green-900 via-green-500 to-green-900 rounded-full"></div>
         </div>
       </div>
     </div>
@@ -280,9 +280,8 @@ const MainX = () => {
       setShowCards(true);
     }
   }, [showCards]);
-  
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timers = [
@@ -382,12 +381,12 @@ const MainX = () => {
           />
           <div className="flex-grow flex flex-col items-center justify-center z-10 px-4 md:px-8 w-full">
             <div
-              className={`text-center space-y-6 backdrop-blur-sm bg-transparent p-4 md:p-8 rounded transition-all duration-500 w-full max-w-5xl mx-auto ${
+              className={`text-center space-y-4 sm:space-y-6 backdrop-blur-sm bg-transparent p-4 md:p-8 rounded transition-all duration-500 w-full max-w-5xl mx-auto ${
                 loading ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             >
               {initSequence && (
-                <div className="font-mono text-xl md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap">
+                <div className="font-mono text-lg sm:text-xl md:text-2xl lg:text-3xl whitespace-normal sm:whitespace-nowrap">
                   <span
                     className="inline-block transition-transform duration-500 translate-y-0"
                     style={{ animation: "slideIn 0.5s ease-out" }}
@@ -410,7 +409,7 @@ const MainX = () => {
                 pulseEffect={pulseEffect}
               />
 
-              <div className="text-xl md:text-2xl lg:text-3xl font-mono mt-8 text-green-300 h-10">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-mono mt-4 sm:mt-8 text-green-300 h-8 sm:h-10">
                 {typedText}
                 <span
                   className={`${
@@ -420,7 +419,7 @@ const MainX = () => {
                   _
                 </span>
               </div>
-              <p className="font-cyberfont max-w-4xl mx-auto text-base md:text-lg lg:text-xl">
+              <p className="font-cyberfont max-w-4xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl">
                 Join IntrusionX, a high-intensity cybersecurity hackathon, on
                 April 11-12, 2025, at GLA University, Mathura. Compete in
                 real-world hacking challenges, learn from industry experts, and
@@ -431,19 +430,21 @@ const MainX = () => {
         </div>
 
         <div
-          className={`w-full min-h-screen py-16 px-4 md:px-8 transition-all duration-500 transform ${
+          className={`w-full min-h-screen py-6 sm:py-8 md:py-16 px-4 md:px-8 transition-all duration-500 transform ${
             showCards ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           } ${cardsPreloaded ? "visible" : "invisible"}`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto">
-            <div className="flex flex-col gap-6 w-full items-stretch">
-              <PosterCard className="w-full max-w-2xl" />
-              <EventDetailsCard className="w-full max-w-2xl" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-6xl mx-auto">
+            <div className="flex flex-col gap-4 md:gap-6 w-full items-stretch">
+              <PosterCard className="w-full h-full" />
             </div>
-            <div className="flex flex-col gap-6 w-full items-stretch">
-              <TimelineCard className="w-full max-w-2xl" />
-              <CountdownCard className="w-full max-w-2xl" />
-              <ContactCard className="w-full max-w-2xl" />
+            <div className="flex flex-col gap-4 md:gap-6 w-full items-stretch">
+              <TimelineCard className="w-full" />
+              <CountdownCard className="w-full" />
+              <EventDetailsCard className="w-full" />
+            </div>
+            <div className="md:col-span-2 flex justify-center w-full">
+              <ContactCard className="w-full" />
             </div>
           </div>
         </div>
@@ -509,57 +510,23 @@ const MainX = () => {
             }
           }
 
-          /* Responsive adjustments */
-          @media (max-width: 768px) {
-            .text-10xl {
-              font-size: 9rem;
+          @keyframes digitalRain {
+            from {
+              opacity: 0.3;
             }
-            .text-9xl {
-              font-size: 6rem;
-            }
-            .text-8xl {
-              font-size: 5rem;
-            }
-            .text-7xl {
-              font-size: 4rem;
-            }
-            .text-6xl {
-              font-size: 3.5rem;
-            }
-            .text-5xl {
-              font-size: 3rem;
-            }
-          }
-
-          @media (max-width: 640px) {
-            .text-10xl {
-              font-size: 7rem;
-            }
-            .text-9xl {
-              font-size: 5rem;
-            }
-            .text-8xl {
-              font-size: 4rem;
-            }
-            .text-7xl {
-              font-size: 3.5rem;
-            }
-            .text-6xl {
-              font-size: 3rem;
-            }
-            .text-5xl {
-              font-size: 2.5rem;
+            to {
+              opacity: 0.3;
             }
           }
         `}</style>
         <button
-          className="fixed bottom-5 text-white right-5 z-50 bg-gradient-to-tl from-cyan-600 to-lime-600 hover:shadow-lg hover:scale-105 transition-all duration-300 py-4 px-4 rounded-full flex items-center justify-center"
+          className="fixed bottom-5 text-white right-5 z-50 bg-gradient-to-tl from-cyan-600 to-lime-600 hover:shadow-lg hover:scale-105 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-4 rounded-full flex items-center justify-center"
           onClick={() => navigate("/")}
           aria-label="Home"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-black"
+            className="w-5 h-5 sm:w-6 sm:h-6 text-black"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -575,6 +542,7 @@ const MainX = () => {
       </div>
 
       <Footer />
+      <ToastContainer />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TimelineCard = () => {
+const TimelineCard = ({ className }) => {
   const [timeline, setTimeline] = useState([]);
 
   useEffect(() => {
@@ -17,12 +17,12 @@ const TimelineCard = () => {
   }, []);
 
   return (
-    <div className="bg-black border border-cyan-400 p-6 rounded-lg shadow-lg font-clash w-full max-w-2xl mx-auto">
-      <h2 className="text-cyan-400 font-semibold text-2xl mb-4 border-b border-cyan-400 pb-2 text-center tracking-wide">
+    <div className={`bg-black border border-cyan-400 p-4 md:p-6 rounded-lg shadow-lg font-clash ${className}`}>
+      <h2 className="text-cyan-400 font-semibold text-xl md:text-2xl mb-3 md:mb-4 border-b border-cyan-400 pb-2 text-center tracking-wide">
         OPERATION TIMELINE
       </h2>
 
-      <div className="grid grid-cols-10 gap-2 text-green-400 text-sm md:text-base">
+      <div className="grid grid-cols-10 gap-2 text-green-400 text-xs sm:text-sm md:text-base">
         <span className="text-cyan-300 font-semibold border-b border-cyan-600 pb-1 col-span-3">Date</span>
         <span className="text-cyan-300 font-semibold border-b border-cyan-600 pb-1 col-span-2">Day</span>
         <span className="text-cyan-300 font-semibold border-b border-cyan-600 pb-1 col-span-5">Event</span>
