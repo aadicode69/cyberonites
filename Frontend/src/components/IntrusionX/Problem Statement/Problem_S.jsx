@@ -7,6 +7,11 @@ const Problem_S = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProblems, setFilteredProblems] = useState(problemsData);
   const [glitchEffect, setGlitchEffect] = useState(false);
+  const [selectedProblem, setSelectedProblem] = useState(null);
+  const [selectionProgress, setSelectionProgress] = useState(0);
+  const [selectionComplete, setSelectionComplete] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     let results = problemsData;
@@ -29,8 +34,56 @@ const Problem_S = () => {
     return () => clearInterval(glitchInterval);
   }, [searchTerm]);
 
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
   const toggleProblem = (id) => {
     setExpandedProblem(expandedProblem === id ? null : id);
+  };
+
+  const handleSelectChallenge = (problemId) => {
+    if (selectedProblem !== problemId) {
+      setSelectionComplete(false);
+      setSelectionProgress(0);
+      const selectedChallenge = filteredProblems.find(
+        (p) => p.id === problemId
+      );
+      setToastMessage(
+        `INITIALIZING: Challenge ${String(problemId).padStart(4, "0")} - ${
+          selectedChallenge.title || "Unknown"
+        }`
+      );
+      setShowToast(true);
+    }
+
+    setSelectedProblem(problemId);
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 3;
+      setSelectionProgress(progress);
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        setSelectionComplete(true);
+        const selectedChallenge = filteredProblems.find(
+          (p) => p.id === problemId
+        );
+        setToastMessage(
+          `ACCESS GRANTED: Challenge ${String(problemId).padStart(
+            4,
+            "0"
+          )} loaded successfully`
+        );
+        setShowToast(true);
+      }
+    }, 70);
   };
 
   const navigateToHome = () => {
@@ -42,6 +95,45 @@ const Problem_S = () => {
       {glitchEffect && (
         <div className="absolute inset-0 bg-green-500/10 z-20 pointer-events-none"></div>
       )}
+
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            className="fixed top-6 right-6 z-50 max-w-md"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 50, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <div className="bg-gray-900 border-l-4 border-green-500 shadow-lg p-4 flex items-start">
+              <div className="mr-3 text-green-500 mt-0.5">
+                {selectionComplete ? "✓" : "!"}
+              </div>
+              <div>
+                <div className="flex items-center mb-1">
+                  <div className="h-2 w-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                  <h4 className="text-green-400 font-bold text-sm">
+                    {selectionComplete
+                      ? "SYSTEM NOTIFICATION"
+                      : "SYSTEM PROCESSING"}
+                  </h4>
+                </div>
+                <p className="text-green-300 text-sm font-mono">
+                  {toastMessage}
+                </p>
+                <div className="mt-2 h-1 w-full bg-green-900/50 overflow-hidden">
+                  <motion.div
+                    className="h-full bg-green-500"
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 1.5, ease: "linear" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <motion.div
         className="absolute w-full h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-30"
@@ -167,14 +259,14 @@ const Problem_S = () => {
                             "No description available for this challenge."}
                         </div>
 
-                        {problem.requirements &&
-                          problem.requirements.length > 0 && (
+                        {problem.challenges &&
+                          problem.challenges.length > 0 && (
                             <div className="mt-4 sm:mt-5 bg-green-900/10 border border-green-900/30 p-3 sm:p-4 rounded">
                               <h4 className="text-sm sm:text-base text-green-400 mb-2 sm:mb-3 font-bold flex items-center">
-                                <span className="mr-2">[!]</span> REQUIREMENTS:
+                                <span className="mr-2">[!]</span> CHALLENGES:
                               </h4>
                               <ul className="space-y-1 sm:space-y-2 text-sm">
-                                {problem.requirements.map((req, idx) => (
+                                {problem.challenges.map((req, idx) => (
                                   <li
                                     key={idx}
                                     className="flex items-start text-green-200"
@@ -190,13 +282,47 @@ const Problem_S = () => {
                           )}
 
                         <div className="mt-4 sm:mt-6 flex justify-end">
-                          <button className="px-3 sm:px-5 py-1.5 sm:py-2 bg-green-700 hover:bg-green-600 text-black text-sm sm:text-base font-bold rounded-sm transition-colors flex items-center">
+                          <button
+                            className={`px-3 sm:px-5 py-1.5 sm:py-2 ${
+                              selectedProblem === problem.id &&
+                              selectionComplete
+                                ? "bg-green-500 hover:bg-green-500"
+                                : "bg-green-700 hover:bg-green-600"
+                            } text-black text-sm sm:text-base font-bold rounded-sm transition-colors flex items-center`}
+                            onClick={() => handleSelectChallenge(problem.id)}
+                            disabled={
+                              selectedProblem === problem.id &&
+                              selectionComplete
+                            }
+                          >
                             <span className="mr-1 sm:mr-2">
-                              SELECT_CHALLENGE
+                              {selectedProblem === problem.id &&
+                              selectionComplete
+                                ? "SELECTED"
+                                : "SELECT_CHALLENGE"}
                             </span>
-                            <span className="text-xs">[ENTER]</span>
+                            {selectedProblem === problem.id &&
+                              selectionProgress > 0 &&
+                              selectionProgress < 100 && (
+                                <span className="text-xs sm:text-sm text-green-400">
+                                  {selectionProgress}%
+                                </span>
+                              )}
                           </button>
                         </div>
+
+                        {selectedProblem === problem.id &&
+                          selectionProgress > 0 &&
+                          selectionProgress < 100 && (
+                            <div className="mt-3 bg-green-900/30 rounded-full h-2 overflow-hidden">
+                              <motion.div
+                                className="h-full bg-green-500"
+                                initial={{ width: "0%" }}
+                                animate={{ width: `${selectionProgress}%` }}
+                                transition={{ duration: 0.15 }}
+                              />
+                            </div>
+                          )}
                       </div>
                     </motion.div>
                   )}
