@@ -26,17 +26,17 @@ function App() {
           <Route exact path="/security" element={<SecurityPage />} />
           <Route path="/guestlecture" element={<GuestLecture />} />
           <Route path="/capturetheflag" element={<CTF />} />
-          <Route path="/404" element={<NotFound />} />
           <Route path="/event_dashboard" element={<EventDash/>} />
-          <Route path="*" element={<Error />} />
           <Route path="/intrusion-x" element={<MainX/>} />
-          {/* <Route path="/prob-statement-x" element={<Problem_S/>} />
-          <Route path="/registrations" element={<Reg_Main/>} />
-          <Route path="/our_team" element={<TeamGallery/>} /> */}
-          {/* <Route path="/playground" element={<Terminal/>} /> */}
+          <Route path="/prob-statement-x" element={<Problem_S/>} />
+          {/* <Route path="/our_team" element={<TeamGallery/>} /> */}
+          
+          {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
           {/* <Route path="/contactus" element={<ContactUs />} /> */}
+          {/* <Route path="/playground" element={<Terminal/>} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
           {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

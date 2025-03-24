@@ -254,18 +254,21 @@ const MainX = () => {
   const [showCards, setShowCards] = useState(false);
   const [cardsPreloaded, setCardsPreloaded] = useState(false);
   const [scrollIcon, setScrollIcon] = useState(false);
+  
+  const navigate = useNavigate();
 
   const navToProblemStatements = useCallback(() => {
-    toast.info("Problem Statements will be out soon!", {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "dark",
-      className: "text-md font-quicksand bg-black border-x border-cyan-500",
-    });
+    // toast.info("Problem Statements will be out soon!", {
+    //   position: "top-center",
+    //   autoClose: 3000,
+    //   hideProgressBar: true,
+    //   closeOnClick: true,
+    //   pauseOnHover: false,
+    //   draggable: false,
+    //   theme: "dark",
+    //   className: "text-md font-quicksand bg-black border-x border-cyan-500",
+    // });
+    window.open("/prob-statement-x")
   }, []);
 
   const navToRegistration = useCallback(() => {
@@ -281,7 +284,6 @@ const MainX = () => {
     }
   }, [showCards]);
 
-  const navigate = useNavigate();
 
   useEffect(() => {
     const timers = [
