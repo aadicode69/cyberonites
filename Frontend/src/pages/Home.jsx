@@ -12,6 +12,7 @@ import DashCard_Event from "../components/pastEvents/DashCard_Event";
 import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
 import NewEvent from "../components/upcomingEventList/NewEvent";
 import Popup from "../components/load_popup/Popup";
+import TeamCard from "../components/hallOf_fame/TeamCard";
 
 const ScrollElement = (item) => {
   document.getElementById(item).scrollIntoView({ behavior: "smooth" });
@@ -37,6 +38,7 @@ const Home = () => {
       <DashCard_Event />
       {/* <NewEvent id="Upcoming"/> */}
       <Grand id="Events" />
+      <TeamCard/>
       <ConnecttUs id="About" />
       <Footer />
       {showPopup && <Popup onClose={() => setShowPopup(false)} />}

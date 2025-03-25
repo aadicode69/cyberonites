@@ -15,23 +15,31 @@ const TeamGallery = () => {
     const stars = Array.from({ length: numStars }, () => ({
       left: `${Math.random() * 100}vw`,
       top: `${Math.random() * 100}vh`,
-      size: Math.random() * 2 + 1, 
+      size: Math.random() * 2 + 1,
       duration: `${8 + Math.random() * 12}s`,
       delay: `${Math.random() * 4}s`,
     }));
     setStarPositions(stars);
   }, []);
 
-  const leadership = teamData.filter(member =>
+  const leadership = teamData.filter((member) =>
     ["President", "Vice President", "General Secretary"].includes(member.role)
   );
 
-  const heads = teamData.filter(member =>
-    ["Technical Head", "Event Head", "Design Head", "Development Head"].includes(member.role)
+  const heads = teamData.filter((member) =>
+    [
+      "Technical Head",
+      "Event Head",
+      "Design Head",
+      "Development Head",
+      "Public Relations Head",
+      "Management Head",
+      "Corporate Relations Head",
+    ].includes(member.role)
   );
 
-  const devTeam = teamData.filter(member =>
-    member.role === "Development Team Member"
+  const devTeam = teamData.filter(
+    (member) => member.role === "Web Development Team Member"
   );
 
   return (
@@ -71,7 +79,8 @@ const TeamGallery = () => {
               transition={{ delay: 0.2 }}
               className="text-lg text-gray-300 max-w-3xl mx-auto mb-12"
             >
-              The minds behind Cyberonites, shaping the future of tech and cybersecurity.
+              The minds behind Cyberonites, shaping the future of tech and
+              cybersecurity.
             </motion.p>
           </div>
 
@@ -115,7 +124,6 @@ const TeamGallery = () => {
             </div>
           </div>
 
-          {/* Development Team Section */}
           <div className="mt-40">
             <h2 className="font-clash text-2xl sm:text-5xl font-bold text-center mb-28">
               <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
@@ -137,7 +145,6 @@ const TeamGallery = () => {
           </div>
         </div>
 
-        {/* Enhanced home button */}
         <button
           onClick={() => navigate("/")}
           aria-label="Home"
@@ -164,29 +171,28 @@ const TeamGallery = () => {
           </div>
         </button>
 
-
         <style jsx>{`
-        @keyframes fall {
-          0% {
-            transform: translateY(-10vh) translateX(0);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
+          @keyframes fall {
+            0% {
+              transform: translateY(-10vh) translateX(0);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            90% {
+              opacity: 1;
             }
             100% {
               transform: translateY(110vh) translateX(20px);
               opacity: 0;
-              }
-              }
-              .animate-fall {
-                animation: fall linear infinite;
-                box-shadow: 0 0 4px rgba(255,255,255,0.8);
-                }
-                `}</style>
+            }
+          }
+          .animate-fall {
+            animation: fall linear infinite;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+          }
+        `}</style>
       </div>
       <Footer />
     </>

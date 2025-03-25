@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import "./Card.css";
 import event1 from "../../img/events/EscalateXGL.jpg";
 import event2 from "../../img/events/EscalateX_CTF.jpg";
 
@@ -37,17 +36,17 @@ function Grand() {
   return (
     <>
       <div id="Events" className="flex items-center justify-center my-7">
-        <h1 className="text-cyan-400 font-clash font-bold text-4xl mt-10">
+        <h1 className="text-cyan-400 font-clash font-bold text-2xl md:text-4xl mt-10 text-center">
           Grand Events
         </h1>
       </div>
       <div
         ref={ref}
-        className="flex flex-col md:flex-row gap-8 items-stretch justify-center font-cyberfont px-4 md:px-8 max-w-6xl mx-auto"
+        className="flex flex-col md:flex-row gap-4 md:gap-2 items-stretch justify-center font-cyberfont px-4 md:px-8 max-w-6xl mx-auto space-y-4 md:space-y-0"
       >
         {/* Card 1 */}
-        <div className="w-full md:w-1/2 max-w-md bg-gray-900 border border-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-400/20 group flex flex-col">
-          <Link to="/guestlecture" className="block relative aspect-[4/3] w-full">
+        <div className="w-full md:w-1/2 max-w-md mx-auto bg-gray-900 border border-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-400/20 group flex flex-col">
+          <Link to="/guestlecture" className="block relative w-full aspect-[4/3]">
             <div className="absolute top-4 left-4 z-10 bg-cyan-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               Lecture
             </div>
@@ -131,8 +130,8 @@ function Grand() {
         </div>
 
         {/* Card 2 */}
-        <div className="w-full md:w-1/2 max-w-md bg-gray-900 border border-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-400/20 group flex flex-col">
-          <Link to="/capturetheflag" className="block relative aspect-[4/3] w-full">
+        <div className="w-full md:w-1/2 max-w-md mx-auto bg-gray-900 border border-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-cyan-400/20 group flex flex-col">
+          <Link to="/capturetheflag" className="block relative w-full aspect-[4/3]">
             <div className="absolute top-4 left-4 z-10 bg-cyan-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               Competition
             </div>
