@@ -29,7 +29,7 @@ function App() {
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="/intrusion-x" element={<MainX/>} />
           <Route path="/prob-statement-x" element={<Problem_S/>} />
-          {/* <Route path="/our_team" element={<TeamGallery/>} /> */}
+          <Route path="/our_team" element={<TeamGallery/>} />
           
           {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
           {/* <Route path="/contactus" element={<ContactUs />} /> */}

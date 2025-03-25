@@ -2,72 +2,99 @@
     {
       "name": "Rahul Dixit",
       "role": "President",
-      "profileImage": "src/img/Team/Aaditya.jpg",
+      "profileImage": "src/img/Team/rahul_dixit_2.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Visionary leader passionate about cybersecurity and emerging technologies. Driving Cyberonites towards excellence.",
+      "description": "Leads the club, oversees operations, and represents Cyberonites in official matters.",
       "linkedin": "https://www.linkedin.com/in/secproof/",
-      "email": "mailto:thedixits940@gmail.com"
+      "email": "mailto:cybereyerahul@gmail.com"
     },
     {
       "name": "Krishna Agarwal",
       "role": "Vice President",
-      "profileImage": "src/img/Team/krishna1.png",
+      "profileImage": "src/img/Team/krishna1.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Strategic thinker with expertise in project management and team leadership. Dedicated to fostering innovation.",
+      "description": "Assists the president and manages internal coordination and strategic initiatives.",
       "linkedin": "https://www.linkedin.com/in/krishna-agrawal-550a4b238",
       "email": "mailto:krishnanjin109@gmail.com"
     },
     {
       "name": "Abhinav Singh",
       "role": "General Secretary",
-      "profileImage": "src/img/Team/abhinav.png",
+      "profileImage": "src/img/Team/abhinav.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Handles documentation, scheduling, and communication within the club.",
       "linkedin": "https://www.linkedin.com/in/abhinav-singh-aba043283/",
       "email": "mailto:secfreaky@gmail.com"
     },
     {
       "name": "Kushagra Varshney",
       "role": "Technical Head",
-      "profileImage": "src/img/Team/kush.jpg",
-      "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "profileImage": "src/img/Team/kush.webp",
+      "bannerImage": "src/img/Team/banner-AG.webp",
+      "description": "Manages cybersecurity research, training, and tech innovations.",
       "linkedin": "https://linkedin.com/in/hacksprob",
       "email": "mailto:kushagravarshney12a@gmail.com"
     },
     {
       "name": "Ayush Singh",
       "role": "Event Head",
-      "profileImage": "src/img/Team/ayush.jpg",
+      "profileImage": "src/img/Team/ayush.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Plans and executes cybersecurity events and workshops.",
       "linkedin": "https://www.linkedin.com/in/ayush-singh-18a9b1253/",
       "email": "mailto:singhayush3264@gmail.com"
     },
     {
       "name": "Abhishek Soni",
       "role": "Design Head",
-      "profileImage": "src/img/Team/abhishek.png",
+      "profileImage": "src/img/Team/abhishek.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Creates visual content, branding, and promotional materials.",
       "linkedin": "https://www.linkedin.com/in/abhishek-soni-89b518250/",
       "email": "mailto:sharmay728@gmail.com"
     },
     {
       "name": "Aaditya Goyal",
       "role": "Development Head",
-      "profileImage": "src/img/Team/Aaditya2.jpg",
+      "profileImage": "src/img/Team/Aaditya2.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Passionate about technology and development. Leading teams to build innovative solutions in the tech space.",
+      "description": "Leads software and development for club's official projects.",
       "linkedin": "https://www.linkedin.com/in/aadityagoyal-net/",
       "email": "mailto:aadityagoyalofficial@gmail.com"
     },
     {
-      "name": "Manmohan Singh",
-      "role": "Development Team Member",
-      "profileImage": "src/img/Team/manmohan.jpg",
+      "name": "Arjun Chauhan",
+      "role": "Public Relations Head",
+      "profileImage": "src/img/Team/arjun_chauhan.webp",
       "bannerImage": "src/img/Team/banner-AG.jpg",
-      "description": "Contributing to web development projects and helping build the club's digital presence.",
+      "description": "Handles public relations, social media, and external communication.",
+      "linkedin": "http://www.linkedin.com/in/geeky-arjun",
+      "email": "mailto:arjun.chauhan.hero@gmail.com"
+    },
+    {
+      "name": "Kartikeyan Singh Tomar",
+      "role": "Management Head",
+      "profileImage": "src/img/Team/kartikeyan_singh_tomar.webp",
+      "bannerImage": "src/img/Team/banner-AG.jpg",
+      "description": "Oversees logistics, budgeting, and resource allocation.",
+      "linkedin": "https://www.linkedin.com/in/kartikeyan-singh-tomar-7aaab7206/",
+      "email": "mailto:galatkaram2@gmail.com"
+    },
+    {
+      "name": "Tanya Singh Jadoun",
+      "role": "Corporate Relations Head",
+      "profileImage": "src/img/Team/tanya_singh_jadoun.webp",
+      "bannerImage": "src/img/Team/banner-AG.jpg",
+      "description": "Manages sponsorships, industry collaborations, and corporate outreach.",
+      "linkedin": "https://www.linkedin.com/in/tanya-jadoun-596b58252/",
+      "email": "mailto:tanyasingh1932@gmail.com"
+    },
+    {
+      "name": "Manmohan Singh",
+      "role": "Web Development Team Member",
+      "profileImage": "src/img/Team/manmohan.webp",
+      "bannerImage": "src/img/Team/banner-AG.jpg",
+      "description": "Builds and maintains the club’s website and digital platforms.",
       "linkedin": "https://linkedin.com/in/manmohan-singh-raghav",
       "email": "mailto:manmohan0singh0@gmail.com",
       "head": "Aaditya Goyal"

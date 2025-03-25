@@ -47,11 +47,14 @@ const TitleCard = ({ name, role, profileImage, description, linkedin, email, tie
             shadow-[0_8px_16px_rgba(0,0,0,0.3)]`}>
             <div className="relative w-full h-full rounded-full overflow-hidden">
               <img
-                src={profileImage}
+                src={profileImage || "/fallback-image.webp"}
                 alt={name}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                onError={(e) => (e.target.src = "/fallback-image.webp")}
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/0 via-black/0 to-black/30"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/0 via-black/10 to-black/50"></div>
             </div>
           </div>
         </div>
@@ -74,7 +77,7 @@ const TitleCard = ({ name, role, profileImage, description, linkedin, email, tie
               label="LinkedIn" 
             />
             <SocialButton 
-              href={email} 
+              href={`mailto:${email}`} 
               icon={<FaEnvelope size={18} />}
               gradient={style.gradient}
               label="Email" 
@@ -105,6 +108,5 @@ const SocialButton = ({ href, icon, label, gradient }) => (
     </div>
   </a>
 );
-
 
 export default TitleCard;
