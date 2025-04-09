@@ -31,7 +31,7 @@ function App() {
           <Route path="/prob-statement-x" element={<Problem_S/>} />
           <Route path="/our_team" element={<TeamGallery/>} />
           
-          {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
+          <Route path="/registrations" element={<Reg_Main/>} />
           {/* <Route path="/contactus" element={<ContactUs />} /> */}
           {/* <Route path="/playground" element={<Terminal/>} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
