@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, Users } from "lucide-react";
 import TitleCard from "./TitleCard";
-import teamData from "../hallOf_fame/teamData.json";
+import teamData from "../hallOf_fame/teamData.js";
 import Footer from "../footer/Footer";
 
 const TeamGallery = () => {
@@ -21,6 +21,10 @@ const TeamGallery = () => {
     }));
     setStarPositions(stars);
   }, []);
+
+  const mentors = teamData.filter((member) =>
+    ["Mentor", "Co-Mentor"].includes(member.role)
+  );
 
   const leadership = teamData.filter((member) =>
     ["President", "Vice President", "General Secretary"].includes(member.role)
@@ -84,7 +88,31 @@ const TeamGallery = () => {
             </motion.p>
           </div>
 
-          {/* Core Team Section (previously Leadership) */}
+          {/* Our Inspiration (Mentors) Section */}
+          <div className="mb-40 mt-24">
+            <h2 className="text-2xl sm:text-5xl font-bold text-center mb-28">
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
+                Our Inspiration
+              </span>
+            </h2>
+            <div className="relative">
+              <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+              <motion.div className="flex flex-wrap justify-center gap-x-16 gap-y-28">
+                {mentors.map((member, index) => (
+                  <motion.div
+                    key={member.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2 }}
+                  >
+                    <TitleCard {...member} tier="mentor" />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Core Team Section */}
           <div className="mb-40 mt-24">
             <h2 className="text-2xl sm:text-5xl font-bold text-center mb-28">
               <span className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
@@ -108,7 +136,7 @@ const TeamGallery = () => {
             </div>
           </div>
 
-          {/* Department Heads Section */}
+          {/* Heads Section */}
           <div className="mb-40">
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-28">
               {heads.map((member, index) => (
@@ -124,6 +152,7 @@ const TeamGallery = () => {
             </div>
           </div>
 
+          {/* Development Team Section */}
           <div className="mt-40">
             <h2 className="font-clash text-2xl sm:text-5xl font-bold text-center mb-28">
               <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
@@ -145,6 +174,7 @@ const TeamGallery = () => {
           </div>
         </div>
 
+        {/* Home Button */}
         <button
           onClick={() => navigate("/")}
           aria-label="Home"
@@ -171,7 +201,7 @@ const TeamGallery = () => {
           </div>
         </button>
 
-        <style jsx>{`
+        <style>{`
           @keyframes fall {
             0% {
               transform: translateY(-10vh) translateX(0);

@@ -1,23 +1,24 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import RotatingText from '../../blocks/TextAnimations/RotatingText/RotatingText';
+import RotatingText from "../../blocks/TextAnimations/RotatingText/RotatingText";
+import { useNavigate } from "react-router-dom";
 
 const InteractiveBackground = () => {
   const canvasRef = useRef(null);
   const [screenSize, setScreenSize] = useState({
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
   });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const particlesRef = useRef([]);
   const configRef = useRef({
     get particleCount() {
-      if (screenSize.width < 640) return 25;  // Mobile (very low)
+      if (screenSize.width < 640) return 25; // Mobile (very low)
       if (screenSize.width < 1024) return 50; // Tablet
       return 100; // Desktop
     },
     connectionDistance: 100,
-    particleColor: 'rgba(103, 232, 249, 0.5)', // Cyan-like color
-    lineColor: 'rgba(56, 189, 248, 0.3)' // Blue-like color
+    particleColor: "rgba(103, 232, 249, 0.5)", // Cyan-like color
+    lineColor: "rgba(56, 189, 248, 0.3)", // Blue-like color
   });
 
   const createParticle = useCallback((width, height) => {
@@ -26,26 +27,26 @@ const InteractiveBackground = () => {
       y: Math.random() * height,
       radius: Math.random() * 1.5 + 0.5,
       speedX: (Math.random() - 0.5) * 1,
-      speedY: (Math.random() - 0.5) * 1
+      speedY: (Math.random() - 0.5) * 1,
     };
   }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let animationFrameId;
 
     const resizeCanvas = () => {
       const newWidth = canvas.offsetWidth;
       const newHeight = canvas.offsetHeight;
-      
+
       canvas.width = newWidth;
       canvas.height = newHeight;
-      
+
       setScreenSize({ width: newWidth, height: newHeight });
 
       particlesRef.current = Array.from(
-        { length: configRef.current.particleCount }, 
+        { length: configRef.current.particleCount },
         () => createParticle(newWidth, newHeight)
       );
     };
@@ -78,7 +79,7 @@ const InteractiveBackground = () => {
 
     const drawConnections = (ctx, particles) => {
       const { connectionDistance, lineColor } = configRef.current;
-      
+
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -100,19 +101,17 @@ const InteractiveBackground = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particlesRef.current = particlesRef.current.map(particle => 
+      particlesRef.current = particlesRef.current.map((particle) =>
         updateParticle(
-          particle, 
-          mousePosition.x, 
-          mousePosition.y, 
-          canvas.width, 
+          particle,
+          mousePosition.x,
+          mousePosition.y,
+          canvas.width,
           canvas.height
         )
       );
 
-      particlesRef.current.forEach(particle => 
-        drawParticle(ctx, particle)
-      );
+      particlesRef.current.forEach((particle) => drawParticle(ctx, particle));
 
       drawConnections(ctx, particlesRef.current);
 
@@ -123,38 +122,36 @@ const InteractiveBackground = () => {
       const rect = canvas.getBoundingClientRect();
       setMousePosition({
         x: e.clientX - rect.left,
-        y: e.clientY - rect.top
+        y: e.clientY - rect.top,
       });
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
+    window.addEventListener("resize", resizeCanvas);
+
     animate();
-    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      canvas.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("resize", resizeCanvas);
+      canvas.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, [createParticle, mousePosition]);
 
   return (
-    <canvas 
-      ref={canvasRef} 
-      className="absolute inset-0 w-full h-full -z-10"
-    />
+    <canvas ref={canvasRef} className="absolute inset-0 w-full h-full -z-10" />
   );
 };
 
 const TeamCard = () => {
+  const navigate = useNavigate();
   const handleNavigateToTeam = () => {
-    window.open("/our_team");
+    navigate("/our_team");
   };
 
   return (
-    <div 
+    <div
       className="relative w-full max-w-xs sm:max-w-md font-clash md:max-w-2xl lg:max-w-4xl mx-auto my-4 sm:my-8 md:my-12 overflow-hidden rounded-xl border border-gray-500 backdrop-blur-lg bg-white/10 cursor-pointer group"
       onClick={handleNavigateToTeam}
     >
@@ -167,7 +164,7 @@ const TeamCard = () => {
           </h3>
           <div className="flex justify-center">
             <RotatingText
-              texts={['Team', 'Leaders', 'Professionals', 'Experts']}
+              texts={["Team", "Leaders", "Professionals", "Experts"]}
               mainClassName="px-4 sm:px-4 font-extrabold text-4xl md:px-5 bg-cyan-400 text-black overflow-hidden py-0.5 sm:py-1 md:py-4 justify-center rounded-lg"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
