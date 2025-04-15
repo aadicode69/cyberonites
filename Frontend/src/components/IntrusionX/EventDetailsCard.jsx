@@ -20,8 +20,7 @@ const EventDetailsCard = ({ className }) => {
             <FaClock className="text-cyan-300" />
             <span className="text-gray-200">Duration:</span>
           </div>
-          <span className="text-left">36+ Hours</span>
-
+          <span className="text-left">24 Hours</span>
           <div className="flex items-center gap-2 md:gap-3">
             <FaMapMarkerAlt className="text-cyan-300" />
             <span className="text-gray-200">Venue:</span>

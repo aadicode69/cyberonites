@@ -228,7 +228,9 @@ const WhyIntrusionSection = React.memo(({ visible, loaded }) => (
               </div>
               <div>
                 <span className="text-green-600 block mb-1">{item.title}</span>
-                <span className="text-green-300 text-sm sm:text-base">{item.desc}</span>
+                <span className="text-green-300 text-sm sm:text-base">
+                  {item.desc}
+                </span>
               </div>
             </li>
           ))}
@@ -254,28 +256,40 @@ const MainX = () => {
   const [showCards, setShowCards] = useState(false);
   const [cardsPreloaded, setCardsPreloaded] = useState(false);
   const [scrollIcon, setScrollIcon] = useState(false);
-  
+
   const navigate = useNavigate();
 
   const navToProblemStatements = useCallback(() => {
-    // toast.info("Problem Statements will be out soon!", {
-    //   position: "top-center",
-    //   autoClose: 3000,
-    //   hideProgressBar: true,
-    //   closeOnClick: true,
-    //   pauseOnHover: false,
-    //   draggable: false,
-    //   theme: "dark",
-    //   className: "text-md font-quicksand bg-black border-x border-cyan-500",
-    // });
-    window.open("/prob-statement-x")
+    window.open("/prob-statement-x");
   }, []);
 
   const navToRegistration = useCallback(() => {
-    window.open(
-      "https://unstop.com/p/the-ultimate-cyber-showdown-gla-university-1437657",
-      "_blank"
-    );
+    toast.info("IntrusionX has officially concluded. See you soon at our next event!", {
+      position: "bottom-left",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      icon: false,
+      theme: "dark",
+      className: `
+        text-md
+        justify-center
+        font-clash
+        tracking-wider
+        bg-black
+        text-[#00ff00]
+        border-y
+        border-[#00ff88]
+        rounded-lg
+        px-4
+        py-2
+        flex
+        items-center
+        animate-fadeIn
+      `,
+    });
   }, []);
 
   const handleScroll = useCallback(() => {
@@ -283,7 +297,6 @@ const MainX = () => {
       setShowCards(true);
     }
   }, [showCards]);
-
 
   useEffect(() => {
     const timers = [
@@ -442,7 +455,6 @@ const MainX = () => {
             </div>
             <div className="flex flex-col gap-4 md:gap-6 w-full items-stretch">
               <TimelineCard className="w-full" />
-              <CountdownCard className="w-full" />
               <EventDetailsCard className="w-full" />
             </div>
             <div className="md:col-span-2 flex justify-center w-full">

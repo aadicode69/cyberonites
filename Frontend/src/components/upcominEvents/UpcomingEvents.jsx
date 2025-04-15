@@ -5,22 +5,10 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function UpcomingEvents() {
-  // const navigate = useNavigate();
   const handleRegisterClick = () => {
     window.open("/intrusion-x", "_blank");
   };
   const handleProblemStatementClick = () => {
-    // toast.info("Problem Statements will be out soon!", {
-    //   position: "bottom-right",
-    //   autoClose: 3000,
-    //   hideProgressBar: true,
-    //   closeOnClick: true,
-    //   pauseOnHover: false,
-    //   draggable: false,
-    //   theme: "dark",
-    //   className:
-    //     "text-md font-quicksand bg-transparent border-x border-cyan-500",
-    // });
     window.open("/prob-statement-x");
   };
 

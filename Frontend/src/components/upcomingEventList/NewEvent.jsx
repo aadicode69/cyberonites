@@ -43,10 +43,7 @@ const NewEvent = () => {
   }, []);
 
   return (
-    <div id="Upcoming">
-      {/* <h1 className="text-4xl font-bold font-clash mt-0 mb-5 text-center text-cyan-400">
-        Latest Events
-      </h1> */}
+    <div>
       <div className="container mx-auto p-6 flex flex-col items-center">
         <div className="max-w-7xl w-full p-6 rounded-xl shadow-lg font-cyberfont border-2 border-gray-700 hover:border-gray-400 transition-all duration-300 ease-in-out">
           <h1 className="text-3xl font-bold mb-8 text-center font-clash text-cyan-400">

@@ -33,7 +33,7 @@ const Home = () => {
         <Alumini heading="Our Alumni" />
         <Sponsor heading="Our Sponsors" />
       </div>
-      <UpcomingEvents id="Upcoming" />
+      {/* <UpcomingEvents id="Upcoming" /> */}
       <KnowUs />
       <DashCard_Event />
       {/* <NewEvent id="Upcoming"/> */}
@@ -41,7 +41,7 @@ const Home = () => {
       <TeamCard/>
       <ConnecttUs id="About" />
       <Footer />
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+      {/* {showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
     </div>
   );
 };
