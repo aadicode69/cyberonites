@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, Users } from "lucide-react";
 import TitleCard from "./TitleCard";
-import teamData from "../hallOf_fame/teamData.json";
+import teamData from "../hallOf_fame/teamData.js";
 import Footer from "../footer/Footer";
 
 const TeamGallery = () => {
@@ -11,36 +11,45 @@ const TeamGallery = () => {
   const [starPositions, setStarPositions] = useState([]);
 
   useEffect(() => {
-    const numStars = 100; // Increased number of stars
+    const numStars = 100;
     const stars = Array.from({ length: numStars }, () => ({
       left: `${Math.random() * 100}vw`,
       top: `${Math.random() * 100}vh`,
-      size: Math.random() * 2 + 1, // Random star size
-      duration: `${8 + Math.random() * 12}s`, // Slower animation
+      size: Math.random() * 2 + 1,
+      duration: `${8 + Math.random() * 12}s`,
       delay: `${Math.random() * 4}s`,
     }));
     setStarPositions(stars);
   }, []);
 
-  const leadership = teamData.filter(member =>
+  const mentors = teamData.filter((member) =>
+    ["Mentor", "Co-Mentor"].includes(member.role)
+  );
+
+  const leadership = teamData.filter((member) =>
     ["President", "Vice President", "General Secretary"].includes(member.role)
   );
 
-  const heads = teamData.filter(member =>
-    ["Technical Head", "Event Head", "Design Head", "Development Head"].includes(member.role)
+  const heads = teamData.filter((member) =>
+    [
+      "Technical Head",
+      "Event Head",
+      "Design Head",
+      "Development Head",
+      "Public Relations Head",
+      "Management Head",
+      "Corporate Relations Head",
+    ].includes(member.role)
   );
 
-  const devTeam = teamData.filter(member =>
-    member.role === "Development Team Member"
+  const devTeam = teamData.filter(
+    (member) => member.role === "Web Development Team Member"
   );
 
   return (
     <>
       <div className="relative min-h-screen font-clash bg-[#0a0a0a]">
-        {/* Improved background gradients */}
         <div className="fixed inset-0 bg-gradient-to-b from-blue-900/10 via-[#0a0a0a] to-purple-900/10"></div>
-
-        {/* Enhanced star animation */}
         {starPositions.map((star, index) => (
           <div
             key={index}
@@ -56,8 +65,6 @@ const TeamGallery = () => {
             }}
           ></div>
         ))}
-
-        {/* Main content container with max-width */}
         <div className="relative z-10 max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-28">
             <motion.h1
@@ -76,11 +83,36 @@ const TeamGallery = () => {
               transition={{ delay: 0.2 }}
               className="text-lg text-gray-300 max-w-3xl mx-auto mb-12"
             >
-              The minds behind Cyberonites, shaping the future of tech and cybersecurity.
+              The minds behind Cyberonites, shaping the future of tech and
+              cybersecurity.
             </motion.p>
           </div>
 
-          {/* Core Team Section (previously Leadership) */}
+          {/* Our Inspiration (Mentors) Section */}
+          <div className="mb-40 mt-24">
+            <h2 className="text-2xl sm:text-5xl font-bold text-center mb-28">
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
+                Our Inspiration
+              </span>
+            </h2>
+            <div className="relative">
+              <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+              <motion.div className="flex flex-wrap justify-center gap-x-16 gap-y-28">
+                {mentors.map((member, index) => (
+                  <motion.div
+                    key={member.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2 }}
+                  >
+                    <TitleCard {...member} tier="mentor" />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Core Team Section */}
           <div className="mb-40 mt-24">
             <h2 className="text-2xl sm:text-5xl font-bold text-center mb-28">
               <span className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
@@ -104,7 +136,7 @@ const TeamGallery = () => {
             </div>
           </div>
 
-          {/* Department Heads Section */}
+          {/* Heads Section */}
           <div className="mb-40">
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-28">
               {heads.map((member, index) => (
@@ -142,7 +174,7 @@ const TeamGallery = () => {
           </div>
         </div>
 
-        {/* Enhanced home button */}
+        {/* Home Button */}
         <button
           onClick={() => navigate("/")}
           aria-label="Home"
@@ -169,29 +201,28 @@ const TeamGallery = () => {
           </div>
         </button>
 
-
-        <style jsx>{`
-        @keyframes fall {
-          0% {
-            transform: translateY(-10vh) translateX(0);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
+        <style>{`
+          @keyframes fall {
+            0% {
+              transform: translateY(-10vh) translateX(0);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            90% {
+              opacity: 1;
             }
             100% {
               transform: translateY(110vh) translateX(20px);
               opacity: 0;
-              }
-              }
-              .animate-fall {
-                animation: fall linear infinite;
-                box-shadow: 0 0 4px rgba(255,255,255,0.8);
-                }
-                `}</style>
+            }
+          }
+          .animate-fall {
+            animation: fall linear infinite;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+          }
+        `}</style>
       </div>
       <Footer />
     </>

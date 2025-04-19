@@ -16,7 +16,6 @@ export default function TagLine({ classNameBox = "", classNameText = "" }) {
   // const joinUs = "formlink";
   const joinUs = (e) => {
     e.preventDefault();
-    // alert("We are not accepting any hiring forms at the moment. Please check back soon for updates!");
     toast("We are not accepting hiring applications at the moment. Please check back later for updates.", {
       position: "bottom-right",
       autoClose: 3000,
