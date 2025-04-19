@@ -16,6 +16,7 @@ import WhatsApp from "./components/hiringForm/WhatsApp";
 import Terminal from "./components/Terminal/Terminal";
 import MainX from "./components/IntrusionX/MainX";
 import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
+import IntrusionX from "./components/grand events/eventdetails/IntrusionX";
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
           <Route path="/404" element={<NotFound />} />
           <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
-          <Route path="/intrusion-x" element={<MainX/>} />
+          {/* <Route path="/intrusion-x" element={<MainX/>} /> */}
+          <Route path="/intrusion-x" element={<IntrusionX/>} />
           <Route path="/prob-statement-x" element={<Problem_S/>} />
           <Route path="/registrations" element={<Reg_Main/>} />
           <Route path="/our_team" element={<TeamGallery/>} />
