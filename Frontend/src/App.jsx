@@ -1,24 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GuestLecture from "./components/grand events/eventdetails/GuestLecture";
-import CTF from "./components/grand events/eventdetails/CTF";
-import Home from "./pages/Home";
-import SecurityPage from "./pages/SecurityPage";
-import NotFound from "./pages/NotFound";
-import "react-creative-cursor/dist/styles.css";
-import ContactUs from "./components/contact us/ContactUs";
-import EventDash from "./components/pastEvents/EventDash";
-import Reg_Main from "./components/Registration/Reg_Main";
+import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
 import TeamGallery from "./components/hallOf_fame/TeamGallery";
-import Hiring from "./components/hiringForm/Hiring";
-import HForm from "./components/hiringForm/HForm";
+import CTF from "./components/grand events/eventdetails/CTF";
+import EventDash from "./components/pastEvents/EventDash";
+import ContactUs from "./components/contact us/ContactUs";
+import Reg_Main from "./components/Registration/Reg_Main";
 import WhatsApp from "./components/hiringForm/WhatsApp";
 import Terminal from "./components/Terminal/Terminal";
+import Hiring from "./components/hiringForm/Hiring";
+import Loader from "./components/Homepage/Loader";
 import MainX from "./components/IntrusionX/MainX";
+import HForm from "./components/hiringForm/HForm";
+import SecurityPage from "./pages/SecurityPage";
+import "react-creative-cursor/dist/styles.css";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Homee from "./components/Homepage/Homee";
 import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
 import IntrusionX from "./components/grand events/eventdetails/IntrusionX";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <BrowserRouter>

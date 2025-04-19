@@ -28,6 +28,27 @@ const Item = ({ Links, title }) => {
           },
         }
       );
+    }else if (name === "Register") {
+      toast(
+        "No upcoming events. Please check back later.",
+        {
+          position: window.innerWidth < 768 ? "top-center" : "bottom-right",
+          autoClose: window.innerWidth < 768 ? 5000 : 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          style: {
+            background: "#0A0A0A",
+            color: "#00FFFF",
+            border: "1px solid #00FFFF",
+            fontFamily: "'Courier New', monospace",
+            textAlign: "center",
+          },
+        }
+      );
     } else if (link) {
       if (link.startsWith("http")) {
         window.open(link, "_blank", "noopener,noreferrer");
@@ -36,7 +57,6 @@ const Item = ({ Links, title }) => {
       }
     }
   };
-  
 
   return (
     <ul className="space-y-3">

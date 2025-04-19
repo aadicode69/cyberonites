@@ -11,8 +11,7 @@ const DashCard_Event = () => {
 
   return (
     <motion.div
-      className="flex justify-center items-center my-6 px-4 sm:my-10 relative transition-all duration-300 ease-in-out"
-      whileHover={{ scale: 1.05 }}
+      className="flex justify-center items-center my-6 sm:my-10 relative transition-all duration-300 ease-in-out"
     >
       <div className="relative w-full max-w-[800px]">
         <SpotlightCard
