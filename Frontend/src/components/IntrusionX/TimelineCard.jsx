@@ -6,10 +6,10 @@ const TimelineCard = ({ className }) => {
   useEffect(() => {
     const fetchTimeline = async () => {
       const data = [
-        { day: "Day 1", time: "20/03/2025", event: "Registrations Open" },
-        { day: "Day 2", time: "24/03/2025", event: "Problem Statements Out" },
-        { day: "Day 3", time: "05/04/2025", event: "Idea Pitch (Online)" },
-        { day: "Day 4", time: "11/04/2025", event: "Final Hackathon" }
+        { day: "Round 1", time: "20/03/2025", event: "Registrations Open" },
+        { day: "Round 2", time: "24/03/2025", event: "Problem Statements Out" },
+        { day: "Round 3", time: "05/04/2025", event: "Idea Pitch (Online)" },
+        { day: "Round 4", time: "11/04/2025", event: "Final Hackathon" }
       ];
       setTimeline(data);
     };
