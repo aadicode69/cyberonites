@@ -18,6 +18,7 @@ import "react-creative-cursor/dist/styles.css";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Homee from "./components/Homepage/Homee";
+import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,23 +34,28 @@ function App() {
     return <Loader />;
   }
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/security" element={<SecurityPage />} />
-        <Route path="/guestlecture" element={<GuestLecture />} />
-        <Route path="/capturetheflag" element={<CTF />} />
-        <Route path="/event_dashboard" element={<EventDash />} />
-        <Route path="/intrusion-x" element={<MainX />} />
-        <Route path="/prob-statement-x" element={<Problem_S />} />
-        <Route path="/our-team" element={<TeamGallery />} />
-
-        {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
-        {/* <Route path="/recruitment" element={<Hiring/>} /> */}
-        {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/security" element={<SecurityPage />} />
+          <Route path="/guestlecture" element={<GuestLecture />} />
+          <Route path="/capturetheflag" element={<CTF />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="/event_dashboard" element={<EventDash/>} />
+          <Route path="*" element={<Error />} />
+          {/* <Route path="/intrusion-x" element={<MainX/>} /> */}
+          <Route path="/intrusion-x" element={<IntrusionX/>} />
+          <Route path="/prob-statement-x" element={<Problem_S/>} />
+          <Route path="/registrations" element={<Reg_Main/>} />
+          <Route path="/our_team" element={<TeamGallery/>} />
+          {/* <Route path="/playground" element={<Terminal/>} /> */}
+          {/* <Route path="/contactus" element={<ContactUs />} /> */}
+          {/* <Route path="/recruitment" element={<Hiring/>} /> */}
+          {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
