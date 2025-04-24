@@ -18,8 +18,7 @@ import "react-creative-cursor/dist/styles.css";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Homee from "./components/Homepage/Homee";
-import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
-import IntrusionX from "./components/grand events/eventdetails/IntrusionX";
+import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 
 function App() {
   const [loading, setLoading] = useState(true);

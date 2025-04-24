@@ -7,13 +7,12 @@ export default {
         cyber1: "#7fe7f1",
       },
       fontFamily: {
-        cyberfont: ["Ubuntu"] ,
-        clash:["Clash Display"],
+        cyberfont: ["Ubuntu"],
+        clash: ["Clash Display"],
         rubik: ["Rubik Glitch"],
         panchang: ["Panchang"],
         ranade: ["Ranade"],
         quicksand: ["Quicksand"],
-
       },
       animation: {
         "border-pulse": "border-pulse 3s infinite",
