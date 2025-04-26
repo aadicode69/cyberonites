@@ -89,5 +89,5 @@ export const sponsorLogos = {
   cyberyaan: "/src/img/intrusionX/web-logo.png",
   alteredSecurity: "/src/img/sponsor-logo/altered-security.png",
   unstop: "/src/img/intrusionX/unstop-logo.png",
-  xyz: "" // Placeholder for future .xyz logo
+  xyz: "/src/img/intrusionX/xyz-logo.png"
 };

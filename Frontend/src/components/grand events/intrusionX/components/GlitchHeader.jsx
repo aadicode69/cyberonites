@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaArrowLeft, FaMapMarkerAlt, FaUsers, FaTrophy, FaCalendarAlt } from 'react-icons/fa';
-import '../glitch-effect.css';
+import '../styles/glitch-effect.css';
 
 const GlitchHeader = ({ onReturnClick, backgroundImage }) => {
   return (

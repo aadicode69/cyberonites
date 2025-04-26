@@ -95,26 +95,6 @@ export const winners = [
 // Judges/Guests data
 export const guests = [
   {
-    name: "Mr. Pankaj Yadav",
-    role: "Founder of Cyberyaan",
-    expertise: "Cybersecurity Expert & Entrepreneur"
-  },
-  {
-    name: "Mr. Mohsin Quresh",
-    role: "Subject Matter Expert at Hack The Box & IBM Trainer",
-    expertise: "Penetration Testing & Security Research"
-  },
-  {
-    name: "Mr. Deepak Yadav",
-    role: "Cyber Security Expert & Evangelist",
-    expertise: "Network Security & Threat Analysis"
-  },
-  {
-    name: "Ms. Ritaj Sharma",
-    role: "Security Consultant at Deloitte",
-    expertise: "Security Assessment & Consulting"
-  },
-  {
     name: "Mr. Aman Singh Chauhan",
     role: "Graduate Engineer Trainee at HCL",
     expertise: "Web Application Security"
@@ -125,7 +105,22 @@ export const guests = [
     expertise: "Vulnerability Research & Bug Bounty"
   },
   {
-    name: "Ms. Kashish Kanojia",
+    name: "Mr. Ritaj Sharma",
+    role: "Security Consultant at Deloitte",
+    expertise: "Security Assessment & Consulting"
+  },
+  {
+    name: "Mr. Deepak Yadav",
+    role: "Cyber Security Expert & Evangelist",
+    expertise: "Network Security & Threat Analysis"
+  },
+  {
+    name: "Mr. Pankaj Yadav",
+    role: "Founder of Cyberyaan",
+    expertise: "Cybersecurity Expert & Entrepreneur"
+  },
+  {
+    name: "Mr. Kashish Kanojia",
     role: "Founder & CEO of IDevSec",
     expertise: "Application Security & Secure Coding"
   },
@@ -133,7 +128,12 @@ export const guests = [
     name: "Mr. Deepak Kumar",
     role: "Co-Founder of IDevSec & OWASP Noida Lead",
     expertise: "OWASP Top 10 & Web Security"
-  }
+  },
+  {
+    name: "Mr. Mohsin Quresh",
+    role: "Subject Matter Expert at Hack The Box & IBM Trainer",
+    expertise: "Penetration Testing & Security Research"
+  },
 ];
 
 // Participating institutions
