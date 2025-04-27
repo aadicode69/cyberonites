@@ -6,7 +6,7 @@
 // Main event banner and overview images
 import eventBannerImgFile from "/src/img/intrusionX/D1.webp";
 import judgesImgFile from "/src/img/intrusionX/Judges.webp";
-import teamsImgFile from "/src/img/intrusionX/teams.webp";
+import teamsImgFile from "/src/img/intrusionX/Teams.webp";
 import winnersImgFile from "/src/img/intrusionX/Winners.webp";
 
 // Featured speakers and special moments
