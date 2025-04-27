@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaTerminal, FaHandshake, FaUsers, FaUserTie, FaClipboardCheck, FaTrophy, FaCamera } from 'react-icons/fa';
+/* eslint-disable react/prop-types */
+import { FaTerminal, FaHandshake, FaUsers, FaUserTie, FaClipboardCheck, FaTrophy, FaCamera, FaShieldAlt } from 'react-icons/fa';
 import { navigationSections } from '../data/eventData';
 
 const SectionNavigation = ({ activeTab, onTabChange, isScrolled }) => {
@@ -12,7 +12,8 @@ const SectionNavigation = ({ activeTab, onTabChange, isScrolled }) => {
       FaUserTie: <FaUserTie />,
       FaClipboardCheck: <FaClipboardCheck />,
       FaTrophy: <FaTrophy />,
-      FaCamera: <FaCamera />
+      FaCamera: <FaCamera />,
+      FaShieldAlt: <FaShieldAlt />
     };
     return iconMap[iconName] || null;
   };

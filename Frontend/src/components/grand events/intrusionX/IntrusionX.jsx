@@ -1,11 +1,12 @@
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   FaTrophy, FaUsers, FaHandshake, FaCamera,
-  FaClipboardCheck, FaUserTie, FaTerminal, FaUserFriends, FaArrowLeft, FaMapMarkerAlt
+  FaClipboardCheck, FaUserTie, FaTerminal, FaUserFriends,
+  FaShieldAlt, FaExclamationTriangle
 } from "react-icons/fa";
 import Footer from "../../footer/Footer";
-import './styles/animations.css'; // Import our custom animations
+import './styles/animations.css';
 
 // Components
 import GlitchHeader from "./components/GlitchHeader";
@@ -14,22 +15,21 @@ import SectionNavigation from "./components/SectionNavigation";
 import TerminalSection from "./components/TerminalSection";
 import WinnerCard from "./components/WinnerCard";
 import SponsorsSection from "./sections/SponsorsSection";
+import GalleryCarousel from './sections/GalleryCarousel';
+import MentorShowcase from './components/MentorShowcase';
+import FacultyCoordinator from "./components/FacultyCoordinator"; // Import the new component
 
 // Custom hooks
 import useScrollPosition from "./hooks/useScrollPosition";
 
 // Data - Import ALL images from IntrusionXImages
-import {
-  eventBannerImg, judgesImg, teamsImg, winnersImg, judgesPanelImg,
-  cyberYaanCEOImg, additionalEvalImg, teamWithAlumniImages,
-  winnerImg1, winnerImg2, winnerImg3, winnerImg4,
-  runnerUpImg1, runnerUpImg2, secondRunnerUpImg1, secondRunnerUpImg2,
-  teamImages, evaluationImages, judgeDetailImages, guestDetailImages, sponsorLogos
-} from "./data/IntrusionXImages";
+import { eventBannerImg, judgesPanelImg, teamWithAlumniImages, teamImages, evaluationImages, judgeDetailImages } from "./data/IntrusionXImages";
 
 import {
-  winners, navigationSections, challengeCategories, eventTimeline, eventLeaders,
-  highlights, participatingInstitutions, judgingCriteria, evaluationSteps, guests
+  winners, challengeCategoriesList, eventTimeline, eventLeaders,
+  highlights, participatingInstitutions, judgingCriteria, evaluationSteps, guests,
+  problemStatementContributors, sponsorContributions, testimonials, challengeProblems,
+  mentors
 } from "./data/eventData";
 
 // Existing components
@@ -43,10 +43,6 @@ const IntrusionX = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const isScrolled = useScrollPosition(400);
   const [loaded, setLoaded] = useState(false);
-  const sectionRefs = useRef([]);
-
-  // Use imported team images instead of hardcoded paths
-  const teamImagePaths = teamImages;
 
   // Use imported judge images
   const judgeImages = judgeDetailImages;
@@ -56,18 +52,6 @@ const IntrusionX = () => {
     imageUrl,
     altText: ""
   }));
-
-  const participatingTeamImages = teamImages.map((imageUrl, index) => ({
-    id: 4000 + index,
-    imageUrl,
-    altText: ""
-  }));
-
-  const evaluationProcessImages = evaluationImages ? evaluationImages.slice(0, 4).map((imageUrl, index) => ({
-    id: 5000 + index,
-    imageUrl,
-    altText: ""
-  })) : [];
 
   const scrollToSection = useCallback((sectionId) => {
     setActiveTab(sectionId);
@@ -116,6 +100,25 @@ const IntrusionX = () => {
     };
   }, []);
 
+  // Add a new state to track active challenge category
+  const [activeChallengeCategory, setActiveChallengeCategory] = useState("all");
+
+  // Group challenges by category - renamed from challengeCategories to challengeFilters
+  const challengeFilters = {
+    all: challengeProblems,
+    iiot: challengeProblems.filter(p => p.id <= 3),
+    ai: challengeProblems.filter(p => p.id >= 4 && p.id <= 6),
+    insider: challengeProblems.filter(p => p.id === 7),
+    cloud: challengeProblems.filter(p => [8, 16].includes(p.id)),
+    blockchain: challengeProblems.filter(p => [9, 18, 19].includes(p.id)),
+    malware: challengeProblems.filter(p => [10, 11, 12, 17].includes(p.id)),
+    mobile: challengeProblems.filter(p => [13, 14].includes(p.id)),
+    deepfake: challengeProblems.filter(p => p.id === 15)
+  };
+
+  // Filter challenges based on selected category - using the renamed variable
+  const filteredChallenges = challengeFilters[activeChallengeCategory];
+
   return (
     <div className="bg-[#050510] min-h-screen text-gray-300">
       {/* Cyberpunk grid background with animation - changed from green to blue */}
@@ -156,34 +159,38 @@ const IntrusionX = () => {
           <TerminalSection id="overview" title="Mission Briefing" icon={<FaTerminal />}>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2 font-mono">
-                <p className="mb-4 leading-relaxed text-cyan-100">
-                  IntrusionX was successfully inaugurated in collaboration with the Office of Students' Welfare, GLA University. The hackathon brought together cybersecurity enthusiasts from various prestigious institutions to compete in challenging security puzzles, network intrusion scenarios, and forensic challenges.
-                </p>
+                {/* Updated with objective information */}
+                <div className="mb-6 border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
+                  <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">OBJECTIVE</h4>
+                  <p className="mb-3 leading-relaxed text-cyan-100 text-sm">
+                    The primary objective of IntrusionX was to organize a high-impact national-level
+                    cybersecurity hackathon that would serve as a platform for budding cybersecurity
+                    enthusiasts to test and showcase their skills in a competitive environment. The
+                    hackathon aimed to simulate real-world cybersecurity scenarios, encouraging
+                    participants to think critically, collaborate effectively, and apply theoretical knowledge
+                    to practical challenges.
+                  </p>
+                  <p className="leading-relaxed text-cyan-100 text-sm">
+                    By bringing together teams from reputed institutions across the country alongside our
+                    own university&apos;s talent, the event fostered innovation, teamwork, and knowledge
+                    exchange. Through this hackathon, we sought to build a thriving community of
+                    security professionals, promote awareness about ethical hacking and digital defense,
+                    and place GLA University on the national map as a leading institution for
+                    cybersecurity initiatives.
+                  </p>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-                  <div className="border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
-                    <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">EVENT LEADERS</h4>
-                    <ul className="space-y-1 text-sm">
-                      {eventLeaders.map((leader, idx) => (
-                        <li key={idx}>{leader}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
-                    <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">CHALLENGE CATEGORIES</h4>
-                    <ul className="space-y-1 text-sm">
-                      {challengeCategories.map((category, idx) => (
-                        <li key={idx} className="flex items-center">
-                          <span className={`w-1.5 h-1.5 bg-${category.color}-500 mr-2 rounded-full`}></span>
-                          {category.name}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {/* Inauguration information */}
+                <div className="mb-6 border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
+                  <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">INAUGURATION CEREMONY</h4>
+                  <p className="leading-relaxed text-cyan-100 text-sm">
+                    The IntrusionX Hackathon was officially inaugurated with great enthusiasm and
+                    energy, setting the tone for two days of intense innovation and competition. The
+                    ceremony was graced by esteemed faculty members and attended by participants from
+                    prestigious institutions across India.
+                  </p>
                 </div>
               </div>
-
               <div className="border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
                 <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">EVENT HIGHLIGHTS</h4>
                 <ul className="space-y-2">
@@ -209,12 +216,197 @@ const IntrusionX = () => {
                 </div>
               </div>
             </div>
+            {/* Replace the Faculty Coordinator div with our new component */}
+            <FacultyCoordinator
+              name="Dr. Asheesh Tiwari"
+              department="Department of Computer Engineering & Applications"
+            />
+
+            {/* Add Mentors Showcase */}
+            <MentorShowcase mentors={mentors} />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+              <div className="border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
+                <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">EVENT LEADERS</h4>
+                <ul className="space-y-1 text-sm">
+                  {eventLeaders.map((leader, idx) => (
+                    <li key={idx}>{leader}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border border-cyan-900/60 bg-black/30 p-4 rounded-sm">
+                <h4 className="text-cyan-400 font-mono mb-3 border-b border-cyan-900/50 pb-2">CHALLENGE CATEGORIES</h4>
+                <ul className="space-y-1 text-sm">
+                  {challengeCategoriesList.map((category, idx) => (
+                    <li key={idx} className="flex items-center">
+                      <span
+                        className="w-1.5 h-1.5 mr-2 rounded-full"
+                        style={{ backgroundColor: `var(--color-${category.color}-500, #3B82F6)` }}
+                      ></span>
+                      {category.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Add Problem Statement Contributors */}
+            <div className="mt-8 border border-cyan-900 bg-black/20 p-4 rounded-sm">
+              <h3 className="text-xl font-mono text-cyan-400 mb-4 text-center">PROBLEM STATEMENT CONTRIBUTORS</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {problemStatementContributors.map((contributor, idx) => (
+                  <div key={idx} className="bg-black/40 border border-cyan-900/50 p-3 rounded-sm">
+                    <h4 className="text-cyan-300 font-mono text-sm">{contributor.name}</h4>
+                    <p className="text-gray-400 text-xs mt-1">{contributor.role}</p>
+                    <div className="flex justify-between mt-2 text-xs">
+                      <span className="text-cyan-400">{contributor.experience} experience</span>
+                      <span className="text-cyan-200">{contributor.count}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Add participant testimonials */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {testimonials.map((testimonial, idx) => (
+                <div key={idx} className="bg-black/40 border border-cyan-900/50 p-4 rounded-sm">
+                  <p className="text-cyan-100 italic">&quot;{testimonial.quote}&quot;</p>
+                  <p className="text-right text-cyan-400 text-sm mt-2">— {testimonial.author}</p>
+                </div>
+              ))}
+            </div>
+          </TerminalSection>
+        </div>
+
+        {/* New Challenges section - updated to show all problems */}
+        <div className="reveal">
+          <TerminalSection id="challenges" title="Cybersecurity Challenges" icon={<FaShieldAlt />}>
+            <div className="mb-6 border border-red-900/60 bg-black/30 p-4 rounded-sm">
+              <h4 className="text-red-400 font-mono mb-3 border-b border-red-900/50 pb-2">
+                <FaExclamationTriangle className="inline mr-2" /> PROBLEM STATEMENTS
+              </h4>
+              <p className="mb-3 leading-relaxed text-red-100 text-sm">
+                The IntrusionX Hackathon presented participants with cutting-edge cybersecurity challenges designed to test their skills in identifying vulnerabilities, implementing secure solutions, and defending against emerging cyber threats. Teams were tasked with solving real-world problems affecting modern digital infrastructure.
+              </p>
+            </div>
+
+            {/* Challenge category tabs - updated to use challengeFilters */}
+            <div className="flex flex-wrap gap-2 mb-6 overflow-x-auto pb-2">
+              {Object.keys(challengeFilters).map(category => (
+                <button
+                  key={category}
+                  onClick={() => setActiveChallengeCategory(category)}
+                  className={`text-xs px-3 py-2 rounded-sm border ${activeChallengeCategory === category
+                    ? 'bg-red-900/40 text-red-300 border-red-700'
+                    : 'bg-transparent border-red-900/30 text-gray-400 hover:text-red-400'
+                    }`}
+                >
+                  {category.toUpperCase()}
+                  {category !== 'all' && (
+                    <span className="ml-1 text-xs bg-red-900/30 px-1.5 rounded-full">
+                      {challengeFilters[category].length}
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {filteredChallenges.map((problem) => (
+                <div key={problem.id} className="border border-red-900/40 bg-black/20 p-4 rounded-sm hover:bg-red-900/5 transition-colors">
+                  <h3 className="text-red-300 font-mono text-sm mb-2 flex items-start">
+                    <span className="bg-red-900/30 text-red-400 px-2 py-1 rounded-sm mr-3 font-bold">{problem.id}</span>
+                    <span className="text-red-200">{problem.title}</span>
+                  </h3>
+                  <p className="text-xs text-gray-300 mb-3 ml-10">{problem.description}</p>
+                  <div className="ml-10">
+                    <h4 className="text-xs font-mono text-red-400 mb-2">KEY CHALLENGES:</h4>
+                    <ul className="list-disc pl-5 text-xs space-y-1">
+                      {problem.challenges.map((challenge, idx) => (
+                        <li key={idx} className="text-gray-300">{challenge}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-6">
+              <div className="bg-red-900/20 p-3 border border-red-900/30 rounded-sm inline-block">
+                <p className="text-sm text-red-300 font-mono text-center">
+                  {challengeProblems.length} problem statements were provided, covering various domains of cybersecurity
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+              <div className="bg-black/40 border border-red-900/40 p-4 rounded-sm">
+                <h4 className="text-red-400 font-mono text-center mb-2">IIOT SECURITY</h4>
+                <p className="text-sm text-center">Industrial IoT attack vectors and defense mechanisms</p>
+              </div>
+              <div className="bg-black/40 border border-red-900/40 p-4 rounded-sm">
+                <h4 className="text-red-400 font-mono text-center mb-2">AI SECURITY</h4>
+                <p className="text-sm text-center">Adversarial attacks and model protection techniques</p>
+              </div>
+              <div className="bg-black/40 border border-red-900/40 p-4 rounded-sm">
+                <h4 className="text-red-400 font-mono text-center mb-2">BLOCKCHAIN</h4>
+                <p className="text-sm text-center">Secure distributed systems and financial security</p>
+              </div>
+            </div>
           </TerminalSection>
         </div>
 
         <div className="reveal">
-          <TerminalSection id="sponsors" title="Sponsors" icon={<FaHandshake />}>
-            <SponsorsSection />
+          <TerminalSection id="winners" title="Winners" icon={<FaTrophy />}>
+            <h3 className="text-green-400 font-mono text-xl mb-6 text-center">CHAMPIONS OF INTRUSIONX</h3>
+
+            {/* First Prize */}
+            <WinnerCard winner={winners[0]} isFirst={true} />
+
+            {/* Second and Third Prize */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <WinnerCard winner={winners[1]} />
+              <WinnerCard winner={winners[2]} />
+            </div>
+
+            {/* All winners celebration section */}
+            <div className="mt-8 border border-cyan-900/40 rounded-sm bg-black/20 p-4">
+              <h4 className="text-center text-cyan-400 font-mono mb-4">LEADERBOARD</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-cyan-900/30">
+                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Rank</th>
+                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Team</th>
+                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Institution</th>
+                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Prize</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-cyan-900/20 bg-green-900/10">
+                      <td className="py-2 px-4 font-mono text-green-400">1</td>
+                      <td className="py-2 px-4">Team Captcha_Unrecognised</td>
+                      <td className="py-2 px-4">MRIIS, Faridabad</td>
+                      <td className="py-2 px-4">₹15,000 + ₹5,000 & CEH Voucher</td>
+                    </tr>
+                    <tr className="border-b border-cyan-900/20 bg-gray-800/10">
+                      <td className="py-2 px-4 font-mono text-gray-400">2</td>
+                      <td className="py-2 px-4">Team Deathly Hallows</td>
+                      <td className="py-2 px-4">GLA University (1st Year)</td>
+                      <td className="py-2 px-4">₹10,000 + 3 CRTP Certificates</td>
+                    </tr>
+                    <tr className="bg-orange-900/10">
+                      <td className="py-2 px-4 font-mono text-orange-400">3</td>
+                      <td className="py-2 px-4">Team Cyber Sentinels</td>
+                      <td className="py-2 px-4">GLA University</td>
+                      <td className="py-2 px-4">₹5,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </TerminalSection>
         </div>
 
@@ -329,18 +521,9 @@ const IntrusionX = () => {
 
         <div className="reveal">
           <TerminalSection id="evaluation" title="Evaluation Process" icon={<FaClipboardCheck />}>
-            <EvaluationCarousel />
+            <EvaluationCarousel images={evaluationImages} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <IntrusionCards
-                  list={evaluationProcessImages}
-                  variant="primary"
-                  rounded="rounded-sm"
-                  shadow="shadow-none"
-                />
-              </div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div className="border border-cyan-900 bg-black/20 p-4 rounded-sm">
                 <h3 className="text-xl font-mono text-cyan-400 mb-4">JUDGING CRITERIA</h3>
                 <ul className="space-y-2">
@@ -352,19 +535,48 @@ const IntrusionX = () => {
                   ))}
                 </ul>
               </div>
-            </div>
 
-            <div className="mt-8 border border-cyan-900 bg-black/20 p-4 rounded-sm">
-              <h3 className="text-center text-xl font-mono text-cyan-400 mb-4">EVALUATION TIMELINE</h3>
-              <div className="space-y-4">
-                {evaluationSteps.map((step, idx) => (
-                  <div key={idx} className="flex items-start">
-                    <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-sm border border-cyan-700 bg-cyan-900/20 text-cyan-400">
-                      <span className="font-mono">{step.step}</span>
+              <div className="border border-cyan-900 bg-black/20 p-4 rounded-sm">
+                <h3 className="text-center text-xl font-mono text-cyan-400 mb-4">EVALUATION TIMELINE</h3>
+                <div className="space-y-4">
+                  {evaluationSteps.map((step, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-sm border border-cyan-700 bg-cyan-900/20 text-cyan-400">
+                        <span className="font-mono">{step.step}</span>
+                      </div>
+                      <div className="ml-4">
+                        <h4 className="text-cyan-300 font-mono">{step.title}</h4>
+                        <p className="text-gray-400 text-sm">{step.description}</p>
+                      </div>
                     </div>
-                    <div className="ml-4">
-                      <h4 className="text-cyan-300 font-mono">{step.title}</h4>
-                      <p className="text-gray-400 text-sm">{step.description}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </TerminalSection>
+        </div>
+
+        <div className="reveal">
+          <TerminalSection id="sponsors" title="Sponsors" icon={<FaHandshake />}>
+            <SponsorsSection />
+
+            {/* Add sponsor contributions */}
+            <div className="mt-8 border border-green-900 bg-black/20 p-4 rounded-sm">
+              <h3 className="text-xl font-mono text-green-400 mb-4 text-center">SPONSOR CONTRIBUTIONS</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {sponsorContributions.map((sponsor, idx) => (
+                  <div key={idx} className="bg-black/40 border border-green-900/50 p-4 rounded-sm">
+                    <h4 className="text-green-300 font-mono text-lg border-b border-green-900/30 pb-2 mb-3">{sponsor.name}</h4>
+                    <ul className="space-y-1 text-sm mb-3">
+                      {sponsor.contributions.map((contribution, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="w-1.5 h-1.5 bg-green-500 mr-2 rounded-full mt-2"></span>
+                          <span>{contribution}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="text-right font-mono text-green-400">
+                      Total Value: {sponsor.totalValue}
                     </div>
                   </div>
                 ))}
@@ -374,69 +586,16 @@ const IntrusionX = () => {
         </div>
 
         <div className="reveal">
-          <TerminalSection id="winners" title="Winners" icon={<FaTrophy />}>
-            <h3 className="text-green-400 font-mono text-xl mb-6 text-center">CHAMPIONS OF INTRUSIONX</h3>
-
-            {/* First Prize */}
-            <WinnerCard winner={winners[0]} isFirst={true} />
-
-            {/* Second and Third Prize */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <WinnerCard winner={winners[1]} />
-              <WinnerCard winner={winners[2]} />
-            </div>
-
-            {/* All winners celebration section */}
-            <div className="mt-8 border border-cyan-900/40 rounded-sm bg-black/20 p-4">
-              <h4 className="text-center text-cyan-400 font-mono mb-4">LEADERBOARD</h4>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-cyan-900/30">
-                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Rank</th>
-                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Team</th>
-                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Institution</th>
-                      <th className="py-2 px-4 text-left font-mono text-cyan-300">Prize</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-cyan-900/20 bg-green-900/10">
-                      <td className="py-2 px-4 font-mono text-green-400">1</td>
-                      <td className="py-2 px-4">Team Captcha_Unrecognised</td>
-                      <td className="py-2 px-4">MRIIS, Faridabad</td>
-                      <td className="py-2 px-4">₹15,000 + ₹5,000 & CEH Voucher</td>
-                    </tr>
-                    <tr className="border-b border-cyan-900/20 bg-gray-800/10">
-                      <td className="py-2 px-4 font-mono text-gray-400">2</td>
-                      <td className="py-2 px-4">Team Deathly Hallows</td>
-                      <td className="py-2 px-4">GLA University (1st Year)</td>
-                      <td className="py-2 px-4">₹10,000 + 3 CRTP Certificates</td>
-                    </tr>
-                    <tr className="bg-orange-900/10">
-                      <td className="py-2 px-4 font-mono text-orange-400">3</td>
-                      <td className="py-2 px-4">Team Cyber Sentinels</td>
-                      <td className="py-2 px-4">GLA University</td>
-                      <td className="py-2 px-4">₹5,000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </TerminalSection>
-        </div>
-
-        <div className="reveal">
           <TerminalSection id="gallery" title="Gallery" icon={<FaCamera />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {participatingTeamImages.slice(0, 9).map((item) => (
-                <div key={item.id} className="border border-magenta-900 bg-black/30 p-1 rounded-sm overflow-hidden">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.altText}
-                    className="w-full h-auto rounded-sm"
-                  />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-2">
+                <GalleryCarousel images={teamImages} />
+                <div className="mt-4 bg-black/30 border border-magenta-900/50 p-3 rounded-sm">
+                  <p className="text-sm text-center text-magenta-200/80">
+                    Capturing memorable moments from IntrusionX - from intense hacking sessions to team collaborations and celebrations
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
           </TerminalSection>
         </div>

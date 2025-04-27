@@ -1,4 +1,3 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -6,16 +5,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './../styles/swiper-custom.css'; // Kept only one import path
 
+import { evaluationImages } from '../data/IntrusionXImages';
+import { captions } from '../data/eventData';
+
 const EvaluationCarousel = () => {
-  const evaluationImages = [
-    "/src/img/intrusionX/DSC_7354.JPG",
-    "/src/img/intrusionX/DSC_7331.JPG",
-    "/src/img/intrusionX/DSC_7319.JPG",
-    "/src/img/intrusionX/DSC_7305.JPG",
-    "/src/img/intrusionX/DSC_7300.JPG",
-    "/src/img/intrusionX/DSC_7292.JPG",
-    "/src/img/intrusionX/DSC_7264.JPG"
-  ];
 
   return (
     <div className="border-2 border-cyan-800 rounded-sm overflow-hidden bg-black/40 mb-6">
@@ -49,7 +42,7 @@ const EvaluationCarousel = () => {
                 alt=""
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent py-3 px-4">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent py-6 px-4">
                 <p className="text-cyan-300 font-mono text-sm">
                   {getImageCaption(index)}
                 </p>
@@ -60,7 +53,7 @@ const EvaluationCarousel = () => {
       </Swiper>
       <div className="p-4 border-t border-cyan-800/50 bg-black/60">
         <p className="text-sm text-cyan-100">
-          Our expert panel of judges evaluated each team's approach to solving complex cybersecurity challenges, 
+          Our expert panel of judges evaluated each team&apos;s approach to solving complex cybersecurity challenges, 
           assessing technical skills, innovation, and presentation quality during the final evaluation rounds.
         </p>
       </div>
@@ -70,15 +63,6 @@ const EvaluationCarousel = () => {
 
 // Helper function to get captions for each image
 function getImageCaption(index) {
-  const captions = [
-    "Judges assessing team presentations and technical implementations",
-    "Team explaining their approach to vulnerability exploitation",
-    "Evaluation of defensive security measures implemented by participants",
-    "Technical review of network penetration methodologies",
-    "Judges analyzing solution effectiveness and innovation",
-    "In-depth questioning of participants about their approach",
-    "Final deliberation on technical merit and implementation"
-  ];
   return captions[index] || "Evaluation process";
 }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaUsers, FaUniversity, FaGraduationCap, FaTrophy } from 'react-icons/fa';
 import { statistics } from '../data/eventData';
 
