@@ -100,6 +100,10 @@
   animation: flicker 3s linear infinite;
 }
 
+.animate-scanline {
+  animation: scanline 3s linear infinite;
+}
+
 /* Animation delays */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }

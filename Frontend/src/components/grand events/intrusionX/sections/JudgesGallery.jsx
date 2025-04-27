@@ -1,15 +1,15 @@
-import React from 'react';
-import { FaUserTie, FaAward, FaCertificate } from 'react-icons/fa';
+/* eslint-disable react/prop-types */
+import { FaUserTie, FaAward } from 'react-icons/fa';
 
 const JudgesGallery = ({ judges, judgeImages }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-      {judges.slice(0, 7).map((judge, idx) => (
+      {judges.map((judge, idx) => (
         <div key={idx} className="bg-black/30 border border-yellow-800 rounded-sm overflow-hidden group hover:border-yellow-600 transition-all">
           {/* Image with overlay */}
           <div className="relative aspect-[3/4] overflow-hidden">
             <img 
-              src={judgeImages[idx % judgeImages.length]} 
+              src={judgeImages[idx]} 
               alt=""
               className="w-full h-full object-cover transition-transform group-hover:scale-105"
             />

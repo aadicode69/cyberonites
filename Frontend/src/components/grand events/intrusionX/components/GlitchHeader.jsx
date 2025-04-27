@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaArrowLeft, FaMapMarkerAlt, FaUsers, FaTrophy, FaCalendarAlt } from 'react-icons/fa';
-import '../glitch-effect.css';
+/* eslint-disable react/prop-types */
+import { FaArrowLeft } from 'react-icons/fa';
+import '../styles/glitch-effect.css';
 
 const GlitchHeader = ({ onReturnClick, backgroundImage }) => {
   return (
@@ -24,32 +24,16 @@ const GlitchHeader = ({ onReturnClick, backgroundImage }) => {
         <div className="scanner"></div>
         
         {/* Main glitch effect - ensure data-text attribute is correctly set */}
-        <h1 className="glitch-title glitch-text glitch-layers" data-text="IntrusionX">
-          <span>IntrusionX</span>
+        <h1 className="glitch-title glitch-text glitch-layers" data-text="INTRUSION">
+          <span>INTRUSION</span>
+        </h1>
+        <h1 className="glitch-title glitch-text glitch-layers text-[8em]" data-text="X">
+          <span>X</span>
         </h1>
         
         <p className="glitch-subtitle">
-          A PREMIER CYBERSECURITY HACKATHON // APRIL 15-16, 2023
+          \\ A PREMIER CYBERSECURITY HACKATHON // <br/> \\ APRIL 10-11, 2025 //
         </p>
-        
-        <div className="glitch-event-details">
-          <div className="glitch-detail-item">
-            <FaMapMarkerAlt className="text-pink-500 glitch-detail-icon" />
-            <span>GLA University, Mathura</span>
-          </div>
-          <div className="glitch-detail-item">
-            <FaUsers className="text-yellow-500 glitch-detail-icon" />
-            <span>25 Teams</span>
-          </div>
-          <div className="glitch-detail-item">
-            <FaTrophy className="text-green-500 glitch-detail-icon" />
-            <span>₹3,00,000 Prize Pool</span>
-          </div>
-          <div className="glitch-detail-item">
-            <FaCalendarAlt className="text-blue-500 glitch-detail-icon" />
-            <span>36-Hour Non-Stop Challenge</span>
-          </div>
-        </div>
         
         {/* Terminal command effect */}
         <div className="mt-8 text-left inline-block bg-black/50 px-4 py-2 rounded-sm font-mono text-xs md:text-sm">
