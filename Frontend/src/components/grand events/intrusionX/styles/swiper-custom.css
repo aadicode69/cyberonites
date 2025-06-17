@@ -1,0 +1,348 @@
+/* Enhanced professional carousel styling with performance optimizations */
+
+/* Smooth carousel container */
+.carousel-container {
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Swiper container styling */
+.event-swiper {
+  width: 100%;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+/* Refined slide styling */
+.event-swiper .swiper-slide-custom {
+  width: 350px;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* Card styling */
+.carousel-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  background-color: #1f2937;
+  transition: all 0.3s;
+}
+
+.carousel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced image handling */
+.carousel-image-container {
+  transform: translateZ(0); /* Hardware acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.carousel-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.carousel-card:hover .carousel-image {
+  transform: scale(1.05);
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  transition: all 0.3s;
+}
+
+.carousel-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Professional navigation buttons */
+.event-swiper .swiper-button-next,
+.event-swiper .swiper-button-prev {
+  color: #fff;
+  background-color: rgba(30, 41, 59, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.event-swiper .swiper-button-next:after,
+.event-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.event-swiper .swiper-button-next:hover,
+.event-swiper .swiper-button-prev:hover {
+  background-color: rgba(37, 99, 235, 0.9);
+}
+
+/* Premium pagination bullets */
+.event-swiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.event-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.event-swiper .swiper-pagination-bullet-active {
+  background: rgb(37, 99, 235);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Optimized performance for 3D/coverflow effects */
+.event-swiper .swiper-slide-shadow-left,
+.event-swiper .swiper-slide-shadow-right {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+}
+
+/* Winner carousel specific styles */
+.winner-swiper {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.winner-swiper .swiper-slide {
+  transition: opacity 300ms ease;
+  border-radius: 0;
+}
+
+.winner-swiper .swiper-button-next,
+.winner-swiper .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.winner-swiper .swiper-button-next:after,
+.winner-swiper .swiper-button-prev:after {
+  font-size: 16px;
+}
+
+.winner-swiper .swiper-pagination {
+  bottom: 5px;
+}
+
+.winner-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.5;
+}
+
+.winner-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #ffffff;
+}
+
+/* Green (1st place) variant */
+.winner-swiper.swiper-primary .swiper-button-next,
+.winner-swiper.swiper-primary .swiper-button-prev {
+  background-color: rgba(22, 163, 74, 0.3);
+}
+
+.winner-swiper.swiper-primary .swiper-pagination-bullet-active {
+  background: rgb(22, 163, 74);
+}
+
+/* Gray (2nd place) variant */
+.winner-swiper.swiper-secondary .swiper-button-next,
+.winner-swiper.swiper-secondary .swiper-button-prev {
+  background-color: rgba(107, 114, 128, 0.3);
+}
+
+.winner-swiper.swiper-secondary .swiper-pagination-bullet-active {
+  background: rgb(107, 114, 128);
+}
+
+/* Orange (3rd place) variant */
+.winner-swiper.swiper-tertiary .swiper-button-next,
+.winner-swiper.swiper-tertiary .swiper-button-prev {
+  background-color: rgba(234, 88, 12, 0.3);
+}
+
+.winner-swiper.swiper-tertiary .swiper-pagination-bullet-active {
+  background: rgb(234, 88, 12);
+}
+
+/* Team carousel specific styles */
+.team-swiper {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.team-swiper .swiper-slide {
+  transition: opacity 300ms ease;
+  border-radius: 0;
+}
+
+.team-swiper .swiper-button-next,
+.team-swiper .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-swiper .swiper-button-next:after,
+.team-swiper .swiper-button-prev:after {
+  font-size: 16px;
+}
+
+.team-swiper .swiper-pagination {
+  bottom: 5px;
+}
+
+.team-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.5;
+}
+
+.team-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #EC4899;
+}
+
+.team-swiper .swiper-button-next,
+.team-swiper .swiper-button-prev {
+  background-color: rgba(236, 72, 153, 0.3);
+}
+
+.team-swiper .swiper-button-next:hover,
+.team-swiper .swiper-button-prev:hover {
+  background-color: rgba(236, 72, 153, 0.5);
+}
+
+/* Evaluation carousel specific styles */
+.evaluation-swiper {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.evaluation-swiper .swiper-slide {
+  transition: opacity 300ms ease;
+  border-radius: 0;
+}
+
+.evaluation-swiper .swiper-button-next,
+.evaluation-swiper .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(8, 145, 178, 0.3);
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evaluation-swiper .swiper-button-next:after,
+.evaluation-swiper .swiper-button-prev:after {
+  font-size: 16px;
+}
+
+.evaluation-swiper .swiper-pagination {
+  bottom: 5px;
+}
+
+.evaluation-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.5;
+}
+
+.evaluation-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #06b6d4;
+}
+
+.evaluation-swiper .swiper-button-next:hover,
+.evaluation-swiper .swiper-button-prev:hover {
+  background-color: rgba(8, 145, 178, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .event-swiper .swiper-slide-custom {
+    width: 280px;
+  }
+  
+  .event-swiper .swiper-button-next,
+  .event-swiper .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-content {
+    padding: 15px;
+  }
+  
+  .carousel-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-swiper .swiper-slide-custom {
+    width: 220px;
+  }
+  
+  .event-swiper .swiper-button-next:after,
+  .event-swiper .swiper-button-prev:after {
+    font-size: 14px;
+  }
+  
+  .event-swiper .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .event-swiper .swiper-pagination-bullet-active {
+    width: 18px;
+  }
+}
