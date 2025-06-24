@@ -7,7 +7,7 @@ import {
 // Statistics for the event
 export const statistics = [
   { label: "Total Teams", value: "25", icon: "FaUsers" },
-  { label: "External Teams", value: "10+", icon: "FaUniversity" },
+  { label: "External Teams", value: "10", icon: "FaUniversity" },
   { label: "Internal Teams", value: "15", icon: "FaGraduationCap" },
   { label: "Prize Pool", value: "₹3,00,000", icon: "FaTrophy" }
 ];
@@ -314,10 +314,9 @@ export const eventLeaders = [
   "Akash Chaudhary – Assistant Professor",
   "Rahul Shandilya – Assistant Professor",
   "Shamsher Khan – Assistant Professor",
-  "Arvind Prasad – Assistant Professor",
   "Shubham Shukla – Assistant Professor",
   "Deepak Kumar Sah – Assistant Professor",
-  "Rohini Raina – Lady Proctor"
+  "Rohini Raina – Assistant Professor",
 ];
 
 // Add problem statement contributors
@@ -325,37 +324,37 @@ export const problemStatementContributors = [
   {
     name: "Dr. Ram Kumar G",
     role: "Cybersecurity & Risk Leader, Global Automotive Company",
-    experience: "22 years",
+    experience: "22 years of",
     count: "3 problem statements"
   },
   {
     name: "Dr. Lalit Gupta",
     role: "President, Cybersecurity Council",
-    experience: "30 years",
+    experience: "30 years of",
     count: "4 problem statements"
   },
   {
     name: "Dhiraj Tandon",
     role: "Senior Solutions Architect, Binalyze",
-    experience: "18 years",
+    experience: "18 years of",
     count: "4 problem statements"
   },
   {
     name: "Sanjeev Multani",
     role: "Security Lead, Nuvollo Corp | Ex-Professor, DU",
-    experience: "10 years",
+    experience: "10 years of",
     count: "2 problem statements"
   },
   {
     name: "Mr. Mohsin Qureshi",
     role: "SME at Hack The Box, Trainer at Kyrion Technologies",
-    experience: "10 years",
+    experience: "10 years of",
     count: "5 problem statements"
   },
   {
     name: "Gaurav Gogia",
     role: "Security Engineer, Qualys",
-    experience: "8 years",
+    experience: "8 years of",
     count: "2 problem statements"
   }
 ];

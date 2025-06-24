@@ -90,7 +90,7 @@ const WinnerCard = ({ winner, isFirst = false }) => {
             {achievement && (
               <div className="mt-6 pt-4 border-t border-green-900/30">
                 <h5 className="text-green-400 font-mono text-sm mb-2">ACHIEVEMENT</h5>
-                <p className="text-xs text-green-200/80">{achievement}</p>
+                <p className="text-sm text-green-200/80">{achievement}</p>
               </div>
             )}
           </div>

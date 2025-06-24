@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import EventImg from "../../img/events/Defence_Matrix.jpg";
-import "react-creative-cursor/dist/styles.css";
 
 const NewEvent = () => {
   const imageRef = useRef(null);

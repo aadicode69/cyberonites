@@ -268,16 +268,13 @@ const MainX = () => {
       position: "bottom-left",
       autoClose: 2000,
       hideProgressBar: true,
-      closeOnClick: true,
       pauseOnHover: false,
-      draggable: false,
       icon: false,
       theme: "dark",
       className: `
         text-md
         justify-center
         font-clash
-        tracking-wider
         bg-black
         text-[#00ff00]
         border-y
@@ -285,9 +282,7 @@ const MainX = () => {
         rounded-lg
         px-4
         py-2
-        flex
         items-center
-        animate-fadeIn
       `,
     });
   }, []);
@@ -440,6 +435,17 @@ const MainX = () => {
                 real-world hacking challenges, learn from industry experts, and
                 win exciting rewards!
               </p>
+          <button
+            onClick={() => navigate("/intrusion-x-overview")}
+            className="group px-8 py-5 mt-12 bg-black border-y-2 font-clash border-green-600/70 text-green-400 rounded-sm hover:border-green-400 hover:text-green-300 hover:translate-y-[-2px] transition-all duration-300 shadow-lg hover:shadow-green-500/40"
+          >
+            <span className="flex items-center justify-center">
+              <span className="mr-3 text-xl group-hover:animate-pulse">⚔️</span>
+              <span className="tracking-wider">
+                INTRUSION<span className="text-xl font-bold">X</span> OVERVIEW
+              </span>
+            </span>
+          </button>
             </div>
           </div>
         </div>
