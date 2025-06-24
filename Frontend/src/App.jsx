@@ -14,25 +14,12 @@ import Loader from "./components/Homepage/Loader";
 import MainX from "./components/IntrusionX/MainX";
 import HForm from "./components/hiringForm/HForm";
 import SecurityPage from "./pages/SecurityPage";
-import "react-creative-cursor/dist/styles.css";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Homee from "./components/Homepage/Homee";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-  if (loading) {
-    return <Loader />;
-  }
   return (
     <>
       <BrowserRouter>
@@ -41,18 +28,18 @@ function App() {
           <Route exact path="/security" element={<SecurityPage />} />
           <Route path="/guestlecture" element={<GuestLecture />} />
           <Route path="/capturetheflag" element={<CTF />} />
-          <Route path="/404" element={<NotFound />} />
-          <Route path="/event_dashboard" element={<EventDash/>} />
           <Route path="*" element={<Error />} />
-          {/* <Route path="/intrusion-x" element={<MainX/>} /> */}
-          <Route path="/intrusion-x" element={<IntrusionX/>} />
+          <Route path="/event_dashboard" element={<EventDash/>} />
+          <Route path="/intrusion-x" element={<MainX/>} />
+          <Route path="/intrusion-x-overview" element={<IntrusionX/>} />
           <Route path="/prob-statement-x" element={<Problem_S/>} />
-          <Route path="/registrations" element={<Reg_Main/>} />
           <Route path="/our_team" element={<TeamGallery/>} />
+          {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
           {/* <Route path="/playground" element={<Terminal/>} /> */}
           {/* <Route path="/contactus" element={<ContactUs />} /> */}
           {/* <Route path="/recruitment" element={<Hiring/>} /> */}
           {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
+          <Route path="/404" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,10 +1,5 @@
-/**
- * IntrusionXImages.js
- * This file contains all image imports and exports for the IntrusionX event component
- */
 
-// Main event banner and overview images
-import eventBannerImgFile from "/src/img/intrusionX/D1.webp";
+import eventBannerImgFile from "/src/img/intrusionX/D1.jpg";
 import judgesImgFile from "/src/img/intrusionX/Judges.webp";
 import teamsImgFile from "/src/img/intrusionX/Teams.webp";
 import winnersImgFile from "/src/img/intrusionX/Winners.webp";
@@ -15,12 +10,12 @@ import cyberYaanCEOImgFile from "/src/img/intrusionX/DSC_0820.webp";
 import additionalEvalImgFile from "/src/img/intrusionX/DSC_7269.webp";
 
 // Cyberonites team with alumni photo collection
-import teamWithAlumniImage1 from "/src/img/intrusionX/DSC_7170.webp";
-import teamWithAlumniImage2 from "/src/img/intrusionX/DSC_7168.webp";
-import teamWithAlumniImage3 from "/src/img/intrusionX/DSC_7155.webp";
+import teamWithAlumniImage1 from "/src/img/intrusionX/DSC_7157.jpg";
+import teamWithAlumniImage2 from "/src/img/intrusionX/DSC_7151.webp";
+import teamWithAlumniImage3 from "/src/img/intrusionX/DSC_7155.jpg";
 
 // Winner and runner-up images
-import winnerImg1File from "/src/img/intrusionX/DSC_0540.webp";
+import winnerImg1File from "/src/img/intrusionX/DSC_0540.jpg";
 import winnerImg2File from "/src/img/intrusionX/DSC_7101.webp";
 import winnerImg3File from "/src/img/intrusionX/DSC_7300.webp";
 import winnerImg4File from "/src/img/intrusionX/DSC_7419.webp";
@@ -62,7 +57,7 @@ import evaluationImage8 from "/src/img/intrusionX/DSC_7269.webp";
 import judgeDetailImage1 from "/src/img/intrusionX/DSC_0650.webp";
 import judgeDetailImage2 from "/src/img/intrusionX/DSC_0657.webp";
 import judgeDetailImage3 from "/src/img/intrusionX/DSC_0647.webp";
-import judgeDetailImage4 from "/src/img/intrusionX/DSC_0817.webp";
+import judgeDetailImage4 from "/src/img/intrusionX/DSC_7396.jpg";
 import judgeDetailImage5 from "/src/img/intrusionX/DSC_0643.webp";
 import judgeDetailImage6 from "/src/img/intrusionX/DSC_0628.webp";
 import judgeDetailImage7 from "/src/img/intrusionX/DSC_0623.webp";
@@ -119,8 +114,6 @@ export const secondRunnerUpImg2 = secondRunnerUpImg2File;
 // Grouped winner images - for winner showcase carousels by placement
 export const firstPlaceWinnerImages = [
   winnerImg1File,
-  winnerImg2File,
-  winnerImg3File,
   winnerImg4File
 ];
 
@@ -141,7 +134,6 @@ export const teamImages = [
   teamImage3,
   teamImage4,
   teamImage5,
-  teamImage6,
   teamImage7,
   teamImage8,
   teamImage9,

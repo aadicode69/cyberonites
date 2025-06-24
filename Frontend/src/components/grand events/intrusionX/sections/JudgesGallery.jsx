@@ -3,11 +3,11 @@ import { FaUserTie, FaAward } from 'react-icons/fa';
 
 const JudgesGallery = ({ judges, judgeImages }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
       {judges.map((judge, idx) => (
         <div key={idx} className="bg-black/30 border border-yellow-800 rounded-sm overflow-hidden group hover:border-yellow-600 transition-all">
           {/* Image with overlay */}
-          <div className="relative aspect-[3/4] overflow-hidden">
+          <div className="relative aspect-[5/3] overflow-hidden">
             <img 
               src={judgeImages[idx]} 
               alt=""
@@ -24,7 +24,6 @@ const JudgesGallery = ({ judges, judgeImages }) => {
             </div>
           </div>
           
-          {/* Details */}
           <div className="p-3 border-t border-yellow-900/50 bg-black/60">
             <div className="flex items-center mb-2">
               <FaAward className="text-yellow-500 mr-2" size={14} />

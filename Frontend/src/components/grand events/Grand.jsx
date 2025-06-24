@@ -37,7 +37,7 @@ function Grand() {
       participants: "90+",
       description:
       "IntrusionX is a 24-hour flagship cybersecurity event by the Cyberonites Club, GLA University, focused on building practical skills in ethical hacking, cyber defense, and digital forensics. It aims to provide hands-on experience with real-world cyber threats while promoting ethical and responsible cybersecurity practices.",
-      link: "/intrusion-x"
+      link: "/intrusion-x-overview"
     }
   ];
 
