@@ -67,7 +67,7 @@ To set up the Cyberonites Club website locally, follow these steps:
 - **Linting**: ESLint (configured with standard React rules)
 - **Deployment**: Vercel
 - **Package Manager**: npm
-- **Styling**: [Add specifics if known, e.g., Tailwind CSS, CSS Modules, or vanilla CSS]
+- **Styling**: Tailwind
 
 ## Available Plugins
 This project supports two official Vite plugins for React:
@@ -120,5 +120,4 @@ This project is licensed under the [MIT License](LICENSE). See the `LICENSE` fil
 ## Contact
 For questions, feedback, or collaboration inquiries:
 - **GitHub Issues**: [https://github.com/aadicode69/cyberonites/issues](https://github.com/aadicode69/cyberonites/issues)
-- **Email**: Contact the maintainer at [insert contact email, e.g., aaditya@example.com]
 - **Website**: [https://cyberonites-alpha.vercel.app/](https://cyberonites-alpha.vercel.app/)

@@ -4,7 +4,6 @@ import ConnecttUs from "../components/connect/ConnectUs";
 import EventArchive from "../components/events/Event";
 import Footer from "../components/footer/Footer";
 import Grand from "../components/grand events/Grand";
-import HeroSection from "../components/hero-section/hero-section";
 import KnowUs from "../components/knowUs/KnowUs";
 import Navbar from "../components/navbar/navbar";
 import Sponsor from "../components/Sponsers/Sponser";
@@ -13,11 +12,8 @@ import UpcomingEvents from "../components/upcominEvents/UpcomingEvents";
 import NewEvent from "../components/upcomingEventList/NewEvent";
 import Popup from "../components/load_popup/Popup";
 import TeamCard from "../components/hallOf_fame/TeamCard";
-
-// ...existing code...
-
-// TEMPORARY TEST - Add this at the top of your imports
-import testPngImage from "../img/sponsor-logo/altered-security.png";
+import PlatformCard from "../components/internalCards/PlatformCard";
+import HeroSection from "../components/hero-section/HeroSection";
 
 const ScrollElement = (item) => {
   document.getElementById(item).scrollIntoView({ behavior: "smooth" });
@@ -27,7 +23,6 @@ const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   
   useEffect(() => {
-    console.log("PNG test import:", testPngImage); // This will log the imported path
     setTimeout(() => setShowPopup(true), 1500);
   }, []);
   
@@ -38,6 +33,34 @@ const Home = () => {
       <div className="promo-section">
         <Alumini heading="Our Alumni" />
         <Sponsor heading="Our Sponsors" />
+      </div>
+      <div className="promo-card-section">
+        <PlatformCard 
+          title="Cyberonites Playground"
+          description="Practice cybersecurity skills in a safe environment with hands-on labs, challenges, and interactive simulations at playground.cyberonites.com"
+          buttonText="Launch Playground"
+          onClick={() => window.open('https://playground.cyberonites.com', '_blank')}
+          gradientFrom="from-gray-900"
+          gradientTo="to-black"
+          hoverFrom="hover:from-gray-800"
+          hoverTo="hover:to-gray-900"
+          accentColor="bg-cyan-400"
+          borderColor="border border-cyan-500/20"
+          textAccent="text-white"
+        />
+        <PlatformCard 
+          title="Vulnerability Disclosure"
+          description="Help us maintain security by reporting vulnerabilities responsibly. Join our bug bounty program and contribute to cybersecurity excellence"
+          buttonText="Report Security Issue"
+          onClick={() => window.location.href = '/security'}
+          gradientFrom="from-black"
+          gradientTo="to-gray-900"
+          hoverFrom="hover:from-gray-900"
+          hoverTo="hover:to-gray-800"
+          accentColor="bg-cyan-400"
+          borderColor="border border-white/10"
+          textAccent="text-white"
+        />
       </div>
       {/* <UpcomingEvents id="Upcoming" /> */}
       <KnowUs />

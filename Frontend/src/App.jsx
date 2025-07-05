@@ -16,7 +16,6 @@ import HForm from "./components/hiringForm/HForm";
 import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
-import Homee from "./components/Homepage/Homee";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 
 function App() {
