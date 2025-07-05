@@ -25,13 +25,13 @@ const HeroSection = ({ id }) => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Content */}
           <motion.div
-            className="lg:w-1/2 text-center lg:text-left space-y-8 lg:space-y-10"
+            className="lg:w-1/2 text-center lg:text-left space-y-6 lg:space-y-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-wide"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-wide mt-16 lg:mt-20"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -41,7 +41,7 @@ const HeroSection = ({ id }) => {
             </motion.h1>
 
             <motion.div
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-300 min-h-[5rem] flex items-center justify-center lg:justify-start mt-6 mb-8"
+              className="text-xl sm:text-2xl lg:text-3xl text-gray-300 min-h-[5rem] flex items-center justify-center lg:justify-start -mt-2 mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -57,7 +57,7 @@ const HeroSection = ({ id }) => {
             </motion.div>
 
             <motion.p
-              className="text-base sm:text-lg text-white leading-relaxed max-w-2xl font-semibold mt-8 mb-10"
+              className="text-base sm:text-lg text-white leading-relaxed max-w-2xl font-semibold mt-6 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
@@ -75,7 +75,7 @@ const HeroSection = ({ id }) => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mt-10"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.8 }}
