@@ -25,4 +25,6 @@ build.zip
 *.sw?
 
 */package-lock.json
-Frontend/package-lock.json
+*/package-lock.json
+*/dist
+*/dist-ssr
