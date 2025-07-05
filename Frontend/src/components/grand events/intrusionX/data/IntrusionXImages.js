@@ -1,85 +1,84 @@
-
-import eventBannerImgFile from "/src/img/intrusionX/D1.jpg";
-import judgesImgFile from "/src/img/intrusionX/Judges.webp";
-import teamsImgFile from "/src/img/intrusionX/Teams.webp";
-import winnersImgFile from "/src/img/intrusionX/Winners.webp";
+import eventBannerImgFile from "../../../../img/intrusionX/D1.jpg";
+import judgesImgFile from "../../../../img/intrusionX/Judges.webp";
+import teamsImgFile from "../../../../img/intrusionX/Teams.webp";
+import winnersImgFile from "../../../../img/intrusionX/Winners.webp";
 
 // Featured speakers and special moments
-import judgesPanelImgFile from "/src/img/intrusionX/DSC_0572.webp";
-import cyberYaanCEOImgFile from "/src/img/intrusionX/DSC_0820.webp";
-import additionalEvalImgFile from "/src/img/intrusionX/DSC_7269.webp";
+import judgesPanelImgFile from "../../../../img/intrusionX/DSC_0572.webp";
+import cyberYaanCEOImgFile from "../../../../img/intrusionX/DSC_0820.webp";
+import additionalEvalImgFile from "../../../../img/intrusionX/DSC_7269.webp";
 
 // Cyberonites team with alumni photo collection
-import teamWithAlumniImage1 from "/src/img/intrusionX/DSC_7157.jpg";
-import teamWithAlumniImage2 from "/src/img/intrusionX/DSC_7151.webp";
-import teamWithAlumniImage3 from "/src/img/intrusionX/DSC_7155.jpg";
+import teamWithAlumniImage1 from "../../../../img/intrusionX/DSC_7157.jpg";
+import teamWithAlumniImage2 from "../../../../img/intrusionX/DSC_7151.webp";
+import teamWithAlumniImage3 from "../../../../img/intrusionX/DSC_7155.jpg";
 
 // Winner and runner-up images
-import winnerImg1File from "/src/img/intrusionX/DSC_0540.jpg";
-import winnerImg2File from "/src/img/intrusionX/DSC_7101.webp";
-import winnerImg3File from "/src/img/intrusionX/DSC_7300.webp";
-import winnerImg4File from "/src/img/intrusionX/DSC_7419.webp";
-import runnerUpImg1File from "/src/img/intrusionX/DSC_7414.webp";
-import runnerUpImg2File from "/src/img/intrusionX/DSC_7105.webp";
-import secondRunnerUpImg1File from "/src/img/intrusionX/DSC_7411.webp";
-import secondRunnerUpImg2File from "/src/img/intrusionX/DSC_7436.webp";
+import winnerImg1File from "../../../../img/intrusionX/DSC_0540.jpg";
+import winnerImg2File from "../../../../img/intrusionX/DSC_7101.webp";
+import winnerImg3File from "../../../../img/intrusionX/DSC_7300.webp";
+import winnerImg4File from "../../../../img/intrusionX/DSC_7419.webp";
+import runnerUpImg1File from "../../../../img/intrusionX/DSC_7414.webp";
+import runnerUpImg2File from "../../../../img/intrusionX/DSC_7105.webp";
+import secondRunnerUpImg1File from "../../../../img/intrusionX/DSC_7411.webp";
+import secondRunnerUpImg2File from "../../../../img/intrusionX/DSC_7436.webp";
 
 // Team participation images
-import teamImage1 from "/src/img/intrusionX/DSC_7100.webp";
-import teamImage2 from "/src/img/intrusionX/DSC_7091.webp";
-import teamImage3 from "/src/img/intrusionX/DSC_7087.webp";
-import teamImage4 from "/src/img/intrusionX/DSC_0809.webp";
-import teamImage5 from "/src/img/intrusionX/DSC_7105.webp";
-import teamImage6 from "/src/img/intrusionX/DSC_7101.webp";
-import teamImage7 from "/src/img/intrusionX/DSC_7106.webp";
-import teamImage8 from "/src/img/intrusionX/DSC_7109.webp";
-import teamImage9 from "/src/img/intrusionX/DSC_7116.webp";
-import teamImage10 from "/src/img/intrusionX/DSC_7117.webp";
-import teamImage11 from "/src/img/intrusionX/DSC_7120.webp";
-import teamImage12 from "/src/img/intrusionX/DSC_7122.webp";
-import teamImage13 from "/src/img/intrusionX/DSC_7124.webp";
-import teamImage14 from "/src/img/intrusionX/DSC_7126.webp";
-import teamImage15 from "/src/img/intrusionX/DSC_7128.webp";
-import teamImage16 from "/src/img/intrusionX/DSC_7129.webp";
-import teamImage17 from "/src/img/intrusionX/DSC_7279.webp";
+import teamImage1 from "../../../../img/intrusionX/DSC_7100.webp";
+import teamImage2 from "../../../../img/intrusionX/DSC_7091.webp";
+import teamImage3 from "../../../../img/intrusionX/DSC_7087.webp";
+import teamImage4 from "../../../../img/intrusionX/DSC_0809.webp";
+import teamImage5 from "../../../../img/intrusionX/DSC_7105.webp";
+import teamImage6 from "../../../../img/intrusionX/DSC_7101.webp";
+import teamImage7 from "../../../../img/intrusionX/DSC_7106.webp";
+import teamImage8 from "../../../../img/intrusionX/DSC_7109.webp";
+import teamImage9 from "../../../../img/intrusionX/DSC_7116.webp";
+import teamImage10 from "../../../../img/intrusionX/DSC_7117.webp";
+import teamImage11 from "../../../../img/intrusionX/DSC_7120.webp";
+import teamImage12 from "../../../../img/intrusionX/DSC_7122.webp";
+import teamImage13 from "../../../../img/intrusionX/DSC_7124.webp";
+import teamImage14 from "../../../../img/intrusionX/DSC_7126.webp";
+import teamImage15 from "../../../../img/intrusionX/DSC_7128.webp";
+import teamImage16 from "../../../../img/intrusionX/DSC_7129.webp";
+import teamImage17 from "../../../../img/intrusionX/DSC_7279.webp";
 
 // Evaluation process documentation images
-import evaluationImage1 from "/src/img/intrusionX/DSC_7354.webp";
-import evaluationImage2 from "/src/img/intrusionX/DSC_7331.webp";
-import evaluationImage3 from "/src/img/intrusionX/DSC_7319.webp";
-import evaluationImage4 from "/src/img/intrusionX/DSC_7305.webp";
-import evaluationImage5 from "/src/img/intrusionX/DSC_7300.webp";
-import evaluationImage6 from "/src/img/intrusionX/DSC_7292.webp";
-import evaluationImage7 from "/src/img/intrusionX/DSC_7264.webp";
-import evaluationImage8 from "/src/img/intrusionX/DSC_7269.webp";
+import evaluationImage1 from "../../../../img/intrusionX/DSC_7354.webp";
+import evaluationImage2 from "../../../../img/intrusionX/DSC_7331.webp";
+import evaluationImage3 from "../../../../img/intrusionX/DSC_7319.webp";
+import evaluationImage4 from "../../../../img/intrusionX/DSC_7305.webp";
+import evaluationImage5 from "../../../../img/intrusionX/DSC_7300.webp";
+import evaluationImage6 from "../../../../img/intrusionX/DSC_7292.webp";
+import evaluationImage7 from "../../../../img/intrusionX/DSC_7264.webp";
+import evaluationImage8 from "../../../../img/intrusionX/DSC_7269.webp";
 
 // Judge profiles and presentations
-import judgeDetailImage1 from "/src/img/intrusionX/DSC_0650.webp";
-import judgeDetailImage2 from "/src/img/intrusionX/DSC_0657.webp";
-import judgeDetailImage3 from "/src/img/intrusionX/DSC_0647.webp";
-import judgeDetailImage4 from "/src/img/intrusionX/DSC_7396.jpg";
-import judgeDetailImage5 from "/src/img/intrusionX/DSC_0643.webp";
-import judgeDetailImage6 from "/src/img/intrusionX/DSC_0628.webp";
-import judgeDetailImage7 from "/src/img/intrusionX/DSC_0623.webp";
+import judgeDetailImage1 from "../../../../img/intrusionX/DSC_0650.webp";
+import judgeDetailImage2 from "../../../../img/intrusionX/DSC_0657.webp";
+import judgeDetailImage3 from "../../../../img/intrusionX/DSC_0647.webp";
+import judgeDetailImage4 from "../../../../img/intrusionX/DSC_7396.jpg";
+import judgeDetailImage5 from "../../../../img/intrusionX/DSC_0643.webp";
+import judgeDetailImage6 from "../../../../img/intrusionX/DSC_0628.webp";
+import judgeDetailImage7 from "../../../../img/intrusionX/DSC_0623.webp";
 
 // Guest speakers and special invitees
-import guestDetailImage1 from "/src/img/intrusionX/DSC_0469.webp";
-import guestDetailImage2 from "/src/img/intrusionX/DSC_0473.webp";
-import guestDetailImage3 from "/src/img/intrusionX/DSC_0477.webp";
-import guestDetailImage4 from "/src/img/intrusionX/DSC_0486.webp";
+import guestDetailImage1 from "../../../../img/intrusionX/DSC_0469.webp";
+import guestDetailImage2 from "../../../../img/intrusionX/DSC_0473.webp";
+import guestDetailImage3 from "../../../../img/intrusionX/DSC_0477.webp";
+import guestDetailImage4 from "../../../../img/intrusionX/DSC_0486.webp";
 
 // Sponsor and partner logos
-import cyberyaanLogo from "/src/img/intrusionX/web-logo.webp";
-import alteredSecurityLogo from "/src/img/sponsor-logo/altered-security.png";
-import unstopLogo from "/src/img/intrusionX/unstop-logo.webp";
-import xyzLogo from "/src/img/intrusionX/xyz-logo.webp";
+import cyberyaanLogo from "../../../../img/intrusionX/web-logo.webp";
+import alteredSecurityLogo from "../../../../img/sponsor-logo/altered-security.png";
+import unstopLogo from "../../../../img/intrusionX/unstop-logo.webp";
+import xyzLogo from "../../../../img/intrusionX/xyz-logo.webp";
 
 // Faculty images - correct path for Dr. Asheesh Tiwari
-import coordinatorImg from "/src/img/intrusionX/DSC_0486.webp";
+import coordinatorImg from "../../../../img/intrusionX/DSC_0486.webp";
 
 // Add mentor profile images - corrected paths for the right people
-import mentorImage1 from "/src/img/intrusionX/DSC_0469.webp"; // Dr. Sandeep Rathod's image
-import mentorImage2 from "/src/img/intrusionX/DSC_0477.webp"; // Dr. Arvind Prasad's image
+import mentorImage1 from "../../../../img/intrusionX/DSC_0469.webp"; // Dr. Sandeep Rathod's image
+import mentorImage2 from "../../../../img/intrusionX/DSC_0477.webp"; // Dr. Arvind Prasad's image
 
 // -------------------- EXPORTS --------------------
 

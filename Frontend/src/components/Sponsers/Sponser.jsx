@@ -37,13 +37,15 @@ const Sponsor = ({ heading }) => {
   ];
 
   const handleImageError = (e) => {
+    console.error('Image failed to load:', e.target.src);
+    console.error('Check if file exists at:', e.target.src);
     e.target.onerror = null;
     e.target.style.display = 'none';
   };
 
   return (
     <div className="sponsor-container">
-      <div className="sponsor-circle" style={{backgroundImage: `url('sssss.jpg')`}}>
+      <div className="sponsor-circle" style={{backgroundImage: `url('/sssss.jpg')`}}>
         <h2 className="sponsor-heading">{heading}</h2>
         <div className="sponsor-items">
           {sponsors.map((sponsor, index) => (
