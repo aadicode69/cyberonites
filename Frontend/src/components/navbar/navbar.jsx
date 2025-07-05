@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { motion, useAnimation } from "framer-motion";
-import { LavalampMenu } from "react-llamp-menu";
+// import { LavalampMenu } from "react-llamp-menu";
 import logo from "../../img/ps-final1.png";
 import "./nav.css";
 
@@ -100,6 +100,7 @@ const Navbar = ({ scrollToComponent }) => {
         <img
           className="logo w-16 h-16 lg:w-28 lg:h-28 translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-5 drop-shadow-[0_0_.5rem_var(--cyan-300)]"
           src={logo}
+          alt="Cyberonites Logo"
         />
       </div>
 
@@ -110,7 +111,7 @@ const Navbar = ({ scrollToComponent }) => {
         className="fixed w-screen h-10 bottom-8 lg:top-14 z-50"
       >
         <div className="flex justify-center">
-          <LavalampMenu
+          {/* <LavalampMenu
             className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] border-0 border-x-2
               bg-black/30 border-cyan-300
               shadow-[0_0_15px_rgba(0,255,255,0.3)]
@@ -130,7 +131,7 @@ const Navbar = ({ scrollToComponent }) => {
                 </li>
               ))}
             </ul>
-          </LavalampMenu>
+          </LavalampMenu> */}
         </div>
       </motion.nav>
     </nav>

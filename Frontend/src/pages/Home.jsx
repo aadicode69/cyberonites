@@ -14,17 +14,23 @@ import NewEvent from "../components/upcomingEventList/NewEvent";
 import Popup from "../components/load_popup/Popup";
 import TeamCard from "../components/hallOf_fame/TeamCard";
 
+// ...existing code...
+
+// TEMPORARY TEST - Add this at the top of your imports
+import testPngImage from "../img/sponsor-logo/altered-security.png";
+
 const ScrollElement = (item) => {
   document.getElementById(item).scrollIntoView({ behavior: "smooth" });
 };
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
-
+  
   useEffect(() => {
+    console.log("PNG test import:", testPngImage); // This will log the imported path
     setTimeout(() => setShowPopup(true), 1500);
   }, []);
-
+  
   return (
     <div className="relative">
       <Navbar scrollToComponent={ScrollElement} />
