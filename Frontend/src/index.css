@@ -88,9 +88,25 @@ body {
   padding: 0 3%;
 }
 
+.promo-card-section {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  padding: 4rem 5%;
+  justify-content: center;
+  align-items: stretch;
+}
+
 @media (max-width: 992px) {
   .promo-section {
     flex-direction: column;
+  }
+  
+  .promo-card-section {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 4%;
   }
 }
 
@@ -98,10 +114,22 @@ body {
   .promo-section {
     flex-direction: column;
   }
+  
+  .promo-card-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 3%;
+  }
 }
 
 @media (max-width: 480px) {
   .promo-section {
     flex-direction: column;
+  }
+  
+  .promo-card-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 2%;
   }
 }

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { motion, useAnimation } from "framer-motion";
-import { LavalampMenu } from "react-llamp-menu";
 import logo from "../../img/ps-final1.png";
 import "./nav.css";
 
@@ -9,6 +8,7 @@ const Navbar = ({ scrollToComponent }) => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [activeItem, setActiveItem] = useState("Home");
   const controls = useAnimation();
 
   const setProgress = useCallback(() => {
@@ -46,19 +46,21 @@ const Navbar = ({ scrollToComponent }) => {
       setScreenWidth(window.innerWidth);
     };
 
-    const debouncedHandleScroll = debounce(handleScroll, 100);
+    const debouncedHandleScroll = debounce(handleScroll, 50);
 
     window.addEventListener("scroll", debouncedHandleScroll);
     window.addEventListener("resize", handleResize);
 
+    // Desktop: Only hide navbar when scrolling down past 30% of viewport height
     if (screenWidth > 770) {
-      if (lastScrollY < 100) {
-        controls.start({ y: isScrollingUp ? 0 : "-100%" });
+      if (lastScrollY > window.innerHeight * 0.3 && !isScrollingUp) {
+        controls.start({ y: "-150%" });
       } else {
-        controls.start({ y: isScrollingUp ? "-100%" : "-250%" });
+        controls.start({ y: "10%" });
       }
     } else {
-      controls.start({ y: isScrollingUp ? "50%" : "250%" });
+      // Mobile: Show at bottom when scrolling up or at top
+      controls.start({ y: isScrollingUp || lastScrollY < 50 ? "10%" : "150%" });
     }
 
     return () => {
@@ -67,20 +69,38 @@ const Navbar = ({ scrollToComponent }) => {
     };
   }, [isScrollingUp, controls, lastScrollY, screenWidth]);
 
+  const navItems = ["Home", "About", "Upcoming", "Events"];
+
+  const handleNavClick = (item) => {
+    setActiveItem(item);
+    scrollToComponent(item);
+  };
+
   return (
     <nav>
       {/* ---- Show NavBar on Hover ---- */}
       <div
-        className="fixed lg:top-0 bottom-0 h-6 w-screen z-30"
+        className="fixed lg:top-0 bottom-0 h-8 w-screen z-30"
         onMouseOver={() =>
           controls.start({
-            y: screenWidth > 770 ? (lastScrollY < 100 ? 0 : "-100%") : "50%",
+            y: "10%",
           })
         }
+        onMouseLeave={() => {
+          if (screenWidth > 770) {
+            if (lastScrollY > window.innerHeight * 0.3 && !isScrollingUp) {
+              controls.start({ y: "-150%" });
+            }
+          } else {
+            if (!isScrollingUp && lastScrollY > 50) {
+              controls.start({ y: "150%" });
+            }
+          }
+        }}
       ></div>
 
       {/* ---- Logo ----- */}
-      <div className="relative w-20 h-20 lg:w-28 lg:h-28 translate-x-4 translate-y-4">
+      <div className="absolute z-20 w-20 h-20 lg:w-28 lg:h-28 translate-x-4 translate-y-4">
         {/* svg circles to rotate for logo */}
         {[40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53].map((e) => (
           <svg
@@ -100,42 +120,57 @@ const Navbar = ({ scrollToComponent }) => {
         <img
           className="logo w-16 h-16 lg:w-28 lg:h-28 translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-5 drop-shadow-[0_0_.5rem_var(--cyan-300)]"
           src={logo}
+          alt="Cyberonites Logo"
         />
       </div>
 
       {/* ----------------- Nav Buttons ----------------- */}
       <motion.nav
-        initial={{ y: 0 }}
+        initial={{ y: "10%" }}
         animate={controls}
-        className="fixed w-screen h-10 bottom-8 lg:top-14 z-50"
+        className="fixed w-screen h-10 bottom-8 lg:top-4 z-50"
+        transition={{ duration: 0.15, ease: "easeInOut" }}
       >
         <div className="flex justify-center">
-          <LavalampMenu
-            className="toggleOptions overflow-hidden font-['Rubik_Glitch',_system-ui] border-0 border-x-2
-              bg-black/30 border-cyan-300
-              shadow-[0_0_15px_rgba(0,255,255,0.3)]
-              backdrop-blur-md bg-gradient-to-r from-cyan-500/10 to-blue-500/10 
-              text-cyan-300 rounded-full"
-          >
-            <ul className="flex items-center">
-              {["Home", "About", "Upcoming", "Events"].map((e) => (
-                <li key={e}>
+          <div className="relative overflow-hidden font-['Rubik_Glitch',_system-ui] border-0 border-x-2
+            bg-black/30 border-cyan-300
+            shadow-[0_0_1px_rgba(0,255,255,0.5)]
+            backdrop-blur-md bg-gradient-to-r from-cyan-500/10 to-blue-500/10 
+            text-cyan-300 rounded-full">
+            <ul className="flex items-center relative">
+              {navItems.map((item, index) => (
+                <li key={item} className="relative">
                   <button
-                    className="h-10 px-2 lg:px-10 mx-[2px] hover:text-cyan-500
-                        rounded-full transition-all duration-300 ease-in-out"
-                    onClick={() => scrollToComponent(e)}
+                    className={`h-10 px-2 lg:px-10 mx-[2px] rounded-full transition-all duration-300 ease-in-out relative z-10
+                      ${activeItem === item
+                        ? 'text-gray-900 font-semibold'
+                        : 'text-cyan-300 hover:text-cyan-500'
+                    }`}
+                    onClick={() => handleNavClick(item)}
                   >
-                    {e}
+                    {item}
                   </button>
+                  {activeItem === item && (
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="absolute inset-0 bg-cyan-300 rounded-full"
+                      style={{ margin: '2px' }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30
+                      }}
+                    />
+                  )}
                 </li>
               ))}
             </ul>
-          </LavalampMenu>
+          </div>
         </div>
       </motion.nav>
     </nav>
   );
-}
+};
 
 function debounce(func, wait) {
   let timeout;

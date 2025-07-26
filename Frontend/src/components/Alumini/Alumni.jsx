@@ -37,7 +37,7 @@ export default function Alumini({ heading }) {
 
   return (
     <div className="alumni-container">
-      <div className="alumni-circle" style={{backgroundImage: `url('sssss.jpg')`}}>
+      <div className="alumni-circle" style={{backgroundImage: `url('/sssss.jpg')`}}>
         <h2 className="alumni-heading">{heading}</h2>
         <div className="alumni-items">
           {Alumni.map((alumni, index) => (
