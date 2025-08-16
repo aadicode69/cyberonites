@@ -164,8 +164,8 @@ const EscX_v2 = () => {
   const navigate = useNavigate();
 
   const navToProblemStatements = useCallback(() => {
-    window.open("/prob-statement-x");
-  }, []);
+    navigate("/escalatex-v2-problems");
+  }, [navigate]);
 
   const navToRegistration = useCallback(() => {
     toast.info("EscalateX v2 registrations open October 10, 2025. Stay tuned!", {

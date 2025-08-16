@@ -19,6 +19,7 @@ import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
+import ProblemsEscXv2 from "./components/EscalateX_v2/Problem Statement/Problem_S";
 
 function App() {
   return (
@@ -35,13 +36,9 @@ function App() {
           <Route path="/escalateXv2" element={<EscX_v2/>} />
           <Route path="/intrusion-x" element={<MainX/>} />
           <Route path="/intrusion-x-overview" element={<IntrusionX/>} />
+          <Route path="/escalatex-v2-problems" element={<ProblemsEscXv2/>} />
           <Route path="/prob-statement-x" element={<Problem_S/>} />
           <Route path="/our_team" element={<TeamGallery/>} />
-          {/* <Route path="/registrations" element={<Reg_Main/>} /> */}
-          {/* <Route path="/playground" element={<Terminal/>} /> */}
-          {/* <Route path="/contactus" element={<ContactUs />} /> */}
-          {/* <Route path="/recruitment" element={<Hiring/>} /> */}
-          {/* <Route path="/recruitment_form" element={<HForm/>} /> */}
           <Route path="/404" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
