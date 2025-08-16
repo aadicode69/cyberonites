@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactCard = ({ className }) => {
   const coordinators = [
-    { name: "Nitin Sikarwar", phone: "+91 9548514037" },
-    { name: "Sumit Kumar", phone: "+91 9631909422" },
+    { name: "Nitin Sikarwar", phone: "+91 xxxxx xxxxx" },
+    { name: "Sumit Kumar", phone: "+91 xxxxx xxxxx" },
   ];
 
   return (
