@@ -28,3 +28,4 @@ build.zip
 */dist
 */dist-ssr
 Frontend/node_modules
+Frontend/package-lock.json

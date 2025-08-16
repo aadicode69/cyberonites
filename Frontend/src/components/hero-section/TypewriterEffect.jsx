@@ -33,7 +33,7 @@ const TypewriterEffect = ({
   }, [currentText, currentTextIndex, isDeleting, texts, speed]);
 
   return (
-    <span className={className}>
+    <span className={`font-semibold italic tracking-wide ${className}`}>
       {currentText}
       <span className="animate-pulse text-cyan-400">|</span>
     </span>

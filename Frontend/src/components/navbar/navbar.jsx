@@ -132,7 +132,7 @@ const Navbar = ({ scrollToComponent }) => {
         transition={{ duration: 0.15, ease: "easeInOut" }}
       >
         <div className="flex justify-center">
-          <div className="relative overflow-hidden font-['Rubik_Glitch',_system-ui] border-0 border-x-2
+          <div className="relative overflow-hidden font-['Montserrat',_sans-serif] border-0 border-x-2
             bg-black/30 border-cyan-300
             shadow-[0_0_1px_rgba(0,255,255,0.5)]
             backdrop-blur-md bg-gradient-to-r from-cyan-500/10 to-blue-500/10 
@@ -141,7 +141,7 @@ const Navbar = ({ scrollToComponent }) => {
               {navItems.map((item, index) => (
                 <li key={item} className="relative">
                   <button
-                    className={`h-10 px-2 lg:px-10 mx-[2px] rounded-full transition-all duration-300 ease-in-out relative z-10
+                    className={`h-10 px-2 lg:px-10 mx-[2px] rounded-full transition-all duration-300 ease-in-out relative z-10 font-medium tracking-wide
                       ${activeItem === item
                         ? 'text-gray-900 font-semibold'
                         : 'text-cyan-300 hover:text-cyan-500'
