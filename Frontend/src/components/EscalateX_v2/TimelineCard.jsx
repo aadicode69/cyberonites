@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { FaCalendarAlt, FaClock } from "react-icons/fa";
+import "./TimelineCard.css";
 
 const TimelineCard = ({ className }) => {
   const [timeline, setTimeline] = useState([]);
@@ -6,10 +8,30 @@ const TimelineCard = ({ className }) => {
   useEffect(() => {
     const fetchTimeline = async () => {
       const data = [
-        { day: "Phase 1", time: "01/09/2025", event: "Planning & Coordination" },
-        { day: "Phase 2", time: "10-11/10/2025", event: "Pre-Screening CTF (Online)" },
-        { day: "Day 1", time: "31/10/2025", event: "Knowledge Villages & Expert Talks" },
-        { day: "Day 2", time: "01/11/2025", event: "Final CTF Competition" }
+        { 
+          phase: "Pre-Screening", 
+          date: "11/10/2025", 
+          time: "9:00 PM",
+          event: "Online CTF Competition", 
+          status: "UPCOMING",
+          description: "High-stakes online CTF. Top teams advance to offline rounds."
+        },
+        { 
+          phase: "Day 1", 
+          date: "08/11/2025", 
+          time: "Full Day",
+          event: "Knowledge Villages & Expert Talks", 
+          status: "PENDING",
+          description: "Immersive learning across 5 cybersecurity domains with industry experts."
+        },
+        { 
+          phase: "Day 2", 
+          date: "09/11/2025", 
+          time: "8 Hours",
+          event: "EscalateX v2 CTF Final Championship", 
+          status: "PENDING",
+          description: "Ultimate 8-hour CTF showdown across 7 specialized categories."
+        }
       ];
       setTimeline(data);
     };
@@ -17,40 +39,50 @@ const TimelineCard = ({ className }) => {
   }, []);
 
   return (
-    <div className={`group relative overflow-hidden rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 p-6 shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 ${className}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
-      
-      <div className="relative z-10">
-        <h2 className="text-white font-bold text-xl md:text-2xl mb-6 text-center tracking-wide">
-          ESCALATE X v2 <span className="text-orange-500">TIMELINE</span>
+    <section className={`content-section timeline-section ${className}`}>
+      <header className="section-header">
+        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-wide exv2-font-cyberjunkies text-center">
+          <span className="text-white">EVENT</span> <span className="text-orange-500">SCHEDULE</span>
         </h2>
-
-        <div className="space-y-4">
-          {timeline.map((item, index) => (
-            <div key={index} className="group/item flex items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300">
-              <div className="flex-shrink-0 mr-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover/item:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">{index + 1}</span>
+        <p className="section-description">
+          Three-phase cybersecurity symposium starting with online pre-screening 
+          followed by intensive offline learning and competition at GLA University, Mathura.
+        </p>
+      </header>
+      
+      <div className="timeline-wrapper">
+        <div className="timeline-line"></div>
+        {timeline.map((item, index) => (
+          <article key={index} className={`timeline-item ${index % 2 === 0 ? '' : 'timeline-item:nth-child(even)'}`}>
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className={`timeline-status ${item.status.toLowerCase()}`}>{item.status}</div>
+              <div className="timeline-phase exv2-font-clouds">{item.phase}</div>
+              <h3 className="timeline-event-title exv2-font-clouds">{item.event}</h3>
+              <div className="timeline-datetime">
+                <div className="timeline-date">
+                  <FaCalendarAlt />
+                  <span>{item.date}</span>
+                </div>
+                <span>•</span>
+                <div className="timeline-time">
+                  <FaClock />
+                  <span>{item.time}</span>
                 </div>
               </div>
-              
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-                  <div className="mb-2 sm:mb-0">
-                    <h3 className="text-white font-semibold text-sm sm:text-base">{item.day}</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">{item.time}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-gray-300 text-xs sm:text-sm font-medium">{item.event}</p>
-                  </div>
-                </div>
-              </div>
+              <p className="timeline-description">{item.description}</p>
             </div>
-          ))}
-        </div>
+          </article>
+        ))}
       </div>
-    </div>
+      
+      <footer className="venue-info-section">
+        <h3 className="exv2-font-clouds">Venue Information</h3>
+        <h4 className="exv2-font-clouds">GLA University, Mathura</h4>
+        <p>All offline activities (Day 1 & Day 2) will be conducted at GLA University campus in Mathura. 
+        Participants advancing from the Pre-CTF will receive detailed venue and accommodation information.</p>
+      </footer>
+    </section>
   );
 };
 

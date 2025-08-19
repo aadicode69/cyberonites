@@ -1,57 +1,83 @@
 import React from "react";
+import { FaEnvelope, FaUser, FaHeadset } from "react-icons/fa";
+import "./EscX_v2_custom.css";
 
 const ContactCard = ({ className }) => {
   const coordinators = [
-    { name: "Nitin Sikarwar", phone: "+91 xxxxx xxxxx" },
-    { name: "Sumit Kumar", phone: "+91 xxxxx xxxxx" },
+    { name: "Nitin Sikarwar", role: "Lead Event Coordinator" },
+    { name: "Sumit Kumar", role: "Technical Coordinator" },
   ];
 
   return (
-    <div className={`group relative overflow-hidden rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 p-6 md:p-8 shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 ${className}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
-      
-      <div className="relative z-10 text-center">
-        <h2 className="text-white font-bold text-2xl md:text-3xl mb-6 tracking-wide">
-          Have Questions? <span className="text-orange-500">Contact Us!</span>
+    <section className={`py-16 px-6 relative ${className}`}>
+      <header className="text-center max-w-4xl mx-auto mb-12">
+        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-wide exv2-font-cyberjunkies">
+          <span className="text-white">CONTACT</span> <span className="text-orange-500">US</span>
         </h2>
-
-        <div className="mb-8 p-6 rounded-2xl bg-white/5 border border-white/10">
-          <p className="text-gray-300 text-lg mb-2">General Inquiries</p>
-          <a
-            href="mailto:support@cyberonites.com"
-            className="text-orange-400 hover:text-orange-300 font-semibold text-xl transition-colors duration-300 hover:underline"
-          >
-            support@cyberonites.com
-          </a>
-        </div>
-
-        <div className="border-t border-white/10 pt-6">
-          <h3 className="text-white font-bold text-xl mb-6">
-            Event <span className="text-orange-500">Coordinators</span>
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {coordinators.map((coordinator, index) => (
-              <div key={index} className="group/card p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-center">
-                  <h4 className="text-white font-semibold text-lg mb-3">{coordinator.name}</h4>
-                  <a
-                    href={`tel:${coordinator.phone}`}
-                    className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 hover:scale-105 font-medium"
-                  >
-                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    {coordinator.phone}
-                  </a>
-                </div>
+        <p className="text-lg text-gray-300 leading-relaxed">
+          Get in touch with our team for event inquiries and support
+        </p>
+      </header>
+      
+      <div className="max-w-4xl mx-auto">
+        <article className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8">
+          <header className="flex items-center gap-4 mb-8">
+            <div className="p-3 bg-orange-500/20 rounded-xl">
+              <FaEnvelope className="text-orange-400 text-2xl" />
+            </div>
+            <h3 className="text-white text-xl font-bold exv2-font-clouds">Event Information & Support</h3>
+          </header>
+          
+          <section className="mb-8">
+            <h4 className="flex items-center gap-3 text-orange-400 text-lg font-semibold mb-4 exv2-font-clouds">
+              <FaEnvelope className="text-base" />
+              General Inquiries
+            </h4>
+            <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="text-gray-400 font-medium min-w-32">Email:</span>
+                <a 
+                  href="mailto:support@cyberonites.com" 
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  support@cyberonites.com
+                </a>
               </div>
-            ))}
-          </div>
-        </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="text-gray-400 font-medium min-w-32">Response Time:</span>
+                <span className="text-white">Within 24 hours</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <span className="text-gray-400 font-medium min-w-32">Venue:</span>
+                <span className="text-white">GLA University, Mathura, UP</span>
+              </div>
+            </div>
+          </section>
+
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent mb-8"></div>
+
+          <section>
+            <h4 className="flex items-center gap-3 text-orange-400 text-lg font-semibold mb-4 exv2-font-clouds">
+              <FaUser className="text-base" />
+              Event Coordinators
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {coordinators.map((coordinator, index) => (
+                <div key={index} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="p-2 bg-orange-500/20 rounded-lg">
+                    <FaHeadset className="text-orange-400 text-lg" />
+                  </div>
+                  <div>
+                    <h5 className="text-white font-semibold exv2-font-clouds">{coordinator.name}</h5>
+                    <p className="text-gray-400 text-sm">{coordinator.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 
