@@ -1,0 +1,742 @@
+/* Timeline Component Styles - Optimized for EscalateX v2 */
+
+/* ==========================================
+   CSS CUSTOM PROPERTIES - Timeline Specific Only
+   ========================================== */
+:root {
+  /* Timeline-specific variables only - inherits from main EscX_v2.css */
+  --timeline-dot-size: 20px;
+  --timeline-line-width: 4px;
+  --timeline-content-max-width: 48%;
+  --timeline-mobile-offset: 3.5rem;
+  --timeline-section-padding: 6rem 0;
+  --timeline-item-margin: 4rem;
+  --timeline-content-padding: 3rem;
+  --timeline-wrapper-padding: 4rem 2rem;
+  --timeline-wrapper-max-width: 1400px;
+}
+
+/* ==========================================
+   MAIN TIMELINE SECTION
+   ========================================== */
+.exv2-timeline-section {
+  padding: var(--timeline-section-padding);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.exv2-timeline-section .exv2-section-header {
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto 6rem auto;
+  padding: var(--container-padding);
+}
+
+.exv2-timeline-section .exv2-section-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+  position: relative;
+  text-align: center;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.exv2-timeline-section .exv2-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 0.3rem;
+  background: var(--gradient-orange);
+  border-radius: 0.15rem;
+  box-shadow: 0 0 1.5rem var(--glow-orange);
+}
+
+.exv2-timeline-section .exv2-section-description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ==========================================
+   TIMELINE WRAPPER & LINE
+   ========================================== */
+.exv2-timeline-wrapper {
+  position: relative;
+  max-width: var(--timeline-wrapper-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--timeline-wrapper-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exv2-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 3rem;
+  bottom: 3rem;
+  width: var(--timeline-line-width);
+  background: linear-gradient(180deg, 
+    transparent 0%,
+    var(--glow-orange) 5%,
+    var(--primary-orange) 50%,
+    var(--glow-orange) 95%,
+    transparent 100%
+  );
+  border-radius: 0.2rem;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 0 10px var(--glow-orange);
+}
+
+.exv2-timeline-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--primary-orange);
+  border: 0.1875rem solid var(--darker-bg);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 1.25rem var(--glow-orange);
+  z-index: 2;
+}
+
+.exv2-timeline-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--primary-orange);
+  border: 0.1875rem solid var(--darker-bg);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 1.25rem var(--glow-orange);
+  z-index: 2;
+}
+
+/* ==========================================
+   TIMELINE ITEMS & ALTERNATING LAYOUT
+   ========================================== */
+.exv2-timeline-item {
+  position: relative;
+  margin-bottom: var(--timeline-item-margin);
+  display: flex;
+  align-items: center;
+  min-height: 160px;
+  padding: 1.5rem 0;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Left-aligned items (odd) */
+.exv2-timeline-item-left {
+  justify-content: flex-start;
+}
+
+.exv2-timeline-item-left .exv2-timeline-content {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Right-aligned items (even) */
+.exv2-timeline-item-right {
+  justify-content: flex-end;
+}
+
+.exv2-timeline-item-right .exv2-timeline-content {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Timeline Dot - Enhanced sizing and positioning */
+.exv2-timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  background: var(--primary-orange);
+  border: 0.3rem solid var(--darker-bg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  box-shadow: 
+    0 0 0 0.4rem rgba(255, 107, 53, 0.2),
+    0 0 1.5rem var(--glow-orange),
+    0 0 3rem rgba(255, 107, 53, 0.4);
+  transition: var(--transition-default);
+}
+
+/* ==========================================
+   TIMELINE CONTENT
+   ========================================== */
+.exv2-timeline-content {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: var(--timeline-content-max-width);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  backdrop-filter: blur(15px);
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Content Hover Effects */
+.exv2-timeline-content:hover {
+  transform: translateY(-0.25rem);
+  border-color: rgba(255, 107, 53, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 107, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.exv2-timeline-item:hover .exv2-timeline-dot {
+  transform: translate(-50%, -50%) scale(1.3);
+  box-shadow: 
+    0 0 0 0.6rem rgba(255, 107, 53, 0.3),
+    0 0 2.5rem rgba(255, 107, 53, 0.8),
+    0 0 4rem rgba(255, 107, 53, 0.6);
+}
+
+/* Timeline Arrows - Enhanced */
+.exv2-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.exv2-timeline-item-left .exv2-timeline-content::before {
+  right: -1rem;
+  border-width: 1rem 0 1rem 1rem;
+  border-color: transparent transparent transparent var(--card-border);
+}
+
+.exv2-timeline-item-right .exv2-timeline-content::before {
+  left: -1rem;
+  border-width: 1rem 1rem 1rem 0;
+  border-color: transparent var(--card-border) transparent transparent;
+}
+
+/* ==========================================
+   TIMELINE CONTENT ELEMENTS
+   ========================================== */
+.exv2-timeline-status {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 3;
+}
+
+.exv2-timeline-status-upcoming {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.exv2-timeline-status-pending {
+  background: rgba(234, 179, 8, 0.2);
+  color: #eab308;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.exv2-timeline-phase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(247, 147, 30, 0.2));
+  color: var(--primary-orange);
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  min-height: 2.5rem;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
+}
+
+.exv2-timeline-event-title {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.exv2-timeline-datetime {
+  color: var(--primary-orange);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  background: rgba(255, 107, 53, 0.05);
+  border-radius: 0.625rem;
+  justify-content: center;
+}
+
+.exv2-timeline-date,
+.exv2-timeline-time {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.exv2-timeline-datetime svg {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.exv2-timeline-description {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   VENUE INFO SECTION - Timeline Specific
+   ========================================== */
+.exv2-venue-info-section {
+  margin: 5rem auto 0 auto;
+  padding: 2.5rem;
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: var(--border-radius-large);
+  text-align: center;
+  backdrop-filter: blur(15px);
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 6px 25px rgba(255, 107, 53, 0.1);
+}
+
+.exv2-venue-info-section::before {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+  border-radius: 2px;
+}
+
+.exv2-venue-info-section h3 {
+  color: var(--primary-orange);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'clouds', 'Ubuntu', sans-serif;
+}
+
+.exv2-venue-info-section h4 {
+  color: var(--text-primary);
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'clouds', 'Ubuntu', sans-serif;
+}
+
+.exv2-venue-info-section p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   TIMELINE MOBILE SPECIFIC STYLES
+   ========================================== */
+@media (max-width: 640px) {
+  .exv2-timeline-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .exv2-timeline-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .exv2-venue-info-section {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    width: calc(100% - 2rem) !important;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - LARGE SCREENS
+   ========================================== */
+@media (min-width: 1400px) {
+  :root {
+    --timeline-wrapper-max-width: 1600px;
+    --timeline-content-max-width: 45%;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - TABLET
+   ========================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  :root {
+    --timeline-content-max-width: 44%;
+    --timeline-section-padding: 5rem 0;
+    --timeline-wrapper-padding: 3rem 2rem;
+    --timeline-content-padding: 2.5rem;
+    --timeline-item-margin: 3rem;
+  }
+  
+  .exv2-timeline-section .exv2-section-header {
+    margin-bottom: 5rem;
+  }
+  
+  .exv2-timeline-event-title {
+    font-size: 1.3rem;
+  }
+  
+  .exv2-venue-info-section {
+    margin-top: 4rem;
+    padding: 2.5rem;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - MOBILE
+   ========================================== */
+@media (max-width: 768px) {
+  :root {
+    --timeline-content-max-width: 100%;
+    --timeline-mobile-offset: 4rem;
+    --timeline-section-padding: 4rem 0;
+    --timeline-wrapper-padding: 3rem 1.5rem;
+    --timeline-content-padding: 2rem;
+    --timeline-item-margin: 3rem;
+  }
+
+  .exv2-timeline-section {
+    align-items: stretch;
+  }
+
+  .exv2-timeline-section .exv2-section-header {
+    margin-bottom: 4rem;
+    padding: 0 1.5rem;
+  }
+
+  .exv2-timeline-wrapper {
+    align-items: stretch;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .exv2-timeline-line {
+    left: 2rem;
+    transform: none;
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .exv2-timeline-line::before,
+  .exv2-timeline-line::after {
+    left: -0.5rem;
+    transform: none;
+  }
+
+  .exv2-timeline-dot {
+    left: 2rem;
+    transform: translateY(-50%);
+  }
+
+  .exv2-timeline-item {
+    justify-content: flex-start !important;
+    padding-left: var(--timeline-mobile-offset);
+    margin-bottom: var(--timeline-item-margin);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .exv2-timeline-item-left,
+  .exv2-timeline-item-right {
+    justify-content: flex-start;
+  }
+
+  .exv2-timeline-item-left .exv2-timeline-content,
+  .exv2-timeline-item-right .exv2-timeline-content {
+    margin: 0;
+    max-width: calc(100% - var(--timeline-mobile-offset));
+  }
+
+  .exv2-timeline-content::before {
+    display: none;
+  }
+
+  .exv2-timeline-status {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .exv2-timeline-datetime {
+    justify-content: flex-start;
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .exv2-timeline-content {
+    padding: 1.75rem;
+    border-radius: 0.875rem;
+  }
+
+  .exv2-timeline-phase {
+    padding: 0.75rem 1rem;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .exv2-venue-info-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+   ========================================== */
+@media (max-width: 480px) {
+  :root {
+    --timeline-section-padding: 3rem 0;
+    --timeline-wrapper-padding: 2rem 1rem;
+    --timeline-content-padding: 1.5rem;
+    --timeline-item-margin: 2.5rem;
+    --timeline-mobile-offset: 3.5rem;
+  }
+
+  .exv2-timeline-section .exv2-section-header {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+
+  .exv2-timeline-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .exv2-timeline-line {
+    left: 1.75rem;
+  }
+
+  .exv2-timeline-dot {
+    left: 1.75rem;
+  }
+
+  .exv2-timeline-item {
+    padding-left: 3.5rem;
+  }
+
+  .exv2-timeline-item-left .exv2-timeline-content,
+  .exv2-timeline-item-right .exv2-timeline-content {
+    max-width: calc(100% - 3.5rem);
+  }
+
+  .exv2-timeline-event-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .exv2-timeline-datetime {
+    padding: 0.75rem 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .exv2-timeline-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .exv2-venue-info-section {
+    padding: 1.75rem;
+    border-radius: 0.875rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .exv2-venue-info-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .exv2-venue-info-section h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ==========================================
+   FOCUS & ACCESSIBILITY STATES
+   ========================================== */
+.exv2-timeline-item:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.exv2-timeline-content:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 0.25rem;
+  border-color: var(--primary-orange);
+}
+
+/* ==========================================
+   HIGH CONTRAST MODE SUPPORT
+   ========================================== */
+@media (prefers-contrast: high) {
+  .exv2-timeline-line {
+    background: var(--primary-orange);
+  }
+  
+  .exv2-timeline-dot {
+    background: var(--primary-orange);
+    border-color: #000;
+  }
+  
+  .exv2-timeline-content {
+    border-color: var(--primary-orange);
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .exv2-timeline-status-upcoming {
+    background: rgba(34, 197, 94, 0.9);
+    border-color: #22c55e;
+  }
+  
+  .exv2-timeline-status-pending {
+    background: rgba(234, 179, 8, 0.9);
+    border-color: #eab308;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .exv2-timeline-content,
+  .exv2-timeline-dot {
+    transition: none;
+  }
+  
+  .exv2-timeline-content:hover {
+    transform: none;
+  }
+  
+  .exv2-timeline-item:hover .exv2-timeline-dot {
+    transform: translate(-50%, -50%);
+  }
+}
+  
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+  .exv2-timeline-section {
+    background: white;
+    color: black;
+  }
+  
+  .exv2-timeline-line,
+  .exv2-timeline-dot {
+    background: black;
+  }
+  
+  .exv2-timeline-content {
+    background: white;
+    border-color: black;
+    box-shadow: none;
+  }
+}

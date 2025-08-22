@@ -1,5 +1,5 @@
 import React from "react";
-import "./EscX_v2_custom.css";
+import "./styles/sponsors.css";
 
 // Import sponsor logos
 import alteredSecurityLogo from "../../img/sponsor-logo/altered-security.png";
@@ -7,6 +7,10 @@ import offsecLogo from "../../img/sponsor-logo/offsec.png";
 import cigLogo from "../../img/sponsor-logo/cig-logo.png";
 import multigradLogo from "../../img/sponsor-logo/multigrade.png";
 import ycfLogo from "../../img/sponsor-logo/ycf-logo.jpg";
+import escalateXLogo from "../../img/escalateXv2/logo.png";
+// Additional logo variations
+import alteredSecurityLogoAlt from "../../img/sponsor-logo/altered-security-logo.jpg";
+import offsecLogoAlt from "../../img/sponsor-logo/offsec-logo.png";
 
 // ==========================================
 // CONFIGURATION CONSTANTS
@@ -136,38 +140,55 @@ const SponsorsSection = ({ className }) => {
   // ==========================================
   // COMPONENT: INDIVIDUAL SPONSOR CARD
   // ==========================================
-  const SponsorCard = ({ sponsor }) => (
-    <article className="exv2-sponsors-card bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center">
-      {/* Sponsor Logo Display */}
-      {sponsor.logo && (
-        <div className="w-full h-16 flex items-center justify-center mb-4 p-2 rounded-xl bg-white/5">
-          <img 
-            src={sponsor.logo} 
-            alt={`${sponsor.name} logo`}
-            className="max-w-full max-h-full object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-        </div>
-      )}
-      
-      {/* Sponsor Name */}
-      <div className="text-white text-lg mb-3 exv2-font-tavo">
-        {sponsor.name}
-      </div>
-      
-      {/* Sponsor Tier Badge */}
-      <span className={`exv2-sponsors-tier-${sponsor.tier.toLowerCase()} inline-block px-3 py-1 rounded-lg text-xs font-medium uppercase tracking-wide mb-3 exv2-font-clouds`}>
-        {sponsor.tier}
-      </span>
-      
-      {/* Sponsor Description */}
-      <p className="text-gray-400 text-sm leading-relaxed">
-        {sponsor.description}
-      </p>
-    </article>
-  );
+  const SponsorCard = ({ sponsor }) => {
+    const handleImageError = (e) => {
+      console.warn(`Failed to load logo for ${sponsor.name}`);
+      e.target.style.display = 'none';
+      // Create fallback element
+      const fallbackDiv = document.createElement('div');
+      fallbackDiv.className = 'w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center exv2-sponsor-fallback';
+      fallbackDiv.innerHTML = `<span class="text-white font-bold text-lg exv2-font-clouds">${sponsor.name.charAt(0)}</span>`;
+      e.target.parentElement.appendChild(fallbackDiv);
+    };
+
+    return (
+      <article className="exv2-sponsors-card bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center hover:bg-white/8 hover:border-orange-500/20 transition-all duration-300 group">
+        {/* Sponsor Logo Display */}
+        <figure className="w-full h-20 flex items-center justify-center mb-6 p-3 rounded-xl bg-white/10 group-hover:bg-white/15 transition-all duration-300">
+          {sponsor.logo ? (
+            <img 
+              src={sponsor.logo} 
+              alt={`${sponsor.name} company logo`}
+              className="max-w-full max-h-full object-contain filter brightness-90 hover:brightness-100 transition-all duration-300"
+              onError={handleImageError}
+              loading="lazy"
+            />
+          ) : (
+            <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl flex items-center justify-center group-hover:from-orange-400 group-hover:to-orange-600 transition-all duration-300 exv2-sponsor-fallback">
+              <span className="text-white font-bold text-lg exv2-font-clouds">
+                {sponsor.name.charAt(0)}
+              </span>
+            </div>
+          )}
+        </figure>
+        
+        {/* Sponsor Name */}
+        <h4 className="text-white text-lg font-bold mb-3 exv2-font-tavo group-hover:text-orange-300 transition-colors duration-300">
+          {sponsor.name}
+        </h4>
+        
+        {/* Sponsor Tier Badge */}
+        <aside className={`exv2-sponsors-tier-${sponsor.tier.toLowerCase()} inline-block px-3 py-2 rounded-lg text-xs font-medium uppercase tracking-wide mb-4 exv2-font-clouds border transition-all duration-300`}>
+          {sponsor.tier}
+        </aside>
+        
+        {/* Sponsor Description */}
+        <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+          {sponsor.description}
+        </p>
+      </article>
+    );
+  };
 
   // ==========================================
   // COMPONENT: SPONSORSHIP TIER CARD
@@ -223,26 +244,46 @@ const SponsorsSection = ({ className }) => {
       
       {/* ===== PAST SPONSORS SECTION ===== */}
       <section className="mb-16">
-        <h3 className="text-orange-400 text-2xl font-bold mb-8 text-center exv2-font-clouds">
-          Past Sponsors (Escalate<span className="exv2-logo-x"></span> {PREVIOUS_EVENT_YEAR})
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <header className="text-center mb-8">
+          <h3 className="text-orange-400 text-2xl font-bold mb-4 exv2-font-clouds flex items-center justify-center gap-3">
+            Past Sponsors (Escalate
+            <img 
+              src={escalateXLogo} 
+              alt="EscalateX logo" 
+              className="w-8 h-8 object-contain inline-block mx-1 filter brightness-0 invert"
+              onError={(e) => {
+                // Fallback to text-based X if image fails
+                e.target.outerHTML = '<span class="exv2-logo-x-small inline-block mx-1 text-orange-500">✕</span>';
+              }}
+            />
+            {PREVIOUS_EVENT_YEAR})
+          </h3>
+          <p className="text-gray-400 text-sm">
+            Thank you to our amazing sponsors who made EscalateX 2024 a huge success
+          </p>
+        </header>
+        <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {pastSponsors.map((sponsor, index) => (
             <SponsorCard key={`sponsor-${index}`} sponsor={sponsor} />
           ))}
-        </div>
+        </main>
       </section>
 
       {/* ===== SPONSORSHIP OPPORTUNITIES SECTION ===== */}
       <section className="mb-16">
-        <h3 className="text-orange-400 text-2xl font-bold mb-8 text-center exv2-font-clouds">
-          Sponsorship Opportunities
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <header className="text-center mb-8">
+          <h3 className="text-orange-400 text-2xl font-bold mb-4 exv2-font-clouds">
+            Sponsorship Opportunities
+          </h3>
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+            Partner with us and reach 800+ cybersecurity enthusiasts, students, and professionals
+          </p>
+        </header>
+        <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {sponsorshipTiers.map((tier, index) => (
             <TierCard key={`tier-${index}`} tier={tier} />
           ))}
-        </div>
+        </main>
       </section>
 
       {/* ===== CONTACT FOOTER ===== */}

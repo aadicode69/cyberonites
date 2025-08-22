@@ -1,89 +1,109 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
-import "./TimelineCard.css";
+import "./styles/TimelineCard.css";
+
+// ==========================================
+// CONFIGURATION CONSTANTS
+// ==========================================
+const TIMELINE_DATA = [
+  { 
+    id: 1,
+    phase: "PRE-SCREENING", 
+    date: "October 11, 2025", 
+    time: "9:00 PM",
+    event: "Online CTF Competition", 
+    status: "UPCOMING",
+    description: "High-stakes online CTF. Top teams advance to offline rounds.",
+    isoCurrent: "2025-10-11T21:00:00"
+  },
+  { 
+    id: 2,
+    phase: "DAY 1", 
+    date: "November 8, 2025", 
+    time: "Full Day",
+    event: "Knowledge Villages & Expert Talks", 
+    status: "PENDING",
+    description: "Immersive learning across 5 cybersecurity domains with industry experts.",
+    isoCurrent: "2025-11-08T09:00:00"
+  },
+  { 
+    id: 3,
+    phase: "DAY 2", 
+    date: "November 9, 2025", 
+    time: "8 Hours",
+    event: "EscalateX v2 CTF Final Championship", 
+    status: "PENDING",
+    description: "Ultimate 8-hour CTF showdown across 7 specialized categories.",
+    isoCurrent: "2025-11-09T09:00:00"
+  }
+];
+
+const VENUE_INFO = {
+  name: "GLA University, Mathura",
+  description: "All offline activities (Day 1 & Day 2) will be conducted at GLA University campus in Mathura. Participants advancing from the Pre-CTF will receive detailed venue and accommodation information."
+};
 
 const TimelineCard = ({ className }) => {
-  const [timeline, setTimeline] = useState([]);
-
-  useEffect(() => {
-    const fetchTimeline = async () => {
-      const data = [
-        { 
-          phase: "Pre-Screening", 
-          date: "11/10/2025", 
-          time: "9:00 PM",
-          event: "Online CTF Competition", 
-          status: "UPCOMING",
-          description: "High-stakes online CTF. Top teams advance to offline rounds."
-        },
-        { 
-          phase: "Day 1", 
-          date: "08/11/2025", 
-          time: "Full Day",
-          event: "Knowledge Villages & Expert Talks", 
-          status: "PENDING",
-          description: "Immersive learning across 5 cybersecurity domains with industry experts."
-        },
-        { 
-          phase: "Day 2", 
-          date: "09/11/2025", 
-          time: "8 Hours",
-          event: "EscalateX v2 CTF Final Championship", 
-          status: "PENDING",
-          description: "Ultimate 8-hour CTF showdown across 7 specialized categories."
-        }
-      ];
-      setTimeline(data);
-    };
-    fetchTimeline();
-  }, []);
-
   return (
-    <section className={`content-section timeline-section ${className}`}>
-      <header className="section-header">
-        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-wide exv2-font-cyberjunkies text-center">
+    <section className={`exv2-content-section exv2-timeline-section ${className}`} aria-labelledby="timeline-heading">
+      {/* Section Header */}
+      <header className="exv2-section-header">
+        <h2 id="timeline-heading" className="exv2-section-title exv2-font-cyberjunkies">
           <span className="text-white">EVENT</span> <span className="text-orange-500">SCHEDULE</span>
         </h2>
-        <p className="section-description">
+        <p className="exv2-section-description">
           Three-phase cybersecurity symposium starting with online pre-screening 
           followed by intensive offline learning and competition at GLA University, Mathura.
         </p>
       </header>
       
-      <div className="timeline-wrapper">
-        <div className="timeline-line"></div>
-        {timeline.map((item, index) => (
-          <article key={index} className={`timeline-item ${index % 2 === 0 ? '' : 'timeline-item:nth-child(even)'}`}>
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <div className={`timeline-status ${item.status.toLowerCase()}`}>{item.status}</div>
-              <div className="timeline-phase exv2-font-clouds">{item.phase}</div>
-              <h3 className="timeline-event-title exv2-font-clouds">{item.event}</h3>
-              <div className="timeline-datetime">
-                <div className="timeline-date">
-                  <FaCalendarAlt />
-                  <span>{item.date}</span>
-                </div>
-                <span>•</span>
-                <div className="timeline-time">
-                  <FaClock />
+      {/* Timeline Wrapper */}
+      <section className="exv2-timeline-wrapper" role="list" aria-label="Event timeline">
+        <div className="exv2-timeline-line" aria-hidden="true"></div>
+        {TIMELINE_DATA.map((item, index) => (
+          <article 
+            key={item.id} 
+            className={`exv2-timeline-item exv2-timeline-item-${index % 2 === 0 ? 'left' : 'right'}`}
+            role="listitem"
+            aria-labelledby={`timeline-event-${item.id}`}
+            tabIndex="0"
+          >
+            <div className="exv2-timeline-dot" aria-hidden="true"></div>
+            <main className="exv2-timeline-content">
+              <aside className={`exv2-timeline-status exv2-timeline-status-${item.status.toLowerCase()}`} aria-label={`Status: ${item.status}`}>
+                {item.status}
+              </aside>
+              <header className="exv2-timeline-phase exv2-font-clouds" aria-label={`Phase: ${item.phase}`}>
+                {item.phase}
+              </header>
+              <h3 id={`timeline-event-${item.id}`} className="exv2-timeline-event-title exv2-font-clouds">
+                {item.event}
+              </h3>
+              <address className="exv2-timeline-datetime not-italic" aria-label={`Date and time: ${item.date} at ${item.time}`}>
+                <time className="exv2-timeline-date" dateTime={item.isoCurrent}>
+                  <FaCalendarAlt aria-hidden="true" />
+                  {item.date}
+                </time>
+                <span aria-hidden="true">•</span>
+                <div className="exv2-timeline-time">
+                  <FaClock aria-hidden="true" />
                   <span>{item.time}</span>
                 </div>
-              </div>
-              <p className="timeline-description">{item.description}</p>
-            </div>
+              </address>
+              <p className="exv2-timeline-description">{item.description}</p>
+            </main>
           </article>
         ))}
-      </div>
+      </section>
       
-      <footer className="venue-info-section">
-        <h3 className="exv2-font-clouds">Venue Information</h3>
-        <h4 className="exv2-font-clouds">GLA University, Mathura</h4>
-        <p>All offline activities (Day 1 & Day 2) will be conducted at GLA University campus in Mathura. 
-        Participants advancing from the Pre-CTF will receive detailed venue and accommodation information.</p>
+      {/* Venue Information */}
+      <footer className="exv2-venue-info-section" role="contentinfo" aria-labelledby="venue-heading">
+        <h3 id="venue-heading" className="exv2-font-clouds">Venue Information</h3>
+        <h4 className="exv2-font-clouds">{VENUE_INFO.name}</h4>
+        <p>{VENUE_INFO.description}</p>
       </footer>
     </section>
   );
 };
 
-export default TimelineCard;
+export default React.memo(TimelineCard);

@@ -31,7 +31,7 @@ const CountdownCard = ({ className }) => {
       <div className="exv2-countdown-border absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
       
       <div className="exv2-countdown-content relative z-10 text-center">
-        <h2 className="text-xl md:text-2xl font-black text-white mb-6 tracking-wide exv2-font-cyberjunkies">
+        <h2 className="text-xl md:text-2xl font-black text-white mb-6 tracking-wide">
           <span className="text-white">EVENT</span> <span className="text-orange-500">COUNTDOWN</span>
         </h2>
 
@@ -58,7 +58,7 @@ const CountdownCard = ({ className }) => {
             </p>
           </div>
           <p className="exv2-countdown-footer text-gray-400 text-sm text-center">
-            Until Escalate<span className="exv2-logo-x exv2-logo-x-small"></span> v2 begins at <span className="text-orange-400 font-semibold">GLA University, Mathura</span>
+            Until Escalate<span className="exv2-logo-x-small"></span> v2 begins at <span className="text-orange-400 font-semibold">GLA University, Mathura</span>
           </p>
         </footer>
       </div>

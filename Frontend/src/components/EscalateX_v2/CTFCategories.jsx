@@ -9,7 +9,7 @@ import {
   FaDesktop,
   FaShieldAlt 
 } from "react-icons/fa";
-import "./EscX_v2_custom.css";
+import "./styles/cards.css";
 
 const CTFCategories = ({ className }) => {
   const categories = [

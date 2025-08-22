@@ -5,7 +5,6 @@ import {
   FaGlobe, 
   FaCloud 
 } from "react-icons/fa";
-import "./EscX_v2_custom.css";
 
 const KnowledgeVillages = ({ className }) => {
   const villages = [
@@ -58,20 +57,23 @@ const KnowledgeVillages = ({ className }) => {
       </header>
 
       {/* Villages Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
         {villages.map((village, index) => (
           <article key={index} className="exv2-village-card bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
             {/* Village Header */}
-            <header className="text-center mb-6">
-              <div className="text-orange-500 text-4xl mb-4 flex justify-center">
+            <header className="exv2-village-header text-center mb-6">
+              <aside className="text-orange-500 text-4xl mb-4 flex justify-center" aria-hidden="true">
                 {village.icon}
-              </div>
+              </aside>
               <h3 className="text-white text-xl font-bold mb-2 exv2-font-clouds">
                 {village.name}
               </h3>
-              <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 text-sm font-medium rounded-lg exv2-font-clouds">
+              <data 
+                value={village.capacity} 
+                className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 text-sm font-medium rounded-lg exv2-font-clouds"
+              >
                 Max Capacity: {village.capacity}
-              </span>
+              </data>
             </header>
 
             {/* Village Description */}
@@ -80,26 +82,26 @@ const KnowledgeVillages = ({ className }) => {
             </p>
 
             {/* Key Topics */}
-            <div className="mb-4">
+            <section className="mb-4">
               <h4 className="text-white text-sm font-semibold mb-3 text-center exv2-font-clouds">Key Topics:</h4>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <ul className="flex flex-wrap gap-2 justify-center">
                 {village.topics.map((topic, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-white/5 text-gray-300 text-xs rounded-lg border border-white/10">
+                  <li key={idx} className="px-3 py-1 bg-white/5 text-gray-300 text-xs rounded-lg border border-white/10">
                     {topic}
-                  </span>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </section>
 
             {/* Village Footer */}
-            <footer className="text-center">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500/20 to-orange-600/20 text-orange-400 text-sm font-medium rounded-xl border border-orange-500/30 exv2-font-clouds">
+            <footer className="exv2-village-footer text-center">
+              <mark className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500/20 to-orange-600/20 text-orange-400 text-sm font-medium rounded-xl border border-orange-500/30 exv2-font-clouds">
                 Hands-on Learning
-              </span>
+              </mark>
             </footer>
           </article>
         ))}
-      </div>
+      </main>
 
       {/* Access Information */}
       <footer className="text-center max-w-2xl mx-auto p-8 bg-gradient-to-br from-orange-500/5 to-orange-600/5 border border-orange-500/20 rounded-2xl backdrop-blur-lg">
