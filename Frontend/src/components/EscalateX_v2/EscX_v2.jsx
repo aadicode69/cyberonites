@@ -16,7 +16,8 @@ import {
   FaShieldVirus,
   FaNetworkWired,
 } from "react-icons/fa";
-import cyberonitesMiniLogo from "../../img/escalateXv2/logo.png";
+import ExcV2MiniLogo from "../../img/escalateXv2/logo.png";
+import cyberonitesLogo from "./../../img/cyberonites.png";
 import CountdownCard from "./CountdownCard";
 import EventDetailsCard from "./EventDetailsCard";
 import CustomFooter from "./CustomFooter";
@@ -59,24 +60,24 @@ const EscX_v2 = () => {
       <aside className="exv2-bg-particles absolute inset-0 opacity-30" aria-hidden="true"></aside>
 
       {/* Header */}
-      <header className="exv2-header relative z-50 py-4 px-6 backdrop-blur-lg bg-black/20 border-b border-white/10">
+      <header className="exv2-header relative z-50 px-6 backdrop-blur-lg bg-black/20 border-b border-white/10">
         <div className="exv2-container max-w-7xl mx-auto">
           <nav className="exv2-header-content flex items-center justify-between">
             <section className="exv2-logo-section">
-              <div className="exv2-logo-container flex items-center space-x-4">
+              <div className="exv2-logo-container flex items-center">
                 <img
-                  src={cyberonitesMiniLogo}
+                  src={cyberonitesLogo}
                   alt="Cyberonites"
-                  className="exv2-logo w-12 h-12 rounded-lg"
+                  className="w-20 h-18 rounded-lg"
                 />
-                <div className="exv2-logo-text">
+                {/* <div className="exv2-logo-text">
                   <h1 className="text-xl font-bold text-white exv2-font-cyberjunkies">
-                    EscalateX v2
+                    Cyberonites
                   </h1>
                   <p className="text-sm text-gray-400">
-                    Cybersecurity Symposium
-                  </p>
-                </div>
+                    Cybersecurity Community
+                  </p> */}
+                {/* </div> */}
               </div>
             </section>
             <menu className="exv2-nav-buttons flex items-center space-x-4">
@@ -129,7 +130,7 @@ const EscX_v2 = () => {
                 SCALATE
               </span>
               <img
-                src={cyberonitesMiniLogo}
+                src={ExcV2MiniLogo}
                 alt="Cyberonites"
                 className="exv2-logo-x-large"
               />

@@ -250,7 +250,7 @@ const SponsorsSection = ({ className }) => {
             <img 
               src={escalateXLogo} 
               alt="EscalateX logo" 
-              className="w-8 h-8 object-contain inline-block mx-1 filter brightness-0 invert"
+              className="w-8 h-8 object-contain inline-block filter brightness-0 invert"
               onError={(e) => {
                 // Fallback to text-based X if image fails
                 e.target.outerHTML = '<span class="exv2-logo-x-small inline-block mx-1 text-orange-500">✕</span>';

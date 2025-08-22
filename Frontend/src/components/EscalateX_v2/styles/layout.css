@@ -615,11 +615,11 @@ menu.exv2-nav-buttons li {
 }
 
 /* Villages and CTF Sections Layout */
-.exv2-villages-section,
+/* .exv2-villages-section,
 .exv2-ctf-section {
   text-align: center;
-}
-
+} */
+/* 
 .exv2-village-header {
   display: flex;
   flex-direction: column;
@@ -636,7 +636,7 @@ menu.exv2-nav-buttons li {
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: auto;
-}
+} */
 
 /* Legacy Stats Layout */
 .exv2-legacy-stats {

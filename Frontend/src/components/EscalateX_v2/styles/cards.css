@@ -6,7 +6,6 @@
 .exv2-sponsors-card,
 .exv2-countdown-card,
 .exv2-event-details-card,
-.exv2-poster-card,
 .exv2-overview-card,
 .exv2-stat-item {
   background: var(--card-bg);
@@ -21,7 +20,6 @@
 /* Consolidated hover effects */
 .exv2-countdown-card:hover,
 .exv2-event-details-card:hover,
-.exv2-poster-card:hover,
 .exv2-village-card:hover,
 .exv2-ctf-card:hover,
 .exv2-stat-item:hover,
@@ -33,13 +31,18 @@
 
 /* Overview Card Effects */
 .exv2-overview-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.05), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 107, 53, 0.05),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -61,13 +64,22 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-orange) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-orange) 50%,
+    transparent 100%
+  );
   animation: shimmer 2s ease-in-out infinite;
 }
 
 @keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* Event Details Card Specific */
@@ -120,7 +132,11 @@
 }
 
 .exv2-event-details-footer {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(247, 147, 30, 0.1) 100%
+  );
   border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
@@ -165,7 +181,11 @@
 }
 
 .exv2-countdown-item {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1),
+    rgba(247, 147, 30, 0.1)
+  );
   border: 1px solid rgba(255, 107, 53, 0.2);
   border-radius: 1rem;
   padding: 1rem;
@@ -185,7 +205,7 @@
   color: var(--text-primary);
   margin-bottom: 0.5rem;
   text-shadow: 0 0 20px var(--glow-orange);
-  font-family: 'clouds', 'Ubuntu', sans-serif;
+  font-family: "clouds", "Ubuntu", sans-serif;
 }
 
 .exv2-countdown-item:hover .exv2-countdown-number {
@@ -202,82 +222,16 @@
 
 /* Poster Card Specific - Consolidated */
 .exv2-poster-card {
-  backdrop-filter: blur(20px);
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transition-slow);
+  /* background: rgba(0, 0, 0, 0.4); */
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  border-radius: 10%;
   position: relative;
-  overflow: hidden;
-  padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .exv2-poster-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  /* box-shadow: 0 2px 4px rgba(255, 107, 53, 0.2); */
   border-color: rgba(255, 107, 53, 0.3);
-}
-
-.exv2-poster-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, transparent 50%, rgba(255, 107, 53, 0.05) 100%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.exv2-poster-card:hover::before {
-  opacity: 1;
-}
-
-.exv2-poster-card .absolute.top-0.left-0 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-orange) 50%, transparent 100%);
-}
-
-.exv2-poster-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 1rem;
-  transition: all 0.7s ease;
-}
-
-.exv2-poster-card:hover img {
-  transform: scale(1.05);
-}
-
-.exv2-poster-card .absolute.inset-0.bg-gradient-to-t {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%, transparent 100%);
-  border-radius: 1rem;
-}
-
-/* 3D Transform Support for Poster Card */
-.exv2-poster-card[style*="transform"][style*="perspective"] {
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.exv2-poster-card .text-center {
-  text-align: center;
-  position: relative;
-  z-index: 10;
-  margin-top: auto;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0.5rem;
-  backdrop-filter: blur(10px);
 }
 
 /* Stats Cards */
@@ -304,22 +258,6 @@
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
-}
-
-/* Village and CTF Cards */
-.exv2-village-card,
-.exv2-ctf-card {
-  padding: var(--card-padding);
-  text-align: center;
-  max-width: 400px;
-  min-height: 350px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .exv2-ctf-card {
@@ -399,7 +337,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.2;
-  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-family: "Orbitron", "Inter", sans-serif;
 }
 
 /* Objectives List */
@@ -467,7 +405,7 @@
 .exv2-legacy-number {
   font-size: 2rem;
   font-weight: 900;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   color: var(--secondary-orange);
   display: block;
   line-height: 1;
@@ -530,14 +468,9 @@
 }
 
 /* Card-specific Villages and CTF Headers/Footers */
-.exv2-village-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
+/* .exv2-village-header {
+
+} */
 
 .exv2-village-footer {
   display: flex;
@@ -603,7 +536,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .exv2-overview-legacy {
     grid-column: 1;
   }
@@ -611,7 +544,7 @@
   .exv2-container-overview {
     padding: 0 1.5rem;
   }
-  
+
   .exv2-event-overview-section {
     padding: 4rem 0;
   }
@@ -624,7 +557,7 @@
     padding: 2rem 1.5rem;
     max-width: 100%;
   }
-  
+
   .exv2-benefit-item {
     padding: 0.8rem;
     flex-direction: column;
@@ -641,7 +574,7 @@
   .exv2-container-overview {
     padding: 0 1rem;
   }
-  
+
   .exv2-event-overview-section {
     padding: 3rem 0;
   }

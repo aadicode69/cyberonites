@@ -29,3 +29,6 @@ build.zip
 */dist-ssr
 Frontend/node_modules
 Frontend/package-lock.json
+Border1.zip
+Border2.zip
+.gitignore

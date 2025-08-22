@@ -77,7 +77,7 @@
   --section-padding: 4rem 0;
   --container-max-width: 1400px;
   --container-padding: 0 2rem;
-  --card-padding: 2rem;
+  --card-padding: 0.875rem;
   --border-radius: 16px;
   --border-radius-small: 10px;
   --border-radius-large: 20px;
@@ -92,8 +92,8 @@
 .exv2-escalate-container *,
 .exv2-escalate-container *::before,
 .exv2-escalate-container *::after {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -150,7 +150,7 @@
 .exv2-escalate-container h4,
 .exv2-escalate-container h5,
 .exv2-escalate-container h6 {
-  font-family: 'clouds', 'Ubuntu', sans-serif;
+  font-family: 'Orbitron', 'Ubuntu', sans-serif;
   line-height: 1.4;
 }
 
@@ -408,15 +408,6 @@
 .exv2-escalate-container ::selection {
   background: rgba(255, 107, 53, 0.3);
   color: var(--text-primary);
-}
-
-/* Focus States for Cards */
-.exv2-village-card:focus-visible,
-.exv2-ctf-card:focus-visible,
-.exv2-contact-card:focus-visible {
-  outline: 2px solid var(--primary-orange);
-  outline-offset: 2px;
-  border-color: var(--primary-orange);
 }
 
 /* Stats Section - Convert to exv2- */
@@ -760,42 +751,20 @@
   text-align: center;
 }
 
-.exv2-village-card,
-.exv2-ctf-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 2.5rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.exv2-village-card {
-  max-width: 400px;
-  min-height: 350px;
-}
-
 .exv2-ctf-card {
   max-width: 400px;
   min-height: 320px;
 }
 
-.exv2-village-header {
+/* .exv2-village-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-}
-
+} */
+/* 
 .exv2-village-footer {
   display: flex;
   justify-content: center;
@@ -803,7 +772,7 @@
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: auto;
-}
+} */
 
 /* Fix benefit item content overflow */
 .exv2-benefit-item {
@@ -943,13 +912,6 @@
     padding: 0 1rem;
   }
   
-  .exv2-village-card,
-  .exv2-ctf-card,
-  .exv2-contact-card {
-    padding: 2rem 1.5rem;
-    max-width: 100%;
-  }
-  
   .exv2-event-overview-section {
     padding: 3rem 0;
   }
@@ -1043,14 +1005,6 @@
   }
 }
 
-/* Focus States for Cards - Remove sponsor references */
-.exv2-village-card:focus-visible,
-.exv2-ctf-card:focus-visible {
-  outline: 2px solid var(--primary-orange);
-  outline-offset: 2px;
-  border-color: var(--primary-orange);
-}
-
 /* Animation Classes */
 .exv2-slide-in-left {
   opacity: 0;
@@ -1080,16 +1034,6 @@
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
-  .exv2-event-details-card,
-  .exv2-countdown-card,
-  .exv2-village-card,
-  .exv2-ctf-card,
-  .exv2-overview-card,
-  .exv2-stat-item {
-    border-width: 2px;
-    border-color: var(--primary-orange);
-  }
-  
   .exv2-text-gradient-orange {
     background: none;
     color: var(--primary-orange);
@@ -1116,15 +1060,6 @@
     color: black !important;
     background: none !important;
     -webkit-text-fill-color: black !important;
-  }
-  
-  .exv2-overview-card,
-  .exv2-village-card,
-  .exv2-ctf-card,
-  .exv2-stat-item {
-    border: 1px solid #ccc !important;
-    box-shadow: none !important;
-    background: white !important;
   }
 }
 
@@ -1171,12 +1106,4 @@
     max-width: 100%;
     padding: 0 1rem;
   }
-}
-
-/* Focus States for Cards - Remove sponsor references */
-.exv2-village-card:focus-visible,
-.exv2-ctf-card:focus-visible {
-  outline: 2px solid var(--primary-orange);
-  outline-offset: 2px;
-  border-color: var(--primary-orange);
 }

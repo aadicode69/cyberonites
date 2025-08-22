@@ -268,8 +268,8 @@
    ========================================== */
 .exv2-timeline-status {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.25rem;
+  right: 1rem;
   padding: 0.5rem 0.875rem;
   border-radius: 0.5rem;
   font-size: 0.75rem;
