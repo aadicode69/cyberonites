@@ -1,0 +1,88 @@
+/* Base section styling for context */
+.carousel-section {
+  background-color: #000000; /* Black background */
+  padding: 4rem 0;
+}
+
+.village-card {
+  width: 75%;
+
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.05); /* Very subtle white transparent background */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* White border for the glass edge */
+  
+  /* Theming and Layout */
+  color: #ffffff; /* White text */
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.village-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-orange, #ff6600); /* Orange border on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px var(--glow-orange, rgba(255, 102, 0, 0.6)); /* Deeper shadow + orange glow */
+}
+
+.icon-container {
+  margin-bottom: 1.5rem;
+  color: var(--primary-orange, #ff6600); /* Orange icon color */
+}
+
+/* Ensure all text within the card is white */
+.village-card h3, .village-card p {
+  color: #ffffff;
+}
+
+.village-card h3 {
+  font-weight: 700;
+  font-size: 1.5rem; /* Larger heading */
+  margin-bottom: 0.75rem;
+}
+
+.village-card p {
+  font-size: 0.9rem;
+  opacity: 0.8; /* Slightly transparent white for description */
+}
+
+.topics-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.topic-tag {
+  background-color: rgba(255, 102, 0, 0.15); /* Faint orange background */
+  color: var(--primary-orange, #ff944d); /* Lighter orange text */
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 102, 0, 0.3);
+}
+
+/* --- New Styles --- */
+
+/* Increase carousel container size */
+.mySwiper {
+  width: 40%;
+  min-height: 50%; /* Give the carousel more vertical space */
+  padding: 4rem 0;
+}
+
+/* Ensure slide background is transparent */
+.swiper-slide {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -14,6 +14,7 @@ import Hiring from "./components/hiringForm/Hiring";
 import Loader from "./components/Homepage/Loader";
 import MainX from "./components/IntrusionX/MainX";
 import EscX_v2 from "./components/EscalateX_v2/EscX_v2";
+import EscXv2 from "./components/EscalateXv2/EscXv2";
 import HForm from "./components/hiringForm/HForm";
 import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
@@ -33,7 +34,8 @@ function App() {
           <Route path="/capturetheflag" element={<CTF />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/event_dashboard" element={<EventDash/>} />
-          <Route path="/escalateXv2" element={<EscX_v2/>} />
+          <Route path="/escalateXv" element={<EscX_v2/>} />
+          <Route path="/escalateXv2" element={<EscXv2 />} />
           <Route path="/intrusion-x" element={<MainX/>} />
           <Route path="/intrusion-x-overview" element={<IntrusionX/>} />
           <Route path="/escalatex-v2-problems" element={<ProblemsEscXv2/>} />

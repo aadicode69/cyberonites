@@ -1,0 +1,44 @@
+#ctf-heading-container {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 10;
+ width: 40vw;
+ max-width: 400px;
+}
+
+ #ctf-grid {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 120vmin;
+ height: 120vmin;
+ max-width: 1000px;
+ max-height: 1000px;
+ transform: translate(-50%, -50%);
+ border-radius: 50%;
+ transition: transform 0.2s linear;
+}
+
+.ctf-card {
+ position: absolute;
+ width: 220px;
+ height: 220px;
+ background: var(--glass-bg);
+ backdrop-filter: blur(10px);
+ -webkit-backdrop-filter: blur(10px);
+ border: 1px solid var(--glass-border);
+ transition: all 0.3s ease;
+ transform-origin: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ padding: 1rem;
+}
+.ctf-card:hover {
+ border-color: var(--primary-orange);
+ z-index: 20;
+}
