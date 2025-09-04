@@ -1,11 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import "../styles/Villages.css";
-import { FaCloud, FaGlobe, FaIndustry, FaNetworkWired, FaSearch, FaVirus, FaUserSecret, FaLink, FaMobileAlt } from 'react-icons/fa';
+import { FaCloud, FaGlobe, FaIndustry, FaNetworkWired, FaSearch, FaVirus, FaUserSecret, FaLink, FaMobileAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Autoplay, Navigation } from 'swiper/modules';
 
 const villages = [
     { name: "IoT Security", icon: <FaIndustry className="text-5xl" />, description: "Explore Internet of Things security challenges, device vulnerabilities, and secure IoT implementations.", topics: ["Device Security", "Network Protocols", "Firmware Analysis", "IoT Forensics"] },
@@ -20,17 +19,17 @@ const villages = [
     { name: "Mobile Security", icon: <FaMobileAlt className="text-5xl" />, description: "Focus on securing mobile applications and devices, identifying vulnerabilities in iOS and Android platforms.", topics: ["App Reverse Engineering", "Runtime Analysis", "Data Storage Security", "MDM"] },
 ];
 
-const VillageCard = ({ village, index }) => {
+const VillageCard = ({ village }) => {
     return (
-        <div className="village-card p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-            <div className="icon-container mb-4">
+        <div className="village-card-inner">
+            <div className="icon-container">
                 {village.icon}
             </div>
-            <h3 className="text-xl font-semibold mb-2">{village.name}</h3>
-            <p className="text-gray-300 text-sm mb-4">{village.description}</p>
+            <h3>{village.name}</h3>
+            <p>{village.description}</p>
             <div className="topics-list">
                 {village.topics.map((topic, i) => (
-                    <span key={i} className="topic-tag text-xs px-2 py-1 rounded-full mr-2 mb-2 inline-block">{topic}</span>
+                    <span key={i} className="topic-tag">{topic}</span>
                 ))}
             </div>
         </div>
@@ -39,46 +38,89 @@ const VillageCard = ({ village, index }) => {
 
 const Villages = () => {
     return (
-        <section id="section4" className="carousel-section">
-            <div className="w-full max-w-7xl mx-auto flex flex-col items-center text-center">
-                <header className="mb-12">
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">
-                        <span className="text-white">KNOWLEDGE</span>
-                        <span style={{ color: 'var(--primary-orange)' }}>VILLAGES</span>
+        <section id="section4" className="carousel-section main-section">
+            <div className="w-full max-w-7xl mx-auto flex flex-col items-center text-center py-8 px-4 h-full overflow-y-auto">
+                <header className="mb-8">
+                    <h2 className="text-3xl md:text-4xl font-black mb-4 font-orbitron">
+                        <span className="text-white">KNOWLEDGE </span>
+                        <span className="escalateX-neon-text escalateX-glitch" data-text="VILLAGES" style={{ color: 'var(--escalate-orange)' }}>VILLAGES</span>
                     </h2>
-                    <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-base text-gray-300 max-w-3xl mx-auto font-mono">
                         Immersive learning environments featuring expert-led workshops and hands-on training across specialized cybersecurity domains.
                     </p>
                 </header>
-                <main className="w-full h-full flex flex-col items-center justify-center">
-                    <Swiper
-                        effect={'coverflow'}
-                        grabCursor={true}
-                        centeredSlides={true}
-                        slidesPerView={'auto'}
-                        loop={true}
-                        loopFillGroupWithBlank={true}
-                        coverflowEffect={{
-                            rotate: 45,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 1, 
-                            slideShadows: false,
-                        }}
-                        autoplay={{
-                            delay: 1000,
-                            disableOnInteraction: false,
-                        }}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[Autoplay, EffectCoverflow, Pagination]} className="mySwiper">
-                        {villages.map((village, index) => (
-                            <SwiperSlide key={index}>
-                                <VillageCard village={village} index={index} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+
+                <main className="w-full flex-1 flex flex-col items-center justify-center relative">
+                    <div className="w-full h-full flex items-center justify-center relative">
+                        {/* Navigation Buttons */}
+                        <button className="villages-nav-prev absolute left-6 top-1/2 transform -translate-y-1/2 z-50 w-14 h-14 bg-gradient-to-br from-orange-500/20 to-orange-600/30 border-2 border-orange-500/50 text-orange-400 flex items-center justify-center transition-all duration-300 hover:bg-orange-500/30 hover:border-orange-400 hover:text-orange-300 active:scale-95"
+                            style={{
+                                clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
+                                filter: 'drop-shadow(0 0 12px rgba(255, 107, 53, 0.4))'
+                            }}>
+                            <FaChevronLeft className="text-xl" />
+                        </button>
+
+                        <button className="villages-nav-next absolute right-6 top-1/2 transform -translate-y-1/2 z-50 w-14 h-14 bg-gradient-to-br from-orange-500/20 to-orange-600/30 border-2 border-orange-500/50 text-orange-400 flex items-center justify-center transition-all duration-300 hover:bg-orange-500/30 hover:border-orange-400 hover:text-orange-300 active:scale-95"
+                            style={{
+                                clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
+                                filter: 'drop-shadow(0 0 12px rgba(255, 107, 53, 0.4))'
+                            }}>
+                            <FaChevronRight className="text-xl" />
+                        </button>
+
+                        <Swiper
+                            grabCursor={true}
+                            slidesPerView={3}
+                            spaceBetween={30}
+                            centeredSlides={false}
+                            loop={false}
+                            speed={800}
+                            navigation={{
+                                prevEl: '.villages-nav-prev',
+                                nextEl: '.villages-nav-next',
+                            }}
+                            autoplay={{
+                                delay: 4000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 20,
+                                    centeredSlides: true,
+                                },
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 25,
+                                    centeredSlides: false,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 30,
+                                    centeredSlides: false,
+                                },
+                                1280: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 35,
+                                    centeredSlides: false,
+                                },
+                            }}
+                            modules={[Autoplay, Navigation]}
+                            className="villages-swiper w-full max-w-7xl h-96 overflow-hidden"
+                            style={{ 
+                                overflow: 'hidden',
+                                zIndex: 100
+                            }}
+                        >
+                            {villages.map((village, index) => (
+                                <SwiperSlide key={index} className="village-card">
+                                    <VillageCard village={village} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </main>
             </div>
         </section>

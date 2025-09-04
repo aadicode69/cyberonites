@@ -1,10 +1,13 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
-import { Autoplay, Navigation } from 'swiper/modules';
 import '../styles/Sponsors.css';
+import alteredSecurityLogo from '../img/sponsor-logo/altered-security.png';
+import offsecLogo from '../img/sponsor-logo/offsec.png';
+import cigLogo from '../img/sponsor-logo/cig-logo.png';
+import ycfLogo from '../img/sponsor-logo/ycf-logo.jpg';
+import multigradLogo from '../img/sponsor-logo/multigrad-logo.png';
+import cyberyaanLogo from '../img/sponsor-logo/cyberyaan-logo.png';
+import unstopLogo from '../img/sponsor-logo/unstop-logo.png';
+import xyzLogo from '../img/sponsor-logo/xyz-logo.png';
 
 const SponsorshipTiers = () => {
     const sponsorshipTiers = [
@@ -15,27 +18,36 @@ const SponsorshipTiers = () => {
     ];
 
     return (
-        <section className="w-full mb-16">
-            <header className="mb-8">
-                <h3 className="text-orange-400 text-2xl font-bold">Sponsorship Opportunities</h3>
-            </header>
-            <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {sponsorshipTiers.map(tier => (
-                    <article key={tier.tier} className='glass-card rounded-2xl p-6 text-left flex flex-col'>
-                        <header>
-                            <h4 className="text-orange-400 text-xl font-bold uppercase tracking-wide">{tier.tier}</h4>
-                            <p className="text-white text-2xl font-bold mb-4">{tier.price}</p>
+        <section className="w-full mb-6">{/* reduced margin-bottom */}
+            <main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 max-w-5xl mx-auto">
+                {sponsorshipTiers.map((tier) => (
+                    <article key={tier.tier} className='sponsorship-tier-card p-4 text-left flex flex-col escalateX-cyber-terminal escalateX-holographic relative z-10'>
+                        {/* Tier level indicator */}
+                        <div className="absolute top-3 right-3 w-3 h-3 bg-orange-500 opacity-60 animate-pulse" 
+                             style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'}}></div>
+                        
+                        <header className="mb-2 relative z-20">{/* reduced margin-bottom */}
+                            <div className="flex items-center gap-2 mb-1">
+                                <div className="w-8 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
+                                <h4 className="text-orange-400 text-lg font-bold uppercase tracking-wider escalateX-neon-text font-orbitron">{tier.tier}</h4>
+                            </div>
+                            <p className="text-white text-2xl font-black mb-1 escalateX-neon-text font-orbitron">{tier.price}</p>
+                            <div className="w-full h-0.5 bg-gradient-to-r from-orange-500/50 via-orange-500/20 to-transparent"></div>
                         </header>
-                        <ul className="space-y-2 mb-6 text-gray-300 text-sm flex-grow">
-                            {tier.benefits.map(benefit => (
-                                <li key={benefit} className="flex items-start gap-2">
-                                    <span className="text-orange-400 mt-1">✓</span>
-                                    <span>{benefit}</span>
+                        
+                        <ul className="space-y-2 mb-3 text-gray-300 text-xs flex-grow font-mono relative z-20">{/* reduced mb */}
+                            {tier.benefits.map((benefit) => (
+                                <li key={benefit} className="flex items-start gap-3">
+                                    <span className="text-orange-400 mt-1 neon-text text-base">▸</span>
+                                    <span className="leading-relaxed">{benefit}</span>
                                 </li>
                             ))}
                         </ul>
-                        <footer>
-                            <a href="mailto:support@cyberonites.com" className="block w-full text-center px-4 py-3 bg-orange-500/80 text-white font-semibold rounded-lg hover:bg-orange-500 transition-colors">Sponsor {tier.tier}</a>
+                        
+                        <footer className="relative z-20">
+                            <button className="escalateX-cyber-button w-full text-center px-3 py-2 font-bold">
+                                <span className="escalateX-glitch text-xs" data-text={`SECURE ${tier.tier}`}>SECURE {tier.tier}</span>
+                            </button>
                         </footer>
                     </article>
                 ))}
@@ -46,80 +58,92 @@ const SponsorshipTiers = () => {
 
 const PastSponsors = () => {
     const pastSponsors = [
-        { name: "Altered Security", tier: "PLATINUM", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950933/EscalateX/Sponsors/cnk1m3b0uihxonp9q9g6.png" },
-        { name: "OffSec", tier: "GOLD", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950933/EscalateX/Sponsors/z2t5zgmzpcp5hqqmubcp.png" },
-        { name: "Cyber Intelligence Global", tier: "GOLD", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950933/EscalateX/Sponsors/g2vgsdspk5qgxwthtrxa.png" },
-        { name: "Unstop", tier: "SILVER", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950934/EscalateX/Sponsors/xucftjpn9vjdnxklxstc.png" },
-        { name: "YCF", tier: "SILVER", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950934/EscalateX/Sponsors/j2wzrfgsd1ksk0vj3t8a.jpg" },
-        { name: "Multigrad", tier: "SILVER", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950933/EscalateX/Sponsors/p8ddf5l9j3qn8vr9g9u9.png" },
-        { name: "Cyberyaan", tier: "BRONZE", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950933/EscalateX/Sponsors/vyi1l2z1t3ihjpcvvepl.png" },
-        { name: ".XYZ", tier: "BRONZE", logo: "https://res.cloudinary.com/dkoez6c4h/image/upload/v1724950934/EscalateX/Sponsors/jnyd6wdddcuaaxz30z5k.png" }
+    { name: "Altered Security", tier: "PLATINUM", logo: alteredSecurityLogo },
+    { name: "OffSec", tier: "GOLD", logo: offsecLogo },
+    { name: "Cyber Intelligence Global", tier: "GOLD", logo: cigLogo },
+    { name: "Unstop", tier: "SILVER", logo: unstopLogo },
+    { name: "YCF", tier: "SILVER", logo: ycfLogo },
+    { name: "Multigrad", tier: "SILVER", logo: multigradLogo },
+    { name: "Cyberyaan", tier: "BRONZE", logo: cyberyaanLogo },
+    { name: ".XYZ", tier: "BRONZE", logo: xyzLogo}
     ];
 
+    // Duplicate the sponsors array for smooth infinite scrolling
+    const duplicatedSponsors = [...pastSponsors, ...pastSponsors];
+
     return (
-        <section className="w-full mb-16">
-            <header className="mb-8">
-                <h3 className="text-orange-400 text-2xl font-bold">Past Sponsors (2024)</h3>
-            </header>
-            <Swiper
-                modules={[Autoplay, Navigation]}
-                spaceBetween={30}
-                slidesPerView={'auto'}
-                loop={true}
-                autoplay={{
-                    delay: 2000,
-                    disableOnInteraction: false,
-                }}
-                navigation={{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                }}
-                className="past-sponsors-carousel"
-            >
-                {pastSponsors.map(sponsor => (
-                    <SwiperSlide key={sponsor.name}>
-                        <article className='glass-card rounded-2xl p-4 text-center'>
-                            <div className="w-full h-20 flex items-center justify-center mb-4">
-                                <img src={sponsor.logo} alt={`${sponsor.name} logo`} className="max-h-full max-w-full object-contain" />
+        <section className="w-full mb-2">{/* reduced margin-bottom */}
+            {/* Simplified Marquee Container - No background, minimal styling */}
+            <div className="relative w-full overflow-hidden py-2">{/* reduced padding */}
+
+                {/* Enhanced Marquee Track with faster animation */}
+                <div className="flex animate-marquee-fast hover:pause-marquee">
+                    {duplicatedSponsors.map((sponsor, index) => (
+                        <article key={`${sponsor.name}-${index}`} className="flex-shrink-0 mx-8 w-40 relative group">
+                            <div className="relative border border-orange-500/20 text-center transition-all duration-300 group-hover:border-orange-500/40"
+                                 style={{
+                                     clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%)',
+                                     background: 'rgba(10, 10, 15, 0.3)',
+                                     backdropFilter: 'blur(5px)'
+                                 }}
+                            >
+                                <div className="absolute top-0 right-0 w-3 h-3 bg-orange-500/60 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
+                                />
+                                <div className="relative w-full h-16 flex items-center justify-center">
+                                    <img 
+                                        src={sponsor.logo} 
+                                        alt={`${sponsor.name} logo`} 
+                                        className="relative z-10 h-full w-full object-contain filter brightness-90 group-hover:brightness-120 transition-all duration-300 group-hover:scale-125" 
+                                    />
+                                </div>  
+                                {/* <h4 className="text-white font-bold font-orbitron text-[10px] mb-1 relative z-10 truncate group-hover:text-orange-200 transition-colors duration-300">
+                                    {sponsor.name}
+                                </h4> */}
+                                <div className="relative inline-block">
+                                    <p className="text-orange-400 text-[10px] font-semibold uppercase font-mono tracking-wider relative z-10 px-1.5 py-0.5 mb-3 border border-orange-500/40 group-hover:border-orange-500/70 transition-all duration-300"
+                                       style={{
+                                           clipPath: 'polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))',
+                                           background: 'transparent'
+                                       }}
+                                    >
+                                        {sponsor.tier}
+                                    </p>
+                                </div>
                             </div>
-                            <h4 className="text-white font-bold">{sponsor.name}</h4>
-                            <p className="text-orange-400 text-xs font-semibold uppercase">{sponsor.tier}</p>
                         </article>
-                    </SwiperSlide>
-                ))}
-                <div className="swiper-button-prev"></div>
-                <div className="swiper-button-next"></div>
-            </Swiper>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 };
 
 const Sponsors = () => {
     return (
-        <section id="section6" className="main-section">
-            <div className="w-full max-w-7xl mx-auto flex flex-col items-center text-center py-12">
-                <header className="mb-12">
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+        <section id="section6" className="carousel-section main-section">
+            <div className="w-full max-w-7xl mx-auto flex flex-col items-center text-center py-8 px-4 h-full overflow-y-auto">{/* hide overflow to avoid sidebar */}
+                <header className="mb-4">{/* compact header */}
+                    <h2 className="text-2xl md:text-3xl font-black mb-2 font-orbitron">{/* smaller heading */}
                         <span className="text-white">PARTNERSHIP & </span>
-                        <span style={{ color: 'var(--primary-orange)' }}>SPONSORSHIP</span>
+                        <span className="escalateX-neon-text escalateX-glitch" data-text="SPONSORSHIP" style={{ color: 'var(--escalate-orange)' }}>SPONSORSHIP</span>
                     </h2>
-                    <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto font-mono">
                         Join us as a partner and showcase your brand to the next generation of cybersecurity professionals.
                     </p>
                 </header>
 
                 <SponsorshipTiers />
-                <PastSponsors />
 
-                <footer className="glass-card rounded-2xl p-8 w-full max-w-3xl">
-                     <h3 className="text-white text-xl font-bold mb-4">Partnership Contact</h3>
-                     <p className="text-gray-300 leading-relaxed mb-6">
-                         Ready to partner with EscalateX v2? Contact us for detailed sponsorship packages and custom opportunities.
-                     </p>
-                     <a href="mailto:support@cyberonites.com" className="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-orange-700 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
-                         support@cyberonites.com
-                     </a>
-                </footer>
+                {/* Past Sponsors Year Label */}
+                <div className="my-4">{/* reduced margin */}
+                    <p className="text-orange-500 text-xs md:text-sm font-mono tracking-wide opacity-80">
+                        - Past Sponsors 2024 -
+                    </p>
+                </div>
+
+                <PastSponsors />
+                
             </div>
         </section>
     );

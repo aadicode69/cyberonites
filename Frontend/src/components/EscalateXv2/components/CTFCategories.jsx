@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import '../styles/CTFCategories.css'; // Assuming you'll move the CSS here
 import { FaGlobe, FaCog, FaMicroscope, FaEye, FaLock, FaPuzzlePiece, FaDesktop } from 'react-icons/fa';
 
@@ -15,90 +15,150 @@ const CTFCategories = () => {
 
     const ctfGridRef = useRef(null);
     const [ctfCircleRotation, setCtfCircleRotation] = useState(0);
+    // Auto-rotation is always enabled; hover/selection pauses it
+    const [selectedCard, setSelectedCard] = useState(null);
+    const [isHovering, setIsHovering] = useState(false);
 
     const getDifficultyClass = (difficulty) => {
         switch (difficulty) {
-            case 'CRITICAL': return 'bg-red-500/20 text-red-400 border-red-500/30';
+            case 'CRITICAL': return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
             case 'HIGH': return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
             default: return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
         }
     };
 
-    const positionCtfCards = () => {
+    const positionCtfCards = useCallback(() => {
         if (!ctfGridRef.current) return;
 
-        const radius = ctfGridRef.current.offsetWidth / 2.5;
-        const cards = ctfGridRef.current.querySelectorAll('.ctf-card');
+        const containerWidth = ctfGridRef.current.offsetWidth;
+        const containerHeight = ctfGridRef.current.offsetHeight;
+        const cards = ctfGridRef.current.querySelectorAll('.escalateX-ctf-card');
         const total = cards.length;
 
+        // Rectangular path parameters - increased by 15% total (7.5% + 7.5% more)
+        const rectWidth = containerWidth; // Increased from 0.7525 to 0.81 (15% total increase)
+        const rectHeight = containerHeight * 0.7; // Increased from 0.5375 to 0.58 (15% total increase)
+        const perimeter = 2 * (rectWidth + rectHeight);
+
         cards.forEach((card, i) => {
-            const angle = (i / total) * 2 * Math.PI;
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
+            // Calculate position along rectangular perimeter
+            const progress = (i / total + ctfCircleRotation / 360) % 1;
+            const distanceAlongPerimeter = progress * perimeter;
+            
+            let x, y;
+            
+            if (distanceAlongPerimeter <= rectWidth) {
+                // Top edge
+                x = distanceAlongPerimeter - rectWidth / 2;
+                y = -rectHeight / 2;
+            } else if (distanceAlongPerimeter <= rectWidth + rectHeight) {
+                // Right edge
+                x = rectWidth / 2;
+                y = (distanceAlongPerimeter - rectWidth) - rectHeight / 2;
+            } else if (distanceAlongPerimeter <= 2 * rectWidth + rectHeight) {
+                // Bottom edge
+                x = rectWidth / 2 - (distanceAlongPerimeter - rectWidth - rectHeight);
+                y = rectHeight / 2;
+            } else {
+                // Left edge
+                x = -rectWidth / 2;
+                y = rectHeight / 2 - (distanceAlongPerimeter - 2 * rectWidth - rectHeight);
+            }
+
             card.style.left = `calc(50% + ${x}px)`;
             card.style.top = `calc(50% + ${y}px)`;
-            card.style.transform = `translate(-50%, -50%) rotate(${-ctfCircleRotation}deg) scale(1)`;
+            card.style.transform = `translate(-50%, -50%) rotate(0deg) scale(1)`;
         });
-    };
+    }, [ctfCircleRotation]);
 
     useEffect(() => {
         positionCtfCards();
 
+        // Continuous rotation - pause on hover or selection
+        const rotationInterval = setInterval(() => {
+            if (!isHovering && !selectedCard) {
+                setCtfCircleRotation(prevRotation => prevRotation + 1);
+            }
+        }, 30);
+
         const handleScroll = (e) => {
-            const scrollDelta = e.deltaY;
-            setCtfCircleRotation(prevRotation => prevRotation + scrollDelta * 0.1);
+            e.preventDefault();
+            if (!selectedCard) {
+                const scrollDelta = e.deltaY;
+                setCtfCircleRotation(prevRotation => prevRotation + scrollDelta * 0.2);
+            }
+        };
+
+        // Click outside to deselect
+        const handleClickOutside = (e) => {
+            if (!e.target.closest('.escalateX-ctf-card') && !e.target.closest('#ctf-heading-container')) {
+                setSelectedCard(null);
+            }
         };
 
         const ctfGridElement = ctfGridRef.current;
         if (ctfGridElement) {
             ctfGridElement.addEventListener('wheel', handleScroll);
         }
+        document.addEventListener('click', handleClickOutside);
 
         return () => {
+            clearInterval(rotationInterval);
             if (ctfGridElement) {
                 ctfGridElement.removeEventListener('wheel', handleScroll);
             }
+            document.removeEventListener('click', handleClickOutside);
         };
-    }, [ctfCircleRotation]); // Re-run when rotation changes to update card positions
+    }, [ctfCircleRotation, isHovering, selectedCard, positionCtfCards]);
 
     return (
-        <section id="section5" className="carousel-section">
-            <div id="ctf-heading-container" className="text-center p-6 glass-card rounded-2xl">
-                <h2 className="text-3xl md:text-4xl font-black mb-4">
-                    <span className="text-white">CTF</span>
-                    <span style={{ color: 'var(--primary-orange)' }}>CATEGORIES</span>
-                </h2>
-                <p className="text-sm text-gray-300">
-                    Day 2 features an intense 8-hour CTF championship. Use your scroll wheel to navigate the categories.
-                </p>
-            </div>
-            <main id="ctf-grid" ref={ctfGridRef}>
+        <section id="section5" className="carousel-section main-section">
+            <div className="w-full max-w-7xl mx-auto h-full relative py-8 px-4 overflow-hidden">
+                <div id="ctf-heading-container" className="escalateX-sci-fi-heading">
+                    <div className="escalateX-heading-scanner"></div>
+                    <div className="escalateX-heading-grid-overlay"></div>
+                    <h2 className="text-4xl md:text-5xl font-black mb-2 font-orbitron relative z-10">
+                        <span className="text-white cyber-text-border">CTF</span>
+                        <span className="escalateX-neon-text escalateX-glitch ml-2 cyber-glow-text" data-text="CATEGORIES" style={{ color: 'var(--escalate-orange)' }}>CATEGORIES</span>
+                    </h2>
+                    <div className="escalateX-heading-status-bar"></div>
+                    <p className="text-lg text-gray-300 max-w-xl font-mono opacity-90 mx-auto relative z-10 cyber-terminal-text">
+                        [SYSTEM] Day 2 features an intense 8-hour CTF championship. Use your scroll wheel to navigate the categories.
+                    </p>
+                </div>
+                <main id="ctf-grid" ref={ctfGridRef}>
                 {ctfCategories.map((category, index) => (
                     <article
                         key={index}
-                        className="ctf-card rounded-2xl"
-                        onMouseEnter={(e) => e.currentTarget.style.transform = `translate(-50%, -50%) rotate(${-ctfCircleRotation}deg) scale(1.1)`}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = `translate(-50%, -50%) rotate(${-ctfCircleRotation}deg) scale(1)`}
+                        className={`escalateX-ctf-card escalateX-sci-fi-card ${selectedCard === index ? 'selected' : ''}`}
+                        onMouseEnter={() => setIsHovering(true)}
+                        onMouseLeave={() => setIsHovering(false)}
+                        onClick={() => setSelectedCard(selectedCard === index ? null : index)}
                         style={{
-                            position: 'absolute', // Required for positioning
-                            transition: 'transform 0.3s ease-out', // Smooth transition for hover and rotation
+                            position: 'absolute',
+                            transition: 'none',
                         }}
                     >
-                        <header className="flex items-start gap-4 mb-4">
-                            <div className="text-orange-400 text-3xl flex-shrink-0 mt-1">
+                        <div className="escalateX-card-scanner"></div>
+                        <div className="escalateX-card-grid-pattern"></div>
+                        <div className="escalateX-card-energy-border"></div>
+                        <header className="flex items-start gap-2 mb-2 relative z-10">
+                            <div className="text-orange-400 flex-shrink-0 mt-1 escalateX-icon-glow">
                                 {category.icon}
                             </div>
-                            <div className="flex-1">
-                                <h3 className="text-white text-lg font-bold mb-2">{category.name}</h3>
-                                <span className={`inline-block px-3 py-1 rounded-lg text-xs font-semibold border ${getDifficultyClass(category.difficulty)}`}>
-                                    Threat Level: {category.difficulty}
+                            <div className="flex-1 min-w-0 text-left">
+                                <h3 className="text-white font-bold mb-1 escalateX-neon-text font-orbitron text-left">{category.name}</h3>
+                                <span className={`inline-block px-2 py-1 text-xs font-semibold border font-mono tracking-wider escalateX-threat-badge ${getDifficultyClass(category.difficulty)}`}>
+                                    {category.difficulty}
                                 </span>
                             </div>
                         </header>
-                        <p className="text-gray-300 text-sm leading-relaxed">{category.description}</p>
+                        <p className="text-gray-300 text-sm leading-relaxed font-mono overflow-hidden relative z-10 text-left">{category.description}</p>
+                        <div className="escalateX-card-status-indicator"></div>
                     </article>
                 ))}
-            </main>
+                </main>
+            </div>
         </section>
     );
 };

@@ -1,44 +1,424 @@
-#ctf-heading-container {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- z-index: 10;
- width: 40vw;
- max-width: 400px;
+/* CTF Categories with enhanced cyberpunk styling */
+.escxv2 #ctf-heading-container {
+  position: absolute;
+  top: 50%; /* Centered vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 150; /* Increased to be above Vanta fog */
+  width: 90vw;
+  max-width: 650px;
+  padding: 1.2rem;
+  pointer-events: none;
+  text-align: center;
+  background: rgba(20, 20, 31, 0.5);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 15px;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 107, 53, 0.1);
 }
 
- #ctf-grid {
- position: absolute;
- top: 50%;
- left: 50%;
- width: 120vmin;
- height: 120vmin;
- max-width: 1000px;
- max-height: 1000px;
- transform: translate(-50%, -50%);
- border-radius: 50%;
- transition: transform 0.2s linear;
+.escxv2 #ctf-heading-container * {
+  pointer-events: auto;
 }
 
-.ctf-card {
- position: absolute;
- width: 220px;
- height: 220px;
- background: var(--glass-bg);
- backdrop-filter: blur(10px);
- -webkit-backdrop-filter: blur(10px);
- border: 1px solid var(--glass-border);
- transition: all 0.3s ease;
- transform-origin: center;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- text-align: center;
- padding: 1rem;
+/* Remove hover effects from heading container */
+.escxv2 #ctf-heading-container:hover {
+  transform: translate(-50%, -50%) !important;
 }
-.ctf-card:hover {
- border-color: var(--primary-orange);
- z-index: 20;
+
+.escxv2 #ctf-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85vw; /* Reduced for better fit */
+  height: 75vh; /* Reduced for better fit */
+  max-width: 900px; /* Reduced from 1000px */
+  max-height: 700px; /* Reduced from 800px */
+  transform: translate(-50%, -50%);
+  transition: none; /* Remove transition for smoother animation */
+  z-index: 100; /* Ensure it's above fog */
+}
+
+.escxv2 .escalateX-ctf-card {
+  position: absolute;
+  width: 220px; /* Reduced from 240px */
+  height: 130px; /* Reduced from 140px */
+  background: rgba(20, 20, 31, 0.3);
+  border: 1px solid rgba(255, 107, 53, 0.4);
+  transform-origin: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.8rem;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    inset 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset -1px 0 0 rgba(255, 255, 255, 0.08),
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(255, 107, 53, 0.2);
+  transition: none;
+}
+
+/* Enhanced Sci-Fi Heading - Similar to category cards but better */
+.escxv2 .escalateX-sci-fi-heading {
+  position: relative;
+  background: linear-gradient(135deg, rgba(20, 20, 31, 0.7), rgba(10, 10, 15, 0.8));
+  border: 2px solid rgba(255, 107, 53, 0.5);
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% calc(100% - 35px), calc(100% - 35px) 100%, 0 100%);
+  box-shadow: 
+    0 0 40px rgba(255, 107, 53, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -2px 0 rgba(255, 107, 53, 0.3),
+    0 15px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.escxv2 .escalateX-sci-fi-heading:hover {
+  border-color: rgba(255, 107, 53, 0.8);
+  box-shadow: 
+    0 0 60px rgba(255, 107, 53, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(255, 107, 53, 0.4),
+    0 20px 60px rgba(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%) translateY(-2px);
+}
+
+.escxv2 .escalateX-heading-scanner {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 1), rgba(255, 255, 255, 0.8), rgba(255, 107, 53, 1), transparent);
+  animation: heading-scan 4s infinite;
+  z-index: 5;
+}
+
+.escxv2 .escalateX-heading-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 107, 53, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.08) 1px, transparent 1px);
+  background-size: 25px 25px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.escxv2 .escalateX-heading-status-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(255, 107, 53, 0.9), 
+    rgba(255, 215, 0, 0.8), 
+    rgba(0, 255, 255, 0.6),
+    rgba(255, 107, 53, 0.9)
+  );
+  animation: status-pulse 2.5s ease-in-out infinite;
+  z-index: 5;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+}
+
+/* Card header styling - left aligned */
+.escxv2 .escalateX-ctf-card header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.escxv2 .escalateX-ctf-card .text-orange-400 {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 6px rgba(255, 107, 53, 0.8));
+  flex-shrink: 0;
+}
+
+.escxv2 .escalateX-ctf-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+  font-weight: 600;
+  text-align: left;
+}
+
+.escxv2 .escalateX-ctf-card p {
+  font-size: 0.7rem;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  text-align: left;
+}
+
+/* Clean threat level badge styling */
+.escxv2 .escalateX-ctf-card span[class*="bg-orange-500"],
+.escxv2 .escalateX-ctf-card span[class*="bg-blue-500"] {
+  font-family: 'Roboto Mono', monospace !important;
+  font-weight: 500 !important; /* Reduced from 600 */
+  font-size: 0.65rem !important; /* Reduced from 0.7rem */
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important; /* Reduced letter spacing */
+  padding: 0.2rem 0.6rem !important; /* Reduced padding */
+  border-width: 1px !important;
+  border-style: solid !important;
+  display: inline-block !important;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px)) !important;
+  border-radius: 2px !important; /* Added slight border radius */
+}
+
+/* Remove data stream effect for cleaner look */
+.escxv2 .escalateX-ctf-card::before {
+  display: none;
+}
+
+/* Enhanced Sci-Fi Cards */
+.escxv2 .escalateX-sci-fi-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(20, 20, 31, 0.5), rgba(10, 10, 15, 0.7));
+  border: 1px solid rgba(255, 107, 53, 0.4);
+  clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 107, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left; /* Ensure all content is left-aligned */
+}
+
+.escxv2 .escalateX-sci-fi-card:hover {
+  border-color: rgba(255, 107, 53, 0.8);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(255, 107, 53, 0.5),
+    0 0 60px rgba(255, 107, 53, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.escxv2 .escalateX-sci-fi-card.selected {
+  border-color: rgba(255, 107, 53, 1);
+  background: linear-gradient(135deg, rgba(20, 20, 31, 0.6), rgba(255, 107, 53, 0.1));
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.8),
+    0 0 60px rgba(255, 107, 53, 0.8),
+    0 0 100px rgba(255, 107, 53, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px) scale(1.1);
+  z-index: 100;
+}
+
+.escxv2 .escalateX-card-scanner {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.8), transparent);
+  animation: card-scan 4s infinite;
+  z-index: 5;
+}
+
+.escxv2 .escalateX-card-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 107, 53, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.05) 1px, transparent 1px);
+  background-size: 15px 15px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.escxv2 .escalateX-card-energy-border {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 107, 53, 0.1) 50%, transparent 70%);
+  background-size: 200% 200%;
+  animation: energy-flow 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+.escxv2 .escalateX-card-status-indicator {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 107, 53, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.6);
+  animation: status-blink 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+.escxv2 .escalateX-icon-glow {
+  filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.8));
+  transition: all 0.3s ease;
+}
+
+.escxv2 .escalateX-sci-fi-card:hover .escalateX-icon-glow {
+  filter: drop-shadow(0 0 15px rgba(255, 107, 53, 1));
+  transform: scale(1.1);
+}
+
+/* Threat level badge - left aligned */
+.escxv2 .escalateX-threat-badge {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 107, 53, 0.1));
+  border: 1px solid;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  text-shadow: 0 0 5px currentColor;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+  text-align: center; /* Keep badge text centered within itself */
+  display: inline-block;
+}
+
+/* Animations */
+@keyframes heading-scan {
+  0% { left: -100%; opacity: 0; }
+  10% { opacity: 0.5; }
+  50% { opacity: 1; }
+  90% { opacity: 0.5; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes card-scan {
+  0% { left: -100%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes status-pulse {
+  0%, 100% { 
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+  }
+  50% { 
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(255, 107, 53, 0.9);
+  }
+}
+
+@keyframes energy-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes status-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+/* Enhanced card interactions */
+.escxv2 .escalateX-sci-fi-card.selected .escalateX-card-scanner {
+  animation: card-scan 1s infinite;
+}
+
+.escxv2 .escalateX-sci-fi-card.selected .escalateX-card-energy-border {
+  animation: energy-flow 1.5s ease-in-out infinite;
+  opacity: 1;
+}
+
+.escxv2 .escalateX-sci-fi-card.selected .escalateX-card-status-indicator {
+  background: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  animation: status-blink 0.5s ease-in-out infinite;
+}
+
+/* Responsive adjustments - maintain left alignment */
+@media (max-width: 768px) {
+  .escxv2 #ctf-heading-container {
+    top: 50%;
+    padding: 1rem;
+    max-width: 550px;
+    text-align: center; /* Keep heading centered */
+  }
+  
+  .escxv2 #ctf-grid {
+    width: 80vw; /* Reduced for mobile */
+    height: 70vh; /* Reduced for mobile */
+    max-width: 700px;
+    max-height: 500px;
+  }
+  
+  .escxv2 .escalateX-ctf-card {
+    width: 180px; /* Reduced for mobile */
+    height: 110px; /* Reduced for mobile */
+    padding: 0.7rem;
+    text-align: left; /* Maintain left alignment on mobile */
+  }
+  
+  .escxv2 .escalateX-ctf-card .text-orange-400 {
+    font-size: 1.6rem;
+  }
+  
+  .escxv2 .escalateX-ctf-card h3 {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  
+  .escxv2 .escalateX-ctf-card p {
+    font-size: 0.65rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .escxv2 #ctf-heading-container {
+    top: 50%;
+    padding: 0.8rem;
+    max-width: 400px; /* Reduced for small mobile */
+    text-align: center; /* Keep heading centered */
+  }
+  
+  .escxv2 #ctf-grid {
+    width: 80vw; /* Further reduced */
+    height: 70vh; /* Further reduced */
+    max-width: 600px;
+    max-height: 500px;
+  }
+  
+  .escxv2 .escalateX-ctf-card {
+    width: 160px; /* Smaller for very small screens */
+    height: 100px; /* Smaller for very small screens */
+    padding: 0.5rem;
+    text-align: left; /* Maintain left alignment on small mobile */
+  }
+  
+  .escxv2 .escalateX-ctf-card .text-orange-400 {
+    font-size: 1.4rem;
+  }
+  
+  .escxv2 .escalateX-ctf-card h3 {
+    font-size: 0.7rem;
+    text-align: left;
+  }
+  
+  .escxv2 .escalateX-ctf-card p {
+    font-size: 0.6rem;
+    text-align: left;
+  }
+  
+  /* Ensure heading text size is readable on very small screens */
+  .escxv2 #ctf-heading-container h2 {
+    font-size: 2rem !important;
+    text-align: center; /* Keep heading centered */
+  }
+  
+  .escxv2 #ctf-heading-container p {
+    font-size: 0.875rem !important;
+    text-align: center; /* Keep description centered */
+  }
 }
