@@ -16,7 +16,7 @@ import PlatformCard from "../components/internalCards/PlatformCard";
 import HeroSection from "../components/hero-section/HeroSection";
 
 const ScrollElement = (item) => {
-  document.getElementById(item).scrollIntoView({ behavior: "smooth" });
+  document.getElementById(item)?.scrollIntoView({ behavior: "smooth" });
 };
 
 const Home = () => {
@@ -27,49 +27,85 @@ const Home = () => {
   }, []);
   
   return (
-    <div className="relative">
+    <div className="relative min-h-screen">
       <Navbar scrollToComponent={ScrollElement} />
-      <HeroSection id="Home" />
-      <div className="promo-section">
-        <Alumini heading="Our Alumni" />
-        <Sponsor heading="Our Sponsors" />
-      </div>
-      <div className="promo-card-section">
-        <PlatformCard 
-          title="Cyberonites Playground"
-          description="Practice cybersecurity skills in a safe environment with hands-on labs, challenges, and interactive simulations at playground.cyberonites.com"
-          buttonText="Launch Playground"
-          onClick={() => window.open('https://playground.cyberonites.com', '_blank')}
-          gradientFrom="from-gray-900"
-          gradientTo="to-black"
-          hoverFrom="hover:from-gray-800"
-          hoverTo="hover:to-gray-900"
-          accentColor="bg-cyan-400"
-          borderColor="border border-cyan-500/20"
-          textAccent="text-white"
-        />
-        <PlatformCard 
-          title="Vulnerability Disclosure"
-          description="Help us maintain security by reporting vulnerabilities responsibly. Join our bug bounty program and contribute to cybersecurity excellence"
-          buttonText="Report Security Issue"
-          onClick={() => window.location.href = '/security'}
-          gradientFrom="from-black"
-          gradientTo="to-gray-900"
-          hoverFrom="hover:from-gray-900"
-          hoverTo="hover:to-gray-800"
-          accentColor="bg-cyan-400"
-          borderColor="border border-white/10"
-          textAccent="text-white"
-        />
-      </div>
-      {/* <UpcomingEvents id="Upcoming" /> */}
-      <KnowUs />
-      <DashCard_Event />
-      {/* <NewEvent id="Upcoming"/> */}
-      <Grand id="Events" />
-      <TeamCard/>
-      <ConnecttUs id="About" />
+      
+      <main className="relative">
+        <HeroSection id="Home" />
+        
+        <section className="promo-section">
+          <div className="w-full">
+            <Alumini heading="Our Alumni" />
+          </div>
+          <div className="w-full">
+            <Sponsor heading="Our Sponsors" />
+          </div>
+        </section>
+        
+        <section className="promo-card-section">
+          <div className="w-full max-w-lg">
+            <PlatformCard 
+              title="Cyberonites Playground"
+              description="Practice cybersecurity skills in a safe environment with hands-on labs, challenges, and interactive simulations at playground.cyberonites.com"
+              buttonText="Launch Playground"
+              onClick={() => window.open('https://playground.cyberonites.com', '_blank')}
+              gradientFrom="from-gray-900"
+              gradientTo="to-black"
+              hoverFrom="hover:from-gray-800"
+              hoverTo="hover:to-gray-900"
+              accentColor="bg-cyan-400"
+              borderColor="border border-cyan-500/20"
+              textAccent="text-white"
+            />
+          </div>
+          <div className="w-full max-w-lg">
+            <PlatformCard 
+              title="Vulnerability Disclosure"
+              description="Help us maintain security by reporting vulnerabilities responsibly. Join our bug bounty program and contribute to cybersecurity excellence"
+              buttonText="Report Security Issue"
+              onClick={() => window.location.href = '/security'}
+              gradientFrom="from-black"
+              gradientTo="to-gray-900"
+              hoverFrom="hover:from-gray-900"
+              hoverTo="hover:to-gray-800"
+              accentColor="bg-cyan-400"
+              borderColor="border border-white/10"
+              textAccent="text-white"
+            />
+          </div>
+        </section>
+        
+        {/* <section className="py-8">
+          <UpcomingEvents id="Upcoming" />
+        </section> */}
+        
+        <section className="py-8">
+          <KnowUs />
+        </section>
+        
+        <section className="py-8">
+          <DashCard_Event />
+        </section>
+        
+        {/* <section className="py-8">
+          <NewEvent id="Upcoming"/>
+        </section> */}
+        
+        <section className="py-8">
+          <Grand id="Events" />
+        </section>
+        
+        <section className="py-8">
+          <TeamCard/>
+        </section>
+        
+        <section className="py-8">
+          <ConnecttUs id="About" />
+        </section>
+      </main>
+      
       <Footer />
+      
       {/* {showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
     </div>
   );

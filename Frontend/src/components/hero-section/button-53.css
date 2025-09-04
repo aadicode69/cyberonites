@@ -1,10 +1,11 @@
 .button-53 {
-  background: linear-gradient(135deg, #00ffff, #3dd1e7);
+  /* Brighter, more cyan gradient */
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
   border: 0;
   box-sizing: border-box;
-  color: #000000;
+  color: transparent;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-family: 'Ubuntu', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   justify-content: center;
@@ -18,134 +19,153 @@
   min-width: 200px;
   max-width: 460px;
   cursor: pointer;
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 250ms cubic-bezier(.2,.8,.4,1), box-shadow 250ms ease-out, background 300ms ease-out;
   outline: none;
   will-change: transform;
+  overflow: visible;
+  --move-x: 0px;
+  --move-y: 0px;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(6,182,212,0.18);
+  filter: drop-shadow(0 4px 8px rgba(6,182,212,0.08));
 }
 
+/* Accessible focus */
 .button-53:focus-visible {
-  outline: 2px solid #00ffff;
-  outline-offset: 2px;
+  outline: 2px solid rgba(6,182,212,0.9);
+  outline-offset: 3px;
+  box-shadow: 0 8px 28px rgba(6,182,212,0.22);
 }
 
+/* Visible label overlay */
 .button-53:after {
-  content: '';
+  content: attr(data-text);
   position: absolute;
-  border: 2px solid #ffffff;
-  bottom: 4px;
-  left: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  bottom: calc(4px + var(--move-y));
+  left: calc(4px + var(--move-x));
   width: calc(100% - 2px);
   height: calc(100% - 2px);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: bottom 200ms cubic-bezier(.2,.8,.4,1), left 200ms cubic-bezier(.2,.8,.4,1), background 250ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
   pointer-events: none;
-}
-
-.button-53:hover:after,
-.button-53:focus-visible:after {
-  bottom: 2px;
-  left: 2px;
-}
-
-.button-53:hover,
-.button-53:focus-visible {
-  transform: rotate(-2deg) translateY(-2px);
-  background: linear-gradient(135deg, #00ffff, #66e0f0);
-}
-
-.button-53:active {
-  transform: rotate(-2deg) translateY(0px);
-}
-
-.button-53-secondary {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
-  border: 2px solid #00ffff;
-  box-sizing: border-box;
-  color: #00ffff;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  justify-content: center;
   align-items: center;
-  line-height: 1.75rem;
-  padding: .75rem 1.65rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  width: auto;
-  min-width: 200px;
-  max-width: 460px;
-  cursor: pointer;
-  transform: rotate(2deg);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
-  outline: none;
-  will-change: transform;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  letter-spacing: 0.4px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 12px rgba(6,182,212,0.12);
 }
 
-.button-53-secondary:focus-visible {
-  outline: 2px solid #00ffff;
-  outline-offset: 2px;
+/* Hover: brighter and lifted (more cyan) */
+.button-53:hover {
+  transform: rotate(-1deg) translateY(-4px);
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+  box-shadow: 0 12px 36px rgba(6,182,212,0.26);
+  filter: drop-shadow(0 6px 12px rgba(6,182,212,0.12));
+  transition: transform 200ms cubic-bezier(.2,.8,.4,1), box-shadow 200ms ease-out, background 250ms ease-out;
 }
 
-.button-53-secondary:after {
-  content: '';
-  position: absolute;
-  border: 2px solid #00ffff;
-  bottom: 4px;
-  left: 4px;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  pointer-events: none;
+/* Hover overlay adjustments */
+.button-53:hover:after {
+  bottom: calc(7px + var(--move-y));
+  left: calc(7px + var(--move-x));
+  border-color: rgba(255, 255, 255, 1);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 8px 20px rgba(6,182,212,0.14);
+  transition: bottom 150ms cubic-bezier(.2,.8,.4,1), left 150ms cubic-bezier(.2,.8,.4,1), background 200ms ease-out, box-shadow 150ms ease-out, border-color 150ms ease-out;
 }
 
-.button-53-secondary:hover,
-.button-53-secondary:focus-visible {
-  background: linear-gradient(135deg, #00ffff, #3dd1e7);
-  color: #000000;
-  transform: rotate(2deg) translateY(-2px);
+/* Active: subtle press */
+.button-53:active {
+  transform: rotate(-1deg) translateY(-1px) scale(0.997);
+  box-shadow: 0 5px 14px rgba(6,182,212,0.18);
+  filter: drop-shadow(0 3px 6px rgba(6,182,212,0.08));
+  transition: transform 100ms cubic-bezier(.2,.8,.4,1), box-shadow 100ms ease-out;
 }
 
-.button-53-secondary:hover:after,
-.button-53-secondary:focus-visible:after {
-  bottom: 2px;
-  left: 2px;
+.button-53:active:after {
+  bottom: calc(3px + var(--move-y));
+  left: calc(3px + var(--move-x));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 8px rgba(6,182,212,0.12);
+  transition: bottom 100ms cubic-bezier(.2,.8,.4,1), left 100ms cubic-bezier(.2,.8,.4,1), box-shadow 100ms ease-out;
 }
 
-.button-53-secondary:active {
-  transform: rotate(2deg) translateY(0px);
+/* Subtle glow animation using softer cyan */
+@keyframes button-glow {
+  0%, 100% {
+    filter: drop-shadow(0 4px 8px rgba(6,182,212,0.06));
+  }
+  50% {
+    filter: drop-shadow(0 6px 14px rgba(6,182,212,0.10));
+  }
 }
 
+.button-53 {
+  animation: button-glow 3.5s ease-in-out infinite;
+}
+
+.button-53:hover {
+  animation: none;
+}
+
+/* Enhanced responsive design */
 @media (min-width: 768px) {
-  .button-53, .button-53-secondary {
-    padding: .75rem 3rem;
-    font-size: 1.25rem;
+  .button-53 {
+    padding: .875rem 3rem;
+    font-size: 1.125rem;
+    min-width: 220px;
+  }
+
+  .button-53:after {
+    font-size: 1.125rem;
   }
 }
 
 @media (max-width: 640px) {
-  .button-53, .button-53-secondary {
+  .button-53 {
     width: 100%;
-    max-width: 300px;
-    min-width: 180px;
+    max-width: 280px;
+    min-width: 200px;
+    padding: .875rem 2rem;
+    border-radius: 8px;
   }
 }
 
-/* Ensure buttons work well on touch devices */
-@media (hover: none) and (pointer: coarse) {
-  .button-53:hover, .button-53-secondary:hover {
-    transform: rotate(-2deg);
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button-53 {
+    border: 2px solid #06b6d4;
+    box-shadow: 0 6px 24px rgba(6,182,212,0.35);
   }
-  
-  .button-53-secondary:hover {
-    transform: rotate(2deg);
+
+  .button-53:after {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .button-53 {
+    animation: none;
+    transition: none;
+  }
+
+  .button-53:after {
+    transition: none;
   }
 }

@@ -1,0 +1,174 @@
+/* Timeline with clean sci-fi styling and proper alignment */
+.escxv2 .timeline-container {
+  position: relative;
+  width: 100%;
+  padding-left: 0;
+}
+
+/* Main timeline line - properly positioned */
+.escxv2 .timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 107, 53, 0.9) 0%,
+    rgba(255, 107, 53, 0.6) 50%,
+    rgba(255, 107, 53, 0.9) 100%
+  );
+  box-shadow: 
+    0 0 8px rgba(255, 107, 53, 0.6),
+    inset 0 0 2px rgba(255, 215, 0, 0.3);
+  z-index: 1;
+  animation: timeline-pulse 3s ease-in-out infinite;
+}
+
+@keyframes timeline-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px rgba(255, 107, 53, 0.6),
+      inset 0 0 2px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 12px rgba(255, 107, 53, 0.9),
+      inset 0 0 4px rgba(255, 215, 0, 0.5);
+  }
+}
+
+/* Timeline items - properly aligned */
+.escxv2 .timeline-item {
+  position: relative;
+  padding-left: 60px; /* Space for the marker */
+  padding-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.escxv2 .timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.escxv2 .timeline-item:last-child::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  bottom: -20px;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 107, 53, 0.6),
+    transparent
+  );
+  z-index: 1;
+}
+
+/* Timeline markers - sci-fi hexagon design */
+.escxv2 .timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: rgba(10, 10, 15, 0.9);
+  border: 2px solid rgba(255, 107, 53, 0.8);
+  transition: all 0.3s ease;
+  z-index: 10;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  box-shadow: 
+    0 0 10px rgba(255, 107, 53, 0.5),
+    inset 0 0 5px rgba(255, 215, 0, 0.2);
+}
+
+/* Active timeline marker */
+.escxv2 .timeline-item.is-active .timeline-marker {
+  background: var(--escalate-orange);
+  border-color: var(--escalate-orange);
+  box-shadow: 
+    0 0 20px rgba(255, 107, 53, 0.9),
+    0 0 35px rgba(255, 107, 53, 0.6),
+    inset 0 0 8px rgba(255, 255, 255, 0.3);
+  animation: active-marker-pulse 2s infinite ease-in-out;
+  transform: scale(1.2);
+}
+
+@keyframes active-marker-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(255, 107, 53, 0.9),
+      0 0 35px rgba(255, 107, 53, 0.6),
+      inset 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(255, 107, 53, 1),
+      0 0 45px rgba(255, 107, 53, 0.8),
+      inset 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Enhanced text styling */
+.escxv2 .timeline-item .text-orange-400 {
+  text-shadow: 
+    0 0 5px rgba(255, 107, 53, 0.8),
+    0 0 10px rgba(255, 107, 53, 0.4);
+  filter: brightness(1.1);
+}
+
+.escxv2 .timeline-item .escalateX-neon-text {
+  text-shadow: 
+    0 0 3px rgba(255, 107, 53, 0.8),
+    0 0 6px rgba(255, 107, 53, 0.6),
+    0 0 9px rgba(255, 107, 53, 0.4);
+}
+
+/* Hover effects */
+.escxv2 .timeline-item:hover .timeline-marker {
+  border-color: rgba(255, 107, 53, 1);
+  box-shadow: 
+    0 0 15px rgba(255, 107, 53, 0.8),
+    inset 0 0 8px rgba(255, 215, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.escxv2 .timeline-item:hover .text-orange-400 {
+  text-shadow: 
+    0 0 8px rgba(255, 107, 53, 1),
+    0 0 15px rgba(255, 107, 53, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .escxv2 .timeline-container::before {
+    left: 10px;
+  }
+  
+  .escxv2 .timeline-item {
+    padding-left: 50px;
+    padding-bottom: 35px;
+  }
+  
+  .escxv2 .timeline-marker {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .escxv2 .timeline-container::before {
+    left: 8px;
+  }
+  
+  .escxv2 .timeline-item {
+    padding-left: 40px;
+    padding-bottom: 30px;
+  }
+  
+  .escxv2 .timeline-marker {
+    width: 16px;
+    height: 16px;
+  }
+}

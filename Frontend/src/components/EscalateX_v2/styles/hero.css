@@ -1,0 +1,500 @@
+/* Hero Section Styles - Complete */
+
+/* Hero Section Layout */
+.exv2-hero-section {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.exv2-hero-content {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Hero Badge */
+.exv2-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.2),
+    rgba(247, 147, 30, 0.2)
+  );
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes exv2-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.exv2-hero-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: exv2-shimmer 2s infinite;
+}
+
+.exv2-hero-badge-icon {
+  font-size: 1.1rem;
+  animation: exv2-pulse 2s infinite;
+}
+
+@keyframes exv2-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Hero Title */
+.exv2-hero-title {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  line-height: 0.9;
+}
+
+.exv2-hero-title span {
+  line-height: 0.9;
+}
+
+/* Hero Subtitle */
+.exv2-hero-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Meta */
+.exv2-hero-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.exv2-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.exv2-meta-icon {
+  color: var(--primary-orange);
+  font-size: 1.1rem;
+}
+
+.exv2-meta-divider {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-orange);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Hero Tagline */
+.exv2-hero-tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.exv2-tagline-word {
+  color: var(--primary-orange);
+}
+
+.exv2-tagline-separator {
+  color: var(--text-muted);
+  font-size: 0.8em;
+}
+
+/* Hero CTA */
+.exv2-hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+/* CTA Button Styles */
+.exv2-cta-primary,
+.exv2-cta-secondary {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-default);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.exv2-cta-primary {
+  background: var(--gradient-orange);
+  color: #000;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.exv2-cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+}
+
+.exv2-cta-secondary {
+  background: transparent;
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+}
+
+.exv2-cta-secondary:hover {
+  background: rgba(255, 107, 53, 0.1);
+  transform: translateY(-2px);
+}
+
+.exv2-cta-icon {
+  font-size: 1.1rem;
+}
+
+/* Hero Cards Layout */
+.exv2-hero-cards-redesigned {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.exv2-hero-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.exv2-hero-right-column {
+  display: flex;
+}
+
+.exv2-hero-countdown,
+.exv2-hero-card-detail {
+  height: auto;
+  min-height: 220px;
+}
+
+.exv2-hero-card-poster {
+  width: 100%;
+}
+
+/* Event Details Card in Hero */
+.exv2-event-details-card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-slow);
+}
+
+.exv2-event-details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+.exv2-event-details-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.05) 0%,
+    transparent 50%,
+    rgba(255, 107, 53, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.exv2-event-details-card:hover .exv2-event-details-overlay {
+  opacity: 1;
+}
+
+.exv2-event-details-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-orange) 50%,
+    transparent 100%
+  );
+  animation: exv2-shimmer 2s ease-in-out infinite;
+}
+
+.exv2-event-details-content {
+  position: relative;
+  z-index: 10;
+}
+
+.exv2-event-details-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition-default);
+}
+
+.exv2-event-details-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 107, 53, 0.3);
+  transform: translateX(5px);
+}
+
+.exv2-event-details-icon-wrapper {
+  background: var(--gradient-orange);
+  box-shadow: 0 4px 15px var(--glow-orange);
+  transition: var(--transition-default);
+}
+
+.exv2-event-details-icon {
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.exv2-event-details-label {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.exv2-event-details-value {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.exv2-event-details-footer {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(247, 147, 30, 0.1) 100%
+  );
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.exv2-event-details-screening {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.exv2-event-details-screening .text-orange-400 {
+  color: var(--primary-orange);
+  font-weight: 700;
+}
+
+.exv2-event-details-description {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* Countdown Card in Hero */
+.exv2-countdown-card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-slow);
+}
+
+.exv2-countdown-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+.exv2-countdown-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.05) 0%,
+    transparent 50%,
+    rgba(255, 107, 53, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.exv2-countdown-card:hover .exv2-countdown-overlay {
+  opacity: 1;
+}
+
+.exv2-countdown-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-orange) 50%,
+    transparent 100%
+  );
+  animation: exv2-shimmer 2s ease-in-out infinite;
+}
+
+.exv2-countdown-content {
+  position: relative;
+  z-index: 10;
+}
+
+.exv2-countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .exv2-countdown-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.exv2-countdown-item {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1),
+    rgba(247, 147, 30, 0.1)
+  );
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  transition: var(--transition-default);
+}
+
+.exv2-countdown-item:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 107, 53, 0.5);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+}
+
+.exv2-countdown-number {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px var(--glow-orange);
+  font-family: "clouds", "Ubuntu", sans-serif;
+}
+
+.exv2-countdown-item:hover .exv2-countdown-number {
+  color: var(--primary-orange);
+}
+
+.exv2-countdown-unit {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+/* Poster Card in Hero - Removed redundant styles, now references cards.css */
+/* All poster card styles consolidated in cards.css */
+
+/* Mobile Hero Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .exv2-hero-cards-redesigned {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exv2-hero-cards-redesigned {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .exv2-hero-left-column {
+    gap: 1.5rem;
+  }
+
+  .exv2-escalate-hero-section {
+    padding: 2rem 0 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .exv2-hero-cards-redesigned {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .exv2-hero-left-column {
+    gap: 1.5rem;
+  }
+
+  .exv2-escalate-hero-section {
+    padding: 2rem 0 4rem 0;
+  }
+}

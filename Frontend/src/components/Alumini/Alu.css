@@ -205,7 +205,7 @@
 .alumni-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Reduced from 100vh */
+  height: clamp(60vh, 80vh, 100vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,13 +214,13 @@
       rgba(34, 211, 238, 0.1) 0%,
       rgba(34, 211, 238, 0.05) 45%,
       transparent 70%);
-  padding: 1rem; /* Reduced padding */
+  padding: clamp(0.5rem, 2vw, 1rem);
 }
 
 .alumni-circle {
   position: relative;
-  width: min(30rem, 90vw); /* Reduced from 35rem */
-  height: min(30rem, 90vw);
+  width: clamp(18rem, 50vw, 30rem);
+  height: clamp(18rem, 50vw, 30rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -240,36 +240,21 @@
   align-items: center;
   transform-style: preserve-3d;
   animation: rotate 30s linear infinite;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 .alumni-item {
   position: absolute;
-  /* inset: 0 0 0 0; */
   --quan: 5;
-  transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(12em); /* Reduced radius from 15em */
-}
-
-.alumni-item img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-  filter: brightness(0.9);
-  transition: filter 0.3s ease;
-}
-
-.alumni-item:hover img {
-  filter: brightness(1);
+  transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(clamp(8em, 15vw, 12em));
 }
 
 .alumni-card {
-  width: 160px; /* Reduced from 200px */
-  height: 100px; /* Reduced from 120px */
+  width: clamp(80px, 20vw, 160px);
+  height: clamp(60px, 15vw, 100px);
   backdrop-filter: blur(0.5rem);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border-radius: clamp(4px, 1vw, 8px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -282,7 +267,6 @@
   from {
     transform: rotateZ(calc(((var(--pos) - 1) * (360 / var(--quan)))* -1deg));
   }
-
   to {
     transform: rotateZ(calc((((var(--pos) - 1) * (360 / var(--quan))) + 360) * -1deg));
   }
@@ -296,8 +280,8 @@
 }
 
 .alumni-logo {
-  width: 130px; /* Reduced from 160px */
-  height: 70px; /* Reduced from 80px */
+  width: clamp(60px, 15vw, 130px);
+  height: clamp(40px, 10vw, 70px);
   object-fit: contain;
   filter: brightness(0.8);
   transition: filter 0.3s ease;
@@ -310,11 +294,12 @@
 .alumni-heading {
   text-align: center;
   color: #22d3ee;
-  font-size: 2.25rem;
+  font-size: clamp(1.25rem, 4vw, 2.25rem);
   font-weight: 800;
   text-shadow: 0px 0px 2.25rem #22d3ee80;
   text-transform: uppercase;
   letter-spacing: 0.2px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 /* Animation */
@@ -322,103 +307,101 @@
   from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
-
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* Mobile Responsive Breakpoints */
+@media (max-width: 480px) {
+  .alumni-container {
+    height: 60vh;
+    padding: 0.5rem;
+  }
+
+  .alumni-circle {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .alumni-item {
+    transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(6em);
+  }
+  
+  .alumni-card {
+    width: 70px;
+    height: 70px;
+    padding: 0.25rem;
+  }
+  
+  .alumni-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .alumni-container {
+    height: 70vh;
+  }
+
+  .alumni-circle {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .alumni-item {
+    transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(8em);
+  }
+}
+
+@media (min-width: 1024px) {
+  .alumni-container {
+    height: 100vh;
+    padding: 1rem;
+  }
+
   .alumni-circle {
     width: 35rem;
     height: 35rem;
   }
 
   .alumni-item {
-    width: 150px;
-    height: 85px;
+    transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(15em);
   }
-}
-
-@media (max-width: 992px) {
-  .alumni-container {
-    height: auto;
-  }
-
-  .alumni-circle {
-    width: 30rem;
-    height: 30rem;
-  }
-  .alumni-item {
-    width: 130px;
-    height: 75px;
-  }
+  
   .alumni-card {
+    width: 200px;
+    height: 120px;
+  }
+  
+  .alumni-logo {
     width: 160px;
-    height: 100px;
-  }
-  .alumni-logo {
-    width: 120px;
-    height: 60px;
+    height: 80px;
   }
 }
 
+/* Performance optimizations for mobile */
 @media (max-width: 768px) {
-  .alumni-container {
-    height: auto;
+  .alumni-items {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
-
-  .alumni-circle {
-    width: min(25rem, 95vw);
-    height: min(25rem, 95vw);
-  }
-
-  .alumni-item {
-    width: 120px;
-    height: 70px;
-    transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(10em);
-  }
+  
   .alumni-card {
-    width: 140px;
-    height: 90px;
-  }
-  .alumni-logo {
-    width: 100px;
-    height: 50px;
-  }
-  .alumni-heading {
-    font-size: 1.75rem;
+    will-change: transform;
+    transform: translateZ(0);
   }
 }
 
-@media (max-width: 480px) {
-  .alumni-container {
-    height: auto;
+/* Reduce animations for low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .alumni-items, .alumni-card {
+    animation: none;
   }
-
-  .alumni-circle {
-    width: min(25rem, 95vw);
-    height: min(25rem, 95vw);
-  }
-
-  .alumni-item {
-    width: 85px;
-    height: 85px;
-    transform: rotateZ(calc((var(--pos) - 1) * (360 / var(--quan)) * 1deg)) translateX(8em); /* Reduced radius */
-  }
-  .alumni-card {
-    width: 85px;
-    height: 85px;
-    padding: 0.5rem;
-  }
-  .alumni-logo {
-    width: 75px;
-    height: 75px;
-    padding: 0.25rem;
-  }
-  .alumni-heading {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  
+  .alumni-card:hover {
+    transform: scale(1.05);
   }
 }
