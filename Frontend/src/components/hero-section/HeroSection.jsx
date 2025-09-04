@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TypewriterEffect from "./TypewriterEffect";
-import AnimatedBackground from "./AnimatedBackground";
 import "./HeroSection.css";
 import "./button-53.css";
 
@@ -146,7 +145,6 @@ const HeroSection = ({ id }) => {
 
   return (
     <section id={id} className="hero-section" aria-label="Hero section introducing Cyberonites">
-      <AnimatedBackground />
       
       <div className="absolute background-gradients inset-0 z-1">
         {gradients.map((gradient, index) => (

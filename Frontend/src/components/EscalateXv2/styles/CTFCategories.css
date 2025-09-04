@@ -89,6 +89,7 @@
   transform: translate(-50%, -50%) translateY(-2px);
 }
 
+/* CLEANED - Removed animation */
 .escxv2 .escalateX-heading-scanner {
   position: absolute;
   top: 0;
@@ -96,7 +97,6 @@
   width: 100%;
   height: 3px;
   background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 1), rgba(255, 255, 255, 0.8), rgba(255, 107, 53, 1), transparent);
-  animation: heading-scan 4s infinite;
   z-index: 5;
 }
 
@@ -111,6 +111,7 @@
   z-index: 1;
 }
 
+/* CLEANED - Removed animation */
 .escxv2 .escalateX-heading-status-bar {
   position: absolute;
   bottom: 0;
@@ -123,7 +124,6 @@
     rgba(0, 255, 255, 0.6),
     rgba(255, 107, 53, 0.9)
   );
-  animation: status-pulse 2.5s ease-in-out infinite;
   z-index: 5;
   box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
 }
@@ -218,6 +218,7 @@
   z-index: 100;
 }
 
+/* CLEANED - Removed animation */
 .escxv2 .escalateX-card-scanner {
   position: absolute;
   top: 0;
@@ -225,7 +226,6 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.8), transparent);
-  animation: card-scan 4s infinite;
   z-index: 5;
 }
 
@@ -240,15 +240,16 @@
   z-index: 1;
 }
 
+/* CLEANED - Removed animation */
 .escxv2 .escalateX-card-energy-border {
   position: absolute;
   inset: 0;
   background: linear-gradient(45deg, transparent 30%, rgba(255, 107, 53, 0.1) 50%, transparent 70%);
   background-size: 200% 200%;
-  animation: energy-flow 3s ease-in-out infinite;
   z-index: 2;
 }
 
+/* CLEANED - Removed animation */
 .escxv2 .escalateX-card-status-indicator {
   position: absolute;
   top: 10px;
@@ -258,7 +259,6 @@
   background: rgba(255, 107, 53, 0.8);
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 107, 53, 0.6);
-  animation: status-blink 2s ease-in-out infinite;
   z-index: 10;
 }
 
@@ -284,57 +284,20 @@
   display: inline-block;
 }
 
-/* Animations */
-@keyframes heading-scan {
-  0% { left: -100%; opacity: 0; }
-  10% { opacity: 0.5; }
-  50% { opacity: 1; }
-  90% { opacity: 0.5; }
-  100% { left: 100%; opacity: 0; }
-}
+/* CLEANED - All animations removed */
 
-@keyframes card-scan {
-  0% { left: -100%; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
-@keyframes status-pulse {
-  0%, 100% { 
-    opacity: 0.7;
-    box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
-  }
-  50% { 
-    opacity: 1;
-    box-shadow: 0 0 25px rgba(255, 107, 53, 0.9);
-  }
-}
-
-@keyframes energy-flow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes status-blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.3; }
-}
-
-/* Enhanced card interactions */
+/* Enhanced card interactions - CLEANED (removed animations) */
 .escxv2 .escalateX-sci-fi-card.selected .escalateX-card-scanner {
-  animation: card-scan 1s infinite;
+  opacity: 1;
 }
 
 .escxv2 .escalateX-sci-fi-card.selected .escalateX-card-energy-border {
-  animation: energy-flow 1.5s ease-in-out infinite;
   opacity: 1;
 }
 
 .escxv2 .escalateX-sci-fi-card.selected .escalateX-card-status-indicator {
   background: rgba(0, 255, 255, 0.8);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
-  animation: status-blink 0.5s ease-in-out infinite;
 }
 
 /* Responsive adjustments - maintain left alignment */

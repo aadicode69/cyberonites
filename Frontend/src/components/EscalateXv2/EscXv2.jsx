@@ -1,10 +1,8 @@
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './index.css'
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
@@ -12,7 +10,6 @@ import 'swiper/css/autoplay';
 import './styles/EscxSwipper.css';
 import './styles/fixes.css';
 
-// import required modules
 import { EffectCube, Mousewheel, Pagination, Autoplay } from 'swiper/modules';
 import Hero from './components/Hero';
 import EventDetail from './components/EventDetail';
@@ -26,7 +23,6 @@ const EscXv2 = () => {
     const [isContactOpen, setIsContactOpen] = useState(false);
 
     useEffect(() => {
-        // Add Google Fonts preconnect for Audiowide
         const preconnectLink = document.createElement('link');
         preconnectLink.rel = 'preconnect';
         preconnectLink.href = 'https://fonts.googleapis.com';
