@@ -3,7 +3,6 @@ import "../styles/Villages.css";
 import { FaCloud, FaGlobe, FaIndustry, FaNetworkWired, FaSearch, FaVirus, FaUserSecret, FaLink, FaMobileAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 
 const villages = [
@@ -50,76 +49,86 @@ const Villages = () => {
                     </p>
                 </header>
 
-                <main className="w-full flex-1 flex flex-col items-center justify-center relative">
-                    <div className="w-full h-full flex items-center justify-center relative">
-                        {/* Navigation Buttons */}
-                        <button className="villages-nav-prev absolute left-6 top-1/2 transform -translate-y-1/2 z-50 w-14 h-14 bg-gradient-to-br from-orange-500/20 to-orange-600/30 border-2 border-orange-500/50 text-orange-400 flex items-center justify-center transition-all duration-300 hover:bg-orange-500/30 hover:border-orange-400 hover:text-orange-300 active:scale-95"
-                            style={{
-                                clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
-                                filter: 'drop-shadow(0 0 12px rgba(255, 107, 53, 0.4))'
-                            }}>
-                            <FaChevronLeft className="text-xl" />
-                        </button>
-
-                        <button className="villages-nav-next absolute right-6 top-1/2 transform -translate-y-1/2 z-50 w-14 h-14 bg-gradient-to-br from-orange-500/20 to-orange-600/30 border-2 border-orange-500/50 text-orange-400 flex items-center justify-center transition-all duration-300 hover:bg-orange-500/30 hover:border-orange-400 hover:text-orange-300 active:scale-95"
-                            style={{
-                                clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
-                                filter: 'drop-shadow(0 0 12px rgba(255, 107, 53, 0.4))'
-                            }}>
-                            <FaChevronRight className="text-xl" />
-                        </button>
-
+                <main className="w-full flex-1 flex flex-col items-center justify-center relative min-h-[500px]">
+                    <div className="w-full relative max-w-6xl mx-auto px-16">
                         <Swiper
-                            grabCursor={true}
                             slidesPerView={3}
-                            spaceBetween={30}
-                            centeredSlides={false}
-                            loop={false}
+                            spaceBetween={50}
+                            grabCursor={true}
+                            loop={true}
                             speed={800}
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                                waitForTransition: true,
+                            }}
                             navigation={{
                                 prevEl: '.villages-nav-prev',
                                 nextEl: '.villages-nav-next',
                             }}
-                            autoplay={{
-                                delay: 4000,
-                                disableOnInteraction: false,
-                                pauseOnMouseEnter: true,
-                            }}
-                            breakpoints={{
-                                320: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20,
-                                    centeredSlides: true,
-                                },
-                                640: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 25,
-                                    centeredSlides: false,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 30,
-                                    centeredSlides: false,
-                                },
-                                1280: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 35,
-                                    centeredSlides: false,
-                                },
-                            }}
                             modules={[Autoplay, Navigation]}
-                            className="villages-swiper w-full max-w-7xl h-96 overflow-hidden"
-                            style={{ 
-                                overflow: 'hidden',
-                                zIndex: 100
-                            }}
+                            className="villages-swiper-container"
                         >
                             {villages.map((village, index) => (
                                 <SwiperSlide key={index} className="village-card">
-                                    <VillageCard village={village} />
+                                        <VillageCard village={village} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
+
+                        {/* Navigation Buttons */}
+                        <button 
+                            className="villages-nav-prev"
+                            style={{
+                                position: 'absolute',
+                                left: '10px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                zIndex: 10000,
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: 'rgba(255, 107, 53, 0.2)',
+                                border: '2px solid rgba(255, 107, 53, 0.5)',
+                                borderRadius: '0',
+                                color: 'rgba(255, 107, 53, 0.9)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))',
+                                boxShadow: '0 0 15px rgba(255, 107, 53, 0.3)',
+                            }}
+                        >
+                            <FaChevronLeft className="text-lg" />
+                        </button>
+
+                        <button 
+                            className="villages-nav-next"
+                            style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                zIndex: 20,
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: 'rgba(255, 107, 53, 0.2)',
+                                border: '2px solid rgba(255, 107, 53, 0.5)',
+                                borderRadius: '0',
+                                color: 'rgba(255, 107, 53, 0.9)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease',
+                                clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))',
+                                boxShadow: '0 0 15px rgba(255, 107, 53, 0.3)',
+                            }}
+                        >
+                            <FaChevronRight className="text-lg" />
+                        </button>
                     </div>
                 </main>
             </div>

@@ -255,12 +255,12 @@ body {
 }
 
 /* Section Transitions */
-main > div:not(.promo-section):not(.promo-card-section) {
+main:not(.escxv2 main) > div:not(.promo-section):not(.promo-card-section) {
   position: relative;
   z-index: 10;
 }
 
-main > div:not(.promo-section):not(.promo-card-section)::before {
+main:not(.escxv2 main) > div:not(.promo-section):not(.promo-card-section):not(#section4)::before {
   content: '';
   position: absolute;
   top: 0;
@@ -276,7 +276,7 @@ main > div:not(.promo-section):not(.promo-card-section)::before {
 }
 
 @media (min-width: 768px) {
-  main > div:not(.promo-section):not(.promo-card-section)::before {
+  main:not(.escxv2 main) > div:not(.promo-section):not(.promo-card-section):not(#section4)::before {
     height: 80px;
   }
 }

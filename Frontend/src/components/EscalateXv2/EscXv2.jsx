@@ -114,14 +114,14 @@ const EscXv2 = () => {
             {/* Enhanced Vanta.js Fog Background - White-based fog in background */}
             <div ref={vantaRef} className="absolute inset-0 z-5 pointer-events-none" 
                  style={{ 
-                     opacity: 0.8,
+                     opacity: 0.5,
                      mixBlendMode: 'normal'
                  }}>
             </div>
 
             {/* Main Swiper Container - 95% screen width with transparent background */}
-            <div className="absolute inset-0 flex items-center justify-center z-30 overflow-hidden">
-                <div className="relative w-[95vw] h-[95vh] overflow-hidden"
+            <div className="absolute inset-0 flex items-center justify-center z-30">
+                <div className="relative w-[95vw] h-[95vh]"
                     style={{
                         background: 'transparent'
                     }}>

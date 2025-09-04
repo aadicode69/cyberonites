@@ -39,7 +39,7 @@ const Hero = () => {
 
     return (
     <section id="section1" className="carousel-section escalateX-hero-section main-section escalateX-hero-with-blur">
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 h-full relative z-10">
+            <div className="w-full max-w-7xl mt-20 sm:px-6 lg:px-8 py-8 h-full relative z-10">
                 <div className="flex flex-col h-full justify-center space-y-6">
                     {/* Title Section - Top */}
                     <div className="escalateX-hero-title-section flex-shrink-0">
