@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import intrusionPoster from "../../img/escalateXv2/esc.png";
+import intrusionPoster from "../../img/escalate-v2/poster.webp";
 import { useNavigate } from "react-router-dom";
 
 const Popup = ({ onClose }) => {
