@@ -60,12 +60,11 @@ import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.jpg
 // Distinguished speakers
 import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.jpg';
 import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.jpg';
-import asheeshTiwariImg from '../../img/Team/asheesh_sir.webp';
 import chiragSinglaImg from '../../img/escalate-v2/speakers/chirag_singla.jpg';
 import pawanSehlotImg from '../../img/escalate-v2/speakers/pawan-sehlot.jpg';
 import tamannaAgrawalImg from '../../img/escalate-v2/speakers/tamanna-agrawal.jpg';
 
-// Gallery Images - ADD THESE IMPORTS
+// Gallery Images
 import gallery1 from '../../img/escalate-v2/gallery/event-1.jpg';
 import gallery2 from '../../img/escalate-v2/gallery/event-2.jpg';
 import gallery3 from '../../img/escalate-v2/gallery/event-3.jpg';
@@ -75,12 +74,11 @@ import gallery6 from '../../img/escalate-v2/gallery/event-6.jpg';
 import gallery7 from '../../img/escalate-v2/gallery/event-7.jpg';
 import gallery8 from '../../img/escalate-v2/gallery/event-8.jpg';
 
-
-
 const EscalateXOverview = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [terminalText, setTerminalText] = useState('');
   const fullCommand = '$ ./launch_event --mode=cybersecurity --event=escalate-x-v2';
+  const canvasRef = useRef(null);
 
   // Create refs for each section
   const overviewRef = useRef(null);
@@ -90,6 +88,7 @@ const EscalateXOverview = () => {
   const outcomesRef = useRef(null);
   const galleryRef = useRef(null);
 
+  // Terminal typing effect
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -101,7 +100,66 @@ const EscalateXOverview = () => {
       }
     }, 50);
     return () => clearInterval(timer);
-  }, [fullCommand.length]);
+  }, []);
+
+  // Particle Background Animation
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = document.documentElement.scrollHeight;
+
+    const particles = [];
+    const particleCount = 1050;
+    const colors = ['#8B5CF6', '#EC4899', '#3B82F6'];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2.5 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        opacity: Math.random() * 0.5 + 0.3
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.globalAlpha = particle.opacity;
+        ctx.fill();
+
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+      });
+
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = document.documentElement.scrollHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const scrollToSection = (sectionRef, tabName) => {
     setActiveTab(tabName);
@@ -146,10 +204,10 @@ const EscalateXOverview = () => {
   ];
 
   const stats = [
-    { icon: '👥', value: '324', label: 'Total Registrations' },
-    { icon: '🏢', value: '66', label: 'Teams Participated' },
-    { icon: '🏆', value: '₹25,000', label: 'Prize Pool' },
-    { icon: '⏱️', value: '2', label: 'Days Event' }
+    { label: 'Total Registrations', value: '324' },
+    { label: 'Teams Participated', value: '66' },
+    { label: 'Prize Pool', value: '₹25,000' },
+    { label: 'Days Event', value: '2' }
   ];
 
   const highlights = [
@@ -162,98 +220,78 @@ const EscalateXOverview = () => {
     'Certificates Worth ₹1,83,000'
   ];
 
-  const villages = [
-    {
-      name: 'OSINT',
-      speaker: 'Mr. Pulkit Singh',
-      company: 'Deloitte USI',
-      description: 'Open Source Intelligence gathering and analysis techniques',
-      icon: '🔍',
-      image: pulkitSinghImg
-    },
-    {
-      name: 'Malware Analysis',
-      speaker: 'Mr. Kaushik Pal',
-      company: 'CloudSEK',
-      description: 'Understanding malware evolution and defense strategies',
-      icon: '🦠',
-      image: kaushikPalImg
-    },
-    {
-      name: 'Cloud Security',
-      speaker: 'Mr. Agrah Jain',
-      company: 'Wheelseye',
-      description: 'Cloud security frameworks and shared responsibility model',
-      icon: '☁️',
-      image: agrahJainImg
-    },
-    {
-      name: 'SOC Operations',
-      speaker: 'Mr. Kanishk Bhadauria',
-      company: 'Industry Expert',
-      description: 'Security Operations Centre real-time threat monitoring',
-      icon: '🛡️',
-      image: kanishkBhadauriaImg
-    },
-    {
-      name: 'Offensive Operations',
-      speaker: 'Mr. Abhijeet Singh',
-      company: 'Industry Expert',
-      description: 'Ethical penetration testing and red team exercises',
-      icon: '⚔️',
-      image: abhijeetSinghImg
-    }
-  ];
-
-  const speakers = [
+  // Distinguished Guests - Big Cards
+  const distinguishedGuests = [
     {
       name: 'Mr. Nipun Jaiswal',
       role: 'Senior Director, Offensive Security',
       company: 'NTT Data',
-      session: 'Chief Guest',
-      icon: '👨‍💼',
+      badge: 'Chief Guest',
       image: nipunJaiswalImg
     },
     {
       name: 'Mr. Himanshu Thakur',
       role: 'Director, Cyber Security',
       company: 'Nangia Group',
-      session: 'Guest of Honour',
-      icon: '👨‍💻',
+      badge: 'Guest of Honour',
       image: himanshuThakurImg
+    }
+  ];
+
+  // Village Speakers - Small Cards
+  const villageSpeakers = [
+    {
+      name: 'OSINT',
+      speaker: 'Mr. Pulkit Singh',
+      company: 'Deloitte USI',
+      designation: 'Solution Delivery Lead',
+      description: 'Open Source Intelligence gathering and analysis techniques',
+      image: pulkitSinghImg
     },
     {
-      name: 'Dr. Asheesh Tiwari',
-      role: 'Club Mentor',
-      company: 'GLA University',
-      session: 'Event Mentor',
-      icon: '👨‍🏫',
-      image: asheeshTiwariImg
+      name: 'Malware Analysis',
+      speaker: 'Mr. Kaushik Pal',
+      company: 'CloudSEK',
+      designation: 'Threat Researcher',
+      description: 'Understanding malware evolution and defense strategies',
+      image: kaushikPalImg
     },
     {
-      name: 'Mr. Chirag Singla',
-      role: 'Threat Researcher',
+      name: 'Cloud Security',
+      speaker: 'Mr. Agrah Jain',
+      company: 'Wheelseye',
+      designation: 'Head Cyber Security',
+      description: 'Cloud security frameworks and shared responsibility model',
+      image: agrahJainImg
+    },
+    {
+      name: 'SOC Operations',
+      speaker: 'Mr. Kanishk Bhadauria',
+      company: 'Industry Expert',
+      designation: 'Cyber Security Professional',
+      description: 'Security Operations Centre real-time threat monitoring',
+      image: kanishkBhadauriaImg
+    },
+    {
+      name: 'Offensive Operations',
+      speaker: 'Mr. Abhijeet Singh',
+      company: 'Industry Expert',
+      designation: 'Cyber Security Professional',
+      description: 'Ethical penetration testing and red team exercises',
+      image: abhijeetSinghImg
+    }
+  ];
+
+  // Other Speakers - Small Cards
+  const otherSpeakers = [
+    {
+      speaker: 'Mr. Chirag Singla',
       company: 'Zscaler',
-      session: 'Alumni Speaker',
-      icon: '👨‍💻',
+      designation: 'Threat Researcher',
+      badge: 'Alumni Speaker',
       image: chiragSinglaImg
     },
-    {
-      name: 'Mr. Pawan Sehlot',
-      role: 'Senior Cyber Crime Investigator',
-      company: 'UP Police',
-      session: 'Law Enforcement',
-      icon: '👮',
-      image: pawanSehlotImg
-    },
-    {
-      name: 'Ms. Tamanna Agrawal',
-      role: 'Assistant Manager, Cyber Security',
-      company: 'CyberFrat',
-      session: 'Panel Moderator',
-      icon: '👩‍💼',
-      image: tamannaAgrawalImg
-    }
+    
   ];
 
   const panelists = [
@@ -277,35 +315,45 @@ const EscalateXOverview = () => {
       position: '1st',
       team: 'Binary',
       prize: '₹12,000',
-      icon: '🥇',
-      image: binaryTeamImg
+      image: binaryTeamImg,
+      details: [
+        '₹12,000 Cash Prize',
+        'OffSec Certification (1× PG Practice - 6 months) – ₹10,121',
+        'SecOps Certification – ₹12,000',
+        'Goodies, Swags, Bookmarks etc.',
+        'Interview Buddy AI Vouchers – ₹449',
+        'Premium Access to AceInt.ai'
+      ]
     },
     {
       position: '2nd',
       team: 'Blitz',
       prize: '₹8,000',
-      icon: '🥈',
-      image: blitzTeamImg
+      image: blitzTeamImg,
+      details: [
+        '₹8,000 Cash Prize',
+        'OffSec Certification (1× PG Practice - 6 months) – ₹10,121',
+        'SecOps Certification – ₹12,000',
+        'Goodies, Swags, Bookmarks etc.',
+        'Interview Buddy AI Vouchers – ₹449',
+        'Premium Access to AceInt.ai'
+      ]
     },
     {
       position: '3rd',
       team: 'House_Stark',
       prize: '₹5,000',
-      icon: '🥉',
-      image: houseStarkTeamImg
+      image: houseStarkTeamImg,
+      details: [
+        '₹5,000 Cash Prize',
+        'OffSec Certification (1× PG Practice - 6 months) – ₹10,121',
+        'SecOps Certification – ₹12,000',
+        'Goodies, Swags, Bookmarks etc.',
+        'Interview Buddy AI Vouchers – ₹449',
+        'Premium Access to AceInt.ai'
+      ]
     },
-    {
-      position: '4th',
-      team: 'DigitalGhost',
-      prize: 'Certificates',
-      icon: '🏅'
-    },
-    {
-      position: '5th',
-      team: '404 Not Found',
-      prize: 'Certificates',
-      icon: '🏅'
-    }
+    
   ];
 
   const outcomes = [
@@ -319,62 +367,34 @@ const EscalateXOverview = () => {
     'Multiple companies announced upcoming hiring opportunities'
   ];
 
-
-
   const galleryImages = [
-  { 
-    id: 1, 
-    src: gallery1, 
-    caption: 'Knowledge Villages Session', 
-    category: 'Day 1' 
-  },
-  { 
-    id: 2, 
-    src: gallery2, 
-    caption: 'Panel Discussion - Future of Cybersecurity', 
-    category: 'Day 1' 
-  },
-  { 
-    id: 3, 
-    src: gallery3, 
-    caption: 'Expert Speaker Session', 
-    category: 'Day 1' 
-  },
-  { 
-    id: 4, 
-    src: gallery4, 
-    caption: 'CTF Competition in Progress', 
-    category: 'Day 2' 
-  },
-  { 
-    id: 5, 
-    src: gallery5, 
-    caption: 'SI Session', 
-    category: 'Session' 
-  },
-  { 
-    id: 6, 
-    src: gallery6, 
-    caption: 'ESCALATE X V2', 
-    category: 'Day 1' 
-  },
-  { 
-    id: 7, 
-    src: gallery7, 
-    caption: 'Cyberonites Team with Alumni', 
-    category: 'Day 2' 
-  },
-  { 
-    id: 8, 
-    src: gallery8, 
-    caption: 'Closing Ceremony & Prize Distribution', 
-    category: 'Day 2' 
-  }
-];
-
+    { id: 1, src: gallery1, caption: 'Knowledge Villages Session', category: 'Day 1' },
+    { id: 2, src: gallery2, caption: 'Panel Discussion - Future of Cybersecurity', category: 'Day 1' },
+    { id: 3, src: gallery3, caption: 'Expert Speaker Session', category: 'Day 1' },
+    { id: 4, src: gallery4, caption: 'CTF Competition in Progress', category: 'Day 2' },
+    { id: 5, src: gallery5, caption: 'SI Session', category: 'Session' },
+    { id: 6, src: gallery6, caption: 'ESCALATE X V2', category: 'Day 1' },
+    { id: 7, src: gallery7, caption: 'Cyberonites Team with Alumni', category: 'Day 2' },
+    { id: 8, src: gallery8, caption: 'Closing Ceremony & Prize Distribution', category: 'Day 2' }
+  ];
 
   return (
     <div className="escalate-container">
+      {/* Particle Background Canvas */}
+      <canvas 
+        ref={canvasRef}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          pointerEvents: 'none',
+          background: 'transparent'
+        }}
+      />
+
       {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-content-wrapper">
@@ -397,15 +417,15 @@ const EscalateXOverview = () => {
           </h1>
 
           <p className="subtitle">
-            <span className="bracket">\\</span> A GRAND CYBERSECURITY SYMPOSIUM BY CYBERONITES CLUB <span className="bracket">//</span>
+            <span className="bracket"></span> A GRAND CYBERSECURITY SYMPOSIUM BY CYBERONITES CLUB <span className="bracket"></span>
           </p>
 
           <div className="hero-line-4">
             <p className="event-date">
-              <span className="bracket">\\</span> NOVEMBER 8-9, 2025 <span className="bracket">//</span>
+              <span className="bracket"></span> NOVEMBER 8-9, 2024 <span className="bracket"></span>
             </p>
             <p className="event-venue">
-              <span className="bracket">\\</span> GLA UNIVERSITY, MATHURA <span className="bracket">//</span>
+              <span className="bracket"></span> GLA UNIVERSITY, MATHURA <span className="bracket"></span>
             </p>
           </div>
         </div>
@@ -419,9 +439,7 @@ const EscalateXOverview = () => {
         <button className={`nav-tab ${activeTab === 'villages' ? 'active' : ''}`} onClick={() => scrollToSection(villagesRef, 'villages')}>
           <span className="tab-icon">▶</span> VILLAGES
         </button>
-        <button className={`nav-tab ${activeTab === 'speakers' ? 'active' : ''}`} onClick={() => scrollToSection(speakersRef, 'speakers')}>
-          <span className="tab-icon">▶</span> SPEAKERS
-        </button>
+        
         <button className={`nav-tab ${activeTab === 'winners' ? 'active' : ''}`} onClick={() => scrollToSection(winnersRef, 'winners')}>
           <span className="tab-icon">▶</span> WINNERS
         </button>
@@ -437,7 +455,6 @@ const EscalateXOverview = () => {
       <div className="stats-grid">
         {stats.map((stat, index) => (
           <div key={index} className="stat-card">
-            <div className="stat-icon">{stat.icon}</div>
             <div className="stat-value">{stat.value}</div>
             <div className="stat-label">{stat.label}</div>
             <div className="stat-border"></div>
@@ -448,9 +465,9 @@ const EscalateXOverview = () => {
       {/* Sponsors & Partners Section */}
       <div className="sponsors-partners-section">
         <div className="sponsors-partners-header">
-          <span className="bracket-left">//</span>
+          <span className="bracket-left"></span>
           <span className="header-text">OUR PARTNERS & SPONSORS</span>
-          <span className="bracket-right">//</span>
+          <span className="bracket-right"></span>
         </div>
 
         <div className="sponsors-row">
@@ -493,7 +510,7 @@ const EscalateXOverview = () => {
       {/* Overview Section */}
       <div ref={overviewRef} className="section mission-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> MISSION BRIEFING
+          <span className="prompt">▶</span> MISSION BRIEFING
           <div className="header-dots">
             <span className="dot red"></span>
             <span className="dot yellow"></span>
@@ -551,32 +568,72 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Villages Section */}
+      {/* Villages Section - All Speakers in One Section */}
       <div ref={villagesRef} className="section villages-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> KNOWLEDGE VILLAGES
+          <span className="prompt">▶</span> KNOWLEDGE VILLAGES
         </div>
 
-        <div className="villages-grid">
-          {villages.map((village, index) => (
-            <div key={index} className="village-card">
-              <div className="village-icon">{village.icon}</div>
-              
-              <div className="speaker-image-container">
-                <img
-                  src={village.image}
-                  alt={village.speaker}
-                  className="speaker-photo"
-                />
+        {/* Distinguished Guests - Big Cards */}
+        <div className="distinguished-guests-container">
+          <h3>Distinguished Guests</h3>
+          <div className="distinguished-guests-row">
+            {distinguishedGuests.map((guest, index) => (
+              <div key={index} className="distinguished-guest-big-card">
+                <div className="guest-big-badge">{guest.badge}</div>
+                <div className="guest-big-image-container">
+                  <img src={guest.image} alt={guest.name} className="guest-big-photo" />
+                </div>
+                <h4 className="guest-big-name">{guest.name}</h4>
+                <p className="guest-big-role">{guest.role}</p>
+                <p className="guest-big-company">{guest.company}</p>
               </div>
-              
-              <h4>{village.name}</h4>
-              <p className="speaker-name">{village.speaker}</p>
-              <p className="speaker-company">{village.company}</p>
-              <p className="village-desc">{village.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        {/* All Speakers Section - Small Cards */}
+        <div className="all-speakers-section">
+          <h3>Speakers & Village Hosts</h3>
+          <p className="all-speakers-subtitle">Expert sessions and knowledge village facilitators</p>
+          
+          <div className="all-speakers-grid">
+            {/* Village Speakers */}
+            {villageSpeakers.map((village, index) => (
+              <div key={index} className="village-speaker-card">
+                <div className="village-badge">{village.name}</div>
+                <div className="village-speaker-image-container">
+                  <img src={village.image} alt={village.speaker} className="village-speaker-photo" />
+                </div>
+                <div className="village-speaker-info">
+                  <h5 className="village-speaker-name">{village.speaker}</h5>
+                  <p className="village-speaker-designation">{village.designation}</p>
+                  <p className="village-speaker-company">{village.company}</p>
+                  <p className="village-speaker-desc">{village.description}</p>
+                </div>
+              </div>
+            ))}
+
+            {/* Other Speakers */}
+            {otherSpeakers.map((speaker, index) => (
+              <div key={index} className="village-speaker-card">
+                <div className="village-badge">{speaker.badge}</div>
+                <div className="village-speaker-image-container">
+                  <img src={speaker.image} alt={speaker.speaker} className="village-speaker-photo" />
+                </div>
+                <div className="village-speaker-info">
+                  <h5 className="village-speaker-name">{speaker.speaker}</h5>
+                  <p className="village-speaker-designation">{speaker.designation}</p>
+                  <p className="village-speaker-company">{speaker.company}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="section-header">
+          <span className="prompt">▶</span> Panel Discussion
+        </div>
+
 
         {/* Panel Section */}
         <div className="panel-section">
@@ -597,11 +654,7 @@ const EscalateXOverview = () => {
             {panelists.map((panelist, index) => (
               <div key={index} className="panelist-card">
                 <div className="panelist-image-container">
-                  <img
-                    src={panelist.image}
-                    alt={panelist.name}
-                    className="panelist-photo"
-                  />
+                  <img src={panelist.image} alt={panelist.name} className="panelist-photo" />
                 </div>
                 <div className="panelist-info">
                   <h5 className="panelist-name">{panelist.name}</h5>
@@ -611,120 +664,146 @@ const EscalateXOverview = () => {
             ))}
           </div>
         </div>
-
-        
       </div>
 
-      {/* Speakers Section */}
-      <div ref={speakersRef} className="section speakers-section scroll-section">
-        <div className="section-header">
-          <span className="prompt">▶_</span> DISTINGUISHED SPEAKERS & GUESTS
-        </div>
-        
-        <div className="speakers-grid">
-          {speakers.map((speaker, index) => (
-            <div key={index} className="speaker-card-passport">
-              <div className="session-badge">{speaker.session}</div>
-              
-              <div className="passport-photo-container">
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="passport-photo"
-                />
-              </div>
-              
-              <div className="speaker-details">
-                <h4 className="speaker-name">{speaker.name}</h4>
-                <p className="speaker-role">{speaker.role}</p>
-                <p className="speaker-company">🏢 {speaker.company}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
       {/* CTF Winners Section */}
-            {/* Winners Section */}
-      <div ref={winnersRef} className="section winners-section scroll-section">
-        <div className="ctf-winners-section">
-          <h3 className="ctf-main-heading">CTF Challenge Winners</h3>
-          <p className="ctf-subtitle">Top 5 Teams - Capture The Flag Competition</p>
-          <div className="ctf-winners">
-            {ctfWinners.map((winner, idx) => (
-              <div
-                key={idx}
-                className={
-                  "ctf-winner-card" +
-                  (winner.position === '1st' ? " first" : winner.position === '2nd' ? " second" : winner.position === '3rd' ? " third" : " rest")
-                }
-              >
-                <div className="ctf-winner-trophy">{winner.icon}</div>
-                {winner.image ? (
-                  <>
-                    <div className="ctf-team-image-container">
-                      <img src={winner.image} alt={`Team ${winner.team}`} className="ctf-team-photo" />
-                    </div>
-                    <h3 className="ctf-position">{winner.position} Place</h3>
-                    <h4 className="ctf-team-name">Team {winner.team}</h4>
-                    <div className="ctf-winner-prize">{winner.prize}</div>
-                  </>
-                ) : (
-                  <div className="ctf-winner-noimg">
-                    <h3 className="ctf-position">{winner.position} Place</h3>
-                    <h4 className="ctf-team-name-big">Team {winner.team}</h4>
-                    <div className="ctf-winner-prize-big">{winner.prize}</div>
-                  </div>
-                )}
-              </div>
-            ))}
+<div ref={winnersRef} className="section scroll-section">
+  <div className="section-header">
+          <span className="prompt">▶ </span> Winners
+        </div>
+  <div className="ctf-winners-section">
+    <h3 className="ctf-main-heading">CTF Challenge Winners</h3>
+    <p className="ctf-subtitle">Top 3 Teams - Capture The Flag Competition</p>
+    
+    {/* TOP 3 WINNERS - PODIUM STYLE: 2nd - 1st - 3rd */}
+    <div className="ctf-top-three">
+      {/* 2nd Place */}
+      <div className="ctf-winner-card second">
+        <div className="ctf-card-inner">
+          {/* FRONT SIDE */}
+          <div className="ctf-card-front">
+            <div className="ctf-team-image-container">
+              <img src={ctfWinners[1].image} alt={`Team ${ctfWinners[1].team}`} className="ctf-team-photo" />
+            </div>
+            <h3 className="ctf-position">{ctfWinners[1].position} Place</h3>
+            <h4 className="ctf-team-name">Team {ctfWinners[1].team}</h4>
+            <div className="ctf-winner-prize">{ctfWinners[1].prize}</div>
+            <div className="flip-hint">Hover to see prize details</div>
           </div>
-        </div>
 
-
-        <div className="section-header">
-          <span className="prompt">▶_</span> COMPETITION HIGHLIGHTS
-        </div>
-        
-        <div className="achievements-section">
-          <div className="achievements-grid">
-            <div className="achievement-card">
-              <div className="achievement-icon">🎯</div>
-              <h4>CTF Categories</h4>
-              <p>Web Exploitation, Cryptography, Reverse Engineering, Forensics, OSINT, Firmware, Steganography</p>
-            </div>
-            <div className="achievement-card">
-              <div className="achievement-icon">📊</div>
-              <h4>Participant Feedback</h4>
-              <p>43.5% rated challenges as appropriately difficult, 34.8% found them challenging</p>
-            </div>
-            <div className="achievement-card">
-              <div className="achievement-icon">💡</div>
-              <h4>Most Popular</h4>
-              <p>Web Exploitation was the most enjoyed category among participants</p>
-            </div>
-            <div className="achievement-card">
-              <div className="achievement-icon">🏆</div>
-              <h4>Prize Pool</h4>
-              <p>₹25,000 distributed among top 3 teams with certificates for all participants</p>
-            </div>
-            <div className="achievement-card">
-              <div className="achievement-icon">👥</div>
-              <h4>Participation</h4>
-              <p>66 teams competed across multiple challenging cybersecurity domains</p>
-            </div>
-            <div className="achievement-card">
-              <div className="achievement-icon">⏱️</div>
-              <h4>Duration</h4>
-              <p>Intense 6-hour CTF challenge testing skills in real-world scenarios</p>
-            </div>
+          {/* BACK SIDE */}
+          <div className="ctf-card-back">
+            <h3 className="prize-details-title">{ctfWinners[1].position} Place Prizes</h3>
+            <h4 className="prize-team-name">Team {ctfWinners[1].team}</h4>
+            <ul className="prize-details-list">
+              {ctfWinners[1].details.map((detail, detailIdx) => (
+                <li key={detailIdx}>
+                  <span className="prize-bullet">◆</span> {detail}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
+
+      {/* 1st Place - CENTER & TALLEST */}
+      <div className="ctf-winner-card first champion">
+        <div className="ctf-card-inner">
+          {/* FRONT SIDE */}
+          <div className="ctf-card-front">
+            <div className="ctf-team-image-container">
+              <img src={ctfWinners[0].image} alt={`Team ${ctfWinners[0].team}`} className="ctf-team-photo" />
+            </div>
+            <h3 className="ctf-position">{ctfWinners[0].position} Place</h3>
+            <h4 className="ctf-team-name">Team {ctfWinners[0].team}</h4>
+            <div className="ctf-winner-prize">{ctfWinners[0].prize}</div>
+            <div className="flip-hint">Hover to see prize details</div>
+          </div>
+
+          {/* BACK SIDE */}
+          <div className="ctf-card-back">
+            <h3 className="prize-details-title">{ctfWinners[0].position} Place Prizes</h3>
+            <h4 className="prize-team-name">Team {ctfWinners[0].team}</h4>
+            <ul className="prize-details-list">
+              {ctfWinners[0].details.map((detail, detailIdx) => (
+                <li key={detailIdx}>
+                  <span className="prize-bullet">◆</span> {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* 3rd Place */}
+      <div className="ctf-winner-card third">
+        <div className="ctf-card-inner">
+          {/* FRONT SIDE */}
+          <div className="ctf-card-front">
+            <div className="ctf-team-image-container">
+              <img src={ctfWinners[2].image} alt={`Team ${ctfWinners[2].team}`} className="ctf-team-photo" />
+            </div>
+            <h3 className="ctf-position">{ctfWinners[2].position} Place</h3>
+            <h4 className="ctf-team-name">Team {ctfWinners[2].team}</h4>
+            <div className="ctf-winner-prize">{ctfWinners[2].prize}</div>
+            <div className="flip-hint">Hover to see prize details</div>
+          </div>
+
+          {/* BACK SIDE */}
+          <div className="ctf-card-back">
+            <h3 className="prize-details-title">{ctfWinners[2].position} Place Prizes</h3>
+            <h4 className="prize-team-name">Team {ctfWinners[2].team}</h4>
+            <ul className="prize-details-list">
+              {ctfWinners[2].details.map((detail, detailIdx) => (
+                <li key={detailIdx}>
+                  <span className="prize-bullet">◆</span> {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="section-header">
+    <span className="prompt">▶</span> COMPETITION HIGHLIGHTS
+  </div>
+  
+  <div className="achievements-section">
+    <div className="achievements-grid">
+      <div className="achievement-card">
+        <h4>CTF Categories</h4>
+        <p>Web Exploitation, Cryptography, Reverse Engineering, Forensics, OSINT, Firmware, Steganography</p>
+      </div>
+      <div className="achievement-card">
+        <h4>Participant Feedback</h4>
+        <p>43.5% rated challenges as appropriately difficult, 34.8% found them challenging</p>
+      </div>
+      <div className="achievement-card">
+        <h4>Most Popular</h4>
+        <p>Web Exploitation was the most enjoyed category among participants</p>
+      </div>
+      <div className="achievement-card">
+        <h4>Prize Pool</h4>
+        <p>₹25,000 distributed among top 3 teams with certificates for all participants</p>
+      </div>
+      <div className="achievement-card">
+        <h4>Participation</h4>
+        <p>66 teams competed across multiple challenging cybersecurity domains</p>
+      </div>
+      <div className="achievement-card">
+        <h4>Duration</h4>
+        <p>Intense 6-hour CTF challenge testing skills in real-world scenarios</p>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Outcomes Section */}
       <div ref={outcomesRef} className="section outcomes-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> EVENT OUTCOMES & OPPORTUNITIES
+          <span className="prompt">▶</span> EVENT OUTCOMES & OPPORTUNITIES
         </div>
         
         <div className="outcomes-grid">
@@ -760,38 +839,50 @@ const EscalateXOverview = () => {
       </div>
 
       {/* Gallery Section */}
-      <div ref={galleryRef} className="section gallery-section scroll-section">
-        <div className="section-header">
-          <span className="prompt">▶_</span> EVENT GALLERY
-          <div className="header-dots">
-            <span className="dot red"></span>
-            <span className="dot yellow"></span>
-            <span className="dot green"></span>
-          </div>
-        </div>
-
-        <div className="gallery-intro">
-          <p>Capturing memorable moments from EscalateX V2 - from intense hacking sessions to team collaborations and celebrations</p>
-        </div>
-
-        <div className="gallery-grid">
-  {galleryImages.map((image) => (
-    <div key={image.id} className="gallery-item">
-      <div className="gallery-frame">
-        <div className="frame-border"></div>
-        <img src={image.src} alt={image.caption} className="gallery-image" />
-        <div className="gallery-overlay">
-          <div className="gallery-caption">
-            <span className="gallery-category">{image.category}</span>
-            <h4>{image.caption}</h4>
-          </div>
-        </div>
-      </div>
+<div ref={galleryRef} className="section gallery-section scroll-section">
+  <div className="section-header">
+    <span className="prompt">▶</span> EVENT GALLERY
+    <div className="header-dots">
+      <span className="dot red"></span>
+      <span className="dot yellow"></span>
+      <span className="dot green"></span>
     </div>
-  ))}
-</div>
+  </div>
 
+  <div className="gallery-intro">
+    <p>Capturing memorable moments from EscalateX V2 - from intense hacking sessions to team collaborations and celebrations</p>
+  </div>
+
+  <div className="gallery-grid">
+    {galleryImages.map((image) => (
+      <div key={image.id} className="gallery-hex-container">
+        <div className="gallery-card-inner">
+          {/* FRONT SIDE - Image */}
+          <div className="gallery-card-front">
+            <img src={image.src} alt={image.caption} />
+            <div className="gallery-overlay">
+              <span className="gallery-hover-hint">Click to see details</span>
+            </div>
+          </div>
+
+          {/* BACK SIDE - Details */}
+          <div className="gallery-card-back">
+            <div className="gallery-back-content">
+              <span className="gallery-category-back">{image.category}</span>
+              <h4 className="gallery-caption-back">{image.caption}</h4>
+              <div className="gallery-details">
+                <p className="gallery-event-name">EscalateX V2</p>
+                <p className="gallery-event-date">November 8-9, 2024</p>
+                <p className="gallery-location">GLA University, Mathura</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
       </div>
+    ))}
+  </div>
+</div>
 
       {/* Footer */}
       <div className="footer">

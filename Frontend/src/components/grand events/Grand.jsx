@@ -15,7 +15,7 @@ function Grand() {
       participants: "350+",
       description:
         "The EscalateX V2 was a grand two-day cybersecurity symposium organized by the Cyberonites Club.",
-      link: "/escalate-x-overview"
+      link: "/escalate-x-v2"
     },
     {
       id: 2,
