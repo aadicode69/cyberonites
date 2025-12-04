@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 import Popup from "./components/load_popup/Popup";
-import Escalatexoverview from "./components/escalate-x-overview/Escalatexoverview";
+import EscalateXOverview from "./components/escalate-x-overview/V2Main";
 
 function AppContent() { 
   const [showPopup, setShowPopup] = useState(false);
@@ -41,7 +41,7 @@ function AppContent() {
         <Route path="/intrusion-x-overview" element={<IntrusionX />} />
         <Route path="/prob-statement-x" element={<Problem_S />} />
         <Route path="/guestlecture" element={<GuestLecture />} />
-        <Route path="/escalate-x-v2" element={<Escalatexoverview />} />
+        <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
 
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

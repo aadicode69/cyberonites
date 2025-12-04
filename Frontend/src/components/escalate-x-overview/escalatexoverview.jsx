@@ -84,9 +84,8 @@ import slide15 from '../../img/escalate-v2/slideshow/s15.jpg';
 import slide16 from '../../img/escalate-v2/slideshow/s16.jpg';
 
 
-const Escalatexoverview = () => {
+const EscalateXOverview = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [terminalText, setTerminalText] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const fullCommand = '$ ./launch_event --mode=cybersecurity --event=escalate-x-v2';
   const canvasRef = useRef(null);
@@ -983,4 +982,4 @@ const Escalatexoverview = () => {
   );
 };
 
-export default Escalatexoverview;
+export default EscalateXOverview;
