@@ -47,41 +47,38 @@ import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.J
 import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.JPG';
 import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.JPG';
 
-import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.jpg';
-import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.jpg';
-import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.jpg';
+import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.JPG';
+import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.JPG';
+import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.jpJPGg';
 
-import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.jpg';
-import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.jpg';
-import chiragSinglaImg from '../../img/escalate-v2/speakers/chirag_singla.jpg';
-import pawanSehlotImg from '../../img/escalate-v2/speakers/pawan-sehlot.jpg';
-import tamannaAgrawalImg from '../../img/escalate-v2/speakers/tamanna-agrawal.jpg';
+import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.JPG';
+import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.JPG';
 
-import gallery1 from '../../img/escalate-v2/gallery/event-1.jpg';
-import gallery2 from '../../img/escalate-v2/gallery/event-2.jpg';
-import gallery3 from '../../img/escalate-v2/gallery/event-3.jpg';
-import gallery4 from '../../img/escalate-v2/gallery/event-4.jpg';
-import gallery5 from '../../img/escalate-v2/gallery/event-5.jpg';
-import gallery6 from '../../img/escalate-v2/gallery/event-6.jpg';
-import gallery7 from '../../img/escalate-v2/gallery/event-7.jpg';
-import gallery8 from '../../img/escalate-v2/gallery/event-8.jpg';
+import gallery1 from '../../img/escalate-v2/gallery/event-1.JPG';
+import gallery2 from '../../img/escalate-v2/gallery/event-2.JPG';
+import gallery3 from '../../img/escalate-v2/gallery/event-3.JPG';
+import gallery4 from '../../img/escalate-v2/gallery/event-4.JPG';
+import gallery5 from '../../img/escalate-v2/gallery/event-5.JPG';
+import gallery6 from '../../img/escalate-v2/gallery/event-6.JPG';
+import gallery7 from '../../img/escalate-v2/gallery/event-7.JPG';
+import gallery8 from '../../img/escalate-v2/gallery/event-8.JPG';
 
-import slide1 from '../../img/escalate-v2/slideshow/s1.jpg';
-import slide2 from '../../img/escalate-v2/slideshow/s2.jpg';
-import slide3 from '../../img/escalate-v2/slideshow/s3.jpg';
-import slide4 from '../../img/escalate-v2/slideshow/s4.jpg';
-import slide5 from '../../img/escalate-v2/slideshow/s5.jpg';
-import slide6 from '../../img/escalate-v2/slideshow/s6.jpg';
-import slide7 from '../../img/escalate-v2/slideshow/s7.jpg';
-import slide8 from '../../img/escalate-v2/slideshow/s8.jpg';
-import slide9 from '../../img/escalate-v2/slideshow/s9.jpg';
-import slide10 from '../../img/escalate-v2/slideshow/s10.jpg';
-import slide11 from '../../img/escalate-v2/slideshow/s11.jpg';
-import slide12 from '../../img/escalate-v2/slideshow/s12.jpg';
-import slide13 from '../../img/escalate-v2/slideshow/s13.jpg';
-import slide14 from '../../img/escalate-v2/slideshow/s14.jpg';
-import slide15 from '../../img/escalate-v2/slideshow/s15.jpg';
-import slide16 from '../../img/escalate-v2/slideshow/s16.jpg';
+import slide1 from '../../img/escalate-v2/slideshow/s1.JPG';
+import slide2 from '../../img/escalate-v2/slideshow/s2.JPG';
+import slide3 from '../../img/escalate-v2/slideshow/s3.JPG';
+import slide4 from '../../img/escalate-v2/slideshow/s4.JPG';
+import slide5 from '../../img/escalate-v2/slideshow/s5.JPG';
+import slide6 from '../../img/escalate-v2/slideshow/s6.JPG';
+import slide7 from '../../img/escalate-v2/slideshow/s7.JPG';
+import slide8 from '../../img/escalate-v2/slideshow/s8.JPG';
+import slide9 from '../../img/escalate-v2/slideshow/s9.JPG';
+import slide10 from '../../img/escalate-v2/slideshow/s10.JPG';
+import slide11 from '../../img/escalate-v2/slideshow/s11.JPG';
+import slide12 from '../../img/escalate-v2/slideshow/s12.JPG';
+import slide13 from '../../img/escalate-v2/slideshow/s13.JPG';
+import slide14 from '../../img/escalate-v2/slideshow/s14.JPG';
+import slide15 from '../../img/escalate-v2/slideshow/s15.JPG';
+import slide16 from '../../img/escalate-v2/slideshow/s16.JPG';
 
 const EscalateXOverview = () => {
   const [activeTab, setActiveTab] = useState('overview');
