@@ -33,19 +33,19 @@ import unstop from '../../img/escalate-v2/sponsor/unstop.png';
 import featuredEvent from '../../img/escalate-v2/featured-event.jpg';
 import mentorImage from '../../img/escalate-v2/mentor-dr-asheesh-tiwari.jpg';
 
-import pulkitSinghImg from '../../img/escalate-v2/speakers/pulkit_singh.jpg';
-import kaushikPalImg from '../../img/escalate-v2/speakers/kaushik_pal.jpg';
-import agrahJainImg from '../../img/escalate-v2/speakers/agrah_jain.jpg';
-import kanishkBhadauriaImg from '../../img/escalate-v2/speakers/kanishk_bhadauria.jpg';
-import abhijeetSinghImg from '../../img/escalate-v2/speakers/abhijeet_singh.jpg';
+import pulkitSinghImg from '../../img/escalate-v2/speakers/pulkit_singh.JPG';
+import kaushikPalImg from '../../img/escalate-v2/speakers/kaushik_pal.JPG';
+import agrahJainImg from '../../img/escalate-v2/speakers/agrah_jain.JPG';
+import kanishkBhadauriaImg from '../../img/escalate-v2/speakers/kanishk_bhadauria.JPG';
+import abhijeetSinghImg from '../../img/escalate-v2/speakers/abhijeet_singh.JPG';
 
-import himanshuThakurPanelistImg from '../../img/escalate-v2/panelists/himanshu_thakur.jpg';
-import chiragSinglaPanelistImg from '../../img/escalate-v2/panelists/chirag_singla.jpg';
-import agrahJainPanelistImg from '../../img/escalate-v2/panelists/agrah_jain.jpg';
-import vinayakChaturvediImg from '../../img/escalate-v2/panelists/vinayak_chaturvedi.jpg';
-import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.jpg';
-import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.jpg';
-import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.jpg';
+import himanshuThakurPanelistImg from '../../img/escalate-v2/panelists/himanshu_thakur.JPG';
+import chiragSinglaPanelistImg from '../../img/escalate-v2/panelists/chirag_singla.JPG';
+import agrahJainPanelistImg from '../../img/escalate-v2/panelists/agrah_jain.JPG';
+import vinayakChaturvediImg from '../../img/escalate-v2/panelists/vinayak_chaturvedi.JPG';
+import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.JPG';
+import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.JPG';
+import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.JPG';
 
 import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.jpg';
 import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.jpg';
