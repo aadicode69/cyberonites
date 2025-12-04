@@ -1,9 +1,8 @@
-// main.jsx
 import React from 'react';
-import EscalateXOverview from './escalatexoverview';
+import Escalatexoverview from './Escalatexoverview.jsx';
 
 const V2Main = () => {
-  return <EscalateXOverview />;
+  return <Escalatexoverview />;
 };
 
 export default V2Main;

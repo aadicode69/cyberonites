@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './EscalateX.css';
+import './escalatex-v2.css';
 import Logo from '../../img/escalate-v2/logo.png';
 
-// Import Partner Images
 import pirates from '../../img/escalate-v2/partners/0x0pirates_logo.jpg';
 import bsidesJ from '../../img/escalate-v2/partners/BSidesJ.jpg';
 import cybersurge from '../../img/escalate-v2/partners/cybersurge.png';
@@ -13,7 +12,6 @@ import hackloop from '../../img/escalate-v2/partners/hackloop-logo.png';
 import leninTree from '../../img/escalate-v2/partners/lenint_tree.png';
 import partnerLogo from '../../img/escalate-v2/partners/logo.jpg';
 
-// Import Sponsor Images
 import abhibus from '../../img/escalate-v2/sponsor/abhibus.jpg';
 import bootcoding from '../../img/escalate-v2/sponsor/Bootcoding.png';
 import burgerjn from '../../img/escalate-v2/sponsor/burgerjn.png';
@@ -32,18 +30,15 @@ import secOps from '../../img/escalate-v2/sponsor/SecOps.png';
 import squareBoat from '../../img/escalate-v2/sponsor/SquareBoat.png';
 import unstop from '../../img/escalate-v2/sponsor/unstop.png';
 
-// Import other images
 import featuredEvent from '../../img/escalate-v2/featured-event.jpg';
 import mentorImage from '../../img/escalate-v2/mentor-dr-asheesh-tiwari.jpg';
 
-// Village speakers
 import pulkitSinghImg from '../../img/escalate-v2/speakers/pulkit_singh.jpg';
 import kaushikPalImg from '../../img/escalate-v2/speakers/kaushik_pal.jpg';
 import agrahJainImg from '../../img/escalate-v2/speakers/agrah_jain.jpg';
 import kanishkBhadauriaImg from '../../img/escalate-v2/speakers/kanishk_bhadauria.jpg';
 import abhijeetSinghImg from '../../img/escalate-v2/speakers/abhijeet_singh.jpg';
 
-// Panelists
 import himanshuThakurPanelistImg from '../../img/escalate-v2/panelists/himanshu_thakur.jpg';
 import chiragSinglaPanelistImg from '../../img/escalate-v2/panelists/chirag_singla.jpg';
 import agrahJainPanelistImg from '../../img/escalate-v2/panelists/agrah_jain.jpg';
@@ -52,19 +47,16 @@ import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.j
 import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.jpg';
 import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.jpg';
 
-// CTF Winner Team Images
 import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.jpg';
 import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.jpg';
 import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.jpg';
 
-// Distinguished speakers
 import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.jpg';
 import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.jpg';
 import chiragSinglaImg from '../../img/escalate-v2/speakers/chirag_singla.jpg';
 import pawanSehlotImg from '../../img/escalate-v2/speakers/pawan-sehlot.jpg';
 import tamannaAgrawalImg from '../../img/escalate-v2/speakers/tamanna-agrawal.jpg';
 
-// Gallery Images
 import gallery1 from '../../img/escalate-v2/gallery/event-1.jpg';
 import gallery2 from '../../img/escalate-v2/gallery/event-2.jpg';
 import gallery3 from '../../img/escalate-v2/gallery/event-3.jpg';
@@ -74,7 +66,6 @@ import gallery6 from '../../img/escalate-v2/gallery/event-6.jpg';
 import gallery7 from '../../img/escalate-v2/gallery/event-7.jpg';
 import gallery8 from '../../img/escalate-v2/gallery/event-8.jpg';
 
-// Slideshow Gallery Images
 import slide1 from '../../img/escalate-v2/slideshow/s1.jpg';
 import slide2 from '../../img/escalate-v2/slideshow/s2.jpg';
 import slide3 from '../../img/escalate-v2/slideshow/s3.jpg';
@@ -93,14 +84,13 @@ import slide15 from '../../img/escalate-v2/slideshow/s15.jpg';
 import slide16 from '../../img/escalate-v2/slideshow/s16.jpg';
 
 
-const EscalateXOverview = () => {
+const Escalatexoverview = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [terminalText, setTerminalText] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const fullCommand = '$ ./launch_event --mode=cybersecurity --event=escalate-x-v2';
   const canvasRef = useRef(null);
 
-  // Create refs for each section
   const overviewRef = useRef(null);
   const villagesRef = useRef(null);
   const slideshowRef = useRef(null);
@@ -110,7 +100,6 @@ const EscalateXOverview = () => {
   const outcomesRef = useRef(null);
   const galleryRef = useRef(null);
 
-  // Terminal typing effect
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -124,7 +113,6 @@ const EscalateXOverview = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Particle Background Animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -191,7 +179,6 @@ const EscalateXOverview = () => {
     });
   };
 
-  // Partners Logos Array
   const partnersLogos = [
     { src: bsidesJ, alt: 'BSides Jaipur' },
     { src: cybersurge, alt: 'Cybersurge' },
@@ -204,7 +191,6 @@ const EscalateXOverview = () => {
     { src: pirates, alt: '0x0pirates' }
   ];
 
-  // Sponsors Logos Array
   const sponsorsLogos = [
     { src: abhibus, alt: 'Abhibus' },
     { src: bootcoding, alt: 'Bootcoding' },
@@ -225,7 +211,6 @@ const EscalateXOverview = () => {
     { src: unstop, alt: 'Unstop' }
   ];
 
-  // Slideshow Images Array
   const slideshowImages = [
     { id: 1, src: slide1, },
     { id: 2, src: slide2, },
@@ -245,7 +230,6 @@ const EscalateXOverview = () => {
     { id: 16, src: slide16, }
   ];
 
-  // Auto slide every 3 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
@@ -254,7 +238,6 @@ const EscalateXOverview = () => {
     return () => clearInterval(timer);
   }, [slideshowImages.length]);
 
-  // Slideshow navigation functions
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -283,7 +266,6 @@ const EscalateXOverview = () => {
     'Networking with 11 Alumni'
   ];
 
-  // Distinguished Guests - Big Cards
   const distinguishedGuests = [
     {
       name: 'Mr. Nipun Jaswal',
@@ -301,7 +283,6 @@ const EscalateXOverview = () => {
     }
   ];
 
-  // Village Speakers - Small Cards
   const villageSpeakers = [
     {
       name: 'OSINT',
@@ -340,7 +321,6 @@ const EscalateXOverview = () => {
     }
   ];
 
-  // Other Speakers - Small Cards
   const otherSpeakers = [
     
   
@@ -421,12 +401,12 @@ const EscalateXOverview = () => {
   const galleryImages = [
     { id: 1, src: gallery1, caption: 'Inauguration', category: 'Day 1' },
     { id: 2, src: gallery2, caption: 'Inauguration', category: 'Day 1' },
-    { id: 3, src: gallery3, caption: 'Alumni Session', category: 'Day 1' },
-    { id: 4, src: gallery4, caption: 'CTF Competition in Progress', category: 'Day 2' },
-    { id: 5, src: gallery5, caption: 'SI Session', category: 'Session' },
-    { id: 6, src: gallery6, caption: 'ESCALATE X V2', category: 'Day 1' },
-    { id: 7, src: gallery7, caption: 'Cyberonites Team with Alumni', category: 'Day 2' },
-    { id: 8, src: gallery8, caption: 'Closing Ceremony & Prize Distribution', category: 'Day 2' }
+    { id: 3, src: gallery3, caption: 'Session by Former President', category: 'Day 1' },
+    { id: 4, src: gallery4, caption: 'Panel Discussion in Progress', category: 'Day 2' },
+    { id: 5, src: gallery5, caption: 'Session by SI Ankush Chaudhary', category: 'Day 2' },
+    { id: 6, src: gallery6, caption: 'Session by Senior Cyber Crime Investigator', category: 'Day 2' },
+    { id: 7, src: gallery7, caption: 'Cyberonites Team with Alumni', category: 'Day 1' },
+    { id: 8, src: gallery8, caption: 'Closing Ceremony & Prize Distribution', category: 'Day 1' }
   ];
 
   return (
@@ -449,19 +429,6 @@ const EscalateXOverview = () => {
       {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-content-wrapper">
-          <div className="hero-line-1">
-            <div className="terminal-window">
-              <div className="terminal-header">
-                <span className="terminal-dot red"></span>
-                <span className="terminal-dot yellow"></span>
-                <span className="terminal-dot green"></span>
-              </div>
-              <div className="terminal-body">
-                <div className="terminal-line">root@cyberonites:~#</div>
-                <div className="terminal-command">{terminalText}<span className="cursor">|</span></div>
-              </div>
-            </div>
-          </div>
 
           <h1 className="main-title">
             ESCALATE <img src={Logo} alt="X" className="logo-image" /> V2
@@ -473,7 +440,7 @@ const EscalateXOverview = () => {
 
           <div className="hero-line-4">
             <p className="event-date">
-              <span className="bracket"></span> NOVEMBER 8-9, 2024 <span className="bracket"></span>
+              <span className="bracket"></span> NOVEMBER 8-9, 2025 <span className="bracket"></span>
             </p>
             <p className="event-venue">
               <span className="bracket"></span> GLA UNIVERSITY, MATHURA <span className="bracket"></span>
@@ -538,7 +505,6 @@ const EscalateXOverview = () => {
 </a>
 
 
-      {/* Sponsors & Partners Section */}
       <div className="sponsors-partners-section">
         <div className="sponsors-partners-header">
           <span className="bracket-left"></span>
@@ -642,13 +608,11 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Villages Section - All Speakers in One Section */}
       <div ref={villagesRef} className="section villages-section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> KNOWLEDGE VILLAGES
         </div>
 
-        {/* Distinguished Guests - Big Cards */}
         <div className="distinguished-guests-container">
           <h3>Distinguished Guests</h3>
           <div className="distinguished-guests-row">
@@ -666,13 +630,11 @@ const EscalateXOverview = () => {
           </div>
         </div>
 
-        {/* All Speakers Section - Small Cards */}
         <div className="all-speakers-section">
           <h3>Speakers & Village Hosts</h3>
           <p className="all-speakers-subtitle">Expert sessions and knowledge village facilitators</p>
 
           <div className="all-speakers-grid">
-            {/* Village Speakers */}
             {villageSpeakers.map((village, index) => (
               <div key={index} className="village-speaker-card">
                 <div className="village-badge">{village.name}</div>
@@ -736,9 +698,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* AUTO SLIDESHOW GALLERY */}
-
-      {/* AUTO SLIDESHOW GALLERY */}
       <div ref={slideshowRef} className="auto-slideshow-container">
 
 
@@ -805,7 +764,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* CTF Winners Section */}
       <div ref={winnersRef} className="section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> WINNERS
@@ -813,9 +771,8 @@ const EscalateXOverview = () => {
 
         <div className="ctf-winners-section">
           <h3 className="ctf-main-heading">CTF Challenge Winners</h3>
-          <p className="ctf-subtitle">Top 3 Teams - Capture The Flag Competition</p>
+          <p className="ctf-subtitle">Winners - Capture The Flag Competition</p>
 
-          {/* TOP 3 WINNERS - PODIUM STYLE: 2nd - 1st - 3rd */}
           <div className="ctf-top-three">
             {/* 2nd Place */}
             <div className="ctf-winner-card second">
@@ -949,10 +906,6 @@ const EscalateXOverview = () => {
         <div className="impact-section">
           <h3>Total Impact</h3>
           <div className="impact-stats">
-            {/* <div className="impact-item">
-              <div className="impact-value">₹1,83,000</div>
-              <div className="impact-label">Certification Vouchers</div>
-            </div> */}
             <div className="impact-item">
               <div className="impact-value">11</div>
               <div className="impact-label">Alumni Speakers</div>
@@ -969,7 +922,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Gallery Section */}
       <div ref={galleryRef} className="section gallery-section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> EVENT GALLERY
@@ -986,9 +938,6 @@ const EscalateXOverview = () => {
               <div className="gallery-card-inner">
                 <div className="gallery-card-front">
                   <img src={image.src} alt={image.caption} />
-                  <div className="gallery-overlay">
-                    <span className="gallery-hover-hint">Hover to see details</span>
-                  </div>
                 </div>
                 <div className="gallery-card-back">
                   <div className="gallery-back-content">
@@ -996,10 +945,9 @@ const EscalateXOverview = () => {
                     <h4 className="gallery-caption-back">{image.caption}</h4>
                     <div className="gallery-details">
                       <p className="gallery-event-name">EscalateX V2</p>
-                      <p className="gallery-event-date">November 8-9, 2024</p>
+                      <p className="gallery-event-date">November 8-9, 2025</p>
                       <p className="gallery-location">GLA University, Mathura</p>
                     </div>
-                    <span className="gallery-flip-back-hint">Hover to see image</span>
                   </div>
                 </div>
               </div>
@@ -1008,7 +956,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="footer">
         <div className="footer-content">
           <div className="footer-section">
@@ -1030,11 +977,10 @@ const EscalateXOverview = () => {
         </div>
         <div className="footer-bottom">
           <p>© 2025 Cyberonites Club, GLA University. All rights reserved.</p>
-          <p className="terminal-prompt">root@cyberonites:~# █</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default EscalateXOverview;
+export default Escalatexoverview;

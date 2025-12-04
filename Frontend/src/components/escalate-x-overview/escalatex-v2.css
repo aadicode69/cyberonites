@@ -1,15 +1,6 @@
-/* =============================================== */
-/* ESCALATE X V2 - PEC HACKS INSPIRED THEME */
-/* =============================================== */
-
-/* Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
-/* =============================================== */
-/* CSS VARIABLES */
-/* =============================================== */
 
 :root {
     --primary-purple: #8B5CF6;
@@ -25,10 +16,6 @@
     --gradient-2: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     --gradient-3: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
 }
-
-/* =============================================== */
-/* BASE STYLES */
-/* =============================================== */
 
 * {
     margin: 0;
@@ -51,11 +38,6 @@ body {
     background: var(--dark-bg);
     background: linear-gradient(180deg, #0a0a0f 0%, #1a0b2e 50%, #0a0a0f 100%);
 }
-
-/* =============================================== */
-/* ESCALATE X CONTAINER */
-/* =============================================== */
-
 .escalate-container {
     width: 100%;
     position: relative;
@@ -71,10 +53,6 @@ body {
     min-height: 100vh;
     padding: 80px 20px;
 }
-
-/* =============================================== */
-/* HERO SECTION - PEC HACKS STYLE */
-/* =============================================== */
 
 .hero-section {
     position: relative;
@@ -100,7 +78,6 @@ body {
     margin: 0 auto;
 }
 
-/* Terminal Window - Modern Style */
 .terminal-window {
     background: rgba(17, 24, 39, 0.9);
     border: 2px solid var(--primary-purple);
@@ -153,7 +130,6 @@ body {
     51%, 100% { opacity: 0; }
 }
 
-/* Main Title with Gradient Effect - BIGGER SIZE */
 .main-title {
     font-family: 'Orbitron', 'Space Grotesk', sans-serif;
     font-size: 9rem;
@@ -161,6 +137,7 @@ body {
     display: flex;
     align-items: center;
     background: linear-gradient(90deg, #8B5CF6, #EC4899, #3B82F6);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     gap: 10px;
@@ -186,7 +163,6 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* Subtitle with Gradient */
 .subtitle {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
@@ -1190,10 +1166,6 @@ body {
     line-height: 1.5;
 }
 
-/* =============================================== */
-/* PANEL SECTION */
-/* =============================================== */
-
 .panel-section {
     background: rgba(17, 24, 39, 0.8);
     backdrop-filter: blur(20px);
@@ -1222,7 +1194,7 @@ body {
     font-size: 1.6rem;
     color: var(--primary-pink);
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     font-style: italic;
     font-weight: 600;
 }
