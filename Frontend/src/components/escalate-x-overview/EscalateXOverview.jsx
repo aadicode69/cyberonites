@@ -54,14 +54,14 @@ import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.JPG
 import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.JPG';
 import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.JPG';
 
-import gallery1 from '../../img/escalate-v2/gallery/EVENT-1.JPG';
-import gallery2 from '../../img/escalate-v2/gallery/EVENT-2.JPG';
-import gallery3 from '../../img/escalate-v2/gallery/EVENT-3.JPG';
-import gallery4 from '../../img/escalate-v2/gallery/EVENT-4.JPG';
-import gallery5 from '../../img/escalate-v2/gallery/EVENT-5.JPG';
-import gallery6 from '../../img/escalate-v2/gallery/EVENT-6.JPG';
-import gallery7 from '../../img/escalate-v2/gallery/EVENT-7.JPG';
-import gallery8 from '../../img/escalate-v2/gallery/EVENT-8.JPG';
+import gallery1 from '../../img/escalate-v2/GALLERY/EVENT-1.JPG';
+import gallery2 from '../../img/escalate-v2/GALLERY/EVENT-2.JPG';
+import gallery3 from '../../img/escalate-v2/GALLERY/EVENT-3.JPG';
+import gallery4 from '../../img/escalate-v2/GALLERY/EVENT-4.JPG';
+import gallery5 from '../../img/escalate-v2/GALLERY/EVENT-5.JPG';
+import gallery6 from '../../img/escalate-v2/GALLERY/EVENT-6.JPG';
+import gallery7 from '../../img/escalate-v2/GALLERY/EVENT-7.JPG';
+import gallery8 from '../../img/escalate-v2/GALLERY/EVENT-8.JPG';
 
 import slide1 from '../../img/escalate-v2/slideshow/s1.JPG';
 import slide2 from '../../img/escalate-v2/slideshow/s2.JPG';
