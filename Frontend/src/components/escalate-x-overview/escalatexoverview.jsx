@@ -83,7 +83,6 @@ import slide14 from '../../img/escalate-v2/slideshow/s14.jpg';
 import slide15 from '../../img/escalate-v2/slideshow/s15.jpg';
 import slide16 from '../../img/escalate-v2/slideshow/s16.jpg';
 
-
 const EscalateXOverview = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [currentSlide, setCurrentSlide] = useState(0);

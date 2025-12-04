@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 import Popup from "./components/load_popup/Popup";
-import EscalateXOverview from "./components/escalate-x-overview/V2Main";
+import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 
 function AppContent() { 
   const [showPopup, setShowPopup] = useState(false);
