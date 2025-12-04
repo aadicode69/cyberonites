@@ -12,9 +12,9 @@ function Grand() {
       image: event1,
       type: "CTF EVENT",
       date: "8-9 November 2025",
-      participants: "350+",
+      participants: "450+",
       description:
-        "The EscalateX V2 was a grand two-day cybersecurity symposium organized by the Cyberonites Club.",
+        "The EscalateX V2 was a grand two-day cybersecurity event organized by the Cyberonites Club.",
       link: "/escalate-x-v2"
     },
     {

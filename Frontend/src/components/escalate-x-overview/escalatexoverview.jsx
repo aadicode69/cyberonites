@@ -268,9 +268,10 @@ const EscalateXOverview = () => {
   };
 
   const stats = [
-    { label: 'Total Registrations', value: '500+' },
-    { label: 'Teams Participated', value: '250+' },
-    { label: 'Prize Pool', value: '₹25,000' },
+    
+    { label: 'Teams Registered - CTF Finale', value: '250+' },
+    { label: 'Resgistered - Knowladge villages ', value: '500+' },
+    { label: 'Prize Pool', value: '₹5,00,000' },
     { label: 'Days Event', value: '2' }
   ];
 
@@ -278,16 +279,14 @@ const EscalateXOverview = () => {
     'Interactive Knowledge Villages',
     'Expert Panel Discussion',
     'Hands-on CTF Competition',
-    'Real-world Cybersecurity Scenarios',
     'Industry Professional Sessions',
-    'Networking with 11 Alumni',
-    'Certificates Worth ₹1,83,000'
+    'Networking with 11 Alumni'
   ];
 
   // Distinguished Guests - Big Cards
   const distinguishedGuests = [
     {
-      name: 'Mr. Nipun Jaiswal',
+      name: 'Mr. Nipun Jaswal',
       role: 'Senior Director, Offensive Security',
       company: 'NTT Data',
       badge: 'Chief Guest',
@@ -309,7 +308,6 @@ const EscalateXOverview = () => {
       speaker: 'Mr. Pulkit Singh',
       company: 'Deloitte USI',
       designation: 'Solution Delivery Lead',
-      description: 'Open Source Intelligence gathering and analysis techniques',
       image: pulkitSinghImg
     },
     {
@@ -317,7 +315,6 @@ const EscalateXOverview = () => {
       speaker: 'Mr. Kaushik Pal',
       company: 'CloudSEK',
       designation: 'Threat Researcher',
-      description: 'Understanding malware evolution and defense strategies',
       image: kaushikPalImg
     },
     {
@@ -325,7 +322,6 @@ const EscalateXOverview = () => {
       speaker: 'Mr. Agrah Jain',
       company: 'Wheelseye',
       designation: 'Head Cyber Security',
-      description: 'Cloud security frameworks and shared responsibility model',
       image: agrahJainImg
     },
     {
@@ -333,7 +329,6 @@ const EscalateXOverview = () => {
       speaker: 'Mr. Kanishk Bhadauria',
       company: 'Industry Expert',
       designation: 'Cyber Security Professional',
-      description: 'Security Operations Centre real-time threat monitoring',
       image: kanishkBhadauriaImg
     },
     {
@@ -341,20 +336,13 @@ const EscalateXOverview = () => {
       speaker: 'Mr. Abhijeet Singh',
       company: 'Industry Expert',
       designation: 'Cyber Security Professional',
-      description: 'Ethical penetration testing and red team exercises',
       image: abhijeetSinghImg
     }
   ];
 
   // Other Speakers - Small Cards
   const otherSpeakers = [
-    {
-      speaker: 'Mr. Chirag Singla',
-      company: 'Zscaler',
-      designation: 'Threat Researcher',
-      badge: 'Alumni Speaker',
-      image: chiragSinglaImg
-    },
+    
   
   ];
 
@@ -431,9 +419,9 @@ const EscalateXOverview = () => {
   ];
 
   const galleryImages = [
-    { id: 1, src: gallery1, caption: 'Knowledge Villages Session', category: 'Day 1' },
-    { id: 2, src: gallery2, caption: 'Panel Discussion - Future of Cybersecurity', category: 'Day 1' },
-    { id: 3, src: gallery3, caption: 'Expert Speaker Session', category: 'Day 1' },
+    { id: 1, src: gallery1, caption: 'Inauguration', category: 'Day 1' },
+    { id: 2, src: gallery2, caption: 'Inauguration', category: 'Day 1' },
+    { id: 3, src: gallery3, caption: 'Alumni Session', category: 'Day 1' },
     { id: 4, src: gallery4, caption: 'CTF Competition in Progress', category: 'Day 2' },
     { id: 5, src: gallery5, caption: 'SI Session', category: 'Session' },
     { id: 6, src: gallery6, caption: 'ESCALATE X V2', category: 'Day 1' },
@@ -480,19 +468,20 @@ const EscalateXOverview = () => {
           </h1>
 
           <p className="subtitle">
-            <span className="bracket">\\</span> A GRAND CYBERSECURITY SYMPOSIUM BY CYBERONITES CLUB <span className="bracket">//</span>
+            <span className="bracket"></span> A GRAND CYBERSECURITY EVENT BY CYBERONITES CLUB <span className="bracket"></span>
           </p>
 
           <div className="hero-line-4">
             <p className="event-date">
-              <span className="bracket">\\</span> NOVEMBER 8-9, 2024 <span className="bracket">//</span>
+              <span className="bracket"></span> NOVEMBER 8-9, 2024 <span className="bracket"></span>
             </p>
             <p className="event-venue">
-              <span className="bracket">\\</span> GLA UNIVERSITY, MATHURA <span className="bracket">//</span>
+              <span className="bracket"></span> GLA UNIVERSITY, MATHURA <span className="bracket"></span>
             </p>
           </div>
         </div>
       </div>
+      
 
       {/* Navigation Tabs */}
       <div className="nav-tabs sticky-nav">
@@ -515,24 +504,46 @@ const EscalateXOverview = () => {
           <span className="tab-icon">▶</span> GALLERY
         </button>
       </div>
+    <div className="stats-grid">
+  {stats.slice(0, 2).map((stat, index) => (
+    <div key={index} className="stat-card">
+      <div className="stat-value">{stat.value}</div>
+      <div className="stat-label">{stat.label}</div>
+      <div className="stat-border"></div>
+    </div>
+  ))}
+  
+ <p className="subtitle_2">
+  <span className="bracket"></span>
+  <span className="subtitle_2-text">
+    Across both days, 450+ participants were present on-ground.
+  </span>
+  <span className="bracket"></span>
+</p>
 
-      {/* Stats Section */}
-      <div className="stats-grid">
-        {stats.map((stat, index) => (
-          <div key={index} className="stat-card">
-            <div className="stat-value">{stat.value}</div>
-            <div className="stat-label">{stat.label}</div>
-            <div className="stat-border"></div>
-          </div>
-        ))}
-      </div>
+  
+  {stats.slice(2, 4).map((stat, index) => (
+    <div key={index + 2} className="stat-card">
+      <div className="stat-value">{stat.value}</div>
+      <div className="stat-label">{stat.label}</div>
+      <div className="stat-border"></div>
+    </div>
+  ))}
+</div>
+
+<a href="/" class="home-button" aria-label="Go to Home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+</a>
+
 
       {/* Sponsors & Partners Section */}
       <div className="sponsors-partners-section">
         <div className="sponsors-partners-header">
-          <span className="bracket-left">//</span>
+          <span className="bracket-left"></span>
           <span className="header-text">OUR PARTNERS & SPONSORS</span>
-          <span className="bracket-right">//</span>
+          <span className="bracket-right"></span>
         </div>
 
         <div className="sponsors-row">
@@ -575,12 +586,8 @@ const EscalateXOverview = () => {
       {/* Overview Section */}
       <div ref={overviewRef} className="section mission-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> MISSION BRIEFING
-          <div className="header-dots">
-            <span className="dot red"></span>
-            <span className="dot yellow"></span>
-            <span className="dot green"></span>
-          </div>
+          <span className="prompt">▶ </span> MISSION BRIEFING
+          
         </div>
 
         <div className="featured-event-image">
@@ -593,8 +600,8 @@ const EscalateXOverview = () => {
             <img src={featuredEvent} alt="EscalateX V2 Main Event" className="featured-img" />
             <div className="featured-image-overlay">
               <div className="overlay-text">
-                <h3>EscalateX V2 - Grand Cybersecurity Symposium</h3>
-                <p>400+ Participants | 250+ Teams | 11 Alumni Speakers</p>
+                <h3>EscalateX V2 - Grand Cybersecurity Event</h3>
+                
               </div>
             </div>
           </div>
@@ -603,18 +610,13 @@ const EscalateXOverview = () => {
         <div className="content-grid">
           <div className="objective-box">
             <h3>OBJECTIVE</h3>
-            <p>EscalateX V2 was a grand two-day cybersecurity symposium organized by the Cyberonites Club under the mentorship of Dr. Asheesh Tiwari at GLA University. The event aimed to promote practical learning, awareness, and innovation in the field of cybersecurity through interactive sessions, expert talks, and competitive challenges.</p>
+            <p>EscalateX V2 was a grand two-day cybersecurity event organized by the Cyberonites Club under the mentorship of Dr. Asheesh Tiwari at GLA University. The event aimed to promote practical learning, awareness, and innovation in the field of cybersecurity through interactive sessions, expert talks, and competitive challenges.</p>
             <p>The first day hosted interactive Knowledge Villages and expert sessions, focusing on real-world cybersecurity concepts including Malware Analysis, OSINT, Cloud Security, Offensive Operations, and Security Operations Centre (SOC). Students had the opportunity to interact with industry professionals and participate in hands-on workshops.</p>
             <p>The second day witnessed the much-anticipated Capture The Flag (CTF) Challenge, where participants showcased their cybersecurity expertise across domains like web exploitation, cryptography, reverse engineering, and forensics. The event successfully bridged the gap between theoretical knowledge and real-world cybersecurity practices.</p>
           </div>
 
           <div className="highlights-box">
-            <h3>EVENT HIGHLIGHTS</h3>
-            <ul className="highlights-list">
-              {highlights.map((highlight, index) => (
-                <li key={index}><span className="bullet">◆</span> {highlight}</li>
-              ))}
-            </ul>
+            
 
             <div className="mentor-section">
               <h4>Club Mentor</h4>
@@ -628,7 +630,14 @@ const EscalateXOverview = () => {
                   <p className="mentor-uni">GLA University</p>
                 </div>
               </div>
+
             </div>
+            <h3>EVENT HIGHLIGHTS</h3>
+            <ul className="highlights-list">
+              {highlights.map((highlight, index) => (
+                <li key={index}><span className="bullet">◆</span> {highlight}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -636,7 +645,7 @@ const EscalateXOverview = () => {
       {/* Villages Section - All Speakers in One Section */}
       <div ref={villagesRef} className="section villages-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> KNOWLEDGE VILLAGES
+          <span className="prompt">▶ </span> KNOWLEDGE VILLAGES
         </div>
 
         {/* Distinguished Guests - Big Cards */}
@@ -734,11 +743,9 @@ const EscalateXOverview = () => {
 
 
         <div className="slideshow-header">
-          <span className="slideshow-prompt">▶_</span> EVENT SLIDESHOW
+          <span className="slideshow-prompt">▶ </span> EVENT SLIDESHOW
           <div className="slideshow-dots-header">
-            <span className="dot red"></span>
-            <span className="dot yellow"></span>
-            <span className="dot green"></span>
+            
           </div>
         </div>
 
@@ -801,7 +808,7 @@ const EscalateXOverview = () => {
       {/* CTF Winners Section */}
       <div ref={winnersRef} className="section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> WINNERS
+          <span className="prompt">▶ </span> WINNERS
         </div>
 
         <div className="ctf-winners-section">
@@ -891,7 +898,7 @@ const EscalateXOverview = () => {
         </div>
 
         <div className="section-header">
-          <span className="prompt">▶_</span> COMPETITION HIGHLIGHTS
+          <span className="prompt">▶ </span> COMPETITION HIGHLIGHTS
         </div>
 
         <div className="achievements-section">
@@ -910,11 +917,11 @@ const EscalateXOverview = () => {
             </div>
             <div className="achievement-card">
               <h4>Prize Pool</h4>
-              <p>₹25,000 distributed among top 3 teams with certificates for all participants</p>
+              <p>The event featured a massive prize pool of ₹5,00,000, including cash prizes and certifications for winners.</p>
             </div>
             <div className="achievement-card">
               <h4>Participation</h4>
-              <p>66 teams competed across multiple challenging cybersecurity domains</p>
+              <p>72 teams competed across multiple challenging cybersecurity domains</p>
             </div>
             <div className="achievement-card">
               <h4>Duration</h4>
@@ -927,7 +934,7 @@ const EscalateXOverview = () => {
       {/* Outcomes Section */}
       <div ref={outcomesRef} className="section outcomes-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> EVENT OUTCOMES & OPPORTUNITIES
+          <span className="prompt">▶ </span> EVENT OUTCOMES & OPPORTUNITIES
         </div>
 
         <div className="outcomes-grid">
@@ -942,10 +949,10 @@ const EscalateXOverview = () => {
         <div className="impact-section">
           <h3>Total Impact</h3>
           <div className="impact-stats">
-            <div className="impact-item">
+            {/* <div className="impact-item">
               <div className="impact-value">₹1,83,000</div>
               <div className="impact-label">Certification Vouchers</div>
-            </div>
+            </div> */}
             <div className="impact-item">
               <div className="impact-value">11</div>
               <div className="impact-label">Alumni Speakers</div>
@@ -955,7 +962,7 @@ const EscalateXOverview = () => {
               <div className="impact-label">Industry Experts</div>
             </div>
             <div className="impact-item">
-              <div className="impact-value">400+</div>
+              <div className="impact-value">450+</div>
               <div className="impact-label">Total Participants</div>
             </div>
           </div>
@@ -965,12 +972,8 @@ const EscalateXOverview = () => {
       {/* Gallery Section */}
       <div ref={galleryRef} className="section gallery-section scroll-section">
         <div className="section-header">
-          <span className="prompt">▶_</span> EVENT GALLERY
-          <div className="header-dots">
-            <span className="dot red"></span>
-            <span className="dot yellow"></span>
-            <span className="dot green"></span>
-          </div>
+          <span className="prompt">▶ </span> EVENT GALLERY
+         
         </div>
 
         <div className="gallery-intro">
@@ -1021,7 +1024,7 @@ const EscalateXOverview = () => {
           </div>
           <div className="footer-section">
             <h4>CONTACT</h4>
-            <p>cyberonites@gla.ac.in</p>
+            <p>support@cyberonites.com</p>
             <p>GLA University, Mathura, UP</p>
           </div>
         </div>
