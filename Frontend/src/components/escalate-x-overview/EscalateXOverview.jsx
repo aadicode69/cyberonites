@@ -49,7 +49,7 @@ import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_a
 
 import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.JPG';
 import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.JPG';
-import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.jpJPGg';
+import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.JPG';
 
 import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.JPG';
 import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.JPG';
