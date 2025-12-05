@@ -1,96 +1,94 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './EscalateX.css';
-import Logo from '../../img/escalate-v2/logo.png';
+import Logo from '../../img/escalate-v2/logo.webp';
 
 // Import Partner Images
-import pirates from '../../img/escalate-v2/partners/0x0pirates_logo.jpg';
-import bsidesJ from '../../img/escalate-v2/partners/BSidesJ.jpg';
-import cybersurge from '../../img/escalate-v2/partners/cybersurge.png';
-import dcgGurugram from '../../img/escalate-v2/partners/dcg_gurugram_logo.jpg';
-import eventsinfo from '../../img/escalate-v2/partners/eventsinfo.jpg';
-import hackhalt from '../../img/escalate-v2/partners/hackhalt.jpeg';
-import hackloop from '../../img/escalate-v2/partners/hackloop-logo.png';
-import leninTree from '../../img/escalate-v2/partners/lenint_tree.png';
-import partnerLogo from '../../img/escalate-v2/partners/logo.jpg';
-
-// Import Sponsor Images
-import abhibus from '../../img/escalate-v2/sponsor/abhibus.jpg';
-import bootcoding from '../../img/escalate-v2/sponsor/Bootcoding.png';
-import burgerjn from '../../img/escalate-v2/sponsor/burgerjn.png';
-import csata from '../../img/escalate-v2/sponsor/csata.jpg';
-import ctf7 from '../../img/escalate-v2/sponsor/CTF7.png';
-import cyberfratnextgen from '../../img/escalate-v2/sponsor/Cyberfratnextgen.png';
-import defronix from '../../img/escalate-v2/sponsor/defronix.jpg';
+import pirates from '../../img/escalate-v2/partners/0x0pirates_logo.webp';
+import bsidesJ from '../../img/escalate-v2/partners/BSidesJ.webp';
+import cybersurge from '../../img/escalate-v2/partners/cybersurge.webp';
+import dcgGurugram from '../../img/escalate-v2/partners/dcg_gurugram_logo.webp';
+import eventsinfo from '../../img/escalate-v2/partners/eventsinfo.webp';
+import hackhalt from '../../img/escalate-v2/partners/hackhalt.webp';
+import hackloop from '../../img/escalate-v2/partners/hackloop-logo.webp';
+import leninTree from '../../img/escalate-v2/partners/lenint_tree.webp';
+import partnerLogo from '../../img/escalate-v2/partners/logo.webp';
+import abhibus from '../../img/escalate-v2/sponsor/abhibus.webp';
+import bootcoding from '../../img/escalate-v2/sponsor/Bootcoding.webp';
+import burgerjn from '../../img/escalate-v2/sponsor/burgerjn.webp';
+import csata from '../../img/escalate-v2/sponsor/csata.webp';
+import ctf7 from '../../img/escalate-v2/sponsor/CTF7.webp';
+import cyberfratnextgen from '../../img/escalate-v2/sponsor/Cyberfratnextgen.webp';
+import defronix from '../../img/escalate-v2/sponsor/defronix.webp';
 import fizzify from '../../img/escalate-v2/sponsor/Fizzify.webp';
-import givemycerti from '../../img/escalate-v2/sponsor/givemycerti.png';
-import interviewbuddy from '../../img/escalate-v2/sponsor/interviewbuddy.png';
-import marketmafia from '../../img/escalate-v2/sponsor/marketmafia.png';
-import modernSecurity from '../../img/escalate-v2/sponsor/ModernSecurity.jpg';
-import offSec from '../../img/escalate-v2/sponsor/OffSec.png';
-import osen from '../../img/escalate-v2/sponsor/OSEN.png';
-import secOps from '../../img/escalate-v2/sponsor/SecOps.png';
-import squareBoat from '../../img/escalate-v2/sponsor/SquareBoat.png';
-import unstop from '../../img/escalate-v2/sponsor/unstop.png';
+import givemycerti from '../../img/escalate-v2/sponsor/givemycerti.webp';
+import interviewbuddy from '../../img/escalate-v2/sponsor/interviewbuddy.webp';
+import marketmafia from '../../img/escalate-v2/sponsor/marketmafia.webp';
+import modernSecurity from '../../img/escalate-v2/sponsor/ModernSecurity.webp';
+import offSec from '../../img/escalate-v2/sponsor/OffSec.webp';
+import osen from '../../img/escalate-v2/sponsor/OSEN.webp';
+import secOps from '../../img/escalate-v2/sponsor/SecOps.webp';
+import squareBoat from '../../img/escalate-v2/sponsor/SquareBoat.webp';
+import unstop from '../../img/escalate-v2/sponsor/unstop.webp';
 
 // Import other images
-import featuredEvent from '../../img/escalate-v2/featured-event.jpg';
-import mentorImage from '../../img/escalate-v2/mentor-dr-asheesh-tiwari.jpg';
+import featuredEvent from '../../img/escalate-v2/featured-event.webp';
+import mentorImage from '../../img/escalate-v2/mentor-dr-asheesh-tiwari.webp';
 
 // Village speakers
-import pulkitSinghImg from '../../img/escalate-v2/speakers/pulkit_singh.jpg';
-import kaushikPalImg from '../../img/escalate-v2/speakers/kaushik_pal.jpg';
-import agrahJainImg from '../../img/escalate-v2/speakers/agrah_jain.jpg';
-import kanishkBhadauriaImg from '../../img/escalate-v2/speakers/kanishk_bhadauria.jpg';
-import abhijeetSinghImg from '../../img/escalate-v2/speakers/abhijeet_singh.jpg';
+import pulkitSinghImg from '../../img/escalate-v2/speakers/pulkit_singh.webp';
+import kaushikPalImg from '../../img/escalate-v2/speakers/kaushik_pal.webp';
+import agrahJainImg from '../../img/escalate-v2/speakers/agrah_jain.webp';
+import kanishkBhadauriaImg from '../../img/escalate-v2/speakers/kanishk_bhadauria.webp';
+import abhijeetSinghImg from '../../img/escalate-v2/speakers/abhijeet_singh.webp';
 
 // Panelists
-import himanshuThakurPanelistImg from '../../img/escalate-v2/panelists/himanshu_thakur.jpg';
-import chiragSinglaPanelistImg from '../../img/escalate-v2/panelists/chirag_singla.jpg';
-import agrahJainPanelistImg from '../../img/escalate-v2/panelists/agrah_jain.jpg';
-import vinayakChaturvediImg from '../../img/escalate-v2/panelists/vinayak_chaturvedi.jpg';
-import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.jpg';
-import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.jpg';
-import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.jpg';
+import himanshuThakurPanelistImg from '../../img/escalate-v2/panelists/himanshu_thakur.webp';
+import chiragSinglaPanelistImg from '../../img/escalate-v2/panelists/chirag_singla.webp';
+import agrahJainPanelistImg from '../../img/escalate-v2/panelists/agrah_jain.webp';
+import vinayakChaturvediImg from '../../img/escalate-v2/panelists/vinayak_chaturvedi.webp';
+import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.webp';
+import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.webp';
+import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.webp';
 
 // CTF Winner Team Images
-import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.jpg';
-import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.jpg';
-import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.jpg';
+import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.webp';
+import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.webp';
+import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.webp';
 
 // Distinguished speakers
-import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.jpg';
-import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.jpg';
-import chiragSinglaImg from '../../img/escalate-v2/speakers/chirag_singla.jpg';
-import pawanSehlotImg from '../../img/escalate-v2/speakers/pawan-sehlot.jpg';
-import tamannaAgrawalImg from '../../img/escalate-v2/speakers/tamanna-agrawal.jpg';
+import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.webp';
+import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.webp';
+import chiragSinglaImg from '../../img/escalate-v2/speakers/chirag_singla.webp';
+import pawanSehlotImg from '../../img/escalate-v2/speakers/pawan-sehlot.webp';
+import tamannaAgrawalImg from '../../img/escalate-v2/speakers/tamanna-agrawal.webp';
 
 // Gallery Images
-import gallery1 from '../../img/escalate-v2/gallery/event-1.jpg';
-import gallery2 from '../../img/escalate-v2/gallery/event-2.jpg';
-import gallery3 from '../../img/escalate-v2/gallery/event-3.jpg';
-import gallery4 from '../../img/escalate-v2/gallery/event-4.jpg';
-import gallery5 from '../../img/escalate-v2/gallery/event-5.jpg';
-import gallery6 from '../../img/escalate-v2/gallery/event-6.jpg';
-import gallery7 from '../../img/escalate-v2/gallery/event-7.jpg';
-import gallery8 from '../../img/escalate-v2/gallery/event-8.jpg';
+import gallery1 from '../../img/escalate-v2/gallery/event-1.webp';
+import gallery2 from '../../img/escalate-v2/gallery/event-2.webp';
+import gallery3 from '../../img/escalate-v2/gallery/event-3.webp';
+import gallery4 from '../../img/escalate-v2/gallery/event-4.webp';
+import gallery5 from '../../img/escalate-v2/gallery/event-5.webp';
+import gallery6 from '../../img/escalate-v2/gallery/event-6.webp';
+import gallery7 from '../../img/escalate-v2/gallery/event-7.webp';
+import gallery8 from '../../img/escalate-v2/gallery/event-8.webp';
 
 // Slideshow Gallery Images
-import slide1 from '../../img/escalate-v2/slideshow/s1.jpg';
-import slide2 from '../../img/escalate-v2/slideshow/s2.jpg';
-import slide3 from '../../img/escalate-v2/slideshow/s3.jpg';
-import slide4 from '../../img/escalate-v2/slideshow/s4.jpg';
-import slide5 from '../../img/escalate-v2/slideshow/s5.jpg';
-import slide6 from '../../img/escalate-v2/slideshow/s6.jpg';
-import slide7 from '../../img/escalate-v2/slideshow/s7.jpg';
-import slide8 from '../../img/escalate-v2/slideshow/s8.jpg';
-import slide9 from '../../img/escalate-v2/slideshow/s9.jpg';
-import slide10 from '../../img/escalate-v2/slideshow/s10.jpg';
-import slide11 from '../../img/escalate-v2/slideshow/s11.jpg';
-import slide12 from '../../img/escalate-v2/slideshow/s12.jpg';
-import slide13 from '../../img/escalate-v2/slideshow/s13.jpg';
-import slide14 from '../../img/escalate-v2/slideshow/s14.jpg';
-import slide15 from '../../img/escalate-v2/slideshow/s15.jpg';
-import slide16 from '../../img/escalate-v2/slideshow/s16.jpg';
+import slide1 from '../../img/escalate-v2/slideshow/s1.webp';
+import slide2 from '../../img/escalate-v2/slideshow/s2.webp';
+import slide3 from '../../img/escalate-v2/slideshow/s3.webp';
+import slide4 from '../../img/escalate-v2/slideshow/s4.webp';
+import slide5 from '../../img/escalate-v2/slideshow/s5.webp';
+import slide6 from '../../img/escalate-v2/slideshow/s6.webp';
+import slide7 from '../../img/escalate-v2/slideshow/s7.webp';
+import slide8 from '../../img/escalate-v2/slideshow/s8.webp';
+import slide9 from '../../img/escalate-v2/slideshow/s9.webp';
+import slide10 from '../../img/escalate-v2/slideshow/s10.webp';
+import slide11 from '../../img/escalate-v2/slideshow/s11.webp';
+import slide12 from '../../img/escalate-v2/slideshow/s12.webp';
+import slide13 from '../../img/escalate-v2/slideshow/s13.webp';
+import slide14 from '../../img/escalate-v2/slideshow/s14.webp';
+import slide15 from '../../img/escalate-v2/slideshow/s15.webp';
+import slide16 from '../../img/escalate-v2/slideshow/s16.webp';
 
 
 const EscalateXOverview = () => {
