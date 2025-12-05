@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './EscalateX.css';
 import Logo from '../../img/escalate-v2/logo.webp';
-
-// Import Partner Images
 import pirates from '../../img/escalate-v2/partners/0x0pirates_logo.webp';
 import bsidesJ from '../../img/escalate-v2/partners/BSidesJ.webp';
 import cybersurge from '../../img/escalate-v2/partners/cybersurge.webp';
@@ -29,19 +27,13 @@ import osen from '../../img/escalate-v2/sponsor/OSEN.webp';
 import secOps from '../../img/escalate-v2/sponsor/SecOps.webp';
 import squareBoat from '../../img/escalate-v2/sponsor/SquareBoat.webp';
 import unstop from '../../img/escalate-v2/sponsor/unstop.webp';
-
-// Import other images
 import featuredEvent from '../../img/escalate-v2/featured-event.webp';
 import mentorImage from '../../img/escalate-v2/mentor-dr-asheesh-tiwari.webp';
-
-// Village speakers
 import pulkitSinghImg from '../../img/escalate-v2/speakers/pulkit_singh.webp';
 import kaushikPalImg from '../../img/escalate-v2/speakers/kaushik_pal.webp';
 import agrahJainImg from '../../img/escalate-v2/speakers/agrah_jain.webp';
 import kanishkBhadauriaImg from '../../img/escalate-v2/speakers/kanishk_bhadauria.webp';
 import abhijeetSinghImg from '../../img/escalate-v2/speakers/abhijeet_singh.webp';
-
-// Panelists
 import himanshuThakurPanelistImg from '../../img/escalate-v2/panelists/himanshu_thakur.webp';
 import chiragSinglaPanelistImg from '../../img/escalate-v2/panelists/chirag_singla.webp';
 import agrahJainPanelistImg from '../../img/escalate-v2/panelists/agrah_jain.webp';
@@ -49,20 +41,11 @@ import vinayakChaturvediImg from '../../img/escalate-v2/panelists/vinayak_chatur
 import kaushikPalPanelistImg from '../../img/escalate-v2/panelists/kaushik_pal.webp';
 import pulkitSinghPanelistImg from '../../img/escalate-v2/panelists/pulkit_singh.webp';
 import tamannaAgrawalPanelistImg from '../../img/escalate-v2/panelists/tamanna_agrawal.webp';
-
-// CTF Winner Team Images
 import binaryTeamImg from '../../img/escalate-v2/ctf-winners/binary.webp';
 import blitzTeamImg from '../../img/escalate-v2/ctf-winners/blitz.webp';
 import houseStarkTeamImg from '../../img/escalate-v2/ctf-winners/house-stark.webp';
-
-// Distinguished speakers
 import nipunJaiswalImg from '../../img/escalate-v2/speakers/nipun-jaiswal.webp';
 import himanshuThakurImg from '../../img/escalate-v2/speakers/himanshu_thakur.webp';
-import chiragSinglaImg from '../../img/escalate-v2/speakers/chirag_singla.webp';
-import pawanSehlotImg from '../../img/escalate-v2/speakers/pawan-sehlot.webp';
-import tamannaAgrawalImg from '../../img/escalate-v2/speakers/tamanna-agrawal.webp';
-
-// Gallery Images
 import gallery1 from '../../img/escalate-v2/gallery/event-1.webp';
 import gallery2 from '../../img/escalate-v2/gallery/event-2.webp';
 import gallery3 from '../../img/escalate-v2/gallery/event-3.webp';
@@ -71,8 +54,6 @@ import gallery5 from '../../img/escalate-v2/gallery/event-5.webp';
 import gallery6 from '../../img/escalate-v2/gallery/event-6.webp';
 import gallery7 from '../../img/escalate-v2/gallery/event-7.webp';
 import gallery8 from '../../img/escalate-v2/gallery/event-8.webp';
-
-// Slideshow Gallery Images
 import slide1 from '../../img/escalate-v2/slideshow/s1.webp';
 import slide2 from '../../img/escalate-v2/slideshow/s2.webp';
 import slide3 from '../../img/escalate-v2/slideshow/s3.webp';
@@ -89,26 +70,18 @@ import slide13 from '../../img/escalate-v2/slideshow/s13.webp';
 import slide14 from '../../img/escalate-v2/slideshow/s14.webp';
 import slide15 from '../../img/escalate-v2/slideshow/s15.webp';
 import slide16 from '../../img/escalate-v2/slideshow/s16.webp';
-
-
 const EscalateXOverview = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [terminalText, setTerminalText] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const fullCommand = '$ ./launch_event --mode=cybersecurity --event=escalate-x-v2';
   const canvasRef = useRef(null);
-
-  // Create refs for each section
   const overviewRef = useRef(null);
   const villagesRef = useRef(null);
   const slideshowRef = useRef(null);
-
-  const speakersRef = useRef(null);
   const winnersRef = useRef(null);
   const outcomesRef = useRef(null);
   const galleryRef = useRef(null);
-
-  // Terminal typing effect
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -121,8 +94,6 @@ const EscalateXOverview = () => {
     }, 50);
     return () => clearInterval(timer);
   }, []);
-
-  // Particle Background Animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -188,8 +159,6 @@ const EscalateXOverview = () => {
       block: 'start'
     });
   };
-
-  // Partners Logos Array
   const partnersLogos = [
     { src: bsidesJ, alt: 'BSides Jaipur' },
     { src: cybersurge, alt: 'Cybersurge' },
@@ -201,8 +170,6 @@ const EscalateXOverview = () => {
     { src: partnerLogo, alt: 'Partner Logo' },
     { src: pirates, alt: '0x0pirates' }
   ];
-
-  // Sponsors Logos Array
   const sponsorsLogos = [
     { src: abhibus, alt: 'Abhibus' },
     { src: bootcoding, alt: 'Bootcoding' },
@@ -222,8 +189,6 @@ const EscalateXOverview = () => {
     { src: squareBoat, alt: 'SquareBoat' },
     { src: unstop, alt: 'Unstop' }
   ];
-
-  // Slideshow Images Array
   const slideshowImages = [
     { id: 1, src: slide1, },
     { id: 2, src: slide2, },
