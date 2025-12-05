@@ -340,11 +340,7 @@ const EscalateXOverview = () => {
     }
   ];
 
-  // Other Speakers - Small Cards
-  const otherSpeakers = [
-    
-  
-  ];
+
 
   const panelists = [
     { name: 'Mr. Himanshu Thakur', designation: 'Director, Nangia Group', image: himanshuThakurPanelistImg },
@@ -473,7 +469,7 @@ const EscalateXOverview = () => {
 
           <div className="hero-line-4">
             <p className="event-date">
-              <span className="bracket"></span> NOVEMBER 8-9, 2024 <span className="bracket"></span>
+              <span className="bracket"></span> NOVEMBER 8-9, 2025 <span className="bracket"></span>
             </p>
             <p className="event-venue">
               <span className="bracket"></span> GLA UNIVERSITY, MATHURA <span className="bracket"></span>
@@ -688,21 +684,7 @@ const EscalateXOverview = () => {
               </div>
             ))}
 
-            {/* Other Speakers */}
-            {otherSpeakers.map((speaker, index) => (
-              <div key={index} className="village-speaker-card">
-                <div className="village-badge">{speaker.badge}</div>
-                <div className="village-speaker-image-container">
-                  <img src={speaker.image} alt={speaker.speaker} className="village-speaker-photo" />
-                </div>
-                <div className="village-speaker-info">
-                  <h5 className="village-speaker-name">{speaker.speaker}</h5>
-                  <p className="village-speaker-designation">{speaker.designation}</p>
-                  <p className="village-speaker-company">{speaker.company}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+                      </div>
         </div>
 
         {/* Panel Section */}
@@ -996,7 +978,7 @@ const EscalateXOverview = () => {
                     <h4 className="gallery-caption-back">{image.caption}</h4>
                     <div className="gallery-details">
                       <p className="gallery-event-name">EscalateX V2</p>
-                      <p className="gallery-event-date">November 8-9, 2024</p>
+                      <p className="gallery-event-date">November 8-9, 2025</p>
                       <p className="gallery-location">GLA University, Mathura</p>
                     </div>
                     <span className="gallery-flip-back-hint">Hover to see image</span>
