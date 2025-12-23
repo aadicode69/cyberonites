@@ -207,8 +207,6 @@ const EscalateXOverview = () => {
     { id: 15, src: slide15, },
     { id: 16, src: slide16, }
   ];
-
-  // Auto slide every 3 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
@@ -216,8 +214,6 @@ const EscalateXOverview = () => {
 
     return () => clearInterval(timer);
   }, [slideshowImages.length]);
-
-  // Slideshow navigation functions
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -246,7 +242,6 @@ const EscalateXOverview = () => {
     'Networking with 11 Alumni'
   ];
 
-  // Distinguished Guests - Big Cards
   const distinguishedGuests = [
     {
       name: 'Mr. Nipun Jaswal',
@@ -264,7 +259,6 @@ const EscalateXOverview = () => {
     }
   ];
 
-  // Village Speakers - Small Cards
   const villageSpeakers = [
     {
       name: 'OSINT',
@@ -303,11 +297,9 @@ const EscalateXOverview = () => {
     }
   ];
 
-  // Other Speakers - Small Cards
-  const otherSpeakers = [
-    
+
   
-  ];
+
 
   const panelists = [
     { name: 'Mr. Himanshu Thakur', designation: 'Director, Nangia Group', image: himanshuThakurPanelistImg },
@@ -394,7 +386,7 @@ const EscalateXOverview = () => {
 
   return (
     <div className="escalate-container">
-      {/* Particle Background Canvas */}
+    
       <canvas
         ref={canvasRef}
         style={{
@@ -409,7 +401,7 @@ const EscalateXOverview = () => {
         }}
       />
 
-      {/* Hero Section */}
+ 
       <div className="hero-section">
         <div className="hero-content-wrapper">
           <div className="hero-line-1">
@@ -436,7 +428,7 @@ const EscalateXOverview = () => {
 
           <div className="hero-line-4">
             <p className="event-date">
-              <span className="bracket"></span> NOVEMBER 8-9, 2024 <span className="bracket"></span>
+              <span className="bracket"></span> NOVEMBER 8-9, 2025 <span className="bracket"></span>
             </p>
             <p className="event-venue">
               <span className="bracket"></span> GLA UNIVERSITY, MATHURA <span className="bracket"></span>
@@ -446,7 +438,6 @@ const EscalateXOverview = () => {
       </div>
       
 
-      {/* Navigation Tabs */}
       <div className="nav-tabs sticky-nav">
         <button className={`nav-tab ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => scrollToSection(overviewRef, 'overview')}>
           <span className="tab-icon">▶</span> OVERVIEW
@@ -501,7 +492,6 @@ const EscalateXOverview = () => {
 </a>
 
 
-      {/* Sponsors & Partners Section */}
       <div className="sponsors-partners-section">
         <div className="sponsors-partners-header">
           <span className="bracket-left"></span>
@@ -546,7 +536,7 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Overview Section */}
+
       <div ref={overviewRef} className="section mission-section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> MISSION BRIEFING
@@ -605,13 +595,12 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Villages Section - All Speakers in One Section */}
       <div ref={villagesRef} className="section villages-section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> KNOWLEDGE VILLAGES
         </div>
 
-        {/* Distinguished Guests - Big Cards */}
+
         <div className="distinguished-guests-container">
           <h3>Distinguished Guests</h3>
           <div className="distinguished-guests-row">
@@ -629,13 +618,12 @@ const EscalateXOverview = () => {
           </div>
         </div>
 
-        {/* All Speakers Section - Small Cards */}
         <div className="all-speakers-section">
           <h3>Speakers & Village Hosts</h3>
           <p className="all-speakers-subtitle">Expert sessions and knowledge village facilitators</p>
 
           <div className="all-speakers-grid">
-            {/* Village Speakers */}
+
             {villageSpeakers.map((village, index) => (
               <div key={index} className="village-speaker-card">
                 <div className="village-badge">{village.name}</div>
@@ -651,7 +639,7 @@ const EscalateXOverview = () => {
               </div>
             ))}
 
-            {/* Other Speakers */}
+            
             {otherSpeakers.map((speaker, index) => (
               <div key={index} className="village-speaker-card">
                 <div className="village-badge">{speaker.badge}</div>
@@ -668,7 +656,7 @@ const EscalateXOverview = () => {
           </div>
         </div>
 
-        {/* Panel Section */}
+        
         <div className="panel-section">
           <h3>Panel Discussion</h3>
           <p className="panel-title">"The Future of Cybersecurity - Threats, Trends, and Talent"</p>
@@ -699,9 +687,7 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* AUTO SLIDESHOW GALLERY */}
-
-      {/* AUTO SLIDESHOW GALLERY */}
+            
       <div ref={slideshowRef} className="auto-slideshow-container">
 
 
@@ -713,7 +699,7 @@ const EscalateXOverview = () => {
         </div>
 
         <div className="slideshow-wrapper">
-          {/* Main Slideshow */}
+     
           <div className="slideshow-main">
             <div className="slideshow-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
               {slideshowImages.map((image) => (
@@ -727,7 +713,6 @@ const EscalateXOverview = () => {
               ))}
             </div>
 
-            {/* Navigation Arrows */}
             <button className="slideshow-nav prev" onClick={prevSlide}>
               <span>❮</span>
             </button>
@@ -735,13 +720,12 @@ const EscalateXOverview = () => {
               <span>❯</span>
             </button>
 
-            {/* Slide Counter */}
+       
             <div className="slideshow-counter">
               {currentSlide + 1} / {slideshowImages.length}
             </div>
           </div>
 
-          {/* Thumbnail Navigation */}
           <div className="slideshow-thumbnails">
             {slideshowImages.map((image, index) => (
               <div
@@ -755,7 +739,7 @@ const EscalateXOverview = () => {
             ))}
           </div>
 
-          {/* Progress Dots */}
+ 
           <div className="slideshow-progress-dots">
             {slideshowImages.map((_, index) => (
               <span
@@ -768,7 +752,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* CTF Winners Section */}
       <div ref={winnersRef} className="section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> WINNERS
@@ -778,9 +761,9 @@ const EscalateXOverview = () => {
           <h3 className="ctf-main-heading">CTF Challenge Winners</h3>
           <p className="ctf-subtitle">Top 3 Teams - Capture The Flag Competition</p>
 
-          {/* TOP 3 WINNERS - PODIUM STYLE: 2nd - 1st - 3rd */}
+   
           <div className="ctf-top-three">
-            {/* 2nd Place */}
+  
             <div className="ctf-winner-card second">
               <div className="ctf-card-inner">
                 <div className="ctf-card-front">
@@ -806,7 +789,7 @@ const EscalateXOverview = () => {
               </div>
             </div>
 
-            {/* 1st Place - CENTER & TALLEST */}
+       
             <div className="ctf-winner-card first champion">
               <div className="ctf-card-inner">
                 <div className="ctf-card-front">
@@ -832,7 +815,7 @@ const EscalateXOverview = () => {
               </div>
             </div>
 
-            {/* 3rd Place */}
+
             <div className="ctf-winner-card third">
               <div className="ctf-card-inner">
                 <div className="ctf-card-front">
@@ -894,7 +877,7 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Outcomes Section */}
+
       <div ref={outcomesRef} className="section outcomes-section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> EVENT OUTCOMES & OPPORTUNITIES
@@ -912,10 +895,7 @@ const EscalateXOverview = () => {
         <div className="impact-section">
           <h3>Total Impact</h3>
           <div className="impact-stats">
-            {/* <div className="impact-item">
-              <div className="impact-value">₹1,83,000</div>
-              <div className="impact-label">Certification Vouchers</div>
-            </div> */}
+        
             <div className="impact-item">
               <div className="impact-value">11</div>
               <div className="impact-label">Alumni Speakers</div>
@@ -932,7 +912,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Gallery Section */}
       <div ref={galleryRef} className="section gallery-section scroll-section">
         <div className="section-header">
           <span className="prompt">▶ </span> EVENT GALLERY
@@ -959,7 +938,7 @@ const EscalateXOverview = () => {
                     <h4 className="gallery-caption-back">{image.caption}</h4>
                     <div className="gallery-details">
                       <p className="gallery-event-name">EscalateX V2</p>
-                      <p className="gallery-event-date">November 8-9, 2024</p>
+                      <p className="gallery-event-date">November 8-9, 2025</p>
                       <p className="gallery-location">GLA University, Mathura</p>
                     </div>
                     <span className="gallery-flip-back-hint">Hover to see image</span>
@@ -971,7 +950,6 @@ const EscalateXOverview = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="footer">
         <div className="footer-content">
           <div className="footer-section">
