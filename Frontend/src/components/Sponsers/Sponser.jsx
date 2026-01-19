@@ -29,15 +29,17 @@ import SecOpsLogo from "../../img/escalate-v2/sponsor/SecOps.webp";
 import SquareBoatLogo from "../../img/escalate-v2/sponsor/SquareBoat.webp";
 import UnstopLogo from "../../img/escalate-v2/sponsor/unstop.webp";
 
+import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
+import './Spon.css';
+
 
 const Sponsor = ({ heading }) => {
   const sponsors = [
     { href: "https://www.alteredsecurity.com/", alt: "Altered Security", img: AlteredSecurityLogo },
-    { href: "https://www.cyintglobal.com/", alt: "Cyber Intelligence Global LLP", img: CIGLogo },
+    { href: "https://www.cyintglobal.com/", alt: "Cyber Intelligence Global", img: CIGLogo },
     { href: "https://www.multigrad.in/", alt: "Multigrad", img: MultigradLogo },
     { href: "https://www.offsec.com/", alt: "Offensive Security", img: OffsecLogo },
     { href: "https://ycfteam.in/", alt: "YCF Team", img: YCFLogo },
-
     { href: "#", alt: "Abhibus", img: AbhibusLogo },
     { href: "#", alt: "Bootcoding", img: BootcodingLogo },
     { href: "#", alt: "Burgerjn", img: BurgerjnLogo },
@@ -50,7 +52,7 @@ const Sponsor = ({ heading }) => {
     { href: "#", alt: "InterviewBuddy", img: InterviewBuddyLogo },
     { href: "#", alt: "Market Mafia", img: MarketMafiaLogo },
     { href: "#", alt: "Modern Security", img: ModernSecurityLogo },
-    { href: "#", alt: "OffSec (Alt)", img: OffSecNewLogo },
+    { href: "#", alt: "OffSec", img: OffSecNewLogo },
     { href: "#", alt: "OSEN", img: OSENLogo },
     { href: "#", alt: "SecOps", img: SecOpsLogo },
     { href: "#", alt: "SquareBoat", img: SquareBoatLogo },
@@ -58,50 +60,36 @@ const Sponsor = ({ heading }) => {
   ];
 
   return (
-    <section className="sponsor-section" id="sponsors">
-      <div className="sponsor-header">
-        <p className="sponsor-eyebrow">Powering EscalateX</p>
-        <h2 className="sponsor-title">{heading || "Our Sponsors"}</h2>
-        <p className="sponsor-subtitle">
-          Brands that support and amplify the EscalateX cyber‑security
-          ecosystem.
+    <section className="logo-loop-section" id="sponsors">
+      <div className="logo-loop-header">
+        <p className="logo-loop-eyebrow">Powering EscalateX</p>
+        <h2 className="logo-loop-title">{heading || "Our Sponsors"}</h2>
+        <p className="logo-loop-subtitle">
+          Brands that support and amplify the EscalateX cyber‑security ecosystem.
         </p>
       </div>
 
-      <Swiper
-        className="sponsor-swiper"
-        modules={[Pagination, Autoplay]}
-        loop
-        speed={600}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        
-  spaceBetween={24}
-  slidesPerView={3}
-  pagination={{ clickable: true }}
-  breakpoints={{
-    0:   { slidesPerView: 1.2, spaceBetween: 14, centeredSlides: true },
-    640: { slidesPerView: 2,   spaceBetween: 18 },
-    1024:{ slidesPerView: 3,   spaceBetween: 24 },
-        }}
-      >
-        {sponsors.map((s, index) => (
-          <SwiperSlide key={index}>
+      <div className="logo-loop-container">
+        <div className="logo-loop-track">
+         
+          {[...sponsors, ...sponsors].map((sponsor, index) => (
             <a
-              href={s.href}
+              key={index}
+              href={sponsor.href}
               target="_blank"
               rel="noreferrer"
-              className="sponsor-card"
+              className="logo-loop-item"
             >
               <img
-                src={s.img}
-                alt={s.alt}
-                className="sponsor-logo"
+                src={sponsor.img}
+                alt={sponsor.alt}
+                className="logo-loop-image"
                 loading="lazy"
               />
             </a>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
