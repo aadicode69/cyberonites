@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import event1 from "../../img/events/EscalateXGL.jpg";
+import event1 from "../../img/events/EscalateXv2.jpg";
 import event2 from "../../img/events/EscalateX_CTF.jpg";
 import event3 from "../../img/events/IntrusionX.png";
 
@@ -8,14 +8,14 @@ function Grand() {
   const eventData = [
     {
       id: 1,
-      title: "EscalateX - Guest Lecture",
+      title: "EscalateX V2 ",
       image: event1,
-      type: "Lecture",
-      date: "14 September 2024",
-      participants: "100+",
+      type: "CTF EVENT",
+      date: "8-9 November 2025",
+      participants: "450+",
       description:
-        "The EscalateX Guest Lecture Series aimed to deepen students' understanding of cybersecurity topics like reverse engineering, hardware hacking, and web penetration testing. Featuring experienced professionals and alumni, it bridged theoretical knowledge with real-world applications, equipping students with practical skills for cybersecurity careers.",
-      link: "/guestlecture"
+        "The EscalateX V2 was a grand two-day cybersecurity event organized by the Cyberonites Club.",
+      link: "/escalate-x-v2"
     },
     {
       id: 2,

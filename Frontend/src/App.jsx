@@ -10,11 +10,12 @@ import SecurityPage from "./pages/SecurityPage";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
-import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
-import Popup from "./components/load_popup/Popup";
-import V2Main from "./components/escalatex-v2/V2Main";
+import IntrusionX from "../src/components/IntrusionX/MainX";
+import IntrusionXv2 from "../components/intrusionX2/IntrusionXv2";
+// import Popup from "./components/load_popup/Popup";
+import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 
-function AppContent() {
+function AppContent() { 
   const [showPopup, setShowPopup] = useState(false);
   const location = useLocation();
 
@@ -41,13 +42,14 @@ function AppContent() {
         <Route path="/intrusion-x-overview" element={<IntrusionX />} />
         <Route path="/prob-statement-x" element={<Problem_S />} />
         <Route path="/guestlecture" element={<GuestLecture />} />
-        <Route path="/escalate-x-v2" element={<V2Main />} />
+        <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
+        <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
 
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+      {/* {showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
     </>
   );
 }
