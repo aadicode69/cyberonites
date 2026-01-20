@@ -11,8 +11,8 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "../src/components/IntrusionX/MainX";
-import IntrusionXv2 from "../src/components/intrusionX2/IntrusionXv2";
-import Popup from "./components/load_popup/Popup";
+import IntrusionXv2 from "../components/intrusionX2/IntrusionXv2";
+// import Popup from "./components/load_popup/Popup";
 import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 
 function AppContent() { 
