@@ -166,7 +166,7 @@ const IntrusionX = () => {
             <div className="nav-logo-left">
               <img
                 src={IntrusionXlogo}
-                alt="IntrusionX 2.0"
+                alt="IntrusionX Second Edition"
                 className="intrusionx-nav-logo"
               />
             </div>
@@ -201,8 +201,9 @@ const IntrusionX = () => {
           className="hero-content"
         >
           <h1 className="hero-title">
-            INTRUSIONX<span className="highlight"></span> <span className="version">Second Edition</span>
+            INTRUSIONX<span className="highlight"></span> 
           </h1>
+          <h1 className="hero-title"><span className="version">Second Edition</span></h1>
 
           <p className="hero-date">APRIL 10-12, 2026</p>
           <p className="hero-subtitle">36-HR CYBERSECURITY HACKATHON</p>
@@ -232,7 +233,7 @@ const IntrusionX = () => {
           <h2 className="section-title">ABOUT THE MISSION</h2>
 
           <p className="about-text">
-            <span className="highlight-text">IntrusionX 2.0</span> is a next-generation technical hackathon designed to bridge
+            <span className="highlight-text">IntrusionX Second Edition</span> is a next-generation technical hackathon designed to bridge
             innovation, industry relevance, and startup culture. The event brings together aspiring developers, security enthusiasts,
             and innovators to solve real-world problems under expert guidance and investor exposure.
           </p>

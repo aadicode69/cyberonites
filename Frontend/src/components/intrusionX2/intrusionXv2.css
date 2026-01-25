@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -277,11 +276,11 @@
   .nav-content {
     grid-template-columns: 150px 1fr 150px;
   }
-  
+
   .nav-links {
     gap: 30px;
   }
-  
+
   .nav-links a {
     font-size: 13px;
   }
@@ -291,16 +290,16 @@
   .nav-content {
     grid-template-columns: 140px 1fr 140px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 50px;
   }
-  
+
   .nav-links {
     gap: 25px;
   }
-  
+
   .nav-links a {
     font-size: 12px;
   }
@@ -310,16 +309,16 @@
   .nav-content {
     grid-template-columns: 120px 1fr 120px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 50px;
   }
-  
+
   .nav-links {
     gap: 20px;
   }
-  
+
   .nav-links a {
     font-size: 12px;
   }
@@ -330,16 +329,16 @@
     grid-template-columns: 100px 1fr 100px;
     padding: 0 20px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 45px;
   }
-  
+
   .nav-links {
     display: none;
   }
-  
+
   .nav-links-mobile {
     display: flex;
     justify-content: center;
@@ -349,7 +348,7 @@
     padding: 12px 0;
     border-top: 1px solid #222;
   }
-  
+
   .nav-links-mobile a {
     color: #ccc;
     text-decoration: none;
@@ -360,7 +359,7 @@
     transition: color 0.3s;
     display: inline-block;
   }
-  
+
   .nav-links-mobile a:hover {
     color: #fff;
   }
@@ -371,16 +370,16 @@
     grid-template-columns: 90px 1fr 90px;
     padding: 0 15px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 40px;
   }
-  
+
   .nav-links-mobile {
     gap: 10px;
   }
-  
+
   .nav-links-mobile a {
     font-size: 11px;
     padding: 6px 12px;
@@ -420,7 +419,7 @@
 }
 
 .version {
-  font-size: clamp(40px, 8vw, 10px);
+  font-size: clamp(40px, 8vw, 8px);
   background: linear-gradient(135deg, #666 0%, #ccc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -624,6 +623,7 @@
   line-height: 1.8;
   color: #aaa;
 }
+
 .tracks-section {
   position: relative;
   z-index: 1;
@@ -925,7 +925,7 @@
   .tracks-swiper .swiper-slide {
     width: 350px;
   }
-  
+
   .track-card-glass {
     height: 420px;
   }
@@ -935,16 +935,16 @@
   .tracks-swiper .swiper-slide {
     width: 320px;
   }
-  
+
   .track-card-glass {
     height: 400px;
     padding: 30px 25px;
   }
-  
+
   .track-name-glass {
     font-size: 22px;
   }
-  
+
   .tracks-swiper .swiper-button-next,
   .tracks-swiper .swiper-button-prev {
     width: 40px;
@@ -956,12 +956,12 @@
   .tracks-swiper .swiper-slide {
     width: 280px;
   }
-  
+
   .track-card-glass {
     height: 380px;
     padding: 25px 20px;
   }
-  
+
   .track-icon-glass {
     width: 60px;
     height: 60px;
@@ -1237,28 +1237,28 @@
   .timeline-line-cyber {
     left: 30px;
   }
-  
+
   .timeline-item-cyber.left,
   .timeline-item-cyber.right {
     justify-content: flex-start;
     padding-left: 80px;
     padding-right: 0;
   }
-  
+
   .timeline-node {
     left: 30px;
   }
-  
+
   .timeline-card-cyber {
     margin: 0;
     max-width: 100%;
   }
-  
+
   .node-outer {
     width: 30px;
     height: 30px;
   }
-  
+
   .node-inner {
     width: 14px;
     height: 14px;
@@ -1269,24 +1269,24 @@
   .timeline-line-cyber {
     left: 20px;
   }
-  
+
   .timeline-node {
     left: 20px;
   }
-  
+
   .timeline-item-cyber.left,
   .timeline-item-cyber.right {
     padding-left: 60px;
   }
-  
+
   .timeline-card-cyber {
     padding: 20px;
   }
-  
+
   .timeline-title-cyber {
     font-size: 18px;
   }
-  
+
   .timeline-desc-cyber {
     font-size: 13px;
   }
@@ -1481,28 +1481,28 @@
   .nav-content {
     grid-template-columns: 150px 1fr 150px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 50px;
   }
-  
+
   .nav-title {
     font-size: 24px;
     letter-spacing: 2px;
   }
-  
+
   .nav-version {
     font-size: 16px;
   }
-  
+
   .nav-links-mobile {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
   }
-  
+
   .vision-mission {
     grid-template-columns: 1fr;
   }
@@ -1513,41 +1513,41 @@
     grid-template-columns: 120px 1fr 120px;
     padding: 0 20px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 45px;
   }
-  
+
   .nav-title {
     font-size: 20px;
     letter-spacing: 1px;
   }
-  
+
   .nav-version {
     font-size: 14px;
   }
-  
+
   .hero-title {
     letter-spacing: 4px;
   }
-  
+
   .hero-info-cards {
     flex-direction: column;
   }
-  
+
   .tracks-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .timeline-item {
     grid-template-columns: 1fr;
   }
-  
+
   .timeline-connector {
     display: none;
   }
-  
+
   .contact-info {
     flex-direction: column;
     align-items: center;
@@ -1559,50 +1559,51 @@
     grid-template-columns: 100px 1fr 100px;
     padding: 0 15px;
   }
-  
+
   .intrusionx-nav-logo,
   .cyberonites-nav-logo {
     height: 40px;
   }
-  
+
   .nav-title {
     font-size: 16px;
     letter-spacing: 0.5px;
   }
-  
+
   .nav-version {
     font-size: 12px;
     margin-left: 3px;
   }
-  
+
   .nav-links-mobile {
     gap: 10px;
   }
-  
+
   .nav-links-mobile a {
     font-size: 12px;
     padding: 8px 12px;
   }
-  
+
   .hero-section {
     padding: 100px 20px 60px;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .btn-primary,
   .btn-secondary,
   .btn-register {
     width: 100%;
   }
-  
+
   .event-card {
     padding: 30px 20px;
   }
 }
+
 .home-button {
   position: fixed;
   bottom: 40px;
@@ -1655,6 +1656,7 @@
     font-size: 20px;
   }
 }
+
 .highlight-blue {
   color: #4dd0e1;
   font-weight: 700;

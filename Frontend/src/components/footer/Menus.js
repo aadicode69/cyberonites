@@ -2,7 +2,7 @@ export const Explore = [
   { name: "Home", link: "/" },
   { name: "Register", link: "#" }, 
   { name: "Join Us", link: "#" },
-  { name: "Our Team", link: "/our-team" },
+  { name: "Our Team", link: "/our_team" },
   // { name: "Contact", link: "#" },
 ];
 export const Visit = [
