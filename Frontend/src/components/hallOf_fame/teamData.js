@@ -1,121 +1,152 @@
-import rahulDixitImg from "../../img/Team/rahul_dixit_2.webp";
-import krishnaAgarwalImg from "../../img/Team/krishna1.webp";
-import abhinavSinghImg from "../../img/Team/abhinav.webp";
-import kushagraVarshneyImg from "../../img/Team/kush.webp";
-import ayushSinghImg from "../../img/Team/ayush.webp";
-import abhishekSoniImg from "../../img/Team/abhishek.webp";
-import aadityaGoyalImg from "../../img/Team/Aaditya2.webp";
-import arjunChauhanImg from "../../img/Team/arjun_chauhan.webp";
-import kartikeyanSinghTomarImg from "../../img/Team/kartikeyan_singh_tomar.webp";
-import tanyaSinghJadounImg from "../../img/Team/tanya_singh_jadoun.webp";
-import manmohanSinghImg from "../../img/Team/manmohan.webp";
-import asheeshSir from "../../img/Team/asheesh_sir.webp";
-import arvindSir from "../../img/Team/arvind_sir.webp";
-
+import aadityaimg from "../../img/Core-team/Aaditya2.webp";
+import abhirajimg from "../../img/Core-team/Abhiraj.webp";
+import abhishekimg from "../../img/Core-team/abhishek.webp";
+import akshitimg from "../../img/Core-team/Akshit.webp";
+import apoorvimg from "../../img/Core-team/apoorv.webp";
+import asheeshimg from "../../img/Core-team/asheesh_sir.webp";
+import devshuklaimg from "../../img/Core-team/Dev_shukla.webp";
+import harshrajimg from "../../img/Core-team/harsh_raj.webp";
+import krishnaimg from "../../img/Core-team/krishna1.webp";
+import nandinikaushikimg from "../../img/Core-team/nandini_kaushik.webp";
+import nandinikulsgereshthaimg from "../../img/Core-team/nandini_kulsherstha.webp";
+import nitinimg from "../../img/Core-team/nitin_sikhawar.webp";
+import piyushimg from "../../img/Core-team/piyush.webp";
+import sakshamimg from "../../img/Core-team/Saksham_wadhwa.webp";
+import tanmayimg from "../../img/Core-team/tanmay.webp";
+import kapilimg from "../../img/Core-team/kapil.webp";
+import khushiimg from "../../img/Core-team/khushi.webp";
+import mehakimg from "../../img/Core-team/mehak.webp";
+import arvindSir from "../../img/Core-team/arvind_Sir.webp";
 
 const teamData = [
   {
     name: "Dr. Asheesh Tiwari",
     role: "Mentor",
-    profileImage: asheeshSir,
+    profileImage: asheeshimg,
     description: "Guiding Cyberonites with expertise in cybersecurity, innovation, and leadership.",
     email: "mailto:asheesh.tiwari@gla.ac.in"
   },
   {
-    name: "Dr. Arvind Prasad",
-    role: "Co-Mentor",
-    profileImage: arvindSir,
-    description: "Supporting Cyberonites with technical knowledge, mentorship, and strategic insights.",
-    email: "mailto:arvind.prasad@gla.ac.in"
-  },
-  {
-    name: "Rahul Dixit",
+    name: "Krishna Agarwal",
     role: "President",
-    profileImage: rahulDixitImg,
-    description: "Leads the club, oversees operations, and represents Cyberonites in official matters.",
+    profileImage: krishnaimg,
+    description: "Leading the club's vision, strategy, and representing Cyberonites in all official capacities.",
     linkedin: "https://www.linkedin.com/in/secproof/",
     email: "mailto:cybereyerahul@gmail.com"
   },
   {
-    name: "Krishna Agarwal",
-    role: "Vice President",
-    profileImage: krishnaAgarwalImg,
-    description: "Assists the president and manages internal coordination and strategic initiatives.",
-    linkedin: "https://www.linkedin.com/in/krishna-agrawal-550a4b238",
-    email: "mailto:krishnanjin109@gmail.com"
-  },
-  {
-    name: "Abhinav Singh",
-    role: "General Secretary",
-    profileImage: abhinavSinghImg,
-    description: "Handles documentation, scheduling, and communication within the club.",
-    linkedin: "https://www.linkedin.com/in/abhinav-singh-aba043283/",
-    email: "mailto:secfreaky@gmail.com"
-  },
-  {
-    name: "Kushagra Varshney",
-    role: "Technical Head",
-    profileImage: kushagraVarshneyImg,
-    description: "Manages cybersecurity research, training, and tech innovations.",
-    linkedin: "https://linkedin.com/in/hacksprob",
-    email: "mailto:kushagravarshney12a@gmail.com"
-  },
-  {
-    name: "Ayush Singh",
-    role: "Event Head",
-    profileImage: ayushSinghImg,
-    description: "Plans and executes cybersecurity events and workshops.",
-    linkedin: "https://www.linkedin.com/in/ayush-singh-18a9b1253/",
-    email: "mailto:singhayush3264@gmail.com"
-  },
-  {
     name: "Abhishek Soni",
-    role: "Design Head",
-    profileImage: abhishekSoniImg,
-    description: "Creates visual content, branding, and promotional materials.",
+    role: "Vice President",
+    profileImage: abhishekimg,
+    description: "Supporting leadership and coordinating strategic initiatives across all departments.",
     linkedin: "https://www.linkedin.com/in/abhishek-soni-89b518250/",
-    email: "mailto:sharmay728@gmail.com"
+    email: "mailto:abhishek@cyberonites.com"
+  },
+  {
+    name: "Nandini Kaushik",
+    role: "General Secretary",
+    profileImage: nandinikaushikimg,
+    description: "Managing documentation, meetings, and ensuring seamless communication within the club.",
+    linkedin: "https://www.linkedin.com/in/nandini-kaushik/",
+    email: "mailto:nandinyk14@gmail.com"
+  },
+  {
+    name: "Nitin Sikhawar",
+    role: "Technical Head",
+    profileImage: nitinimg,
+    description: "Overseeing technical operations, infrastructure, and cybersecurity tool implementations.",
+    email: "mailto:nitin.sikarwar369@gmail.com"
+  },
+  {
+    name: "Kapil Patel",
+    role: "DY. Technical Head",
+    profileImage: kapilimg,
+    description: "Supporting technical projects and managing lab infrastructure for hands-on learning.",
+    email: "mailto:kapil@cyberonites.com"
   },
   {
     name: "Aaditya Goyal",
     role: "Development Head",
-    profileImage: aadityaGoyalImg,
-    description: "Leads software and development for club's official projects.",
-    linkedin: "https://www.linkedin.com/in/aadityagoyal-net/",
-    email: "mailto:aadityagoyalofficial@gmail.com"
+    profileImage: aadityaimg,
+    description: "Leading cybersecurity research, training programs, and technical skill development initiatives.",
+    email: "mailto:outtareach69@gmail.com"
   },
   {
-    name: "Arjun Chauhan",
-    role: "Public Relations Head",
-    profileImage: arjunChauhanImg,
-    description: "Handles public relations, social media, and external communication.",
-    linkedin: "http://www.linkedin.com/in/geeky-arjun",
-    email: "mailto:arjun.chauhan.hero@gmail.com"
+    name: "Akshit Jaiswal",
+    role: "DY. Development Head",
+    profileImage: akshitimg,
+    description: "Assisting development initiatives and driving innovation in cybersecurity training programs.",
+    email: "mailto:jaiswalakshit4@gmail.com"
   },
   {
-    name: "Kartikeyan Singh Tomar",
+    name: "Abhiraj Singh Chauhan",
+    role: "Treasurer",
+    profileImage: abhirajimg,
+    description: "Managing club finances, budgeting, and ensuring transparent resource allocation.",
+    email: "mailto:abhirajsingh1styear@gmail.com"
+  },
+  {
+    name: "Piyush Kumar",
     role: "Management Head",
-    profileImage: kartikeyanSinghTomarImg,
-    description: "Oversees logistics, budgeting, and resource allocation.",
-    linkedin: "https://www.linkedin.com/in/kartikeyan-singh-tomar-7aaab7206/",
-    email: "mailto:galatkaram2@gmail.com"
+    profileImage: piyushimg,
+    description: "Managing club operations, resources, and ensuring efficient workflow across teams.",
+    email: "mailto:piyushkumar07x@gmail.com"
   },
   {
-    name: "Tanya Singh Jadoun",
-    role: "Corporate Relations Head",
-    profileImage: tanyaSinghJadounImg,
-    description: "Manages sponsorships, industry collaborations, and corporate outreach.",
-    linkedin: "https://www.linkedin.com/in/tanya-jadoun-596b58252/",
-    email: "mailto:tanyasingh1932@gmail.com"
+    name: "Tanmay Jha",
+    role: "Event Head",
+    profileImage: tanmayimg,
+    description: "Planning and executing cybersecurity events, workshops, and hackathons for the community.",
+    email: "mailto:tanmay7500889928jha@gmail.com"
   },
   {
-    name: "Manmohan Singh",
-    role: "Web Development Team Member",
-    profileImage: manmohanSinghImg,
-    description: "Builds and maintains the club’s website and digital platforms.",
-    linkedin: "https://linkedin.com/in/manmohan-singh-raghav",
-    email: "mailto:manmohan0singh0@gmail.com",
-    head: "Aaditya Goyal"
+    name: "Khushi Singh",
+    role: "Event Head",
+    profileImage: khushiimg,
+    description: "Coordinating event logistics, participant engagement, and competition management.",
+    email: "mailto:khushi@cyberonites.com"
+  },
+  {
+    name: "Harsh Raj",
+    role: "Design Head",
+    profileImage: harshrajimg,
+    description: "Creating visual content, branding materials, and designing promotional assets for events.",
+    email: "mailto:rajharshraj2005@gmail.com"
+  },
+  {
+    name: "Mehak Bansal",
+    role: "PR Head",
+    profileImage: mehakimg,
+    description: "Handling public relations, media outreach, and amplifying club presence across platforms.",
+    email: "mailto:mehak@cyberonites.com"
+  },
+  {
+    name: "Nandini Kulsherestha",
+    role: "DY. PR Head",
+    profileImage: nandinikulsgereshthaimg,
+    description: "Assisting PR strategies, social media management, and content creation for outreach.",
+    email: "mailto:nandinikulshrestha2005@gmail.com"
+  },
+  {
+    name: "Saksham Wadhwa",
+    role: "CR Head",
+    profileImage: sakshamimg,
+    description: "Building corporate partnerships, managing sponsorships, and fostering industry collaborations.",
+    email: "mailto:saksham672005@gmail.com"
+  },
+  {
+    name: "Dev Shukla",
+    role: "DY. CR Head",
+    profileImage: devshuklaimg,
+    description: "Supporting corporate relations and coordinating with industry partners for opportunities.",
+    email: "mailto:devs44236@gmail.com"
+  },
+  {
+    name: "Apoorv",
+    role: "Content Head",
+    profileImage: apoorvimg,
+    description: "Developing engaging content, managing publications, and crafting technical write-ups.",
+    email: "mailto:apoorv.mehrotra_cs.aiml23@gla.ac.in"
   }
 ];
 
