@@ -53,7 +53,7 @@ const IntrusionXv2 = () => {
   const tracks = [
     {
       id: "01",
-      name: "Cybersecurity",
+      name: "Cyber Security",
       desc: "Threat detection, defense mechanisms, and secure systems",
       color: "#00ff88",
       icon: "🔐",
@@ -88,8 +88,8 @@ const IntrusionXv2 = () => {
     },
     {
       id: "06",
-      name: "Mobile Security",
-      desc: "Secure mobile platforms and applications",
+      name: "Internet of Things (IoT)",
+      desc: "Hardened IoT ecosystems and device security",
       color: "#10b981",
       icon: "📱",
     },
@@ -477,15 +477,15 @@ const IntrusionXv2 = () => {
           <div className="contact-info">
             <div className="contact-item">
               <span className="contact-icon">📧</span>
-              <span>team@cyberonites.org</span>
+              <span>events@cyberonites.com</span>
             </div>
             <div className="contact-item">
               <span className="contact-icon">📍</span>
-              <span>GLA University, Mathura, Uttar Pradesh</span>
+              <span>GLA University, Mathura</span>
             </div>
             <div className="contact-item">
               <span className="contact-icon">🌐</span>
-              <span>www.cyberonites.org</span>
+              <span>www.cyberonites.com</span>
             </div>
           </div>
 

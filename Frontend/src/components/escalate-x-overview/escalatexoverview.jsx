@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './EscalateX.css';
+import './escalatex.css';
 import Logo from '../../img/escalate-v2/logo.webp';
 import pirates from '../../img/escalate-v2/partners/0x0pirates_logo.webp';
 import bsidesJ from '../../img/escalate-v2/partners/BSidesJ.webp';
@@ -635,21 +635,6 @@ const EscalateXOverview = () => {
                   <p className="village-speaker-designation">{village.designation}</p>
                   <p className="village-speaker-company">{village.company}</p>
                   <p className="village-speaker-desc">{village.description}</p>
-                </div>
-              </div>
-            ))}
-
-            
-            {otherSpeakers.map((speaker, index) => (
-              <div key={index} className="village-speaker-card">
-                <div className="village-badge">{speaker.badge}</div>
-                <div className="village-speaker-image-container">
-                  <img src={speaker.image} alt={speaker.speaker} className="village-speaker-photo" />
-                </div>
-                <div className="village-speaker-info">
-                  <h5 className="village-speaker-name">{speaker.speaker}</h5>
-                  <p className="village-speaker-designation">{speaker.designation}</p>
-                  <p className="village-speaker-company">{speaker.company}</p>
                 </div>
               </div>
             ))}
