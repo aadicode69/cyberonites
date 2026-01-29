@@ -640,20 +640,7 @@ const EscalateXOverview = () => {
             ))}
 
             
-            {otherSpeakers.map((speaker, index) => (
-              <div key={index} className="village-speaker-card">
-                <div className="village-badge">{speaker.badge}</div>
-                <div className="village-speaker-image-container">
-                  <img src={speaker.image} alt={speaker.speaker} className="village-speaker-photo" />
-                </div>
-                <div className="village-speaker-info">
-                  <h5 className="village-speaker-name">{speaker.speaker}</h5>
-                  <p className="village-speaker-designation">{speaker.designation}</p>
-                  <p className="village-speaker-company">{speaker.company}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+                      </div>
         </div>
 
         
