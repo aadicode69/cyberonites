@@ -35,8 +35,8 @@ function AppContent() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/team-2024" element={<Team2024 />} />
-        <Route path="/team-2025" element={<Team2025 />} />
+        <Route path="/team2024" element={<Team2024 />} />
+        <Route path="/team2025" element={<Team2025 />} />
 
         <Route exact path="/" element={<Home />} />
         <Route exact path="/security" element={<SecurityPage />} />
@@ -49,7 +49,6 @@ function AppContent() {
         <Route path="/guestlecture" element={<GuestLecture />} />
         <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
         <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
-        <Route path="/Team-2024" element={<Team2024 />} />
 
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

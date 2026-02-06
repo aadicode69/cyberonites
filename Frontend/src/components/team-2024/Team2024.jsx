@@ -112,7 +112,6 @@ const TeamGallery = () => {
             </div>
           </div>
 
-          {/* Core Team Section */}
           <div className="mb-40 mt-24">
             <h2 className="text-2xl sm:text-5xl font-bold text-center mb-28">
               <span className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] tracking-tight">
@@ -136,7 +135,6 @@ const TeamGallery = () => {
             </div>
           </div>
 
-          {/* Heads Section */}
           <div className="mb-40">
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-28">
               {heads.map((member, index) => (
