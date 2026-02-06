@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./IntrusionXv2.css";
-import IntrusionXlogo from "../intrusionX2/IntrusionX-2.png";
+import IntrusionXlogo from "../intrusionX2/intrusionX-2.png";
 import CyberoniteNavLogo from "../../img/ps-final.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
