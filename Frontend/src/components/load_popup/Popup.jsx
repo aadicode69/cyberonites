@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import intrusionPoster from "../../img/escalate-v2/poster.webp";
+import intrusionPoster from "../../img/intrusionX/IntrusionXSE.webp";
 import { useNavigate } from "react-router-dom";
 
 const Popup = ({ onClose }) => {
@@ -84,7 +84,7 @@ const Popup = ({ onClose }) => {
         </span>
 
         <h2 className="text-2xl md:text-3xl font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-center">
-          EscalateX v2
+          Intrusion X Second Edition
         </h2>
         
         <p className="mt-1 text-sm md:text-lg italic text-gray-300 text-center opacity-80">
@@ -114,7 +114,7 @@ const Popup = ({ onClose }) => {
 
         <button 
           ref={buttonRef}
-          onClick={() => navigate("/escalate-x-v2")} 
+          onClick={() => navigate("/intrusion-x-second-edition")} 
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
           className="mt-2 w-1/3 py-2 relative overflow-hidden rounded-md font-bold
