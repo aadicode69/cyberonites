@@ -13,9 +13,9 @@ import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 import IntrusionXv2 from "../src/components/intrusionX2/IntrusionXv2";
 import Popup from "./components/load_popup/Popup";
-import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 import Team2024 from "./components/team-2024/Team2024";
 import Team2025 from "./components/team-2025/Team2025";
+import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 
 function AppContent() {
   const [showPopup, setShowPopup] = useState(false);
@@ -35,8 +35,8 @@ function AppContent() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/team2024" element={<Team2024 />} />
-        <Route path="/team2025" element={<Team2025 />} />
+        <Route path="/team-2024" element={<Team2024 />} />
+        <Route path="/team-2025" element={<Team2025 />} />
 
         <Route exact path="/" element={<Home />} />
         <Route exact path="/security" element={<SecurityPage />} />

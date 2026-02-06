@@ -99,7 +99,7 @@ const IntrusionXv2 = () => {
       date: "",
       phase: "21st February",
       title: "Registrations Open",
-      desc: "Official start of registrations for IntrusionX 2.0. Teams can start forming and submitting their details.",
+      desc: "Official start of registrations for IntrusionX SE. Teams can start forming and submitting their details.",
     },
     {
       date: "",
@@ -179,7 +179,7 @@ const IntrusionXv2 = () => {
             <div className="nav-logo-left">
               <img
                 src={IntrusionXlogo}
-                alt="IntrusionX 2.0"
+                alt="IntrusionX SE"
                 className="intrusionx-nav-logo"
               />
             </div>
@@ -246,7 +246,7 @@ const IntrusionXv2 = () => {
           <h2 className="section-title">ABOUT THE MISSION</h2>
 
           <p className="about-text">
-            <span className="highlight-text">IntrusionX 2.0</span> is a
+            <span className="highlight-text">IntrusionX SE</span> is a
             next-generation technical hackathon designed to bridge innovation,
             industry relevance, and startup culture. The event brings together
             aspiring developers, security enthusiasts, and innovators to solve
