@@ -48,13 +48,13 @@ function AppContent() {
         <Route path="/prob-statement-x" element={<Problem_S />} />
         <Route path="/guestlecture" element={<GuestLecture />} />
         <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
-        <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
+        {/* <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} /> */}
 
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+{/* 
+      {showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
     </>
   );
 }
