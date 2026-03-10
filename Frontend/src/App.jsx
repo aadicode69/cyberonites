@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import GuestLecture from "./components/grand events/eventdetails/GuestLecture";
 import Problem_S from "./components/IntrusionX/Problem Statement/Problem_S";
-
 import CTF from "./components/grand events/eventdetails/CTF";
 import EventDash from "./components/pastEvents/EventDash";
 import SecurityPage from "./pages/SecurityPage";
@@ -37,7 +36,6 @@ function AppContent() {
       <Routes>
         <Route path="/team2024" element={<Team2024 />} />
         <Route path="/team2025" element={<Team2025 />} />
-
         <Route exact path="/" element={<Home />} />
         <Route exact path="/security" element={<SecurityPage />} />
         <Route path="/event_dashboard" element={<EventDash />} />
@@ -50,7 +48,6 @@ function AppContent() {
         <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
         <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
         <Route path="/Team-2024" element={<Team2024 />} />
-
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
