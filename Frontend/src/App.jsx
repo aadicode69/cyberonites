@@ -11,7 +11,8 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
-import IntrusionXv2 from "../src/components/intrusionX2/IntrusionXv2";
+import IntrusionXv2 from "./components/intrusionX2/IntrusionXv2";
+import Problem_S_v2 from "./components/intrusionX2/Problem-Statement/Problem_S";
 import Popup from "./components/load_popup/Popup";
 import Team2024 from "./components/team-2024/Team2024";
 import Team2025 from "./components/team-2025/Team2025";
@@ -48,17 +49,17 @@ function AppContent() {
         <Route path="/prob-statement-x" element={<Problem_S />} />
         <Route path="/guestlecture" element={<GuestLecture />} />
         <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
-        {/* <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} /> */}
+        <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} /> 
+        <Route path="/prob-statement-x-v2" element={<Problem_S_v2 />} /> 
 
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-{/* 
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
+
+      {/*showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
     </>
   );
 }
-
 export default function App() {
   return (
     <BrowserRouter>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./IntrusionXv2.css";
 import IntrusionXlogo from "../intrusionX2/intrusionx-2.png";
@@ -225,13 +226,15 @@ const IntrusionXv2 = () => {
           <p className="hero-subtitle">36-HR CYBERSECURITY HACKATHON</p>
 
           <div className="cta-buttons">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary"
-            >
-              Coming Soon
-            </motion.button>
+            <Link to="/prob-statement-x-v2" style={{ textDecoration: "none" }}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary"
+              >
+                Problem Statements
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </section>
