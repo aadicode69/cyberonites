@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 import IntrusionXv2 from "../src/components/intrusionX2/IntrusionXv2";
+import Ps from "./components/intrusionX2/Ps/Ps";
 import Popup from "./components/load_popup/Popup";
 import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 import Team2024 from "./components/team-2024/Team2024";
@@ -47,6 +48,7 @@ function AppContent() {
         <Route path="/guestlecture" element={<GuestLecture />} />
         <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
         <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
+        <Route path="/Ps" element={<Ps />} />
         <Route path="/Team-2024" element={<Team2024 />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />

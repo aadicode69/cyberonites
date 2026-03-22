@@ -28,29 +28,55 @@
     justify-content: center;
 }
 
-/* Main Title Styling */
 .hero-title {
-    font-size: clamp(1.8rem, 6vw, 7.5rem);
-    font-weight: 700;
-    margin: 0 0 clamp(15px, 3vw, 30px) 0;
-    line-height: 0.9;
-    letter-spacing: clamp(-0.5px, -0.15vw, -1.5px);
-    font-family: 'Shark', 'Orbitron', monospace !important;
-    text-align: center;
-    width: 100%;
-    padding: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  font-size: clamp(1.5rem, 5.5vw, 6rem); /* single size for all text */
+  font-weight: 700;
+  margin: 0 0 clamp(15px, 3vw, 30px) 0;
+  line-height: 1;
+  letter-spacing: clamp(-0.5px, -0.1vw, -1px);
+  
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  white-space: nowrap;
+  display: block;        /* ✅ not flex */
 }
 
 .title-cyan {
-    color: #06b6d4;
+  color: #dadada;
+  display: inline;       /* ✅ inline, same size as sibling */
+  font-size: inherit;    /* ✅ same font size — stops cy from being larger */
+  font-family: inherit;
 }
 
 .title-white {
-    color: #ffffff;
+  color: #ffffff;
+  display: inline;
+  font-size: inherit;    /* ✅ inherits from h1 */
+  font-family: inherit;
+}
+
+@media (max-width: 1024px) {
+  .hero-title { font-size: clamp(1.5rem, 6vw, 4.5rem); }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(1.3rem, 7vw, 3rem); }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.1rem, 9vw, 2.2rem);
+    padding: 0 10px;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: clamp(1rem, 10vw, 1.8rem);
+    letter-spacing: -1.5px;
+  }
 }
 
 /* Subtitle Container */

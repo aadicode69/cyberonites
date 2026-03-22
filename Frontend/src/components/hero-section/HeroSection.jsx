@@ -171,11 +171,10 @@ const HeroSection = ({ id }) => {
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 className="hero-title font-light text-center sm:text-left" variants={contentVariants}>
-          <span className="title-cyan">cy</span>
-          <span className="title-white">BER</span>
-          <span className="title-white">ONITES</span>
-        </motion.h1>
+        <motion.h1 className="hero-title" variants={contentVariants}>
+  <span className="title-cyan">CYBERONITES</span>
+</motion.h1>
+
 
         <motion.div className="hero-subtitle-container text-center sm:text-left" variants={contentVariants}>
           <TypewriterEffect

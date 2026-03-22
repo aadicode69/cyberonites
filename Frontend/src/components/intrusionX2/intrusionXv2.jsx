@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import './IntrusionXv2.css';
 import IntrusionXlogo from "../intrusionX2/IntrusionX-2.png";
 import CyberoniteNavLogo from "../../img/ps-final.png";
+import BgImage from "../intrusionX2/Background.png"; 
+import Ps from "../intrusionX2/Ps/Ps";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
@@ -10,40 +12,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
-const IntrusionX = () => {
-  const [stars, setStars] = useState([]);
 
-  useEffect(() => {
-    const generatedStars = Array.from({ length: 200 }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      size: Math.random() * 2.5 + 0.5,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
-      moveX: (Math.random() - 0.5) * 100,
-      moveY: (Math.random() - 0.5) * 100,
-      moveDuration: Math.random() * 20 + 15,
-      opacity: Math.random() * 0.5 + 0.5
-    }));
-    setStars(generatedStars);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const starsElements = document.querySelectorAll('.moving-star');
-
-      starsElements.forEach((star, index) => {
-        const speed = (index % 5 + 1) * 0.05;
-        const yPos = -(scrolled * speed);
-        star.style.transform = `translate(calc(var(--move-x) * var(--progress, 0)), calc(var(--move-y) * var(--progress, 0) + ${yPos}px))`;
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+const IntrusionXv2 = () => {
 
   const tracks = [
     {
@@ -81,8 +51,8 @@ const IntrusionX = () => {
       color: '#f59e0b',
       icon: '🌐'
     },
-
   ];
+
   const timeline = [
     {
       date: '',
@@ -114,13 +84,7 @@ const IntrusionX = () => {
       title: 'Result Announcement',
       desc: 'The shortlist drops. Only the sharpest minds advance — check if your team has earned a place at the on-site showdown.'
     },
-
-    {
-      date: '',
-      phase: '2nd April',
-      title: 'Real-World PS Released',
-      desc: 'The real problems hit. Industry-grade challenges go live for shortlisted teams — this is where theory meets execution.'
-    },
+   
     {
       date: '',
       phase: '10th – 11th April',
@@ -128,70 +92,44 @@ const IntrusionX = () => {
       desc: 'The ultimate 36-hour on-site showdown. Build. Break. Defend. The best team walks away as the champion of IntrusionX 2.0.'
     }
   ];
+
   return (
     <div className="intrusionx-container">
 
-      <div className="stars-background">
-        <div className="space-gradient"></div>
-
-        {stars.map(star => (
-          <div
-            key={star.id}
-            className="star moving-star"
-            style={{
-              left: `${star.left}%`,
-              top: `${star.top}%`,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              animationDelay: `${star.delay}s`,
-              '--move-x': `${star.moveX}px`,
-              '--move-y': `${star.moveY}px`,
-              '--move-duration': `${star.moveDuration}s`,
-              opacity: star.opacity
-            }}
-          />
-        ))}
-
-        <div className="shooting-star" style={{ top: '20%', animationDelay: '2s' }}></div>
-        <div className="shooting-star" style={{ top: '40%', animationDelay: '8s' }}></div>
-        <div className="shooting-star" style={{ top: '60%', animationDelay: '15s' }}></div>
-        <div className="shooting-star" style={{ top: '75%', animationDelay: '20s' }}></div>
+      {/* ── Background Image ── */}
+      <div className="bg-image-wrapper">
+        <img src={BgImage} alt="" className="bg-image" />
       </div>
 
-
+      {/* ── Navbar ── */}
       <nav className="navbar">
-
-        <nav className="navbar">
-          <div className="nav-content">
-
-            <div className="nav-logo-left">
-              <img
-                src={IntrusionXlogo}
-                alt="IntrusionX 2.0"
-                className="intrusionx-nav-logo"
-              />
-            </div>
-
-            <div className="nav-links">
-              <a href="#home">HOME</a>
-              <a href="#about">ABOUT</a>
-              <a href="#tracks">TRACKS</a>
-              <a href="#timeline">TIMELINE</a>
-              <a href="#contact">CONTACT</a>
-            </div>
-
-            <div className="nav-logo-right">
-              <a href="https://cyberonites.com" target="_blank" rel="noopener noreferrer">
-                <img
-                  src={CyberoniteNavLogo}
-                  alt="Cyberonites Club"
-                  className="cyberonites-nav-logo"
-                />
-              </a>
-            </div>
+        <div className="nav-content">
+          <div className="nav-logo-left">
+            <img
+              src={IntrusionXlogo}
+              alt="IntrusionX 2.0"
+              className="intrusionx-nav-logo"
+            />
           </div>
-        </nav>
 
+          <div className="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#tracks">TRACKS</a>
+            <a href="#timeline">TIMELINE</a>
+            <a href="#contact">CONTACT</a>
+          </div>
+
+          <div className="nav-logo-right">
+            <a href="https://cyberonites.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src={CyberoniteNavLogo}
+                alt="Cyberonites Club"
+                className="cyberonites-nav-logo"
+              />
+            </a>
+          </div>
+        </div>
       </nav>
 
       <section id="home" className="hero-section">
@@ -202,29 +140,50 @@ const IntrusionX = () => {
           className="hero-content"
         >
           <h1 className="hero-title">
-            INTRUSIONX<span className="highlight"></span> <span className="version">Second Edition</span>
-          </h1>
+  <span className="title-main">INTRUSION X</span>
+  <span className="version">Second Edition</span>
+</h1>
 
-          <p className="hero-date">APRIL 10-12, 2026</p>
-          <p className="hero-subtitle">36-HR CYBERSECURITY HACKATHON</p>
-
-
+          <p className="hero-date">APRIL 10-11, 2026</p>
+          <p className="hero-subtitle">A NATIONAL LEVEL HACKATHON</p>
 
           <div className="cta-buttons">
-            <a href="https://unstop.com/hackathons/intrusion-x-second-edition-gla-university-glau-uttar-pradesh-1644953" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary"
-              >
-                Register Now
-              </motion.button>
-            </a>
+  <div className="flex gap-4">
+    <a
+      href="https://unstop.com/hackathons/intrusion-x-second-edition-gla-university-glau-uttar-pradesh-1644953"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: 'none' }}
+    >
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="btn-primary"
+      >
+        Register Now
+      </motion.button>
+    </a>
 
-          </div>
+    <a
+      href="Ps"
+      style={{ textDecoration: 'none' }}
+    >
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="btn-primary"
+      >
+        Problem Statement
+      </motion.button>
+    </a>
+  </div>
+</div>
+
+
         </motion.div>
       </section>
 
+      {/* ── About Section ── */}
       <section id="about" className="about-section">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -247,7 +206,6 @@ const IntrusionX = () => {
               dedicated to strengthening the digital ecosystem. We are committed to advancing cyber resilience through structured
               education, collaborative innovation, and real-world security practices.
             </p>
-
           </div>
 
           <div className="vision-mission">
@@ -257,7 +215,7 @@ const IntrusionX = () => {
               viewport={{ once: true }}
               className="vm-card"
             >
-              <h4> Our Vision</h4>
+              <h4>Our Vision</h4>
               <p>To create a secure, resilient, and trustworthy digital world, where knowledge, innovation, and collaboration
                 form the first line of defense against emerging cyber threats.</p>
             </motion.div>
@@ -268,7 +226,7 @@ const IntrusionX = () => {
               viewport={{ once: true }}
               className="vm-card"
             >
-              <h4> Our Mission</h4>
+              <h4>Our Mission</h4>
               <p>To cultivate a future-ready cybersecurity community that promotes continuous learning, encourages hands-on
                 skill development, and produces skilled professionals capable of securing tomorrow's digital infrastructure.</p>
             </motion.div>
@@ -276,6 +234,7 @@ const IntrusionX = () => {
         </motion.div>
       </section>
 
+      {/* ── Tracks Section ── */}
       <section id="tracks" className="tracks-section">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -301,10 +260,7 @@ const IntrusionX = () => {
               modifier: 1,
               slideShadows: true,
             }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true
-            }}
+            pagination={{ clickable: true, dynamicBullets: true }}
             navigation={true}
             autoplay={{
               delay: 3000,
@@ -322,10 +278,7 @@ const IntrusionX = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   className="track-card-glass"
-                  style={{
-                    '--track-color': track.color,
-                    borderColor: track.color
-                  }}
+                  style={{ '--track-color': track.color, borderColor: track.color }}
                 >
                   <div className="glass-shine"></div>
                   <div className="track-glow" style={{ background: `radial-gradient(circle, ${track.color}40, transparent)` }}></div>
@@ -342,8 +295,6 @@ const IntrusionX = () => {
                   <h3 className="track-name-glass" style={{ color: track.color }}>{track.name}</h3>
                   <p className="track-desc-glass">{track.desc}</p>
 
-
-
                   <div className="glass-corner tl" style={{ borderColor: track.color }}></div>
                   <div className="glass-corner tr" style={{ borderColor: track.color }}></div>
                   <div className="glass-corner bl" style={{ borderColor: track.color }}></div>
@@ -355,7 +306,7 @@ const IntrusionX = () => {
         </div>
       </section>
 
-
+      {/* ── Timeline Section ── */}
       <section id="timeline" className="timeline-section">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -404,6 +355,7 @@ const IntrusionX = () => {
         </div>
       </section>
 
+      {/* ── Contact Section ── */}
       <section id="contact" className="contact-section">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -414,7 +366,12 @@ const IntrusionX = () => {
           <h2>Ready to Join?</h2>
           <p>Join us for an unforgettable 36-hour journey of innovation, collaboration, and cybersecurity excellence</p>
 
-          <a href="https://unstop.com/hackathons/intrusion-x-second-edition-gla-university-glau-uttar-pradesh-1644953" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+          <a
+            href="https://unstop.com/hackathons/intrusion-x-second-edition-gla-university-glau-uttar-pradesh-1644953"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none' }}
+          >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -427,7 +384,7 @@ const IntrusionX = () => {
           <div className="contact-info">
             <div className="contact-item">
               <span className="contact-icon">📧</span>
-              <span>team@cyberonites.org</span>
+              <span>cyberonitesclub@gla.ac.in</span>
             </div>
             <div className="contact-item">
               <span className="contact-icon">📍</span>
@@ -435,7 +392,7 @@ const IntrusionX = () => {
             </div>
             <div className="contact-item">
               <span className="contact-icon">🌐</span>
-              <span>www.cyberonites.org</span>
+              <span>www.cyberonites.com</span>
             </div>
           </div>
 
@@ -444,10 +401,10 @@ const IntrusionX = () => {
             <a href="https://www.instagram.com/official_cyberonites" target="_blank" rel="noopener noreferrer" className="social-link">Instagram</a>
             <a href="https://cyberonites.com" target="_blank" rel="noopener noreferrer" className="social-link">Website</a>
           </div>
-
         </motion.div>
       </section>
 
+      {/* ── Home Button ── */}
       <a
         href="https://cyberonites.com"
         className="home-button"
@@ -460,9 +417,8 @@ const IntrusionX = () => {
         </svg>
       </a>
 
-
-    </div >
+    </div>
   );
 };
 
-export default IntrusionX;
+export default IntrusionXv2;
