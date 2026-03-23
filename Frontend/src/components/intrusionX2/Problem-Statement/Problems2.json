@@ -1,8 +1,8 @@
 [
     {
-        "id":"1",
-        "title":"AI-Based Malware Classification System",
-        "description": "Modern malware variants constantly change their signatures to evade traditional antivirus systems. AIbased malware classification systems can analyze behavioral patterns, file structures, and execution traces to identify malicious software.",
+        "id": "1",
+        "title": "AI-Based Malware Classification System",
+        "description": "Modern malware variants constantly change their signatures to evade traditional antivirus systems. AI-based malware classification systems can analyze behavioral patterns, file structures, and execution traces to identify malicious software.",
         "challenges": [
             "Detecting polymorphic and obfuscated malware",
             "Handling large malware datasets efficiently",
@@ -11,8 +11,8 @@
     },
     {
         "id": "2",
-        "title" : "AI-Based Document Forgery Detection",
-        "description": "Fraudsters manipulate digital documents such as ID cards, certificates, and invoices. AI-based systems can analyze image inconsistencies, text anomalies, and metadata to detect forged documents. These systems may use computer vision, pattern recognition, and machine learning techniques to identify alterations such as tampered text, inconsistent fonts, altered signatures.",
+        "title": "AI-Based Document Forgery Detection",
+        "description": "Fraudsters manipulate digital documents such as ID cards, certificates, and invoices. AI-based systems can analyze image inconsistencies, text anomalies, and metadata to detect forged documents using computer vision, pattern recognition, and machine learning techniques.",
         "challenges": [
             "Detecting subtle manipulations in scanned documents",
             "Handling multiple document formats and layouts",
@@ -21,8 +21,8 @@
     },
     {
         "id": "3",
-        "title" : "AI-Based Insider Threat Detection",
-        "description": "Insider threats are difficult to detect because malicious activities often appear as legitimate system behavior. Employees with authorized access may intentionally or unintentionally misuse sensitive data.",
+        "title": "AI-Based Insider Threat Detection",
+        "description": "Insider threats are difficult to detect because malicious activities often appear as legitimate system behavior. AI-based systems can analyze user activity logs, access patterns, system behavior, and login histories to identify unusual actions indicating insider threats.",
         "challenges": [
             "Identifying abnormal behavior among legitimate users",
             "Analyzing large volumes of user activity logs",
@@ -31,8 +31,8 @@
     },
     {
         "id": "4",
-        "title" : " AI-Powered Data Privacy Compliance Checker",
-        "description": "An AI-powered compliance checker can automatically analyze databases, logs, and storage systems to detect exposure of sensitive information, identify policy violations, and ensure adherence to data protection standards such as GDPR or other privacy frameworks.",
+        "title": "AI-Powered Data Privacy Compliance Checker",
+        "description": "An AI-powered compliance checker can automatically analyze databases, logs, and storage systems to detect exposure of sensitive information, identify policy violations, and ensure adherence to data protection standards such as GDPR.",
         "challenges": [
             "Identifying personally identifiable information (PII) in large datasets",
             "Detecting unauthorized access or data leaks",
@@ -41,210 +41,562 @@
     },
     {
         "id": "5",
-        "title" : "Adversarial Attack Detection for AI Models",
-        "description": "Machine learning models can be manipulated using adversarial examples—inputs that are slightly modified in ways that are often imperceptible to humans but cause the AI model to make incorrect predictions. These attacks can compromise systems used in areas such as autonomous driving, facial recognition, and cybersecurity.",
+        "title": "Adversarial Attack Detection for AI Models",
+        "description": "Machine learning models can be manipulated using adversarial examples—inputs slightly modified but imperceptible to humans that cause incorrect predictions. The system should detect adversarial manipulations before they influence AI decision-making.",
         "challenges": [
-            "Ensuring detection works across different types of AI models",
-            "Protecting AI systems from manipulation without affecting model performance"
+            "Identifying adversarial inputs with very small perturbations",
+            "Ensuring detection works across different AI models",
+            "Protecting AI systems without affecting model performance"
         ]
     },
     {
         "id": "6",
-        "title" : "Poisoned Dataset Detection",
-        "description": "The goal is to build a detection system that analyzes datasets to identify suspicious or manipulated data points before they are used in model training. The system should automatically flag or remove potentially poisoned samples to ensure the integrity and reliability of the training data.",
+        "title": "AI Model Integrity Verification",
+        "description": "AI models deployed in production may be modified or corrupted by attackers. The system uses hashing, digital signatures, or blockchain verification to ensure deployed models match original trusted versions.",
         "challenges": [
-            "Identifying subtle malicious patterns in large datasets",
-            "Differentiating between legitimate outliers and poisoned data points",
-            "Maintaining model performance after removing suspicious data"
+            "Detecting unauthorized modifications to AI models",
+            "Ensuring verification doesn't increase system overhead",
+            "Maintaining secure storage of model integrity data"
         ]
     },
     {
         "id": "7",
-        "title" : "AI-Powered Multi-Modal Deepfake Detection and Authentication System",
-        "description": "Deepfake technologies can generate highly realistic fake media that can be used for misinformation, fraud, and identity impersonation. An AI-based system can analyze visual, audio, and metadata signals to detect manipulated media and verify authenticity.",
+        "title": "Secure Federated Learning Framework",
+        "description": "Federated learning enables collaborative model training without sharing raw data. The system protects against malicious participants injecting harmful updates or inferring sensitive information from shared parameters.",
         "challenges": [
-            "Detecting deepfakes across images, videos, and audio",
-            "Identifying subtle inconsistencies like facial expressions and audio-visual mismatches",
-            "Supporting real-time detection with high accuracy"
+            "Preventing data leakage during distributed training",
+            "Detecting malicious or poisoned model updates",
+            "Maintaining model accuracy with strong privacy protection"
         ]
     },
     {
         "id": "8",
-        "title" : "Centralized Application Firewall System",
-        "description": "Organizations need a centralized firewall system to monitor and control application network communication.",
+        "title": "Poisoned Dataset Detection",
+        "description": "Machine learning models rely on training datasets that attackers can poison with manipulated data. The system analyzes datasets to identify and remove suspicious data points before model training.",
         "challenges": [
-            "Managing security policies across multiple endpoints",
-            "Detecting abnormal or malicious network activities",
-            "Ensuring minimal impact on application performance"
+            "Identifying subtle malicious patterns in large datasets",
+            "Differentiating legitimate outliers from poisoned data",
+            "Maintaining model performance after data removal"
         ]
     },
     {
         "id": "9",
-        "title" : "Web Application Supply Chain Security Scanner",
-        "description": "Modern web applications depend heavily on external packages and libraries. These dependencies may contain known security vulnerabilities that attackers can exploit. The system should analyze application dependencies and alert developers about vulnerable libraries with recommended fixes.",
+        "title": "AI-Powered Multi-Modal Deepfake Detection",
+        "description": "Deepfake technologies generate realistic fake media for misinformation and fraud. AI system analyzes visual, audio, and metadata signals to detect manipulated media across images, videos, and audio.",
         "challenges": [
-            "Detecting vulnerabilities in third-party dependencies",
-            "Continuously updating vulnerability databases",
-            "Providing accurate alerts and remediation suggestions to developers"
+            "Detecting deepfakes across images, videos, and audio",
+            "Identifying subtle inconsistencies like facial expressions",
+            "Supporting real-time detection with high accuracy"
         ]
     },
     {
         "id": "10",
-        "title" : "Secure API Gateway for Web Applications",
-        "description": "Modern applications rely heavily on APIs to exchange data between services. If APIs are not properly secured, they can expose sensitive information or allow attackers to exploit system functionality",
+        "title": "AI-Powered Data Loss Prevention",
+        "description": "Organizations store sensitive information that AI systems analyze through network traffic, files, and user activity to detect potential data leaks and prevent unauthorized transfers.",
         "challenges": [
-            "Preventing unauthorized API access",
-            "Implementing effective rate limiting and abuse detection",
-            "Maintaining high performance while enforcing security controls"
+            "Detecting sophisticated data exfiltration techniques",
+            "Analyzing large volumes of network and user data",
+            "Preventing leaks while minimizing false positives"
         ]
     },
     {
         "id": "11",
-        "title" : "Digital Intelligence Aggregation Platform",
-        "description": "Develop a Digital Intelligence Aggregation Platform that combines multiple OSINT capabilities into a single system, enabling investigators to collect and analyze intelligence from publicly available digital sources through a unified interface.",
+        "title": "Network-Level Data Exfiltration Detection",
+        "description": "Attackers steal data gradually to avoid detection. AI-based monitoring analyzes network traffic patterns to identify suspicious data transfer activities indicating exfiltration attempts.",
         "challenges": [
-        "Building OSINT collection modules from scratch without relying on external APIs",
-        "Aggregating and organizing data from multiple open sources",
-        "Handling large volumes of intelligence while maintaining performance and accuracy"
+            "Detecting slow and stealthy data exfiltration",
+            "Analyzing large volumes of network traffic efficiently",
+            "Minimizing false positives while maintaining accuracy"
         ]
     },
     {
         "id": "12",
-        "title" : "Early Warning System for Android Ransomware",
-        "description": "There is a need for an early warning system to detect ransomware activity on Android devices before major damage occurs.",
+        "title": "Hardening C2 Against Synthetic Identity Injection",
+        "description": "Generative AI enables deepfake audio/video impersonation of officials. Secure system verifies communication authenticity to prevent fraudulent command issuance through synthetic identities.",
         "challenges": [
-            "Designing a lightweight system that does not affect device performance.",
-            "Implementing accurate alerts with low false positives",
-            "Developing preventive mechanisms such as warnings or rollback option"
+            "Detecting deepfake audio and video in real time",
+            "Building resilience against adversarial techniques",
+            "Ensuring secure media authenticity verification"
         ]
     },
     {
         "id": "13",
-        "title" : "Secure DNS Filtering System",
-        "description": "Attackers frequently use DNS to communicate with command-and-control (C2) servers. This system aims to build a secure DNS filtering solution that detects and blocks malicious domains in real time using threat intelligence and anomaly detection techniques.",
+        "title": "AI-Powered Mobile Security Companion",
+        "description": "AI-based Android app analyzes SMS/messages in real time to detect phishing links, malware URLs, and manipulative language while providing cybersecurity threat information.",
         "challenges": [
-            "Detecting domains generated by Domain Generation Algorithms (DGA)",
-            "Identifying DNS tunneling attempts over modern protocols like DoH and DoT",
-            "Maintaining fast DNS resolution with minimal latency"
+            "Detecting phishing and social engineering in real time",
+            "Providing up-to-date cybersecurity intelligence",
+            "Designing user-friendly security awareness interface"
         ]
     },
     {
         "id": "14",
-        "title" : "Automated Fuzzing for IoT Protocols",
-        "description": "An automated fuzzing framework can generate malformed or unexpected inputs to test these protocols and identify potential weaknesses in their communication stacks.",
+        "title": "Deepfake Voice/Video Scam Detector",
+        "description": "Lightweight AI tool analyzes audio/video content to detect AI-generated media by examining speech patterns, audio frequencies, and visual cues indicating synthetic generation.",
         "challenges": [
-            "Implementing fuzzing techniques for protocols like WPA2/WPA3 and BLE",
-            "Detecting crashes and identifying unique vulnerabilities automatically"
+            "Detecting subtle patterns in AI-generated media",
+            "Real-time analysis with minimal processing overhead",
+            "Building reliable scam profile tracking system"
         ]
     },
     {
         "id": "15",
-        "title" : "Dark Web Monitoring and Keyword Search Tool",
-        "description": "Anonymous networks such as TOR, I2P, and Freenet host platforms that may contain illegal marketplaces or malicious activities. The system should collect and filter data from these networks based on keywords, locations, and timestamps to help investigators monitor suspicious activities.",
+        "title": "Automated Vulnerability Monitoring Tool",
+        "description": "Web-based tool scans vendor/security websites to collect newly disclosed vulnerabilities, extracting CVE IDs, severity levels, and mitigation steps for organizational tracking.",
         "challenges": [
-            "Establishing secure connectivity through VPN or anonymity networks.",
-            "Extracting data from dynamic and frequently changing dark web sources.",
-            "Managing continuously changing dark web resources while maintaining operational security."
+            "Handling frequently changing website formats",
+            "Avoiding duplicate vulnerability reports",
+            "Processing large volumes of vulnerability data"
         ]
     },
     {
         "id": "16",
-        "title" : "Cybersecurity Readiness Assessment Tool",
-        "description": "Many organizations struggle to evaluate how prepared they are for threats such as malware, phishing, and data breaches. This tool will assess an organization's capabilities across areas like prevention, detection, response, and recovery, and generate a cybersecurity maturity score with recommendations.",
+        "title": "Unencrypted PII in Browser Storage",
+        "description": "Web apps store sensitive data in browser storage or debug logs accessible by malicious scripts. System identifies leaked PII and implements secure storage practices.",
         "challenges": [
-            "Designing a reliable assessment framework",
-            "Generating meaningful maturity scores and actionable recommendations",
-            "Ensuring the confidentiality and security of assessment data"
+            "Identifying leaked PII categories in logs/storage",
+            "Demonstrating XSS exploitation of exposed data",
+            "Implementing data redaction and CSP measures"
         ]
     },
     {
         "id": "17",
-        "title" : "Software-Defined Load Balancer, Firewall, and WAF for Cloud-Native Applications",
-        "description": "Design and integrate a software-defined load balancer, firewall, and web application firewall (WAF) for cloudnative application stacks.",
+        "title": "Centralized Application Firewall System",
+        "description": "Application-aware firewall enables administrators to define security policies for domains, IPs, and protocols through centralized dashboard with traffic monitoring.",
         "challenges": [
-            "Selecting and integrating suitable open-source security solutions",
-            "Implementing WAF rules to protect applications from web attacks",
-            "Ensuring seamless integration with cloud orchestration platforms"
+            "Managing policies across multiple endpoints",
+            "Detecting abnormal/malicious network activities",
+            "Minimizing impact on application performance"
         ]
     },
     {
         "id": "18",
-        "title" : "Unified Monitoring Solution for VMs and Containers",
-        "description": "Create a unified monitoring system for both virtual machines (VMs) and containerized environments.",
+        "title": "AI-Based Web Application Attack Detection",
+        "description": "AI-driven system analyzes HTTP requests in real time to detect/block SQL Injection, XSS, CSRF attacks and includes vulnerability scanning for developers.",
         "challenges": [
-            "Collecting metrics from diverse environments (VMs and containers)",
-            "Efficiently storing large volumes of monitoring data",
-            "Designing dashboards and alert mechanisms for realtime monitoring"
+            "Minimizing false positives in attack detection",
+            "Handling large volumes of web traffic efficiently",
+            "Providing actionable security insights"
         ]
     },
     {
         "id": "19",
-        "title" : "Insecure Serverless Application",
-        "description": "Serverless applications may contain security vulnerabilities due to insecure dependencies, improper permissions, or weak configurations.",
+        "title": "Secure Authentication & Session Management",
+        "description": "Secure framework implements strong authentication, session handling, and monitoring to prevent session hijacking and credential-based attacks on web applications.",
         "challenges": [
-            "Identifying insecure dependencies in serverless functions",
-            "Detecting improper permissions and configuration issues",
-            "Providing automated security checks without affecting application performance"
+            "Preventing session hijacking and credential theft",
+            "Implementing strong authentication mechanisms",
+            "Detecting abnormal login behavior"
         ]
     },
     {
         "id": "20",
-        "title" : "Kubernetes RBAC Privilege Escalation via Wildcard Permissions",
-        "description": "Identify and mitigate Kubernetes RBAC misconfigurations involving wildcard (*) permissions that may grant excessive privileges to service accounts and increase the risk of unauthorized access within the cluster.",
+        "title": "Web Application Supply Chain Scanner",
+        "description": "Analyzes web application dependencies to detect vulnerable third-party libraries and provides remediation recommendations to developers.",
         "challenges": [
-            "Detecting wildcard or overly permissive RBAC rules in cluster configurations",
-            "Auditing service accounts and role bindings for excessive privileges",
-            "Enforcing least-privilege RBAC policies and automated compliance checks using security tools and policy frameworks."
+            "Detecting vulnerabilities in third-party dependencies",
+            "Continuously updating vulnerability databases",
+            "Providing accurate remediation suggestions"
         ]
     },
     {
-        "id":"21",
-        "title" : "Sybil Attacks on Decentralized Identity (DID) Systems",
-        "description": "Decentralized Identity (DID) systems on blockchain are vulnerable to Sybil attacks, where attackers create multiple fake identities to manipulate the network.",
-        "challenges":[
-            "Detecting and eliminating Sybil nodes without relying on centralized authorities",
-            "Maintaining privacy and anonymity of legitimate devices",
-            "Identifying fraudulent identities in real time without disrupting the network"
+        "id": "21",
+        "title": "Secure API Gateway for Web Applications",
+        "description": "Gateway enforces authentication, rate limiting, request monitoring, and logging to protect APIs from unauthorized access and abuse while maintaining performance.",
+        "challenges": [
+            "Preventing unauthorized API access",
+            "Implementing effective rate limiting",
+            "Maintaining high performance with security"
         ]
     },
     {
-        "id":"22",
-        "title" : "Zero-Day Vulnerabilities in IIoT Smart Contracts",
-        "description": "Smart contracts in Industrial IoT (IIoT) blockchain networks may contain undiscovered zero-day vulnerabilities that can be exploited by attackers.",
-        "challenges":[
-            "Performing automated security auditing of smart contract code",
-            "Detecting malicious contract interactions in real time",
-            "Maintaining decentralization while monitoring and preventing attacks"
+        "id": "22",
+        "title": "GraphQL Introspection Batching DoS Attack",
+        "description": "GraphQL introspection enables attackers to craft deeply nested queries/batch operations exhausting server resources. System implements query complexity limits.",
+        "challenges": [
+            "Detecting high-complexity nested queries",
+            "Preventing excessive batched operations",
+            "Implementing query depth/complexity analysis"
         ]
     },
     {
-        "id":"23",
-        "title" : "Cross-Chain Bridge Trust Gaps",
-        "description": "Industrial IoT ecosystems may use multiple blockchain networks that communicate through cross-chain bridges. During this transfer, cryptographic continuity can break, allowing attackers to inject falsified device telemetry or manipulate data as it moves between blockchains.",
-        "challenges":[
-            "Maintaining end-to-end cryptographic proof across different blockchain networks",
-            "Detecting anomalies during cross-chain data transfers",
-            "Preventing centralized bridge validators that could become single points of failure"
+        "id": "23",
+        "title": "HTTP Request Smuggling in Reverse Proxies",
+        "description": "Exploits proxy/backend server parsing inconsistencies in HTTP headers to enable session hijacking, cache poisoning, and security bypass through malformed requests.",
+        "challenges": [
+            "Identifying request parsing discrepancies",
+            "Demonstrating request queue poisoning",
+            "Implementing header normalization defenses"
         ]
     },
     {
-        "id":"24",
-        "title" : "IoT Botnet Detection System",
-        "description": "Design a real-time detection system that identifies IoT devices infected by botnets participating in large-scale DDoS attacks.",
-        "challenges":[
-            "Detecting abnormal traffic patterns from IoT devices",
-            "Differentiating between legitimate and malicious network activity",
-            "Isolating infected devices without affecting normal network functionality"
+        "id": "24",
+        "title": "Digital Intelligence Aggregation Platform",
+        "description": "OSINT platform combines social media, domain records, public databases into centralized dashboard for username searches, email analysis, and geolocation tracking.",
+        "challenges": [
+            "Building OSINT modules without external APIs",
+            "Aggregating data from multiple open sources",
+            "Handling large intelligence volumes efficiently"
         ]
     },
     {
-        "id":"25",
-        "title" : "Firmware Integrity Verification System for Industrial IoT",
-        "description": "Design a lightweight, offline-capable system that verifies firmware integrity in Industrial IoT mesh networks to prevent malicious OTA firmware injection.",
-        "challenges":[
-            "Implementing firmware verification within limited memory and processing capacity of IoT devices",
-            "Designing reliable peer verification even if some nodes are compromised",
-            "Ensuring update verification does not delay legitimate firmware deployment"
+        "id": "25",
+        "title": "Early Warning System for Android Ransomware",
+        "description": "Behavior-based system monitors Android devices for rapid file encryption or screen locking indicative of ransomware, providing real-time user alerts.",
+        "challenges": [
+            "Lightweight system without performance impact",
+            "Accurate alerts with low false positives",
+            "Preventive mechanisms and rollback options"
+        ]
+    },
+    {
+        "id": "26",
+        "title": "Analysis of Tor Network Hidden Services",
+        "description": "System identifies active .onion services hosting malicious content and analyzes vulnerabilities while maintaining ethical/legal compliance.",
+        "challenges": [
+            "Discovering .onion services anonymously",
+            "Analyzing hidden service vulnerabilities",
+            "Ensuring legal/ethical data collection"
+        ]
+    },
+    {
+        "id": "27",
+        "title": "Secure DNS Filtering System",
+        "description": "Real-time DNS filtering detects/blocks malicious domains using threat intelligence and anomaly detection, including DGA domains and DNS tunneling.",
+        "challenges": [
+            "Detecting Domain Generation Algorithm domains",
+            "Identifying DNS tunneling over DoH/DoT",
+            "Maintaining fast DNS resolution"
+        ]
+    },
+    {
+        "id": "28",
+        "title": "Centralized Infrastructure Management Platform",
+        "description": "Single interface for secure monitoring, management, and control of distributed servers, firewalls with role-based access and audit logging.",
+        "challenges": [
+            "Role-based access control implementation",
+            "Real-time monitoring and audit logging",
+            "Secure patching and rollback mechanisms"
+        ]
+    },
+    {
+        "id": "29",
+        "title": "Automated Fuzzing for IoT Protocols",
+        "description": "Fuzzing framework tests Wi-Fi, Bluetooth, Zigbee protocols with malformed inputs to identify handshake and state transition vulnerabilities.",
+        "challenges": [
+            "Fuzzing WPA2/WPA3 and BLE protocols",
+            "Automatic crash detection and vulnerability ID",
+            "Modular framework for multiple protocols"
+        ]
+    },
+    {
+        "id": "30",
+        "title": "Dark Web Monitoring Tool",
+        "description": "Keyword-based search across TOR, I2P, Freenet monitors illegal activities with secure connectivity and dynamic source extraction.",
+        "challenges": [
+            "Secure connectivity through anonymity networks",
+            "Extracting data from changing dark web sources",
+            "Maintaining operational security"
+        ]
+    },
+    {
+        "id": "31",
+        "title": "Cybersecurity Readiness Assessment Tool",
+        "description": "Assesses organizational capabilities across prevention, detection, response, recovery generating maturity scores and recommendations.",
+        "challenges": [
+            "Reliable assessment framework design",
+            "Meaningful maturity scores and recommendations",
+            "Data confidentiality and security"
+        ]
+    },
+    {
+        "id": "32",
+        "title": "BGP Route Hijack Detection",
+        "description": "Real-time BGP monitoring validates prefix announcements against RPKI ROA records detecting origin AS mismatches and routing anomalies.",
+        "challenges": [
+            "Processing live BGP update streams efficiently",
+            "RPKI validation and anomaly detection",
+            "Clear alerting and monitoring dashboard"
+        ]
+    },
+    {
+        "id": "33",
+        "title": "Software-Defined Load Balancer & WAF",
+        "description": "Integrates load balancer, firewall, WAF for cloud-native apps with Kubernetes/OpenStack supporting SSL offloading and security rules.",
+        "challenges": [
+            "Integrating open-source security solutions",
+            "WAF rules for web attack protection",
+            "Cloud orchestration platform integration"
+        ]
+    },
+    {
+        "id": "34",
+        "title": "Unified VM/Container Monitoring",
+        "description": "Monitoring platform collects performance metrics from VMs/containers, stores in real-time database with visualization dashboards and alerting.",
+        "challenges": [
+            "Metrics collection from diverse environments",
+            "Efficient large-scale data storage",
+            "Real-time dashboard and alert design"
+        ]
+    },
+    {
+        "id": "35",
+        "title": "Cloud IAM Mismanagement Detection",
+        "description": "Analyzes IAM configurations identifying overly permissive policies and privilege escalation paths with remediation recommendations.",
+        "challenges": [
+            "Detecting permissive IAM policies",
+            "Identifying privilege escalation paths",
+            "Providing clear remediation guidance"
+        ]
+    },
+    {
+        "id": "36",
+        "title": "Cloud Satellite Data Processing",
+        "description": "Scalable cloud platform processes massive satellite/geospatial datasets for researchers with efficient storage, analysis, and visualization.",
+        "challenges": [
+            "Processing large geospatial datasets",
+            "Cloud scalability and performance",
+            "Effective visualization tools"
+        ]
+    },
+    {
+        "id": "37",
+        "title": "DNS Rebinding Attack Detection",
+        "description": "Detects DNS rebinding attacks bypassing browser security to access internal admin panels through controlled domain IP switching.",
+        "challenges": [
+            "Simulating DNS rebinding in controlled environment",
+            "Data exfiltration demonstration",
+            "Host validation and network defenses"
+        ]
+    },
+    {
+        "id": "38",
+        "title": "Insecure Serverless Applications",
+        "description": "Detects vulnerabilities in AWS Lambda/Azure Functions from insecure dependencies, improper permissions, and weak configurations.",
+        "challenges": [
+            "Identifying insecure serverless dependencies",
+            "Detecting permission/configuration issues",
+            "Automated security checks"
+        ]
+    },
+    {
+        "id": "39",
+        "title": "Kubernetes RBAC Privilege Escalation",
+        "description": "Audits RBAC configurations detecting wildcard permissions granting excessive privileges to service accounts in Kubernetes clusters.",
+        "challenges": [
+            "Detecting permissive RBAC rules",
+            "Auditing service account bindings",
+            "Least-privilege policy enforcement"
+        ]
+    },
+    {
+        "id": "40",
+        "title": "Cloud Data Encryption Key Management",
+        "description": "Secure system manages encryption keys protecting stored/transmitted cloud data from unauthorized access through poor key management.",
+        "challenges": [
+            "Secure key storage and lifecycle management",
+            "Preventing key leakage",
+            "Scalable cloud key management"
+        ]
+    },
+    {
+        "id": "41",
+        "title": "Sybil Attacks on Decentralized Identity",
+        "description": "Blockchain DID systems vulnerable to attackers creating multiple fake identities to manipulate IIoT device authentication and consensus.",
+        "challenges": [
+            "Detecting Sybil nodes without central authorities",
+            "Maintaining legitimate device privacy",
+            "Real-time fraudulent identity detection"
+        ]
+    },
+    {
+        "id": "42",
+        "title": "Quantum Threats to Blockchain Cryptography",
+        "description": "Elliptic curve cryptography in blockchains vulnerable to quantum computers requiring migration to quantum-resistant algorithms.",
+        "challenges": [
+            "Migrating to quantum-resistant cryptography",
+            "Maintaining network performance",
+            "Large-scale implementation without disruption"
+        ]
+    },
+    {
+        "id": "43",
+        "title": "IIoT Smart Contract Zero-Days",
+        "description": "Immutable smart contracts contain permanent zero-day vulnerabilities exploitable for transaction manipulation and industrial disruption.",
+        "challenges": [
+            "Automated smart contract security auditing",
+            "Real-time malicious interaction detection",
+            "Maintaining decentralization with monitoring"
+        ]
+    },
+    {
+        "id": "44",
+        "title": "Cross-Chain Bridge Trust Gaps",
+        "description": "Cross-chain bridges break cryptographic continuity enabling attackers to inject falsified IIoT telemetry between blockchain networks.",
+        "challenges": [
+            "End-to-end cryptographic proof across chains",
+            "Anomaly detection in data transfers",
+            "Avoiding centralized bridge validators"
+        ]
+    },
+    {
+        "id": "45",
+        "title": "51% Attack Detection on Audit Logs",
+        "description": "Blockchain audit logs in critical infrastructure vulnerable to 51% attacks rewriting recent transaction history and falsifying sensor data.",
+        "challenges": [
+            "Early 51% attack detection",
+            "Protecting low-node network logs",
+            "Majority-resistant consensus mechanisms"
+        ]
+    },
+    {
+        "id": "46",
+        "title": "IoT Botnet Detection System",
+        "description": "Real-time detection isolates Mirai-infected IoT devices launching DDoS attacks through network traffic pattern analysis.",
+        "challenges": [
+            "Detecting abnormal IoT traffic patterns",
+            "Legitimate vs malicious activity differentiation",
+            "Isolating devices without network disruption"
+        ]
+    },
+    {
+        "id": "47",
+        "title": "Smart Home IoT Intrusion Detection",
+        "description": "Home network monitoring detects compromised cameras, routers, smart speakers through abnormal IoT device behavior analysis.",
+        "challenges": [
+            "Monitoring diverse IoT protocols",
+            "Compromise behavior detection",
+            "Timely alerts without false positives"
+        ]
+    },
+    {
+        "id": "48",
+        "title": "Industrial IoT Firmware Verification",
+        "description": "Lightweight offline system verifies OTA firmware integrity preventing malicious injection in industrial IoT mesh networks.",
+        "challenges": [
+            "Firmware verification on resource-constrained devices",
+            "Peer verification with compromised nodes",
+            "Non-disruptive legitimate update verification"
+        ]
+    },
+    {
+        "id": "49",
+        "title": "Passive IoT Compromise Detection",
+        "description": "Analyzes encrypted IoT traffic detecting supply-chain compromised devices communicating with hidden C2 servers.",
+        "challenges": [
+            "Hidden C2 detection in encrypted traffic",
+            "Normal vs malicious behavior distinction",
+            "Low false positive behavioral models"
+        ]
+    },
+    {
+        "id": "50",
+        "title": "Healthcare IoT Security Monitoring",
+        "description": "Monitors hospital IoT medical devices detecting vulnerabilities and suspicious communication ensuring patient safety.",
+        "challenges": [
+            "Secure monitoring of medical IoT devices",
+            "Vulnerability and anomaly detection",
+            "Patient safety during security monitoring"
+        ]
+    },
+    {
+        "id": "51",
+        "title": "Autonomous IoT Threat Response",
+        "description": "Automatically detects compromised IoT endpoints and isolates them preserving critical system functionality through behavior monitoring.",
+        "challenges": [
+            "Real-time IoT compromise detection",
+            "Automatic isolation without disruption",
+            "Minimizing false positive responses"
+        ]
+    },
+    {
+        "id": "52",
+        "title": "Insecure Smart Home Cameras",
+        "description": "Smart cameras/doorbells with weak passwords and poor security enable attackers to monitor homes and misuse devices.",
+        "challenges": [
+            "Default/weak unchanged credentials",
+            "Insecure authentication/reset mechanisms",
+            "Unencrypted video/audio streams"
+        ]
+    },
+    {
+        "id": "53",
+        "title": "Vulnerable Smart Building Access",
+        "description": "IoT door locks enable unauthorized physical access through security flaws, weak practices, and delayed patching.",
+        "challenges": [
+            "Preventing unauthorized physical access",
+            "Unpatched firmware vulnerabilities",
+            "Default/predictable device credentials"
+        ]
+    },
+    {
+        "id": "54",
+        "title": "AI Model Integrity Verification",
+        "description": "Verification mechanism checks deployed AI models haven't been tampered with using hashing, signatures, or blockchain techniques.",
+        "challenges": [
+            "Detecting unauthorized model modifications",
+            "Low-overhead verification process",
+            "Secure model integrity data storage"
+        ]
+    },
+    {
+        "id": "55",
+        "title": "Secure Authentication System",
+        "description": "Framework protects web apps from session hijacking and credential attacks through strong authentication and monitoring.",
+        "challenges": [
+            "Session hijacking prevention",
+            "Strong authentication implementation",
+            "Suspicious login detection"
+        ]
+    },
+    {
+        "id": "56",
+        "title": "Cloud IAM Detection Tool",
+        "description": "Identifies misconfigured IAM policies enabling privilege escalation and unauthorized cloud resource access.",
+        "challenges": [
+            "Overly permissive policy detection",
+            "Privilege escalation path identification",
+            "Remediation recommendations"
+        ]
+    },
+    {
+        "id": "57",
+        "title": "Post-Quantum Crypto Migration",
+        "description": "Cryptographic agility framework transitions from RSA/ECDH to post-quantum crypto maintaining compatibility during migration.",
+        "challenges": [
+            "Algorithm identification in codebases",
+            "Unified crypto API for hybrid modes",
+            "Migration compatibility assurance"
+        ]
+    },
+    {
+        "id": "58",
+        "title": "Network Data Exfiltration AI",
+        "description": "AI monitors enterprise networks detecting large-scale data exfiltration through traffic pattern analysis.",
+        "challenges": [
+            "Slow/stealthy exfiltration detection",
+            "Large network traffic analysis",
+            "Accurate detection minimizing false positives"
+        ]
+    },
+    {
+        "id": "59",
+        "title": "Kubernetes RBAC Auditing",
+        "description": "Audits service accounts detecting wildcard permissions granting excessive cluster privileges requiring least-privilege enforcement.",
+        "challenges": [
+            "Wildcard permission detection",
+            "Service account privilege auditing",
+            "Automated compliance enforcement"
+        ]
+    },
+    {
+        "id": "60",
+        "title": "Blockchain Quantum Resistance",
+        "description": "Prepares blockchain networks for quantum computing threats through cryptographic algorithm migration and performance maintenance.",
+        "challenges": [
+            "Quantum-resistant algorithm migration",
+            "Network performance preservation",
+            "Disruption-free large-scale implementation"
         ]
     }
 ]
