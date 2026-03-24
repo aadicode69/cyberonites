@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
 import IntrusionXv2 from "../src/components/intrusionX2/IntrusionXv2";
-import Ps from "./components/intrusionX2/Ps/Ps";
+import Ps from "./components/intrusionX2/se-problem-statements/Ps";
 import Popup from "./components/load_popup/Popup";
 import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 import Team2024 from "./components/team-2024/Team2024";

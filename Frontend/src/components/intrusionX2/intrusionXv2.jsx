@@ -4,7 +4,7 @@ import './IntrusionXv2.css';
 import IntrusionXlogo from "../intrusionX2/IntrusionX-2.png";
 import CyberoniteNavLogo from "../../img/ps-final.png";
 import BgImage from "../intrusionX2/Background.png"; 
-import Ps from "../intrusionX2/Ps/Ps";
+import Ps from "../intrusionX2/se-problem-statements/Ps";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
