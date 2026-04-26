@@ -4,7 +4,7 @@ import './IntrusionXv2.css';
 import IntrusionXlogo from "../intrusionX2/IntrusionX-2.png";
 import CyberoniteNavLogo from "../../img/ps-final.png";
 import BgImage from "../intrusionX2/Background.png"; 
-import Ps from "../intrusionX2/se-problem-statements/Ps";
+import Ps from "./se-problem-statements/ProblemS";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
@@ -150,7 +150,7 @@ const IntrusionXv2 = () => {
           <div className="cta-buttons">
   <div className="flex gap-4">
     <a
-      href="https://unstop.com/hackathons/intrusion-x-second-edition-gla-university-glau-uttar-pradesh-1644953"
+      href="/intrusion-x-se/pre-screening/results"
       target="_blank"
       rel="noopener noreferrer"
       style={{ textDecoration: 'none' }}
@@ -160,12 +160,12 @@ const IntrusionXv2 = () => {
         whileTap={{ scale: 0.95 }}
         className="btn-primary"
       >
-        Register Now
+        Pre-Sreening Results
       </motion.button>
     </a>
 
     <a
-      href="Ps"
+      href="/problem-statements-se"
       style={{ textDecoration: 'none' }}
     >
       <motion.button
