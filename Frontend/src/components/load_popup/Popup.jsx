@@ -84,7 +84,7 @@ const Popup = ({ onClose }) => {
         </span>
 
         <h2 className="text-2xl md:text-3xl font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-center">
-          Intrusion X Second Edition
+          IntrusionX Second Edition
         </h2>
 
         <p className="mt-1 text-sm md:text-lg italic text-gray-300 text-center opacity-80">

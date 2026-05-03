@@ -52,7 +52,7 @@ function AppContent() {
         <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
         <Route path="/problem-statements-se" element={<ProblemS />} />
         <Route path="/intrusion-x-se/pre-screening/results" element={<PreScreeningResults />} />
-        <Route path="/intrusionX2-Overview" element={<IntrusionX_Overview/>} />
+        <Route path="/intrusion-x-se-overview" element={<IntrusionX_Overview/>} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -982,7 +982,7 @@ footer {
 
 .carousel-stat-label {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);

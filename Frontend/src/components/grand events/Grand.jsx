@@ -8,14 +8,14 @@ function Grand() {
   const eventData = [
     {
       id: 1,
-      title: "IntrusionX -  Second Edition ",
+      title: "IntrusionX Second Edition",
       image: event1,
-      type: "CTF EVENT",
-      date: "10-11 Aopril , 2026",
+      type: "HACKATHON",
+      date: "10-11 April, 2026",
       participants: "990+",
       description:
-        "Intrusion X (Second Edition) was an intensive 36-hour cybersecurity hackathon organized by the Cyberonites Club.",
-      link: "/IntrusionX2-Overview"
+        "IntrusionX Second Edition was an intensive 36-hour cybersecurity hackathon organized by the Cyberonites Club.",
+      link: "/intrusion-x-se-overview"
     },{
       id: 2,
       title: "EscalateX V2 ",
