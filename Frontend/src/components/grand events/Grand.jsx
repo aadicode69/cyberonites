@@ -1,15 +1,25 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import event1 from "../../img/events/EscalateXv2.jpg";
-import event2 from "../../img/events/EscalateX_CTF.jpg";
-import event3 from "../../img/events/IntrusionX.png";
+import event2 from "../../img/events/EscalateXv2.jpg";
+import event3 from "../../img/events/EscalateX_CTF.jpg";
+import event1 from "../../img/events/IntrusionX2.png";
 
 function Grand() {
   const eventData = [
     {
       id: 1,
-      title: "EscalateX V2 ",
+      title: "IntrusionX -  Second Edition ",
       image: event1,
+      type: "CTF EVENT",
+      date: "10-11 Aopril , 2026",
+      participants: "990+",
+      description:
+        "Intrusion X (Second Edition) was an intensive 36-hour cybersecurity hackathon organized by the Cyberonites Club.",
+      link: "/IntrusionX2-Overview"
+    },{
+      id: 2,
+      title: "EscalateX V2 ",
+      image: event2,
       type: "CTF EVENT",
       date: "8-9 November 2025",
       participants: "450+",
@@ -18,9 +28,9 @@ function Grand() {
       link: "/escalate-x-v2"
     },
     {
-      id: 2,
+      id: 3,
       title: "EscalateX - CTF",
-      image: event2,
+      image: event3,
       type: "Competition",
       date: "15 September 2024",
       participants: "50",
@@ -28,17 +38,7 @@ function Grand() {
       "The primary objective of the CTF event was to promote practical learning and encourage students to apply their theoretical knowledge to real-world cybersecurity issues. By offering challenges that simulated real hacking scenarios, the event aimed to enhance participants' problem-solving abilities, teamwork, and technical skills.",
       link: "/capturetheflag"
     },
-    {
-      id: 3,
-      title: "IntrusionX - Hackathon",
-      image: event3,
-      type: "Hackathon",
-      date: "11 - 12 April 2024",
-      participants: "90+",
-      description:
-      "IntrusionX is a 24-hour flagship cybersecurity event by the Cyberonites Club, GLA University, focused on building practical skills in ethical hacking, cyber defense, and digital forensics. It aims to provide hands-on experience with real-world cyber threats while promoting ethical and responsible cybersecurity practices.",
-      link: "/intrusion-x-overview"
-    }
+    
   ];
 
   const [isVisible, setIsVisible] = useState(false);

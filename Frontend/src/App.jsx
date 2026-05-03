@@ -17,13 +17,14 @@ import EscalateXOverview from "./components/escalate-x-overview/EscalateXOvervie
 import Team2024 from "./components/team-2024/Team2024";
 import Team2025 from "./components/team-2025/Team2025";
 import PreScreeningResults from "./components/intrusionX2/prescreen-results/PreScreeningResults";
+import IntrusionX_Overview from "./components/intrusionX2-Overview/intrusionX2_Overview";
 
 function AppContent() {
   const [showPopup, setShowPopup] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    setShowPopup(true);
+    // setShowPopup(true);
   }, []);
 
   useEffect(() => {
@@ -51,6 +52,7 @@ function AppContent() {
         <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} />
         <Route path="/problem-statements-se" element={<ProblemS />} />
         <Route path="/intrusion-x-se/pre-screening/results" element={<PreScreeningResults />} />
+        <Route path="/intrusionX2-Overview" element={<IntrusionX_Overview/>} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
