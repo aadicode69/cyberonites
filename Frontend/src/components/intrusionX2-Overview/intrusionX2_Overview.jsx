@@ -182,9 +182,9 @@ const SPONSORS = [
     logo: logoStartUpNews,
     url: "https://startupnews.fyi",
     offerings: "Event Support",
-    pricePerQty: "—",
-    totalQty: "—",
-    total: "—",
+    pricePerQty: "-",
+    totalQty: "-",
+    total: "-",
   },
   {
     sn: "03",
@@ -222,9 +222,9 @@ const SPONSORS = [
     logo: logoGoPwnIt,
     url: "https://gopwnit.com",
     offerings: "Goodies / Swag",
-    pricePerQty: "—",
-    totalQty: "—",
-    total: "—",
+    pricePerQty: "-",
+    totalQty: "-",
+    total: "-",
   },
   {
     sn: "07",
@@ -272,9 +272,9 @@ const SPONSORS = [
     logo: logoV0,
     url: "https://v0.dev",
     offerings: "Tech Support",
-    pricePerQty: "—",
-    totalQty: "—",
-    total: "—",
+    pricePerQty: "-",
+    totalQty: "-",
+    total: "-",
   },
   {
     sn: "12",
@@ -282,9 +282,9 @@ const SPONSORS = [
     logo: logoDuality,
     url: "https://www.duality.ai/",
     offerings: "Community Support",
-    pricePerQty: "—",
-    totalQty: "—",
-    total: "—",
+    pricePerQty: "-",
+    totalQty: "-",
+    total: "-",
   },
   {
     sn: "13",
@@ -292,9 +292,9 @@ const SPONSORS = [
     logo: logoOSEN,
     url: "https://osen.live",
     offerings: "Sponsorship Referral",
-    pricePerQty: "—",
-    totalQty: "—",
-    total: "—",
+    pricePerQty: "-",
+    totalQty: "-",
+    total: "-",
   },
   {
     sn: "14",
@@ -303,7 +303,7 @@ const SPONSORS = [
     url: "https://tsnsecurity.com",
     offerings: "Goodies & Swags",
     pricePerQty: "₹150 (T-shirt)",
-    totalQty: "—",
+    totalQty: "-",
     total: "₹21,500",
   },
   {
@@ -338,33 +338,17 @@ const SPONSORS = [
   },
 ];
 
-const BUDGET = [
-  { name: "Flex Print", qty: "2", rate: "₹1,947", total: "₹3,894" },
-  { name: "Posters CMYK Print", qty: "30", rate: "₹11.80", total: "₹354" },
-  { name: "Certificate CMYK Print", qty: "50", rate: "₹5.90", total: "₹295" },
-  { name: "Hand Bands", qty: "250", rate: "₹8", total: "₹2,000" },
-  { name: "Cash Cheque", qty: "3", rate: "₹40", total: "₹120" },
-  { name: "Medals", qty: "12", rate: "₹60", total: "₹720" },
-  { name: "Sticker Sheets", qty: "30", rate: "₹45", total: "₹1,350" },
-  { name: "Refreshments", qty: "—", rate: "—", total: "₹18,000" },
-  { name: "Stationery", qty: "—", rate: "—", total: "₹1,769" },
-  { name: "Cash Prize", qty: "3", rate: "—", total: "₹30,000" },
-  { name: "Momentos", qty: "5", rate: "₹300", total: "₹1,500" },
-  { name: "Guest Travel", qty: "—", rate: "—", total: "₹20,000" },
-  { name: "Guest House", qty: "5", rate: "₹1,500", total: "₹7,500" },
-  { name: "Guest House Food", qty: "10", rate: "₹380", total: "₹3,800" },
-  { name: "Miscellaneous", qty: "—", rate: "—", total: "₹5,000" },
-];
+
 
 const HIGHLIGHTS = [
-  "Hackathon kickoff on 10 April 2026 — official start of the 36-hour countdown.",
+  "Hackathon kickoff on 10 April 2026 - official start of the 36-hour countdown.",
   "High competitive spirit with teams from 15+ institutions across India.",
   "Innovative working prototypes developed and demonstrated under intense time constraints.",
   "Real-time mentorship and feedback sessions with industry experts throughout the event.",
   "Night-time jamming session to help participants relax and recharge mid-hackathon.",
-  "Cybersecurity awareness session by Aman Singh, Co-Founder, TSN Security — covering threat hunting, digital forensics, and cyber crime.",
+  "Cybersecurity awareness session by Aman Singh, Co-Founder, TSN Security - covering threat hunting, digital forensics, and cyber crime.",
   "Community-building session by Vikas Yadav (OSEN team) on hackathon culture and real-world impact.",
-  "Final evaluations on 11 April 2026 — presentations judged on innovation, technical depth, and practical applicability.",
+  "Final evaluations on 11 April 2026 - presentations judged on innovation, technical depth, and practical applicability.",
 ];
 
 /* ─── COMPONENT ─────────────────────────────────────────────── */
@@ -418,7 +402,7 @@ export default function IntrusionX2_Overview() {
           IntrusionX Second Edition was an intensive 36-hour cybersecurity
           hackathon organized by the Cyberonites Club, designed to simulate
           real-world cyber environments. Teams competed across domains spanning
-          AI/ML, Cloud Security, Web Applications, Blockchain, and IoT — pushing
+          AI/ML, Cloud Security, Web Applications, Blockchain, and IoT - pushing
           the boundaries of strategic thinking, rapid decision-making, and
           technical execution under pressure.
         </p>
@@ -451,7 +435,7 @@ export default function IntrusionX2_Overview() {
         <p>
           The event was designed to foster innovation, collaboration, and
           real-world problem-solving across cutting-edge domains. What set
-          IntrusionX apart was its simulation of genuine cyber environments —
+          IntrusionX apart was its simulation of genuine cyber environments -
           participants were required to think critically, adapt quickly, and
           execute efficiently under time pressure, mirroring actual industry
           scenarios.
@@ -474,7 +458,7 @@ export default function IntrusionX2_Overview() {
           <div className="carousel-divider" />
         </div>
 
-        {/* Infinite auto-scrolling logo strip — pauses on hover */}
+        {/* Infinite auto-scrolling logo strip - pauses on hover */}
         <div className="carousel-track-wrap">
           <div className="carousel-track">
             {[...SPONSORS, ...SPONSORS].map(
@@ -512,7 +496,7 @@ export default function IntrusionX2_Overview() {
           {[
             {
               index: "Round 01",
-              title: "Idea Submission — PPT Round",
+              title: "Idea Submission - PPT Round",
               date: null,
               bullets: [
                 "Teams submitted detailed presentations outlining their problem understanding and proposed solution.",
@@ -666,7 +650,7 @@ export default function IntrusionX2_Overview() {
           {EVALUATORS.map((name) => (
             <div className="person-card" key={name}>
               <div className="person-name">{name}</div>
-              <div className="person-role">Judge / Evaluator</div>
+              <div className="person-role"> Evaluator</div>
             </div>
           ))}
         </div>
@@ -713,7 +697,7 @@ export default function IntrusionX2_Overview() {
 
       {/* ── IMPACT ── */}
       <section className="section">
-        <span className="section-tag"> Impact & Conclusion</span>
+       
         <h2>IMPACT</h2>
         <p>
           IntrusionX Second Edition successfully bridged the gap between
@@ -723,8 +707,8 @@ export default function IntrusionX2_Overview() {
           IoT domains.
         </p>
         <p>
-          The event also surfaced key areas for improvement — financial
-          management, team coordination, logistics, and communication — which
+          The event also surfaced key areas for improvement - financial
+          management, team coordination, logistics, and communication - which
           will be addressed in future editions to make IntrusionX even more
           impactful.
         </p>
@@ -806,7 +790,7 @@ export default function IntrusionX2_Overview() {
           IntrusionX SE © 2026
         </span>
         <span className="footer-right">
-          BEST OF LUCK — <span className="accent">EXECUTE OR BE EXECUTED</span>
+          BEST OF LUCK - <span className="accent">EXECUTE OR BE EXECUTED</span>
         </span>
       </footer>
     </div>
