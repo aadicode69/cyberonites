@@ -43,21 +43,7 @@ const Home = () => {
         </section>
         
         <section className="promo-card-section">
-          <div className="w-full max-w-lg">
-            <PlatformCard 
-              title="Cyberonites Playground"
-              description="Practice cybersecurity skills in a safe environment with hands-on labs, challenges, and interactive simulations at playground.cyberonites.com"
-              buttonText="Launch Playground"
-              onClick={() => window.open('https://playground.cyberonites.com', '_blank')}
-              gradientFrom="from-gray-900"
-              gradientTo="to-black"
-              hoverFrom="hover:from-gray-800"
-              hoverTo="hover:to-gray-900"
-              accentColor="bg-cyan-400"
-              borderColor="border border-cyan-500/20"
-              textAccent="text-white"
-            />
-          </div>
+          
           <div className="w-full max-w-lg">
             <PlatformCard 
               title="Vulnerability Disclosure"
