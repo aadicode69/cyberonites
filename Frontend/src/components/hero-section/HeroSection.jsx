@@ -206,21 +206,27 @@ const HeroSection = ({ id }) => {
             Join Us
           </button>
           
-          <button
-            ref={sponsorButtonRef}
-            className="button-53 font-ubuntu font-semibold"
-            role="button"
-            aria-label="Sponsor the Cyberonites community"
-            data-text="Sponsor Us"
-            style={{ 
-              transform: 'rotate(2deg)',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}
-            onMouseEnter={(e) => e.target.style.transform = 'rotate(0deg) scale(1.05)'}
-            onMouseLeave={(e) => e.target.style.transform = 'rotate(2deg) scale(1)'}
-          >
-            Sponsor Us
-          </button>
+          <a
+  href="https://forms.gle/tXcy9ZjqRPPjpXsH6"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    ref={sponsorButtonRef}
+    className="button-53 font-ubuntu font-semibold"
+    role="button"
+    aria-label="Sponsor the Cyberonites community"
+    data-text="Sponsor Us"
+    style={{
+      transform: 'rotate(2deg)',
+      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    }}
+    onMouseEnter={(e) => e.target.style.transform = 'rotate(0deg) scale(1.05)'}
+    onMouseLeave={(e) => e.target.style.transform = 'rotate(2deg) scale(1)'}
+  >
+    Sponsor Us
+  </button>
+</a>
         </motion.div>
       </motion.div>
 
