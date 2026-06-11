@@ -18,6 +18,7 @@ import Team2024 from "./components/team-2024/Team2024";
 import Team2025 from "./components/team-2025/Team2025";
 import PreScreeningResults from "./components/intrusionX2/prescreen-results/PreScreeningResults";
 import IntrusionX_Overview from "./components/intrusionX2-Overview/intrusionX2_Overview";
+import Hackops from "./components/hackops/Hackops";
 
 function AppContent() {
   const [showPopup, setShowPopup] = useState(false);
@@ -53,6 +54,7 @@ function AppContent() {
         <Route path="/problem-statements-se" element={<ProblemS />} />
         <Route path="/intrusion-x-se/pre-screening/results" element={<PreScreeningResults />} />
         <Route path="/intrusion-x-se-overview" element={<IntrusionX_Overview/>} />
+        <Route path="/hackops" element={<Hackops/>} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
