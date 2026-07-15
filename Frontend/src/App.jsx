@@ -16,6 +16,7 @@ import Problem_S_v2 from "./components/intrusionX2/Problem-Statement/Problem_S";
 import Popup from "./components/load_popup/Popup";
 import Team2024 from "./components/team-2024/Team2024";
 import Team2025 from "./components/team-2025/Team2025";
+import Team2026 from "./components/team-2026/Team2026";
 import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 
 function AppContent() {
@@ -38,6 +39,8 @@ function AppContent() {
       <Routes>
         <Route path="/team2024" element={<Team2024 />} />
         <Route path="/team2025" element={<Team2025 />} />
+        <Route path="/team2026" element={<Team2026 />} />
+        <Route path="/team-2026" element={<Team2026 />} />
 
         <Route exact path="/" element={<Home />} />
         <Route exact path="/security" element={<SecurityPage />} />
