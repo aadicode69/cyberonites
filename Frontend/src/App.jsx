@@ -11,10 +11,12 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import MainX from "./components/IntrusionX/MainX";
 import IntrusionX from "./components/grand events/intrusionX/IntrusionX";
-import IntrusionXv2 from "../src/components/intrusionX2/IntrusionXv2";
+import IntrusionXv2 from "./components/intrusionX2/IntrusionXv2";
+import Problem_S_v2 from "./components/intrusionX2/Problem-Statement/Problem_S";
 import Popup from "./components/load_popup/Popup";
 import Team2024 from "./components/team-2024/Team2024";
 import Team2025 from "./components/team-2025/Team2025";
+import Team2026 from "./components/team-2026/Team2026";
 import EscalateXOverview from "./components/escalate-x-overview/EscalateXOverview";
 
 function AppContent() {
@@ -37,6 +39,8 @@ function AppContent() {
       <Routes>
         <Route path="/team2024" element={<Team2024 />} />
         <Route path="/team2025" element={<Team2025 />} />
+        <Route path="/team2026" element={<Team2026 />} />
+        <Route path="/team-2026" element={<Team2026 />} />
 
         <Route exact path="/" element={<Home />} />
         <Route exact path="/security" element={<SecurityPage />} />
@@ -48,17 +52,17 @@ function AppContent() {
         <Route path="/prob-statement-x" element={<Problem_S />} />
         <Route path="/guestlecture" element={<GuestLecture />} />
         <Route path="/escalate-x-v2" element={<EscalateXOverview />} />
-        {/* <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} /> */}
+        <Route path="/intrusion-x-second-edition" element={<IntrusionXv2 />} /> 
+        <Route path="/prob-statement-x-v2" element={<Problem_S_v2 />} /> 
 
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-{/* 
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
+
+      {/*showPopup && <Popup onClose={() => setShowPopup(false)} />} */}
     </>
   );
 }
-
 export default function App() {
   return (
     <BrowserRouter>

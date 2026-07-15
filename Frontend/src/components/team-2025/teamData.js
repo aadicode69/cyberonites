@@ -4,7 +4,7 @@ import abhishekimg from "../../img/Core-team/abhishek.webp";
 
 import apoorvimg from "../../img/Core-team/apoorv.webp";
 import asheeshimg from "../../img/Core-team/asheesh_sir.webp";
-import harshrajimg from "../../img/Core-team/harsh_raj.webp";
+import harshrajimg from "../../img/Core-team/harsh2.jpeg";
 import krishnaimg from "../../img/Core-team/krishna1.webp";
 import nandinikaushikimg from "../../img/Core-team/nandini_kaushik.webp";
 
